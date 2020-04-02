@@ -1,0 +1,1842 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+$(LIBFT)	Makefile	/^$(LIBFT):$/;"	t
+$(NAME)	libft/Makefile	/^$(NAME): $(OBJ) $(INCLUDES)libft.h$/;"	t
+$(NAME1)	Makefile	/^$(NAME1) : $(ASM_OBJ) $(LIBFT)$/;"	t
+$(NAME2)	Makefile	/^$(NAME2) : $(VM_OBJ) $(LIBFT)$/;"	t
+$(OBJ_PATH)/%.o	Makefile	/^$(OBJ_PATH)\/%.o : $(SRC_PATH)\/%.c$/;"	t
+ASM_H	includes/asm.h	/^# define ASM_H$/;"	d
+ASM_OBJ	Makefile	/^ASM_OBJ = $(addprefix $(OBJ_PATH)\/,$(ASM_SRC_FILES:.c=.o))$/;"	m
+ASM_PATH	Makefile	/^ASM_PATH = asm$/;"	m
+ASM_SRC_FILES	Makefile	/^ASM_SRC_FILES = $(addprefix $(ASM_PATH)\/,$(SRC_ASM))$/;"	m
+BUFF_SIZE	gnl/get_next_line.h	/^# define BUFF_SIZE /;"	d
+BUFF_SIZE	libft/includes/get_next_line.h	/^# define BUFF_SIZE /;"	d
+CC	Makefile	/^CC = clang$/;"	m
+CC	libft/Makefile	/^CC = gcc$/;"	m
+CFBundleDevelopmentRegion	corewar.dSYM/Contents/Info.plist	/^		<key>CFBundleDevelopmentRegion<\/key>$/;"	k
+CFBundleIdentifier	corewar.dSYM/Contents/Info.plist	/^		<key>CFBundleIdentifier<\/key>$/;"	k
+CFBundleInfoDictionaryVersion	corewar.dSYM/Contents/Info.plist	/^		<key>CFBundleInfoDictionaryVersion<\/key>$/;"	k
+CFBundlePackageType	corewar.dSYM/Contents/Info.plist	/^		<key>CFBundlePackageType<\/key>$/;"	k
+CFBundleShortVersionString	corewar.dSYM/Contents/Info.plist	/^		<key>CFBundleShortVersionString<\/key>$/;"	k
+CFBundleSignature	corewar.dSYM/Contents/Info.plist	/^		<key>CFBundleSignature<\/key>$/;"	k
+CFBundleVersion	corewar.dSYM/Contents/Info.plist	/^		<key>CFBundleVersion<\/key>$/;"	k
+CFLAGS	Makefile	/^CFLAGS = -g #-fsanitize=address# -Wextra -Werror -Wall -Wno-missing-field-initializers$/;"	m
+CFLAGS	libft/Makefile	/^CFLAGS = -Werror -Wall -Wextra$/;"	m
+CHAMP_MAX_SIZE	includes/op.h	/^# define CHAMP_MAX_SIZE	/;"	d
+COMMENT_CHAR	includes/op.h	/^# define COMMENT_CHAR	/;"	d
+COMMENT_CMD_STRING	includes/op.h	/^# define COMMENT_CMD_STRING	/;"	d
+COMMENT_LENGTH	includes/op.h	/^# define COMMENT_LENGTH	/;"	d
+COMMON_H	includes/common.h	/^# define COMMON_H$/;"	d
+COMMON_PATH	Makefile	/^COMMON_PATH = common$/;"	m
+COREWAR_EXEC_MAGIC	includes/op.h	/^# define COREWAR_EXEC_MAGIC /;"	d
+COREWAR_H	includes/corewar.h	/^# define COREWAR_H$/;"	d
+CPPFLAGS	libft/Makefile	/^CPPFLAGS = -I includes$/;"	m
+CYCLE_DELTA	includes/op.h	/^# define CYCLE_DELTA	/;"	d
+CYCLE_TO_DIE	includes/op.h	/^# define CYCLE_TO_DIE	/;"	d
+DIRECT_CHAR	includes/op.h	/^# define DIRECT_CHAR	/;"	d
+DIR_CODE	includes/op.h	/^# define DIR_CODE	/;"	d
+DIR_SIZE	includes/op.h	/^# define DIR_SIZE	/;"	d
+EPENDS	Makefile	/^EPENDS = $(ASM_OBJ:%.o=%.d) $/;"	m
+GET_NEXT_LINE_H	gnl/get_next_line.h	/^# define GET_NEXT_LINE_H$/;"	d
+GET_NEXT_LINE_H	libft/includes/get_next_line.h	/^# define GET_NEXT_LINE_H$/;"	d
+IDX_MOD	includes/op.h	/^# define IDX_MOD	/;"	d
+INCLUDES	libft/Makefile	/^INCLUDES = includes\/$/;"	m
+INC_LIBFT	Makefile	/^INC_LIBFT = "-Ilibft\/includes"$/;"	m
+INC_PATH	Makefile	/^INC_PATH = "includes"$/;"	m
+IND_CODE	includes/op.h	/^# define IND_CODE	/;"	d
+IND_SIZE	includes/op.h	/^# define IND_SIZE	/;"	d
+LABEL_CHAR	includes/op.h	/^# define LABEL_CHAR	/;"	d
+LABEL_CHARS	includes/op.h	/^# define LABEL_CHARS	/;"	d
+LIBFT	Makefile	/^LIBFT = libft\/libft.a$/;"	m
+LIBFT_H	libft/includes/libft.h	/^# define LIBFT_H$/;"	d
+MAX_ARGS_NUMBER	includes/op.h	/^# define MAX_ARGS_NUMBER	/;"	d
+MAX_CHECKS	includes/op.h	/^# define MAX_CHECKS	/;"	d
+MAX_PLAYERS	includes/op.h	/^# define MAX_PLAYERS	/;"	d
+MEM_SIZE	includes/op.h	/^# define MEM_SIZE	/;"	d
+NAME	libft/Makefile	/^NAME = libft.a$/;"	m
+NAME1	Makefile	/^NAME1 = asm$/;"	m
+NAME2	Makefile	/^NAME2 = corewar$/;"	m
+NAME_CMD_STRING	includes/op.h	/^# define NAME_CMD_STRING	/;"	d
+NBR_LIVE	includes/op.h	/^# define NBR_LIVE	/;"	d
+OBJ	libft/Makefile	/^OBJ = $(SRC:.c=.o)$/;"	m
+OBJ_PATH	Makefile	/^OBJ_PATH = obj$/;"	m
+OP_H	includes/op.h	/^#define OP_H$/;"	d
+PROG_NAME_LENGTH	includes/op.h	/^# define PROG_NAME_LENGTH	/;"	d
+REG_CODE	includes/op.h	/^# define REG_CODE	/;"	d
+REG_NUMBER	includes/op.h	/^# define REG_NUMBER	/;"	d
+REG_SIZE	includes/op.h	/^# define REG_SIZE	/;"	d
+SEPARATOR_CHAR	includes/op.h	/^# define SEPARATOR_CHAR	/;"	d
+SRC	libft/Makefile	/^SRC =	ft_memset.c \\$/;"	m
+SRC_ASM	Makefile	/^SRC_ASM = asm.c errors.c asm_parttwo.c asm_parsing.c itobighex.c asm_parsing_tools.c asm_parsing/;"	m
+SRC_COMMON	Makefile	/^SRC_COMMON = #op.c$/;"	m
+SRC_PATH	Makefile	/^SRC_PATH = sources$/;"	m
+SRC_VM	Makefile	/^SRC_VM = main.c debug.c battle.c champ_load.c init_corewar.c process_new.c\\$/;"	m
+T_DIR	includes/op.h	/^# define T_DIR	/;"	d
+T_IND	includes/op.h	/^# define T_IND	/;"	d
+T_LAB	includes/op.h	/^# define T_LAB	/;"	d
+T_REG	includes/op.h	/^# define T_REG	/;"	d
+VM_OBJ	Makefile	/^VM_OBJ = $(addprefix $(OBJ_PATH)\/,$(VM_SRC_FILES:.c=.o))$/;"	m
+VM_PATH	Makefile	/^VM_PATH = vm$/;"	m
+VM_SRC_FILES	Makefile	/^VM_SRC_FILES = $(addprefix $(VM_PATH)\/,$(SRC_VM))$/;"	m
+a0	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^a0:$/;"	l
+a1	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^a1:$/;"	l
+a2	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^a2:$/;"	l
+a3	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^a3:$/;"	l
+a4	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^a4:$/;"	l
+a5	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^a5:$/;"	l
+a6	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^a6:$/;"	l
+a7	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^a7:$/;"	l
+a8	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^a8:$/;"	l
+aaaaah	ressources/champs/championships/2017/iburel/gateau.s	/^aaaaah:$/;"	l
+add	ressources/42.s	/^add	r1,           r2 , r3$/;"	l
+add	ressources/champs/championships/2014/clafleur/big_feet.s	/^add		r11, r16, r11$/;"	l
+add	ressources/champs/championships/2014/clafleur/big_feet.s	/^add		r7, r16, r7$/;"	l
+add	ressources/champs/championships/2014/clafleur/big_feet.s	/^add		r9, r16, r9$/;"	l
+add	ressources/champs/championships/2014/gjestin/salamahenagalabadoun.s	/^add		r3, r4, r5$/;"	l
+add	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^add     r4, r12, r4$/;"	l
+add	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^add		r13, r12, r13$/;"	l
+add	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^add		r14, r12, r14$/;"	l
+add	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^add		r4, r10, r4$/;"	l
+add	ressources/champs/examples/bee_gees.s	/^add	r2, r3, r2		;increment r2$/;"	l
+addlabel	sources/asm/asm_parsing_body.c	/^void addlabel(char *s, int len, header_t *header)$/;"	f	typeref:typename:void
+af	ressources/champs/championships/2014/tdemay/champ.s	/^af:$/;"	l
+aff	ressources/champs/championships/2017/iburel/gateau.s	/^aff:$/;"	l
+alive	ressources/champs/championships/2014/gmange/corelol.s	/^alive:$/;"	l
+alive	ressources/champs/championships/2014/gudepard/Kappa.s	/^alive:$/;"	l
+alive	ressources/champs/championships/2014/hmichals/Wall.s	/^alive:$/;"	l
+all	Makefile	/^all : $(NAME1) $(NAME2)$/;"	t
+all	libft/Makefile	/^all : $(NAME)$/;"	t
+and	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^and		r16, r16, r16$/;"	l
+apocalypse	ressources/champs/championships/2017/iburel/gateau.s	/^apocalypse:$/;"	l
+arbre	ressources/champs/maxidef.s	/^arbre:	live %1$/;"	l
+ardef	ressources/champs/examples/turtle.s	/^ardef:$/;"	l
+ardefchk	ressources/champs/examples/fluttershy.s	/^ardefchk:$/;"	l
+ardefgen	ressources/champs/examples/fluttershy.s	/^ardefgen:$/;"	l
+ardefgeni	ressources/champs/examples/fluttershy.s	/^ardefgeni:$/;"	l
+ardefinit	ressources/champs/examples/fluttershy.s	/^ardefinit:$/;"	l
+ardefl1	ressources/champs/examples/fluttershy.s	/^ardefl1:$/;"	l
+ardefloop	ressources/champs/examples/fluttershy.s	/^ardefloop:	$/;"	l
+ardeftgt	ressources/champs/examples/fluttershy.s	/^ardeftgt:$/;"	l
+ardefwrite	ressources/champs/examples/fluttershy.s	/^ardefwrite:$/;"	l
+args	includes/corewar.h	/^	t_arg				args[4];$/;"	m	struct:s_instruction	typeref:typename:t_arg[4]
+arriere	ressources/champs/barriere.s	/^arriere:	ld	%-5, r5$/;"	l
+arriere	ressources/champs/barriere_test.s	/^arriere:	ld	%-5, r5$/;"	l
+arriere	ressources/champs/leeloo.s	/^arriere:$/;"	l
+arriere	ressources/champs/new.s	/^arriere:$/;"	l
+arriere2	ressources/champs/barriere.s	/^arriere2:	ld	%-5, r3$/;"	l
+arriere2	ressources/champs/barriere_test.s	/^arriere2:	ld	%-5, r3$/;"	l
+arriere_live	ressources/champs/barriere.s	/^arriere_live:	live %42$/;"	l
+arriere_live	ressources/champs/barriere_test.s	/^arriere_live:	live %42$/;"	l
+asm_ld	sources/asm/asm_parttwo.c	/^void			asm_ld(header_t *header, instr_t *instr, unsigned char *BUF, int *bufptout)$/;"	f	typeref:typename:void
+asmparsehead	sources/asm/asm_parsing_head.c	/^void	asmparsehead(header_t *header)$/;"	f	typeref:typename:void
+asmparseinstr	sources/asm/asm_parsing_body.c	/^void	asmparseinstr(header_t *header)$/;"	f	typeref:typename:void
+asmparsing	sources/asm/asm_parsing.c	/^void	asmparsing(header_t *header)$/;"	f	typeref:typename:void
+asmtofile	sources/asm/asm.c	/^static void		asmtofile(header_t *header, char *name1)$/;"	f	typeref:typename:void	file:
+assaut1	ressources/champs/championships/2014/sbuono/Asombra.s	/^assaut1:$/;"	l
+assaut2	ressources/champs/championships/2014/sbuono/Asombra.s	/^assaut2:$/;"	l
+at1	ressources/champs/championships/2014/gbir/_.s	/^at1:$/;"	l
+at2	ressources/champs/championships/2014/gbir/_.s	/^at2:$/;"	l
+atf	ressources/champs/championships/2014/gbir/_.s	/^atf:$/;"	l
+atj1	ressources/champs/championships/2014/gbir/_.s	/^atj1:$/;"	l
+attak	ressources/champs/championships/2014/bjacob/doge.s	/^attak:$/;"	l
+atterissage	ressources/champs/championships/2017/gnebie/ultima.s	/^atterissage:$/;"	l
+avant	ressources/champs/barriere.s	/^avant:		ld	%-5, r5$/;"	l
+avant	ressources/champs/barriere_test.s	/^avant:		ld	%-5, r5$/;"	l
+avant	ressources/champs/leeloo.s	/^avant:	$/;"	l
+avant	ressources/champs/new.s	/^avant:	$/;"	l
+avant2	ressources/champs/barriere.s	/^avant2:		ld	%10, r3$/;"	l
+avant2	ressources/champs/barriere_test.s	/^avant2:		ld	%10, r3$/;"	l
+avant_live	ressources/champs/barriere.s	/^avant_live:	live %1$/;"	l
+avant_live	ressources/champs/barriere_test.s	/^avant_live:	live %1$/;"	l
+avantdebt	ressources/champs/toto.s	/^avantdebt:	sti   r1,%:code,%1  # 		# mets a jour le live$/;"	l
+avantdebut	ressources/champs/Gagnant.s	/^avantdebut:	sti   r1,%:code,%1  # 		#7	$/;"	l
+avdef	ressources/champs/examples/turtle.s	/^avdef:$/;"	l
+avdefchk	ressources/champs/examples/fluttershy.s	/^avdefchk:$/;"	l
+avdefgen	ressources/champs/examples/fluttershy.s	/^avdefgen:$/;"	l
+avdefgeni	ressources/champs/examples/fluttershy.s	/^avdefgeni:$/;"	l
+avdefinit	ressources/champs/examples/fluttershy.s	/^avdefinit:$/;"	l
+avdefl1	ressources/champs/examples/fluttershy.s	/^avdefl1:$/;"	l
+avdefloop	ressources/champs/examples/fluttershy.s	/^avdefloop:	$/;"	l
+avdeftgt	ressources/champs/examples/fluttershy.s	/^avdeftgt:$/;"	l
+avdefwrite	ressources/champs/examples/fluttershy.s	/^avdefwrite:$/;"	l
+b0	ressources/champs/42.s	/^b0:	live	%1		# boucle fork$/;"	l
+b1	ressources/champs/42.s	/^b1:	add	r2,r4,r2$/;"	l
+back	ressources/champs/championships/2014/rmasse/THUNDER.s	/^back:$/;"	l
+back_wall	ressources/champs/Octobre_Rouge_V4.2.s	/^back_wall:      live	%42	$/;"	l
+backward	ressources/champs/championships/2014/vrey/darksasuke.s	/^backward:$/;"	l
+base	ressources/champs/championships/2014/bjacob/doge.s	/^base:$/;"	l
+battle	sources/vm/battle.c	/^int		battle(t_data *data)$/;"	f	typeref:typename:int
+beegees	ressources/champs/examples/helltrain.s	/^beegees:$/;"	l
+beegees_gen	ressources/champs/examples/helltrain.s	/^beegees_gen:$/;"	l
+begin	ressources/champs/championships/2014/clafleur/big_feet.s	/^begin:$/;"	l
+begin	ressources/champs/championships/2014/gbir/_.s	/^begin:$/;"	l
+begin	ressources/champs/championships/2017/adenis/Explosive_Kitty.s	/^begin:$/;"	l
+begin	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^begin:$/;"	l
+begin	ressources/champs/leeloo.s	/^begin:	ld %0,r6$/;"	l
+begin	ressources/champs/new.s	/^begin:	ld %0,r6$/;"	l
+begin	ressources/champs/tdc2.s	/^begin:$/;"	l
+begin_coromp2	ressources/champs/championships/2017/gnebie/ultima.s	/^begin_coromp2:$/;"	l
+begin_coromp2	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^begin_coromp2:$/;"	l
+beginnewattack	ressources/champs/championships/2014/gbir/_.s	/^beginnewattack:$/;"	l
+bf	ressources/champs/championships/2014/tdemay/champ.s	/^bf:$/;"	l
+big_endian_int	sources/common/endian.c	/^int		big_endian_int(void *ptr)$/;"	f	typeref:typename:int
+big_little_endian	sources/vm/champ_load.c	/^unsigned int		big_little_endian(unsigned int nbr)$/;"	f	typeref:typename:unsigned int
+bite	ressources/champs/42.s	/^bite:	sti     r1,%:copie,%2$/;"	l
+bomb_a	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^bomb_a:$/;"	l
+bomb_b	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^bomb_b:$/;"	l
+boost	ressources/champs/mortel.s	/^boost:	ld %12,r2$/;"	l
+boucle	ressources/champs/jumper.s	/^boucle:	live %66$/;"	l
+boucle	ressources/champs/tdc2.s	/^boucle:	$/;"	l
+boucle1	ressources/champs/championships/2017/iburel/gateau.s	/^boucle1:$/;"	l
+boucle2	ressources/champs/championships/2017/iburel/gateau.s	/^boucle2:$/;"	l
+boucle2	ressources/champs/tdc2.s	/^boucle2:$/;"	l
+boucle2	ressources/champs/tdc3.s	/^boucle2:$/;"	l
+brain	ressources/champs/championships/2014/gbir/_.s	/^brain:$/;"	l
+buff	libft/includes/get_next_line.h	/^	char	*buff;$/;"	m	struct:s_buff	typeref:typename:char *
+buff	ressources/champs/jumper.s	/^buff:	st r1,r1	$/;"	l
+buff_mars	sources/vm/debug.c	/^int			buff_mars(t_data *data)$/;"	f	typeref:typename:int
+buff_size	libft/includes/get_next_line.h	/^	int		buff_size;$/;"	m	struct:s_buff	typeref:typename:int
+buldog	ressources/champs/championships/2014/kelickel/Varimathras.s	/^buldog:$/;"	l
+carried_nbr	includes/corewar.h	/^	int					carried_nbr;$/;"	m	struct:s_champid	typeref:typename:int
+carry	includes/corewar.h	/^	int					carry;$/;"	m	struct:s_champid	typeref:typename:int
+carry	includes/corewar.h	/^	unsigned int		carry;$/;"	m	struct:s_process	typeref:typename:unsigned int
+catch	ressources/champs/leeloo.s	/^catch:	$/;"	l
+catch	ressources/champs/new.s	/^catch:	$/;"	l
+catch1	ressources/champs/leeloo.s	/^catch1:	zjmp %:catch$/;"	l
+catch1	ressources/champs/new.s	/^catch1:	zjmp %:catch$/;"	l
+cc1	ressources/champs/examples/helltrain.s	/^cc1:$/;"	l
+cc2	ressources/champs/examples/helltrain.s	/^cc2:$/;"	l
+cc3	ressources/champs/examples/helltrain.s	/^cc3:$/;"	l
+cc4	ressources/champs/examples/helltrain.s	/^cc4:$/;"	l
+cc4l	ressources/champs/examples/helltrain.s	/^cc4l:$/;"	l
+cc4ld	ressources/champs/examples/helltrain.s	/^cc4ld:$/;"	l
+cc_live	ressources/champs/examples/helltrain.s	/^cc_live:$/;"	l
+cc_spawn	ressources/champs/examples/helltrain.s	/^cc_spawn:$/;"	l
+cf	ressources/champs/championships/2014/tdemay/champ.s	/^cf:$/;"	l
+champ_dump	sources/vm/debug.c	/^int			champ_dump(t_champ *champ)$/;"	f	typeref:typename:int
+champ_fill	sources/vm/champ_load.c	/^int		champ_fill(t_champ *champ, int fd)$/;"	f	typeref:typename:int
+champs	includes/corewar.h	/^	t_champ				*champs;$/;"	m	struct:s_data	typeref:typename:t_champ *
+char_hexa	sources/vm/debug.c	/^void		char_hexa(t_octet c)$/;"	f	typeref:typename:void
+char_hexa_str	sources/vm/debug.c	/^void		char_hexa_str(t_octet c, char *str)$/;"	f	typeref:typename:void
+check_labelname	sources/asm/asm_managellabels.c	/^int		check_labelname(char *s)$/;"	f	typeref:typename:int
+check_labelname	sources/asm/asm_parsing_body.c	/^int		check_labelname(char *s)$/;"	f	typeref:typename:int
+checkarg	sources/asm/asm_parsing_body.c	/^int checkarg(char *s, int pt, int argnb, header_t *header)$/;"	f	typeref:typename:int
+checkclean	sources/asm/asm_parsing_tools.c	/^static int checkclean(char *s)$/;"	f	typeref:typename:int	file:
+choochoo	ressources/champs/examples/helltrain.s	/^choochoo:$/;"	l
+clean	Makefile	/^clean :$/;"	t
+clean	libft/Makefile	/^clean :$/;"	t
+clear	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^clear:$/;"	l
+code	ressources/champs/Gagnant.s	/^code:		live %42			# 5$/;"	l
+code	ressources/champs/toto.s	/^code:		live %42			# 5$/;"	l
+col	includes/op.h	/^	int					col;$/;"	m	struct:header_s	typeref:typename:int
+colors	includes/corewar.h	/^	int					colors[MEM_SIZE];$/;"	m	struct:s_data	typeref:typename:int[]
+comment	includes/corewar.h	/^	t_octet				comment[COMMENT_LENGTH + 1];$/;"	m	struct:s_champ	typeref:typename:t_octet[]
+comment	includes/op.h	/^	char				comment[COMMENT_LENGTH + 1];$/;"	m	struct:header_s	typeref:typename:char[]
+complete_name	includes/corewar.h	/^	char		*complete_name;$/;"	m	struct:s_op	typeref:typename:char *
+complicate	ressources/champs/championships/2014/kelickel/Varimathras.s	/^complicate:$/;"	l
+cont	ressources/champs/42.s	/^cont:	add	r6,r6,r6$/;"	l
+content	includes/corewar.h	/^	t_octet				content[4];$/;"	m	struct:s_arg	typeref:typename:t_octet[4]
+content	includes/corewar.h	/^	t_octet				content[CHAMP_MAX_SIZE];$/;"	m	struct:s_champ	typeref:typename:t_octet[]
+content	libft/includes/libft.h	/^	void			*content;$/;"	m	struct:s_list	typeref:typename:void *
+content_size	libft/includes/libft.h	/^	size_t			content_size;$/;"	m	struct:s_list	typeref:typename:size_t
+cooldown	includes/corewar.h	/^	int					cooldown;$/;"	m	struct:s_process	typeref:typename:int
+copie	ressources/champs/42.s	/^copie:  ld      %1,r1$/;"	l
+core	ressources/champs/championships/2014/esusseli/gedeon.s	/^core:$/;"	l
+coregen	ressources/champs/examples/fluttershy.s	/^coregen:$/;"	l
+coregeni	ressources/champs/examples/fluttershy.s	/^coregeni:$/;"	l
+coreinit	ressources/champs/examples/fluttershy.s	/^coreinit:$/;"	l
+corelive	ressources/champs/examples/fluttershy.s	/^corelive:$/;"	l
+corps	ressources/champs/championships/2014/gbir/_.s	/^corps:$/;"	l
+corruption_first	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^corruption_first:$/;"	l
+corruption_first2	ressources/champs/championships/2017/gnebie/ultima.s	/^corruption_first2:$/;"	l
+corruption_second	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^corruption_second:$/;"	l
+corruption_second2	ressources/champs/championships/2017/gnebie/ultima.s	/^corruption_second2:$/;"	l
+countargs	sources/asm/asm_parsing_body.c	/^void	countargs(char *s, header_t *header, int expnb)$/;"	f	typeref:typename:void
+cp	ressources/champs/tdc4.s	/^cp:	$/;"	l
+custom_id	sources/vm/init_corewar.c	/^void	custom_id(t_data *data, t_champid *champ_id, char *str)$/;"	f	typeref:typename:void
+cycle	includes/corewar.h	/^	int			cycle;$/;"	m	struct:s_op	typeref:typename:int
+cycles_to_die	includes/corewar.h	/^	int					cycles_to_die;$/;"	m	struct:s_data	typeref:typename:int
+data	includes/op.h	/^	int				data[3];$/;"	m	struct:instr_s	typeref:typename:int[3]
+data_miner	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^data_miner:$/;"	l
+death_reaper	sources/vm/battle.c	/^int		death_reaper(t_data *data)$/;"	f	typeref:typename:int
+deb	ressources/champs/leeloo.s	/^deb:	$/;"	l
+deb	ressources/champs/mat.s	/^deb:	fork %12$/;"	l
+deb	ressources/champs/new.s	/^deb:	$/;"	l
+deb1	ressources/champs/mat.s	/^deb1:	zjmp %:deb$/;"	l
+debt	ressources/champs/toto.s	/^debt:		live %42			#5$/;"	l
+debut	ressources/champs/Gagnant.s	/^debut:		live %42			#5$/;"	l
+debut	ressources/champs/Torpille.s	/^debut:$/;"	l
+debut	ressources/champs/championships/2017/iburel/gateau.s	/^debut:$/;"	l
+debut	ressources/champs/jumper.s	/^debut:	ld %0,r7$/;"	l
+debut	ressources/champs/lde.s	/^debut:	st r3,4$/;"	l
+debut	ressources/champs/leeloo.s	/^debut:	st r3,4$/;"	l
+debut	ressources/champs/new.s	/^debut:	st r3,4$/;"	l
+debut	ressources/champs/tdc4.s	/^debut:	$/;"	l
+debut2	ressources/champs/Torpille.s	/^debut2:$/;"	l
+dec1	ressources/champs/championships/2014/gbir/_.s	/^dec1:$/;"	l
+dec2	ressources/champs/championships/2014/gbir/_.s	/^dec2:$/;"	l
+decal	ressources/champs/lde.s	/^decal:	live %1$/;"	l
+decal	ressources/champs/leeloo.s	/^decal:	live %1$/;"	l
+decal	ressources/champs/new.s	/^decal:	live %1$/;"	l
+decal2	ressources/champs/lde.s	/^decal2: live %1$/;"	l
+decal2	ressources/champs/leeloo.s	/^decal2: live %1$/;"	l
+decal2	ressources/champs/new.s	/^decal2: live %1$/;"	l
+decitohex	sources/asm/itobighex.c	/^char			decitohex(int nb)$/;"	f	typeref:typename:char
+def	ressources/champs/championships/2014/bjacob/doge.s	/^def:$/;"	l
+def	ressources/champs/championships/2014/gleger/Machine-gun.s	/^def:	st r2, -270$/;"	l
+def	ressources/champs/championships/2017/adenis/Explosive_Kitty.s	/^def:$/;"	l
+def	ressources/champs/championships/2017/iburel/gateau.s	/^def:$/;"	l
+def_at	ressources/champs/championships/2014/gbir/_.s	/^def_at:$/;"	l
+defdessus	ressources/champs/championships/2014/gbir/_.s	/^defdessus:$/;"	l
+deflv	ressources/champs/maxidef.s	/^deflv:	live %1$/;"	l
+defm	ressources/champs/maxidef.s	/^defm:	st r3,-510$/;"	l
+defplus	ressources/champs/championships/2014/gbir/_.s	/^defplus:$/;"	l
+direct_size_two	includes/corewar.h	/^	int			direct_size_two;$/;"	m	struct:s_op	typeref:typename:int
+ecriture	ressources/champs/mortel.s	/^ecriture: zjmp %:wait$/;"	l
+empty	ressources/champs/championships/2014/gbir/_.s	/^empty:$/;"	l
+enc	includes/op.h	/^	unsigned char	enc;$/;"	m	struct:instr_s	typeref:typename:unsigned char
+encod	includes/corewar.h	/^	t_octet				encod;$/;"	m	struct:s_instruction	typeref:typename:t_octet
+encoding_byte	includes/corewar.h	/^	t_octet		encoding_byte;$/;"	m	struct:s_op	typeref:typename:t_octet
+end1	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^end1:$/;"	l
+end2	ressources/champs/championships/2017/gnebie/ultima.s	/^end2:$/;"	l
+endwhile	ressources/champs/championships/2014/gpetrov/MarineKing.s	/^endwhile:$/;"	l
+endwhile	ressources/champs/examples/bee_gees.s	/^endwhile:$/;"	l
+entree	ressources/champs/42.s	/^entree:	live	%42		# entree$/;"	l
+entry	ressources/champs/championships/2014/bguy/sam_2.0.s	/^entry:$/;"	l
+entry	ressources/champs/championships/2014/cdivry/youforkmytralala.s	/^entry:$/;"	l
+entry	ressources/champs/championships/2014/ekocevar/mandragore.s	/^entry:$/;"	l
+entry	ressources/champs/championships/2014/gleger/Machine-gun.s	/^entry:	sti r1, %:live, %1$/;"	l
+entry	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^entry:$/;"	l
+entry	ressources/champs/championships/2014/tdemay/champ.s	/^entry:$/;"	l
+entry	ressources/champs/examples/fluttershy.s	/^entry:$/;"	l
+entry	ressources/champs/examples/helltrain.s	/^entry:$/;"	l
+entry	ressources/champs/examples/turtle.s	/^entry:$/;"	l
+entry_l1	ressources/champs/examples/turtle.s	/^entry_l1:$/;"	l
+eraser	ressources/champs/championships/2014/sbuono/Asombra.s	/^eraser:$/;"	l
+err	sources/vm/debug.c	/^int			err(char *s)$/;"	f	typeref:typename:int
+errorparser	sources/asm/errors.c	/^void	errorparser(const char *s, header_t *header)$/;"	f	typeref:typename:void
+errorparserasm	sources/asm/errors.c	/^void	errorparserasm(char *s, header_t *header, int errtyp, int freestr)$/;"	f	typeref:typename:void
+ertuen	ressources/champs/championships/2014/kmonrose/justin_bee.s	/^ertuen:$/;"	l
+execute_operation	sources/vm/battle.c	/^int		execute_operation(t_data *data, t_process *process)$/;"	f	typeref:typename:int
+f0_z	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^f0_z:$/;"	l
+f1	ressources/champs/Death.s	/^f1:	fork	%:f2$/;"	l
+f1	ressources/champs/Survivor.s	/^f1:	ld	%4, r2$/;"	l
+f1	ressources/champs/Survivor.s	/^f1:	ld	%5, r2$/;"	l
+f1	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^f1:$/;"	l
+f10	ressources/champs/Death.s	/^f10:$/;"	l
+f1_a	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^f1_a:$/;"	l
+f1_b	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^f1_b:$/;"	l
+f1_y	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^f1_y:$/;"	l
+f1_z	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^f1_z:$/;"	l
+f2	ressources/champs/Death.s	/^f2:	fork	%:f3$/;"	l
+f2	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^f2:$/;"	l
+f2_a	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^f2_a:$/;"	l
+f2_b	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^f2_b:$/;"	l
+f2_c	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^f2_c:$/;"	l
+f2_d	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^f2_d:$/;"	l
+f2_w	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^f2_w:$/;"	l
+f2_x	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^f2_x:$/;"	l
+f2_y	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^f2_y:$/;"	l
+f2_z	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^f2_z:$/;"	l
+f3	ressources/champs/Death.s	/^f3:	fork	%:f4$/;"	l
+f3_a	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^f3_a:							;run + 8$/;"	l
+f3_b	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^f3_b:							;snipe run + 12$/;"	l
+f3_c	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^f3_c:							;snipe after$/;"	l
+f3_d	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^f3_d:							;snipe after - 8$/;"	l
+f3_e	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^f3_e:							;run + 0$/;"	l
+f3_f	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^f3_f:							;snipe before + 4$/;"	l
+f3_g	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^f3_g:							;snipe after - 4$/;"	l
+f3_h	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^f3_h:							;run + 4$/;"	l
+f4	ressources/champs/Death.s	/^f4:	fork	%:f5$/;"	l
+f5	ressources/champs/Death.s	/^f5:	fork	%:f6$/;"	l
+f6	ressources/champs/Death.s	/^f6:	fork	%:f7$/;"	l
+f7	ressources/champs/Death.s	/^f7:	fork	%:f8$/;"	l
+f8	ressources/champs/Death.s	/^f8:	fork	%:f9$/;"	l
+f9	ressources/champs/Death.s	/^f9:	fork	%:f10$/;"	l
+fclean	Makefile	/^fclean : clean$/;"	t
+fclean	libft/Makefile	/^fclean : clean$/;"	t
+fd	includes/op.h	/^	int					fd;$/;"	m	struct:header_s	typeref:typename:int
+fd	libft/includes/get_next_line.h	/^	int		fd;$/;"	m	struct:s_buff	typeref:typename:int
+feuille	ressources/champs/championships/2014/ekocevar/mandragore.s	/^feuille:$/;"	l
+ff1	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ff1:$/;"	l
+ff2	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ff2:$/;"	l
+fill_arg	sources/vm/operation_reading.c	/^int		fill_arg(t_arg *arg, t_octet bits, int direct_size_two)$/;"	f	typeref:typename:int
+fill_instruction	sources/vm/operation_reading.c	/^int			fill_instruction(t_data *data, t_process *process, int *pc)$/;"	f	typeref:typename:int
+filler	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^filler:$/;"	l
+fin	ressources/champs/42.s	/^fin:	live	%633$/;"	l
+fin	ressources/champs/barriere.s	/^fin:		zjmp	%:avant_live$/;"	l
+fin	ressources/champs/barriere_test.s	/^fin:		zjmp	%:avant_live$/;"	l
+fin	ressources/champs/championships/2014/kelickel/Varimathras.s	/^fin:$/;"	l
+fin	ressources/champs/leeloo.s	/^fin:$/;"	l
+fin	ressources/champs/new.s	/^fin:$/;"	l
+final	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^final:$/;"	l
+finboucle0	ressources/champs/jumper.s	/^finboucle0:	xor r3,r3,r3$/;"	l
+finboucle1	ressources/champs/jumper.s	/^finboucle1:	xor r3,r3,r3$/;"	l
+findfd	gnl/get_next_line.c	/^static t_file	*findfd(const int fd, t_file **list)$/;"	f	typeref:typename:t_file *	file:
+findlastpt	sources/asm/asm.c	/^static int		findlastpt(char *addr)$/;"	f	typeref:typename:int	file:
+first	ressources/champs/championships/2014/gbir/_.s	/^first:$/;"	l
+first_attack	ressources/champs/championships/2017/adenis/Explosive_Kitty.s	/^first_attack:$/;"	l
+firstinstr	includes/op.h	/^	instr_t				*firstinstr;$/;"	m	struct:header_s	typeref:typename:instr_t *
+fork	ressources/champs/championships/2014/clafleur/big_feet.s	/^fork	%:begin$/;"	l
+fork	ressources/champs/championships/2014/clafleur/big_feet.s	/^fork	%:live$/;"	l
+fork	ressources/champs/championships/2014/clafleur/big_feet.s	/^fork	%:piege1$/;"	l
+fork	ressources/champs/championships/2014/clafleur/big_feet.s	/^fork	%:piege2$/;"	l
+fork	ressources/champs/championships/2014/hmichals/Wall.s	/^fork:$/;"	l
+fork	ressources/champs/championships/2014/lseguin/skynet.s	/^fork %:wall$/;"	l
+fork	ressources/champs/championships/2014/lseguin/skynet.s	/^fork %:wall2$/;"	l
+fork	ressources/champs/championships/2014/lsirigna/live.s	/^fork		%42$/;"	l
+fork	ressources/champs/championships/2014/lsirigna/live.s	/^fork		%:live$/;"	l
+fork	ressources/champs/championships/2014/lsirigna/live.s	/^fork		%:start$/;"	l
+fork	ressources/champs/championships/2014/lsirigna/live.s	/^fork		%:wall$/;"	l
+fork	ressources/champs/championships/2014/lsirigna/live.s	/^fork	%:live$/;"	l
+fork	ressources/champs/championships/2014/lsirigna/live.s	/^fork	%:wall$/;"	l
+fork	ressources/champs/championships/2014/sbuono/Asombra.s	/^fork %:forkcycle$/;"	l
+fork	ressources/champs/championships/2014/sbuono/Asombra.s	/^fork %:go$/;"	l
+fork	ressources/champs/championships/2014/sbuono/Asombra.s	/^fork %:go2$/;"	l
+fork	ressources/champs/championships/2014/sbuono/Asombra.s	/^fork %:part2$/;"	l
+fork	ressources/champs/championships/2014/sbuono/Asombra.s	/^fork %:second$/;"	l
+fork	ressources/champs/championships/2014/sbuono/Asombra.s	/^fork %:start1$/;"	l
+fork	ressources/champs/championships/2014/sbuono/Asombra.s	/^fork:$/;"	l
+fork	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^fork 			%:corruption_second$/;"	l
+fork	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^fork            %-511$/;"	l
+fork	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^fork            %:begin_coromp2$/;"	l
+fork	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^fork            %:lefork$/;"	l
+fork	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^fork    %:begin_coromp2$/;"	l
+fork	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^fork    %:live1$/;"	l
+fork	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^fork    %:live3$/;"	l
+fork	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^fork    %:machinerie$/;"	l
+fork	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^fork		%:a0$/;"	l
+fork	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^fork		%:a3$/;"	l
+fork	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^fork		%:a5$/;"	l
+fork	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^fork		%:a7$/;"	l
+fork	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^fork		%:a8$/;"	l
+fork	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^fork		%:f1$/;"	l
+fork	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^fork		%:p2$/;"	l
+fork	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^fork		%:pp2$/;"	l
+fork	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^fork 		%:a6$/;"	l
+fork	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^fork 		%:ff1$/;"	l
+fork	ressources/champs/examples/bee_gees.s	/^fork	%:forks$/;"	l
+fork0	ressources/champs/mortel.s	/^fork0:	live %66$/;"	l
+fork1	ressources/champs/mortel.s	/^fork1:	live %66$/;"	l
+fork1	ressources/champs/slider2.s	/^fork1:		live	%42$/;"	l
+fork2	ressources/champs/mortel.s	/^fork2:	live %66$/;"	l
+fork2	ressources/champs/slider2.s	/^fork2:		live	%42$/;"	l
+fork3	ressources/champs/slider2.s	/^fork3:		live	%42$/;"	l
+fork_arriere	ressources/champs/barriere.s	/^fork_arriere:	live	%42$/;"	l
+fork_arriere	ressources/champs/barriere_test.s	/^fork_arriere:	live	%42$/;"	l
+fork_avant	ressources/champs/barriere.s	/^fork_avant:	live	%42$/;"	l
+fork_avant	ressources/champs/barriere_test.s	/^fork_avant:	live	%42$/;"	l
+fork_live	ressources/champs/barriere.s	/^fork_live:	live	%42$/;"	l
+fork_live	ressources/champs/barriere_test.s	/^fork_live:	live	%42$/;"	l
+fork_live	ressources/champs/slider2.s	/^fork_live:	live	%42$/;"	l
+forkcycle	ressources/champs/championships/2014/sbuono/Asombra.s	/^forkcycle:$/;"	l
+forking	ressources/champs/championships/2014/cdivry/youforkmytralala.s	/^forking:$/;"	l
+forklive	ressources/champs/championships/2014/gbir/_.s	/^forklive:$/;"	l
+forklive	ressources/champs/championships/2014/hmichals/Wall.s	/^forklive:	$/;"	l
+forknikator	ressources/champs/championships/2014/ybouvet/casimir.s	/^forknikator:$/;"	l
+forks	ressources/champs/championships/2014/gpetrov/MarineKing.s	/^forks:$/;"	l
+forks	ressources/champs/examples/bee_gees.s	/^forks:$/;"	l
+forward	ressources/champs/championships/2014/vrey/darksasuke.s	/^forward:$/;"	l
+front	ressources/champs/championships/2014/rmasse/THUNDER.s	/^front:$/;"	l
+ft_atoi	libft/ft_atoi.c	/^int		ft_atoi(const char *str)$/;"	f	typeref:typename:int
+ft_bzero	libft/ft_bzero.c	/^void	*ft_bzero(void *s, size_t n)$/;"	f	typeref:typename:void *
+ft_countwords	libft/ft_countwords.c	/^size_t	ft_countwords(char const *s, char c)$/;"	f	typeref:typename:size_t
+ft_delete	libft/ft_lstmap.c	/^static void		ft_delete(void *content, size_t content_size)$/;"	f	typeref:typename:void	file:
+ft_exit	gnl/get_next_line.c	/^static int		ft_exit(t_file **file)$/;"	f	typeref:typename:int	file:
+ft_fd_s_chain	libft/get_next_line.c	/^t_buff	*ft_fd_s_chain(int fd)$/;"	f	typeref:typename:t_buff *
+ft_freechartab	libft/ft_freechartab.c	/^void		ft_freechartab(char ***tab)$/;"	f	typeref:typename:void
+ft_isalnum	libft/ft_isalnum.c	/^int		ft_isalnum(int c)$/;"	f	typeref:typename:int
+ft_isalpha	libft/ft_isalpha.c	/^int		ft_isalpha(int c)$/;"	f	typeref:typename:int
+ft_isascii	libft/ft_isascii.c	/^int		ft_isascii(int c)$/;"	f	typeref:typename:int
+ft_isdigit	libft/ft_isdigit.c	/^int		ft_isdigit(int c)$/;"	f	typeref:typename:int
+ft_isprint	libft/ft_isprint.c	/^int		ft_isprint(int c)$/;"	f	typeref:typename:int
+ft_isword	libft/ft_strsplit.c	/^static int		ft_isword(int i, char const *str, char c)$/;"	f	typeref:typename:int	file:
+ft_itoa	libft/ft_itoa.c	/^char		*ft_itoa(int n)$/;"	f	typeref:typename:char *
+ft_lstadd	libft/ft_lstadd.c	/^void	ft_lstadd(t_list **alst, t_list *new)$/;"	f	typeref:typename:void
+ft_lstdel	libft/ft_lstdel.c	/^void	ft_lstdel(t_list **alst, void (*del)(void*, size_t))$/;"	f	typeref:typename:void
+ft_lstdelone	libft/ft_lstdelone.c	/^void	ft_lstdelone(t_list **alst, void (*del)(void*, size_t))$/;"	f	typeref:typename:void
+ft_lstiter	libft/ft_lstiter.c	/^void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))$/;"	f	typeref:typename:void
+ft_lstmap	libft/ft_lstmap.c	/^t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))$/;"	f	typeref:typename:t_list *
+ft_lstnew	libft/ft_lstnew.c	/^t_list		*ft_lstnew(void const *content, size_t content_size)$/;"	f	typeref:typename:t_list *
+ft_memalloc	libft/ft_memalloc.c	/^void	*ft_memalloc(size_t size)$/;"	f	typeref:typename:void *
+ft_memccpy	libft/ft_memccpy.c	/^void		*ft_memccpy(void *dst, const void *src, int c, size_t n)$/;"	f	typeref:typename:void *
+ft_memchr	libft/ft_memchr.c	/^void	*ft_memchr(const void *s, int c, size_t n)$/;"	f	typeref:typename:void *
+ft_memcmp	libft/ft_memcmp.c	/^int		ft_memcmp(const void *s1, const void *s2, size_t n)$/;"	f	typeref:typename:int
+ft_memcpy	libft/ft_memcpy.c	/^void	*ft_memcpy(void *dst, const void *src, size_t n)$/;"	f	typeref:typename:void *
+ft_memdel	libft/ft_memdel.c	/^void	ft_memdel(void **ap)$/;"	f	typeref:typename:void
+ft_memmove	libft/ft_memmove.c	/^void	*ft_memmove(void *dst, const void *src, size_t len)$/;"	f	typeref:typename:void *
+ft_memset	libft/ft_memset.c	/^void	*ft_memset(void *b, int c, size_t len)$/;"	f	typeref:typename:void *
+ft_nbrlen	libft/ft_nbrlen.c	/^int		ft_nbrlen(int n)$/;"	f	typeref:typename:int
+ft_power	libft/ft_power.c	/^int		ft_power(int nbr, int pwr)$/;"	f	typeref:typename:int
+ft_putchar	libft/ft_putchar.c	/^void	ft_putchar(char c)$/;"	f	typeref:typename:void
+ft_putchar_fd	libft/ft_putchar_fd.c	/^void	ft_putchar_fd(char c, int fd)$/;"	f	typeref:typename:void
+ft_putendl	libft/ft_putendl.c	/^void	ft_putendl(char const *s)$/;"	f	typeref:typename:void
+ft_putendl_fd	libft/ft_putendl_fd.c	/^void	ft_putendl_fd(char const *s, int fd)$/;"	f	typeref:typename:void
+ft_putnbr	libft/ft_putnbr.c	/^void	ft_putnbr(int n)$/;"	f	typeref:typename:void
+ft_putnbr_fd	libft/ft_putnbr_fd.c	/^void	ft_putnbr_fd(int n, int fd)$/;"	f	typeref:typename:void
+ft_putstr	libft/ft_putstr.c	/^void	ft_putstr(char const *s)$/;"	f	typeref:typename:void
+ft_putstr_fd	libft/ft_putstr_fd.c	/^void	ft_putstr_fd(char const *s, int fd)$/;"	f	typeref:typename:void
+ft_read_first_time	libft/get_next_line.c	/^int		ft_read_first_time(t_buff *fd_ch)$/;"	f	typeref:typename:int
+ft_read_or_not	libft/get_next_line.c	/^int		ft_read_or_not(t_buff *fd_ch, char **line, char *tmp, char *tmp2)$/;"	f	typeref:typename:int
+ft_sqrt	libft/ft_sqrt.c	/^int		ft_sqrt(int nbr)$/;"	f	typeref:typename:int
+ft_strappend	gnl/get_next_line.c	/^static int		ft_strappend(char **init, char *add)$/;"	f	typeref:typename:int	file:
+ft_strcat	libft/ft_strcat.c	/^char	*ft_strcat(char *s1, const char *s2)$/;"	f	typeref:typename:char *
+ft_strchr	libft/ft_strchr.c	/^char	*ft_strchr(const char *s, int c)$/;"	f	typeref:typename:char *
+ft_strclr	libft/ft_strclr.c	/^void	ft_strclr(char *s)$/;"	f	typeref:typename:void
+ft_strcmp	libft/ft_strcmp.c	/^int		ft_strcmp(const char *s1, const char *s2)$/;"	f	typeref:typename:int
+ft_strcpy	libft/ft_strcpy.c	/^char	*ft_strcpy(char *dst, const char *src)$/;"	f	typeref:typename:char *
+ft_strdel	libft/ft_strdel.c	/^void	ft_strdel(char **as)$/;"	f	typeref:typename:void
+ft_strdup	libft/ft_strdup.c	/^char	*ft_strdup(const char *s1)$/;"	f	typeref:typename:char *
+ft_strdupspace	sources/asm/asm_managellabels.c	/^static char	*ft_strdupspace(const char *s1)$/;"	f	typeref:typename:char *	file:
+ft_strequ	libft/ft_strequ.c	/^int		ft_strequ(char const *s1, char const *s2)$/;"	f	typeref:typename:int
+ft_striter	libft/ft_striter.c	/^void	ft_striter(char *s, void (*f)(char *))$/;"	f	typeref:typename:void
+ft_striteri	libft/ft_striteri.c	/^void	ft_striteri(char *s, void (*f)(unsigned int, char *))$/;"	f	typeref:typename:void
+ft_strjoin	libft/ft_strjoin.c	/^char	*ft_strjoin(char const *s1, char const *s2)$/;"	f	typeref:typename:char *
+ft_strlcat	libft/ft_strlcat.c	/^size_t		ft_strlcat(char *dst, const char *src, size_t size)$/;"	f	typeref:typename:size_t
+ft_strlen	libft/ft_strlen.c	/^size_t	ft_strlen(const char *c)$/;"	f	typeref:typename:size_t
+ft_strmap	libft/ft_strmap.c	/^char	*ft_strmap(char const *s, char (*f)(char))$/;"	f	typeref:typename:char *
+ft_strmapi	libft/ft_strmapi.c	/^char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))$/;"	f	typeref:typename:char *
+ft_strncat	libft/ft_strncat.c	/^char	*ft_strncat(char *s1, const char *s2, size_t n)$/;"	f	typeref:typename:char *
+ft_strncmp	libft/ft_strncmp.c	/^int		ft_strncmp(const char *s1, const char *s2, size_t n)$/;"	f	typeref:typename:int
+ft_strncpy	libft/ft_strncpy.c	/^char	*ft_strncpy(char *dst, const char *src, size_t len)$/;"	f	typeref:typename:char *
+ft_strndup	libft/ft_strndup.c	/^char	*ft_strndup(const char *s1, int n)$/;"	f	typeref:typename:char *
+ft_strnequ	libft/ft_strnequ.c	/^int		ft_strnequ(char const *s1, char const *s2, size_t n)$/;"	f	typeref:typename:int
+ft_strnew	libft/ft_strnew.c	/^char	*ft_strnew(size_t size)$/;"	f	typeref:typename:char *
+ft_strnstr	libft/ft_strnstr.c	/^char	*ft_strnstr(const char *haystack, const char *needle, size_t len)$/;"	f	typeref:typename:char *
+ft_strrchr	libft/ft_strrchr.c	/^char	*ft_strrchr(const char *s, int c)$/;"	f	typeref:typename:char *
+ft_strsplit	libft/ft_strsplit.c	/^char			**ft_strsplit(char const *s, char c)$/;"	f	typeref:typename:char **
+ft_strstr	libft/ft_strstr.c	/^char	*ft_strstr(const char *haystack, const char *needle)$/;"	f	typeref:typename:char *
+ft_strsub	libft/ft_strsub.c	/^char	*ft_strsub(char const *s, unsigned int start, size_t len)$/;"	f	typeref:typename:char *
+ft_strtrim	libft/ft_strtrim.c	/^char		*ft_strtrim(char const *s)$/;"	f	typeref:typename:char *
+ft_tolower	libft/ft_tolower.c	/^int		ft_tolower(int c)$/;"	f	typeref:typename:int
+ft_toupper	libft/ft_toupper.c	/^int		ft_toupper(int c)$/;"	f	typeref:typename:int
+ft_wordlen	libft/ft_strsplit.c	/^static int		ft_wordlen(int beg, char const *str, char c)$/;"	f	typeref:typename:int	file:
+fuite	ressources/champs/lde.s	/^fuite:	live %1$/;"	l
+fuite	ressources/champs/leeloo.s	/^fuite:	live %1$/;"	l
+fuite	ressources/champs/new.s	/^fuite:	live %1$/;"	l
+func	sources/vm/battle.c	/^static int		(*func[17])(t_data *, t_process *) =$/;"	v	typeref:typename:int (* [17])(t_data *,t_process *)	file:
+fwall	ressources/champs/championships/2014/ekocevar/mandragore.s	/^fwall:$/;"	l
+g00dbye_kitty	ressources/champs/championships/2017/agregoir/Kittystrophic.s	/^g00dbye_kitty:$/;"	l
+gear_fourth	ressources/champs/championships/2017/nolivier/run_Kitty_RUN.s	/^gear_fourth:$/;"	l
+gear_second	ressources/champs/championships/2017/nolivier/run_Kitty_RUN.s	/^gear_second:$/;"	l
+gear_third	ressources/champs/championships/2017/nolivier/run_Kitty_RUN.s	/^gear_third:$/;"	l
+gen	ressources/champs/tdc3.s	/^gen:$/;"	l
+gen21	ressources/champs/maxidef.s	/^gen21:	live %1		$/;"	l
+gen22	ressources/champs/maxidef.s	/^gen22:	live %1		$/;"	l
+get_encoding_byte	sources/vm/operation_reading.c	/^int		get_encoding_byte(t_data *data, t_process *process, int *pc)$/;"	f	typeref:typename:int
+get_next_line	gnl/get_next_line.c	/^int				get_next_line(const int fd, char **line)$/;"	f	typeref:typename:int
+get_next_line	libft/get_next_line.c	/^int		get_next_line(const int fd, char **line)$/;"	f	typeref:typename:int
+get_op	sources/vm/operation_reading.c	/^int		get_op(t_data *data, t_process *process, int *pc)$/;"	f	typeref:typename:int
+get_without_encod_byte	sources/vm/operation_reading.c	/^int		get_without_encod_byte(t_data *data, t_process *process, int *pc)$/;"	f	typeref:typename:int
+getparam	sources/asm/asm_parsing_head.c	/^static void getparam(header_t *header, char *s, char *str, char *dest)$/;"	f	typeref:typename:void	file:
+getparams	sources/asm/asm_parsing_body.c	/^void	getparams(char *s, header_t *header)$/;"	f	typeref:typename:void
+go	ressources/champs/championships/2014/sbuono/Asombra.s	/^go:$/;"	l
+go	ressources/champs/jumper.s	/^go:	ld %48,r5$/;"	l
+go2	ressources/champs/championships/2014/sbuono/Asombra.s	/^go2:$/;"	l
+go_erase	ressources/champs/championships/2017/adenis/Explosive_Kitty.s	/^go_erase:$/;"	l
+gobepc	ressources/champs/jumper.s	/^gobepc:	st r1,:buff$/;"	l
+gobepc	ressources/champs/maxidef.s	/^gobepc:	st r1,6			# 03 70 01 00 06			5$/;"	l
+goboucle0	ressources/champs/jumper.s	/^goboucle0:	live %66$/;"	l
+goboucle1	ressources/champs/jumper.s	/^goboucle1:	live %66$/;"	l
+golive	ressources/champs/Death.s	/^golive:	live	%1$/;"	l
+golive	ressources/champs/championships/2014/gbir/_.s	/^golive:$/;"	l
+gomugomu	ressources/champs/championships/2017/nolivier/run_Kitty_RUN.s	/^gomugomu:$/;"	l
+haki_of_kings	ressources/champs/championships/2017/nolivier/run_Kitty_RUN.s	/^haki_of_kings:$/;"	l
+hanibalsmith	ressources/champs/championships/2014/cdivry/youforkmytralala.s	/^hanibalsmith:$/;"	l
+hanibalsmith2	ressources/champs/championships/2014/cdivry/youforkmytralala.s	/^hanibalsmith2:$/;"	l
+head	ressources/champs/championships/2014/gbir/_.s	/^head:$/;"	l
+header_s	includes/op.h	/^typedef struct		header_s$/;"	s
+header_t	includes/op.h	/^}					header_t;$/;"	t	typeref:struct:header_s
+headerinit	sources/asm/asm_parsing.c	/^void headerinit(header_t *header)$/;"	f	typeref:typename:void
+hello	ressources/champs/championships/2014/gmange/corelol.s	/^hello:$/;"	l
+hex_dump	sources/vm/debug.c	/^void		hex_dump(t_octet *src, size_t len)$/;"	f	typeref:typename:void
+hexbig	sources/asm/itobighex.c	/^static void		hexbig(char *NUM, long long nb)$/;"	f	typeref:typename:void	file:
+hop	ressources/champs/lde.s	/^hop:	live %1$/;"	l
+hop	ressources/champs/leeloo.s	/^hop:	live %1$/;"	l
+hop	ressources/champs/new.s	/^hop:	live %1$/;"	l
+i	gnl/get_next_line.h	/^	int					i;$/;"	m	struct:s_file	typeref:typename:int
+id	includes/corewar.h	/^	int					id;$/;"	m	struct:s_champ	typeref:typename:int
+id	includes/corewar.h	/^	int					id;$/;"	m	struct:s_champid	typeref:typename:int
+id	includes/corewar.h	/^	int					id;$/;"	m	struct:s_process	typeref:typename:int
+infi	ressources/champs/42.s	/^infi:	sti	r1,%:l0,%1$/;"	l
+init	ressources/champs/Gagnant.s	/^init:		ld   %393216,r4		 	#7	$/;"	l
+init	ressources/champs/barriere.s	/^init:		fork	%:kmissile$/;"	l
+init	ressources/champs/barriere_test.s	/^init:		fork	%:kmissile$/;"	l
+init	ressources/champs/championships/2014/rabid-on/jinx.s	/^init:$/;"	l
+init	ressources/champs/championships/2014/sbuono/Asombra.s	/^init:$/;"	l
+init	ressources/champs/maxidef.s	/^init:	ld %57672703,r3$/;"	l
+init	ressources/champs/toto.s	/^init:		ld   %393216,r4		 	#7	$/;"	l
+init_backward	ressources/champs/championships/2014/gudepard/Kappa.s	/^init_backward:$/;"	l
+init_buldog	ressources/champs/championships/2014/kelickel/Varimathras.s	/^init_buldog:$/;"	l
+init_corewar	sources/vm/init_corewar.c	/^int		init_corewar(t_data *data, int ac, char **av)$/;"	f	typeref:typename:int
+init_forward	ressources/champs/championships/2014/gudepard/Kappa.s	/^init_forward:$/;"	l
+init_write	ressources/champs/championships/2014/tdemay/champ.s	/^init_write:$/;"	l
+initlive	ressources/champs/championships/2014/vrey/darksasuke.s	/^initlive:$/;"	l
+inside	ressources/champs/championships/2017/adenis/Explosive_Kitty.s	/^inside:$/;"	l
+instr	includes/op.h	/^	instr_t				*instr;$/;"	m	struct:header_s	typeref:typename:instr_t *
+instr	includes/op.h	/^	int				instr;$/;"	m	struct:instr_s	typeref:typename:int
+instr_s	includes/op.h	/^typedef struct		instr_s$/;"	s
+instr_t	includes/op.h	/^}					instr_t;$/;"	t	typeref:struct:instr_s
+instruction	includes/corewar.h	/^	t_instruction		instruction;$/;"	m	struct:s_process	typeref:typename:t_instruction
+is_pointed	sources/vm/debug.c	/^int			is_pointed(t_data *data, unsigned int pc)$/;"	f	typeref:typename:int
+isinstruct	sources/asm/asm_parsing_body.c	/^static int isinstruct(char *s, header_t *header)$/;"	f	typeref:typename:int	file:
+islabel	includes/op.h	/^	int				islabel[3];$/;"	m	struct:instr_s	typeref:typename:int[3]
+isvalidlabel	sources/asm/asm_parsing_body.c	/^int isvalidlabel(char *s, header_t *header)$/;"	f	typeref:typename:int
+itobh	sources/asm/itobighex.c	/^void			itobh(unsigned char *BUF, int *bufpt, long long nb)$/;"	f	typeref:typename:void
+j1	ressources/champs/Survivor.s	/^j1:	$/;"	l
+j_te_khabbar	ressources/champs/championships/2017/nolivier/run_Kitty_RUN.s	/^j_te_khabbar:$/;"	l
+jmp	ressources/champs/championships/2014/lsirigna/live.s	/^jmp:	fork		%:start$/;"	l
+jump	ressources/champs/championships/2014/sbuono/Asombra.s	/^jump:$/;"	l
+jump	ressources/champs/leeloo.s	/^jump:	zjmp %:deb$/;"	l
+jump	ressources/champs/new.s	/^jump:	zjmp %:deb$/;"	l
+just	ressources/champs/leeloo.s	/^just:	live %3$/;"	l
+just	ressources/champs/new.s	/^just:	live %3$/;"	l
+just2	ressources/champs/leeloo.s	/^just2:	live %3$/;"	l
+just2	ressources/champs/new.s	/^just2:	live %3$/;"	l
+just3	ressources/champs/leeloo.s	/^just3:	live %3$/;"	l
+just3	ressources/champs/new.s	/^just3:	live %3$/;"	l
+just4	ressources/champs/leeloo.s	/^just4:	live %3$/;"	l
+just4	ressources/champs/new.s	/^just4:	live %3$/;"	l
+just5	ressources/champs/leeloo.s	/^just5:	fork %:middle$/;"	l
+just5	ressources/champs/new.s	/^just5:	fork %:middle$/;"	l
+kdebut	ressources/champs/barriere.s	/^kdebut:		ldi	%:kdebut,r2,r3 $/;"	l
+kdebut	ressources/champs/barriere_test.s	/^kdebut:		ldi	%:kdebut,r2,r3 $/;"	l
+kfin	ressources/champs/barriere.s	/^kfin:		zjmp	%180$/;"	l
+kfin	ressources/champs/barriere_test.s	/^kfin:		zjmp	%180$/;"	l
+kfork1	ressources/champs/barriere.s	/^kfork1:		live	%42$/;"	l
+kfork1	ressources/champs/barriere_test.s	/^kfork1:		live	%42$/;"	l
+kfork2	ressources/champs/barriere.s	/^kfork2:		live	%42$/;"	l
+kfork2	ressources/champs/barriere_test.s	/^kfork2:		live	%42$/;"	l
+kfork3	ressources/champs/barriere.s	/^kfork3:		live	%42$/;"	l
+kfork3	ressources/champs/barriere_test.s	/^kfork3:		live	%42$/;"	l
+kfork4	ressources/champs/barriere.s	/^kfork4:		ld	%16,r2$/;"	l
+kfork4	ressources/champs/barriere_test.s	/^kfork4:		ld	%16,r2$/;"	l
+kfork5	ressources/champs/barriere.s	/^kfork5:		ld	%20,r2$/;"	l
+kfork5	ressources/champs/barriere_test.s	/^kfork5:		ld	%20,r2$/;"	l
+kfork6	ressources/champs/barriere.s	/^kfork6:		ld	%24,r2$/;"	l
+kfork6	ressources/champs/barriere_test.s	/^kfork6:		ld	%24,r2$/;"	l
+kittyrecuperable	ressources/champs/championships/2017/agregoir/Kittystrophic.s	/^kittyrecuperable:$/;"	l
+kittyrritable	ressources/champs/championships/2017/agregoir/Kittystrophic.s	/^kittyrritable:$/;"	l
+kittysaurus_rex	ressources/champs/championships/2017/agregoir/Kittystrophic.s	/^kittysaurus_rex:$/;"	l
+kmissile	ressources/champs/barriere.s	/^kmissile:	live	%42$/;"	l
+kmissile	ressources/champs/barriere_test.s	/^kmissile:	live	%42$/;"	l
+kta	ressources/champs/championships/2014/hmichals/Wall.s	/^kta:$/;"	l
+l0	ressources/champs/42.s	/^l0:	live	%1$/;"	l
+l1	ressources/champs/42.s	/^l1:	live	%1$/;"	l
+l1	ressources/champs/Backward.s	/^l1:	live	%1$/;"	l
+l1	ressources/champs/Death.s	/^l1:	live	%1$/;"	l
+l1	ressources/champs/Survivor.s	/^l1:	st	r2, 1$/;"	l
+l1	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^l1:$/;"	l
+l10	ressources/champs/42.s	/^l10:	live	%1$/;"	l
+l2	ressources/champs/42.s	/^l2:	live	%1$/;"	l
+l2	ressources/champs/Backward.s	/^l2:/;"	l
+l2	ressources/champs/Death.s	/^l2:	live	%1$/;"	l
+l2	ressources/champs/ex.s	/^l2:	sti	r1,%:live,%0$/;"	l
+l2	ressources/champs/examples/zork.s	/^l2:		sti r1, %:live, %1$/;"	l
+l3	ressources/champs/42.s	/^l3:	live	%1$/;"	l
+l3	ressources/champs/Backward.s	/^l3:	ldi	%:l2, r2, r4$/;"	l
+l3	ressources/champs/Death.s	/^l3:	live	%1$/;"	l
+l4	ressources/champs/42.s	/^l4:	live	%1$/;"	l
+l4	ressources/champs/Death.s	/^l4:	live	%1$/;"	l
+l5	ressources/champs/42.s	/^l5:	live	%1$/;"	l
+l6	ressources/champs/42.s	/^l6:	live	%1$/;"	l
+l7	ressources/champs/42.s	/^l7:	live	%1$/;"	l
+l8	ressources/champs/42.s	/^l8:	live	%1$/;"	l
+l9	ressources/champs/42.s	/^l9:	live	%1$/;"	l
+label00	ressources/champs/Car.s	/^label00: ld    %400,r3            		# 7,106,175$/;"	l
+label01	ressources/champs/Car.s	/^label01: ld    %-202,r3           		# 7,62,219$/;"	l
+label02	ressources/champs/Car.s	/^label02: ld    %4,r2              		# 7,45,236$/;"	l
+label03	ressources/champs/Car.s	/^label03: ldi   r2,%:label12,r6    		# 6,181,100$/;"	l
+label04	ressources/champs/Car.s	/^label04: ld    %4,r2              		# 7,89,192$/;"	l
+label05	ressources/champs/Car.s	/^label05: ldi   r2,%:label14,r6    		# 6,233,48$/;"	l
+label06	ressources/champs/Car.s	/^label06: fork  %:label09          		# 3,158,123$/;"	l
+label07	ressources/champs/Car.s	/^label07: ld    %4,r2              		# 7,141,140$/;"	l
+label08	ressources/champs/Car.s	/^label08: ldi   r2,%:label13,r6    		# 6,207,74$/;"	l
+label09	ressources/champs/Car.s	/^label09: ld    %0,r4              		# 7,171,110$/;"	l
+label1	ressources/champs/championships/2014/kmonrose/justin_bee.s	/^label1:$/;"	l
+label10	ressources/champs/Car.s	/^label10: live  %1                 		# 5,259,22$/;"	l
+label11	ressources/champs/Car.s	/^label11: live  %1                 		# 5,270,11$/;"	l
+label12	ressources/champs/Car.s	/^label12: sti   r6,r2,r3           		# 5,199,82$/;"	l
+label13	ressources/champs/Car.s	/^label13: sti   r6,r2,r3           		# 5,225,56$/;"	l
+label14	ressources/champs/Car.s	/^label14: sti   r6,r2,r3           		# 5,251,30$/;"	l
+label2	ressources/champs/championships/2014/kmonrose/justin_bee.s	/^label2:$/;"	l
+label3	ressources/champs/championships/2014/kmonrose/justin_bee.s	/^label3:$/;"	l
+label4	ressources/champs/championships/2014/kmonrose/justin_bee.s	/^label4:$/;"	l
+label5	ressources/champs/championships/2014/kmonrose/justin_bee.s	/^label5:$/;"	l
+label6	ressources/champs/championships/2014/kmonrose/justin_bee.s	/^label6:$/;"	l
+label7	ressources/champs/championships/2014/kmonrose/justin_bee.s	/^label7:$/;"	l
+label8	ressources/champs/championships/2014/kmonrose/justin_bee.s	/^label8:$/;"	l
+label9	ressources/champs/championships/2014/kmonrose/justin_bee.s	/^label9:$/;"	l
+label_checkdup	sources/asm/asm_managellabels.c	/^static int		label_checkdup(labels_t *labels, char *s)$/;"	f	typeref:typename:int	file:
+labelname	includes/op.h	/^	char			*labelname[3];$/;"	m	struct:instr_s	typeref:typename:char * [3]
+labels	includes/op.h	/^	labels_t			*labels;$/;"	m	struct:header_s	typeref:typename:labels_t *
+labels_s	includes/op.h	/^typedef struct		labels_s$/;"	s
+labels_t	includes/op.h	/^}					labels_t;$/;"	t	typeref:struct:labels_s
+lancement	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^lancement:$/;"	l
+laser	ressources/champs/championships/2014/gbir/_.s	/^laser:$/;"	l
+lasera	ressources/champs/championships/2014/gbir/_.s	/^lasera:$/;"	l
+lasertop	ressources/champs/championships/2014/gbir/_.s	/^lasertop:$/;"	l
+lastlabelnb	includes/op.h	/^	int					lastlabelnb;$/;"	m	struct:header_s	typeref:typename:int
+lastlive1	ressources/champs/leeloo.s	/^lastlive1: live %1$/;"	l
+lastlive1	ressources/champs/new.s	/^lastlive1: live %1$/;"	l
+lastlive2	ressources/champs/leeloo.s	/^lastlive2: live %1$/;"	l
+lastlive2	ressources/champs/new.s	/^lastlive2: live %1$/;"	l
+lastlive3	ressources/champs/leeloo.s	/^lastlive3: live %1$/;"	l
+lastlive3	ressources/champs/new.s	/^lastlive3: live %1$/;"	l
+lastlive4	ressources/champs/leeloo.s	/^lastlive4: live %1$/;"	l
+lastlive4	ressources/champs/new.s	/^lastlive4: live %1$/;"	l
+launc_	ressources/champs/Octobre_Rouge_V4.2.s	/^launc_:	live	%42$/;"	l
+launch	ressources/champs/Octobre_Rouge_V4.2.s	/^launch:	st	r3,15$/;"	l
+ld	ressources/champs/championships/2014/clafleur/big_feet.s	/^ld		%-12, r4				# r4 = suite (soustraction de start pr aller a r3 : suite du carry)$/;"	l
+ld	ressources/champs/championships/2014/clafleur/big_feet.s	/^ld		%-16, r5				# r2 = soustraction de start pr aller a r2 : carry a 1$/;"	l
+ld	ressources/champs/championships/2014/clafleur/big_feet.s	/^ld		%-8, r6					# r6 = soustration de start pr aller a r10 : zjmp$/;"	l
+ld	ressources/champs/championships/2014/clafleur/big_feet.s	/^ld		%0, r8					# carry = 1$/;"	l
+ld	ressources/champs/championships/2014/clafleur/big_feet.s	/^ld		%1, r13$/;"	l
+ld	ressources/champs/championships/2014/clafleur/big_feet.s	/^ld		%12, r7					# r7 = addition de end pr aller a r7 : carry a 1$/;"	l
+ld	ressources/champs/championships/2014/clafleur/big_feet.s	/^ld		%150994944, r10			# r10 = zjmp$/;"	l
+ld	ressources/champs/championships/2014/clafleur/big_feet.s	/^ld		%16, r16				# decrementation de start$/;"	l
+ld	ressources/champs/championships/2014/clafleur/big_feet.s	/^ld		%16, r9					# r9 = suite (addition de end pr aller a r9 : suite du carry)$/;"	l
+ld	ressources/champs/championships/2014/clafleur/big_feet.s	/^ld		%20, r11				# r11 = addition de end pr aller a r11 : zjmp$/;"	l
+ld	ressources/champs/championships/2014/clafleur/big_feet.s	/^ld		%23, r12				# compteur pour le nombres de pieges$/;"	l
+ld	ressources/champs/championships/2014/clafleur/big_feet.s	/^ld		%256, r3				# suite du carry a 1$/;"	l
+ld	ressources/champs/championships/2014/clafleur/big_feet.s	/^ld		%42991616, r2			# debut de carry a 1$/;"	l
+ld	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^ld %0, r2$/;"	l
+ld	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^ld %151088384, r3 ;st r4, 511$/;"	l
+ld	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^ld %4278780410, r5$/;"	l
+ld	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^ld %57672449, r4				;ld %4278780395, r5$/;"	l
+ld	ressources/champs/championships/2014/gjestin/salamahenagalabadoun.s	/^ld		%0, r16$/;"	l
+ld	ressources/champs/championships/2014/gjestin/salamahenagalabadoun.s	/^ld		190, r5$/;"	l
+ld	ressources/champs/championships/2014/gjestin/salamahenagalabadoun.s	/^ld		32, r3$/;"	l
+ld	ressources/champs/championships/2014/gjestin/salamahenagalabadoun.s	/^ld		4, r4$/;"	l
+ld	ressources/champs/championships/2014/gpetrov/MarineKing.s	/^ld		%0, r15$/;"	l
+ld	ressources/champs/championships/2014/gpetrov/MarineKing.s	/^ld		%1, r2$/;"	l
+ld	ressources/champs/championships/2014/gpetrov/MarineKing.s	/^ld		%1, r3$/;"	l
+ld	ressources/champs/championships/2014/ldesgoui/_honeybadger.s	/^ld %0, r2$/;"	l
+ld	ressources/champs/championships/2014/ldesgoui/_honeybadger.s	/^ld %151087104, r3$/;"	l
+ld	ressources/champs/championships/2014/ldesgoui/_honeybadger.s	/^ld %4278780410, r5$/;"	l
+ld	ressources/champs/championships/2014/ldesgoui/_honeybadger.s	/^ld %57672449, r4$/;"	l
+ld	ressources/champs/championships/2014/lsirigna/live.s	/^ld		0, r4$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %0, r12$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %0, r16$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %0, r5$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %1, r12$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %135004416, r7 # r8,r12 live$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %150994956, r3 #0x0900000c$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %150994956, r6 #0x0900000c$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %190055172, r3 #0x0B540304$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %190055172, r6 #0x0B540304$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %190055943, r10 # sti r6, r7$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %190056971, r10 # sti r10,r11$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %202068999, r10 # r12 sti r7$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %24, r4$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %251658255, r2$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %26, r7$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %270, r11$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %273, r8$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %274, r11$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %276, r8$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %28, r4$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %40, r11$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %495, r4$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %507, r7$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %511, r7$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %84475923, r3 #0x0509001b$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %84475923, r6$/;"	l
+ld	ressources/champs/championships/2014/sbuono/Asombra.s	/^ld %84476405, r11 # r5 jump 01F5 (501)$/;"	l
+ld	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^ld		%0, r3$/;"	l
+ld	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^ld      %-182, r14$/;"	l
+ld	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^ld      %-186, r14$/;"	l
+ld	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^ld      %-190, r14$/;"	l
+ld	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^ld      %-194, r14$/;"	l
+ld	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^ld      %0, r2$/;"	l
+ld	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^ld      %1, r11$/;"	l
+ld	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^ld      %393216, r4$/;"	l
+ld	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^ld      %6, r10$/;"	l
+ld	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^ld      %917504, r12$/;"	l
+ld	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^ld				%-9,r12$/;"	l
+ld	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^ld				%0,r10$/;"	l
+ld	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^ld				%103, r13$/;"	l
+ld	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^ld				%16777216,r5$/;"	l
+ld	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^ld				%1879245026, r4$/;"	l
+ld	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^ld				%190055946,r15$/;"	l
+ld	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^ld				%269025348, r14 #ld	%369885440, r14 269222120$/;"	l
+ld	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^ld				%4,r10$/;"	l
+ld	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^ld				%5,r10$/;"	l
+ld	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^ld				%57672449,r3$/;"	l
+ld	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^ld              %134808042,r15$/;"	l
+ld	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^ld              %134808042,r6$/;"	l
+ld	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^ld              %134808042,r7$/;"	l
+ld	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^ld              %16,r11$/;"	l
+ld	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^ld              %185139211,r9$/;"	l
+ld	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^ld              %190056202,r6$/;"	l
+ld	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^ld              %190056714,r7$/;"	l
+ld	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^ld              %190056714,r9$/;"	l
+ld	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^ld              %252645135,r2$/;"	l
+ld	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^ld              %495,r08$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%-10, r9$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%-12, r9$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%-250, r3$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%-252, r3$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%0, r16$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%0, r9$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%1111638594, r1$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%12, r9$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%14, r9$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%151584787, r8$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%151650275, r8$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%190054658, r1$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%190055683, r2$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%190056451, r5$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%190056457, r8$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%2, r3$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%242, r3$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%244, r3$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%252645135, r9$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%254, r2$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%254, r3$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%4, r2$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%4, r3$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%4242, r1$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%50397184, r1$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%50921951, r2$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%50921951, r5$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%50986499, r2$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%50986499, r5$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%6, r2$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%7, r2$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%7, r3$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld		%8, r2$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld 		%0, r2$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld 		%17432564, r15$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld 		%4294967041, r10$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld 		%42991616, r16$/;"	l
+ld	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ld 		%655202, r12$/;"	l
+ld	ressources/champs/examples/bee_gees.s	/^ld	%0, r4			;carry = 1$/;"	l
+ld	ressources/champs/examples/bee_gees.s	/^ld	%1, r3$/;"	l
+ld	ressources/champs/examples/bee_gees.s	/^ld	%33, r6$/;"	l
+ld	ressources/champs/examples/bigzork.s	/^ld %0, r2$/;"	l
+ld1	ressources/champs/Torpille.s	/^ld1:	live	%0$/;"	l
+ld1	ressources/champs/tdc2.s	/^ld1:	$/;"	l
+ld2	ressources/champs/Torpille.s	/^ld2:	live	%0$/;"	l
+ldi	ressources/champs/championships/2014/sbuono/Asombra.s	/^ldi %:shield, %1, r13$/;"	l
+ldi	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^ldi     %0, %65248, r15$/;"	l
+ldi	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^ldi     %12, %65277, r15$/;"	l
+ldi	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^ldi     %4, %65306, r15$/;"	l
+ldi	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^ldi     %8, %65343, r15$/;"	l
+lefork	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^lefork:$/;"	l
+len	gnl/get_next_line.h	/^	size_t				len;$/;"	m	struct:s_file	typeref:typename:size_t
+len	includes/corewar.h	/^	int					len;$/;"	m	struct:s_arg	typeref:typename:int
+len	includes/op.h	/^	int				len;$/;"	m	struct:instr_s	typeref:typename:int
+leon	ressources/champs/slider2.s	/^leon:		ld      %0,r2$/;"	l
+leon_ecrit	ressources/champs/slider2.s	/^leon_ecrit:	zjmp    %:leon_live$/;"	l
+leon_live	ressources/champs/slider2.s	/^leon_live:	live    %42$/;"	l
+level0	ressources/champs/Gagnant.s	/^level0:		fork %:level10$/;"	l
+level0	ressources/champs/toto.s	/^level0:		fork %:level10$/;"	l
+level10	ressources/champs/Gagnant.s	/^level10:	live %42$/;"	l
+level10	ressources/champs/toto.s	/^level10:	live %42$/;"	l
+level100	ressources/champs/Gagnant.s	/^level100:	live %42$/;"	l
+level100	ressources/champs/toto.s	/^level100:	live %42$/;"	l
+level101	ressources/champs/Gagnant.s	/^level101:	live %42$/;"	l
+level101	ressources/champs/toto.s	/^level101:	live %42$/;"	l
+level11	ressources/champs/Gagnant.s	/^level11:	live %4$/;"	l
+level11	ressources/champs/toto.s	/^level11:	live %4$/;"	l
+level110	ressources/champs/Gagnant.s	/^level110:	live %42$/;"	l
+level110	ressources/champs/toto.s	/^level110:	live %42$/;"	l
+level111	ressources/champs/Gagnant.s	/^level111:	live %42	$/;"	l
+level111	ressources/champs/toto.s	/^level111:	live %42	$/;"	l
+lf	ressources/champs/championships/2014/vrey/darksasuke.s	/^lf:$/;"	l
+lfork	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^lfork %:var1$/;"	l
+lfork	ressources/champs/championships/2014/ldesgoui/_honeybadger.s	/^lfork %:var1$/;"	l
+li1	ressources/champs/championships/2014/gbir/_.s	/^li1:$/;"	l
+li1	ressources/champs/tdc4.s	/^li1:	$/;"	l
+li2	ressources/champs/tdc4.s	/^li2:	$/;"	l
+libft	libft/README.md	/^# libft$/;"	c
+life	includes/corewar.h	/^	int					life;$/;"	m	struct:s_process	typeref:typename:int
+liv	ressources/champs/championships/2014/bjacob/doge.s	/^liv:$/;"	l
+live	ressources/champs/Backward.s	/^live:	zjmp	%:l1 - 100$/;"	l
+live	ressources/champs/Death.s	/^live:	live	%1$/;"	l
+live	ressources/champs/championships/2014/clafleur/big_feet.s	/^live	%08395432657$/;"	l
+live	ressources/champs/championships/2014/clafleur/big_feet.s	/^live	%118978653103279		# je suis en vie$/;"	l
+live	ressources/champs/championships/2014/clafleur/big_feet.s	/^live	%198562346853412$/;"	l
+live	ressources/champs/championships/2014/clafleur/big_feet.s	/^live	%23456789456780987$/;"	l
+live	ressources/champs/championships/2014/clafleur/big_feet.s	/^live 	%123456789$/;"	l
+live	ressources/champs/championships/2014/clafleur/big_feet.s	/^live 	%13371337$/;"	l
+live	ressources/champs/championships/2014/clafleur/big_feet.s	/^live 	%42424242$/;"	l
+live	ressources/champs/championships/2014/clafleur/big_feet.s	/^live:$/;"	l
+live	ressources/champs/championships/2014/evlasova/terminator.s	/^live:$/;"	l
+live	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^live %0$/;"	l
+live	ressources/champs/championships/2014/gjestin/salamahenagalabadoun.s	/^live	%666$/;"	l
+live	ressources/champs/championships/2014/gleger/Machine-gun.s	/^live:	live %15$/;"	l
+live	ressources/champs/championships/2014/gpetrov/MarineKing.s	/^live	%13123$/;"	l
+live	ressources/champs/championships/2014/gpetrov/MarineKing.s	/^live	%433$/;"	l
+live	ressources/champs/championships/2014/gpetrov/MarineKing.s	/^live	%45223$/;"	l
+live	ressources/champs/championships/2014/gpetrov/MarineKing.s	/^live:$/;"	l
+live	ressources/champs/championships/2014/lseguin/skynet.s	/^live:$/;"	l
+live	ressources/champs/championships/2014/lsirigna/live.s	/^live		%42$/;"	l
+live	ressources/champs/championships/2014/lsirigna/live.s	/^live	%1$/;"	l
+live	ressources/champs/championships/2014/lsirigna/live.s	/^live:$/;"	l
+live	ressources/champs/championships/2014/mconraux/dubo.s	/^live %1$/;"	l
+live	ressources/champs/championships/2014/rmasse/THUNDER.s	/^live:$/;"	l
+live	ressources/champs/championships/2014/sbuono/Asombra.s	/^live %0$/;"	l
+live	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^live	%42$/;"	l
+live	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^live    %3$/;"	l
+live	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^live    %4$/;"	l
+live	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^live    %42$/;"	l
+live	ressources/champs/championships/2014/tdemay/champ.s	/^live:$/;"	l
+live	ressources/champs/championships/2014/vrey/darksasuke.s	/^live:$/;"	l
+live	ressources/champs/championships/2014/ybouvet/casimir.s	/^live:$/;"	l
+live	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^live            %1$/;"	l
+live	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^live    %0$/;"	l
+live	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^live    %1$/;"	l
+live	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^live    %1;$/;"	l
+live	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^live		%12345$/;"	l
+live	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^live 		%12345$/;"	l
+live	ressources/champs/ex.s	/^live:	live	%1$/;"	l
+live	ressources/champs/examples/bee_gees.s	/^live %4$/;"	l
+live	ressources/champs/examples/bee_gees.s	/^live:$/;"	l
+live	ressources/champs/examples/bigzork.s	/^live %1$/;"	l
+live	ressources/champs/examples/zork.s	/^live:	live %1$/;"	l
+live	ressources/champs/mortel.s	/^live:	sti r1,r5,r5$/;"	l
+live	ressources/champs/slider2.s	/^live:		live	%42$/;"	l
+live0	ressources/champs/championships/2014/rabid-on/jinx.s	/^live0:$/;"	l
+live0	ressources/champs/jumper.s	/^live0:	live %66$/;"	l
+live1	ressources/champs/Torpille.s	/^live1:	live	%4$/;"	l
+live1	ressources/champs/championships/2014/bjacob/doge.s	/^live1:$/;"	l
+live1	ressources/champs/championships/2014/esusseli/gedeon.s	/^live1:$/;"	l
+live1	ressources/champs/championships/2014/kelickel/Varimathras.s	/^live1:$/;"	l
+live1	ressources/champs/championships/2014/lseguin/skynet.s	/^live1:$/;"	l
+live1	ressources/champs/championships/2014/rabid-on/jinx.s	/^live1:$/;"	l
+live1	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^live1:$/;"	l
+live1	ressources/champs/jumper.s	/^live1:	live %66$/;"	l
+live1	ressources/champs/leeloo.s	/^live1:	live %3$/;"	l
+live1	ressources/champs/mortel.s	/^live1:	live %66$/;"	l
+live1	ressources/champs/new.s	/^live1:	live %3$/;"	l
+live100	ressources/champs/barriere.s	/^live100:	live	%42$/;"	l
+live100	ressources/champs/barriere_test.s	/^live100:	live	%42$/;"	l
+live101	ressources/champs/barriere.s	/^live101:	live	%42	$/;"	l
+live101	ressources/champs/barriere_test.s	/^live101:	live	%42	$/;"	l
+live102	ressources/champs/barriere.s	/^live102:	live	%42$/;"	l
+live102	ressources/champs/barriere_test.s	/^live102:	live	%42$/;"	l
+live103	ressources/champs/barriere.s	/^live103:	live	%42$/;"	l
+live103	ressources/champs/barriere_test.s	/^live103:	live	%42$/;"	l
+live104	ressources/champs/barriere.s	/^live104:	live	%42$/;"	l
+live104	ressources/champs/barriere_test.s	/^live104:	live	%42$/;"	l
+live105	ressources/champs/barriere.s	/^live105:	live	%42$/;"	l
+live105	ressources/champs/barriere_test.s	/^live105:	live	%42$/;"	l
+live106	ressources/champs/barriere.s	/^live106:	live	%42$/;"	l
+live106	ressources/champs/barriere_test.s	/^live106:	live	%42$/;"	l
+live107	ressources/champs/barriere.s	/^live107:	live	%42$/;"	l
+live107	ressources/champs/barriere_test.s	/^live107:	live	%42$/;"	l
+live108	ressources/champs/barriere.s	/^live108:	live	%42$/;"	l
+live108	ressources/champs/barriere_test.s	/^live108:	live	%42$/;"	l
+live109	ressources/champs/barriere.s	/^live109:	live	%42$/;"	l
+live109	ressources/champs/barriere_test.s	/^live109:	live	%42$/;"	l
+live110	ressources/champs/barriere.s	/^live110:	live	%42$/;"	l
+live110	ressources/champs/barriere_test.s	/^live110:	live	%42$/;"	l
+live111	ressources/champs/barriere.s	/^live111:	live	%42$/;"	l
+live111	ressources/champs/barriere_test.s	/^live111:	live	%42$/;"	l
+live112	ressources/champs/barriere.s	/^live112:	live	%42$/;"	l
+live112	ressources/champs/barriere_test.s	/^live112:	live	%42$/;"	l
+live113	ressources/champs/barriere.s	/^live113:	live	%42$/;"	l
+live113	ressources/champs/barriere_test.s	/^live113:	live	%42$/;"	l
+live114	ressources/champs/barriere.s	/^live114:	live	%42$/;"	l
+live114	ressources/champs/barriere_test.s	/^live114:	live	%42$/;"	l
+live115	ressources/champs/barriere.s	/^live115:	live	%42$/;"	l
+live115	ressources/champs/barriere_test.s	/^live115:	live	%42$/;"	l
+live116	ressources/champs/barriere.s	/^live116:	live	%42$/;"	l
+live116	ressources/champs/barriere_test.s	/^live116:	live	%42$/;"	l
+live117	ressources/champs/barriere.s	/^live117:	live	%42$/;"	l
+live117	ressources/champs/barriere_test.s	/^live117:	live	%42$/;"	l
+live118	ressources/champs/barriere.s	/^live118:	live	%42$/;"	l
+live118	ressources/champs/barriere_test.s	/^live118:	live	%42$/;"	l
+live119	ressources/champs/barriere.s	/^live119:	live	%42$/;"	l
+live119	ressources/champs/barriere_test.s	/^live119:	live	%42$/;"	l
+live120	ressources/champs/barriere.s	/^live120:	live	%42$/;"	l
+live120	ressources/champs/barriere_test.s	/^live120:	live	%42$/;"	l
+live121	ressources/champs/barriere.s	/^live121:	live	%42$/;"	l
+live121	ressources/champs/barriere_test.s	/^live121:	live	%42$/;"	l
+live122	ressources/champs/barriere.s	/^live122:	live	%42$/;"	l
+live122	ressources/champs/barriere_test.s	/^live122:	live	%42$/;"	l
+live123	ressources/champs/barriere.s	/^live123:	live	%42$/;"	l
+live123	ressources/champs/barriere_test.s	/^live123:	live	%42$/;"	l
+live124	ressources/champs/barriere.s	/^live124:	live	%42$/;"	l
+live124	ressources/champs/barriere_test.s	/^live124:	live	%42$/;"	l
+live125	ressources/champs/barriere.s	/^live125:	live	%42$/;"	l
+live125	ressources/champs/barriere_test.s	/^live125:	live	%42$/;"	l
+live126	ressources/champs/barriere.s	/^live126:	live	%42$/;"	l
+live126	ressources/champs/barriere_test.s	/^live126:	live	%42$/;"	l
+live127	ressources/champs/barriere.s	/^live127:	live	%42$/;"	l
+live127	ressources/champs/barriere_test.s	/^live127:	live	%42$/;"	l
+live128	ressources/champs/barriere.s	/^live128:	live	%42$/;"	l
+live128	ressources/champs/barriere_test.s	/^live128:	live	%42$/;"	l
+live129	ressources/champs/barriere.s	/^live129:	live	%42$/;"	l
+live129	ressources/champs/barriere_test.s	/^live129:	live	%42$/;"	l
+live130	ressources/champs/barriere.s	/^live130:	live	%42$/;"	l
+live130	ressources/champs/barriere_test.s	/^live130:	live	%42$/;"	l
+live131	ressources/champs/barriere.s	/^live131:	live	%42$/;"	l
+live131	ressources/champs/barriere_test.s	/^live131:	live	%42$/;"	l
+live132	ressources/champs/barriere.s	/^live132:	live	%42$/;"	l
+live132	ressources/champs/barriere_test.s	/^live132:	live	%42$/;"	l
+live133	ressources/champs/barriere.s	/^live133:	live	%42$/;"	l
+live133	ressources/champs/barriere_test.s	/^live133:	live	%42$/;"	l
+live134	ressources/champs/barriere.s	/^live134:	live	%42$/;"	l
+live134	ressources/champs/barriere_test.s	/^live134:	live	%42$/;"	l
+live135	ressources/champs/barriere.s	/^live135:	live	%42$/;"	l
+live135	ressources/champs/barriere_test.s	/^live135:	live	%42$/;"	l
+live136	ressources/champs/barriere.s	/^live136:	live	%42$/;"	l
+live136	ressources/champs/barriere_test.s	/^live136:	live	%42$/;"	l
+live137	ressources/champs/barriere.s	/^live137:	live	%42$/;"	l
+live137	ressources/champs/barriere_test.s	/^live137:	live	%42$/;"	l
+live138	ressources/champs/barriere.s	/^live138:	live	%42$/;"	l
+live138	ressources/champs/barriere_test.s	/^live138:	live	%42$/;"	l
+live139	ressources/champs/barriere.s	/^live139:	live	%42$/;"	l
+live139	ressources/champs/barriere_test.s	/^live139:	live	%42$/;"	l
+live140	ressources/champs/barriere.s	/^live140:	live	%42$/;"	l
+live140	ressources/champs/barriere_test.s	/^live140:	live	%42$/;"	l
+live141	ressources/champs/barriere.s	/^live141:	live	%42$/;"	l
+live141	ressources/champs/barriere_test.s	/^live141:	live	%42$/;"	l
+live142	ressources/champs/barriere.s	/^live142:	live	%42$/;"	l
+live142	ressources/champs/barriere_test.s	/^live142:	live	%42$/;"	l
+live143	ressources/champs/barriere.s	/^live143:	live	%42$/;"	l
+live143	ressources/champs/barriere_test.s	/^live143:	live	%42$/;"	l
+live144	ressources/champs/barriere.s	/^live144:	live	%42$/;"	l
+live144	ressources/champs/barriere_test.s	/^live144:	live	%42$/;"	l
+live145	ressources/champs/barriere.s	/^live145:	live	%42$/;"	l
+live145	ressources/champs/barriere_test.s	/^live145:	live	%42$/;"	l
+live146	ressources/champs/barriere.s	/^live146:	live	%42$/;"	l
+live146	ressources/champs/barriere_test.s	/^live146:	live	%42$/;"	l
+live147	ressources/champs/barriere.s	/^live147:	live	%42$/;"	l
+live147	ressources/champs/barriere_test.s	/^live147:	live	%42$/;"	l
+live148	ressources/champs/barriere.s	/^live148:	live	%42$/;"	l
+live148	ressources/champs/barriere_test.s	/^live148:	live	%42$/;"	l
+live149	ressources/champs/barriere.s	/^live149:	live	%42$/;"	l
+live149	ressources/champs/barriere_test.s	/^live149:	live	%42$/;"	l
+live1b	ressources/champs/Torpille.s	/^live1b:	fork	%:t2$/;"	l
+live2	ressources/champs/Torpille.s	/^live2:	live	%4$/;"	l
+live2	ressources/champs/championships/2014/bjacob/doge.s	/^live2:$/;"	l
+live2	ressources/champs/championships/2014/esusseli/gedeon.s	/^live2:$/;"	l
+live2	ressources/champs/championships/2014/kelickel/Varimathras.s	/^live2:$/;"	l
+live2	ressources/champs/championships/2014/rabid-on/jinx.s	/^live2:$/;"	l
+live2	ressources/champs/championships/2014/ybouvet/casimir.s	/^live2:$/;"	l
+live2	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^live2:$/;"	l
+live2	ressources/champs/examples/bee_gees.s	/^live2:$/;"	l
+live2	ressources/champs/jumper.s	/^live2:	live %66$/;"	l
+live2	ressources/champs/leeloo.s	/^live2:	live %3$/;"	l
+live2	ressources/champs/new.s	/^live2:	live %3$/;"	l
+live2b	ressources/champs/Torpille.s	/^live2b:	fork	%:t1$/;"	l
+live3	ressources/champs/championships/2014/bjacob/doge.s	/^live3:$/;"	l
+live3	ressources/champs/championships/2014/kelickel/Varimathras.s	/^live3:$/;"	l
+live3	ressources/champs/championships/2014/rabid-on/jinx.s	/^live3:$/;"	l
+live3	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^live3:$/;"	l
+live3	ressources/champs/jumper.s	/^live3:	live %66$/;"	l
+live3	ressources/champs/leeloo.s	/^live3:	live %3$/;"	l
+live3	ressources/champs/new.s	/^live3:	live %3$/;"	l
+live4	ressources/champs/championships/2014/rabid-on/jinx.s	/^live4:$/;"	l
+live4	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^live4:$/;"	l
+live4	ressources/champs/jumper.s	/^live4:	live %66$/;"	l
+live4	ressources/champs/leeloo.s	/^live4:	live %4$/;"	l
+live4	ressources/champs/new.s	/^live4:	live %4$/;"	l
+live5	ressources/champs/championships/2014/rabid-on/jinx.s	/^live5:$/;"	l
+live5	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^live5:$/;"	l
+live6	ressources/champs/championships/2014/rabid-on/jinx.s	/^live6:$/;"	l
+live_live	ressources/champs/barriere.s	/^live_live:	live	%42	$/;"	l
+live_live	ressources/champs/barriere_test.s	/^live_live:	live	%42	$/;"	l
+livel	ressources/champs/jumper.s	/^livel:	live %66$/;"	l
+liver1	ressources/champs/tdc2.s	/^liver1:$/;"	l
+liver2	ressources/champs/tdc2.s	/^liver2:	$/;"	l
+lives	includes/corewar.h	/^	int					lives;$/;"	m	struct:s_data	typeref:typename:int
+livex	ressources/champs/jumper.s	/^livex:	live %66$/;"	l
+llll	ressources/champs/championships/2017/gnebie/ultima.s	/^llll:$/;"	l
+loader	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^loader:$/;"	l
+lock	ressources/champs/Death.s	/^lock:	add	r3, r4, r3$/;"	l
+lol	ressources/champs/championships/2014/lsirigna/live.s	/^lol:	sti		r3, -1, %1$/;"	l
+loop	ressources/champs/Death.s	/^loop:	add	r3, r4, r3$/;"	l
+loop	ressources/champs/championships/2014/brandazz/Rainbow_dash.s	/^loop:$/;"	l
+loop	ressources/champs/championships/2014/gjestin/salamahenagalabadoun.s	/^loop:$/;"	l
+loop	ressources/champs/championships/2014/lseguin/skynet.s	/^loop:$/;"	l
+loop	ressources/champs/championships/2014/mbacoux/meowluigi.s	/^loop:$/;"	l
+loop	ressources/champs/championships/2014/rabid-on/jinx.s	/^loop:$/;"	l
+loop	ressources/champs/examples/bigzork.s	/^loop:$/;"	l
+loop	ressources/champs/maxidef.s	/^loop:	live %0$/;"	l
+loop_live	ressources/champs/championships/2014/dcohen/loose.s	/^loop_live:$/;"	l
+machine_gun_gen	ressources/champs/championships/2014/bguy/sam_2.0.s	/^machine_gun_gen:$/;"	l
+machine_gun_init	ressources/champs/championships/2014/bguy/sam_2.0.s	/^machine_gun_init:$/;"	l
+machinerie	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^machinerie:$/;"	l
+magic_poney	ressources/champs/championships/2017/agregoir/Kittystrophic.s	/^magic_poney:$/;"	l
+main	ressources/champs/championships/2014/mbacoux/meowluigi.s	/^main:$/;"	l
+main	ressources/champs/championships/2014/rmasse/THUNDER.s	/^main:$/;"	l
+main	sources/asm/asm.c	/^int				main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	sources/vm/main.c	/^int		main(int ac, char **av)$/;"	f	typeref:typename:int
+main2	ressources/champs/championships/2014/mbacoux/meowluigi.s	/^main2:$/;"	l
+main3	ressources/champs/championships/2014/mbacoux/meowluigi.s	/^main3:$/;"	l
+main4	ressources/champs/championships/2014/mbacoux/meowluigi.s	/^main4:$/;"	l
+manage_label	sources/asm/asm_managellabels.c	/^void	manage_label(char *s, int type, header_t *header)$/;"	f	typeref:typename:void
+mars	includes/corewar.h	/^	t_octet				mars[MEM_SIZE];$/;"	m	struct:s_data	typeref:typename:t_octet[]
+mars_fill	sources/vm/init_corewar.c	/^int		mars_fill(t_data *data)$/;"	f	typeref:typename:int
+master	ressources/champs/mortel.s	/^master:	live %66$/;"	l
+max_cycles	includes/corewar.h	/^	int					max_cycles;$/;"	m	struct:s_data	typeref:typename:int
+mei	ressources/champs/championships/2017/pzarmehr/overwatch.s	/^mei:$/;"	l
+mercy	ressources/champs/championships/2017/pzarmehr/overwatch.s	/^mercy:$/;"	l
+middle	ressources/champs/lde.s	/^middle:	live %1$/;"	l
+middle	ressources/champs/leeloo.s	/^middle:	live %3$/;"	l
+middle	ressources/champs/new.s	/^middle:	live %3$/;"	l
+mloop	ressources/champs/championships/2014/mbacoux/meowluigi.s	/^mloop:$/;"	l
+modme	ressources/champs/championships/2014/gbir/_.s	/^modme:$/;"	l
+mov	ressources/champs/championships/2014/tdemay/champ.s	/^mov:$/;"	l
+mov_init	ressources/champs/championships/2014/tdemay/champ.s	/^mov_init:$/;"	l
+move1	ressources/champs/championships/2014/cdivry/youforkmytralala.s	/^move1:$/;"	l
+move2	ressources/champs/championships/2014/cdivry/youforkmytralala.s	/^move2:$/;"	l
+move3	ressources/champs/championships/2014/cdivry/youforkmytralala.s	/^move3:$/;"	l
+move4	ressources/champs/championships/2014/cdivry/youforkmytralala.s	/^move4:$/;"	l
+move5	ressources/champs/championships/2014/cdivry/youforkmytralala.s	/^move5:$/;"	l
+move_forward	ressources/champs/championships/2014/gudepard/Kappa.s	/^move_forward:$/;"	l
+name	includes/corewar.h	/^	char		*name;$/;"	m	struct:s_op	typeref:typename:char *
+name	includes/op.h	/^	char		*name;$/;"	m	struct:labels_s	typeref:typename:char *
+nb	includes/op.h	/^	int nb;$/;"	m	struct:s_num	typeref:typename:int
+nb2	includes/op.h	/^	int nb2;$/;"	m	struct:s_num	typeref:typename:int
+nb3	includes/op.h	/^	int nb3;$/;"	m	struct:s_num	typeref:typename:int
+nbr_args	includes/corewar.h	/^	int					nbr_args;$/;"	m	struct:s_instruction	typeref:typename:int
+nbr_champs	includes/corewar.h	/^	int					nbr_champs;$/;"	m	struct:s_data	typeref:typename:int
+new_champ	sources/vm/champ_load.c	/^int		new_champ(t_data *data, char *source, t_champid *champ_id)$/;"	f	typeref:typename:int
+new_process	sources/vm/process_new.c	/^int			new_process(t_data *data, int loc, int champ_id)$/;"	f	typeref:typename:int
+new_turn	sources/vm/battle.c	/^int		new_turn(t_data *data)$/;"	f	typeref:typename:int
+next	gnl/get_next_line.h	/^	t_file				*next;$/;"	m	struct:s_file	typeref:typename:t_file *
+next	includes/corewar.h	/^	struct s_champ		*next;$/;"	m	struct:s_champ	typeref:struct:s_champ *
+next	includes/corewar.h	/^	struct s_process	*next;$/;"	m	struct:s_process	typeref:struct:s_process *
+next	includes/op.h	/^	struct		instr_s *next;$/;"	m	struct:instr_s	typeref:struct:instr_s *
+next	includes/op.h	/^	struct		labels_s *next;$/;"	m	struct:labels_s	typeref:struct:labels_s *
+next	libft/includes/get_next_line.h	/^	t_buff	*next;$/;"	m	struct:s_buff	typeref:typename:t_buff *
+next	libft/includes/libft.h	/^	struct s_list	*next;$/;"	m	struct:s_list	typeref:struct:s_list *
+next_wall	ressources/champs/championships/2014/dcohen/loose.s	/^next_wall:$/;"	l
+no	ressources/champs/tdc2.s	/^no:$/;"	l
+no	ressources/champs/tdc3.s	/^no:$/;"	l
+nodeadplz	ressources/champs/championships/2014/mconraux/dubo.s	/^nodeadplz:$/;"	l
+nolock	ressources/champs/Death.s	/^nolock:	$/;"	l
+nothing	libft/ft_strtrim.c	/^static int	nothing(char c)$/;"	f	typeref:typename:int	file:
+nothing	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^nothing:$/;"	l
+numero1	ressources/champs/mortel.s	/^numero1: live %66$/;"	l
+numero2	ressources/champs/mortel.s	/^numero2: live %66$/;"	l
+ok	ressources/champs/tdc3.s	/^ok:$/;"	l
+op	includes/corewar.h	/^	int					op;$/;"	m	struct:s_instruction	typeref:typename:int
+op_add	sources/vm/functions.c	/^int		op_add(t_data *data, t_process *process)$/;"	f	typeref:typename:int
+op_aff	sources/vm/functions.c	/^int		op_aff(t_data *data, t_process *process)$/;"	f	typeref:typename:int
+op_and	sources/vm/functions.c	/^int		op_and(t_data *data, t_process *process)$/;"	f	typeref:typename:int
+op_bzero	libft/op_bzero.c	/^void	op_bzero(void *s, size_t n)$/;"	f	typeref:typename:void
+op_code	includes/corewar.h	/^	t_octet		op_code;$/;"	m	struct:s_op	typeref:typename:t_octet
+op_fork	sources/vm/functions.c	/^int		op_fork(t_data *data, t_process *process)$/;"	f	typeref:typename:int
+op_id	includes/corewar.h	/^	int					op_id;$/;"	m	struct:s_instruction	typeref:typename:int
+op_ld	sources/vm/functions.c	/^int		op_ld(t_data *data, t_process *process)$/;"	f	typeref:typename:int
+op_ldi	sources/vm/functions.c	/^int		op_ldi(t_data *data, t_process *process)$/;"	f	typeref:typename:int
+op_lfork	sources/vm/functions.c	/^int		op_lfork(t_data *data, t_process *process)$/;"	f	typeref:typename:int
+op_live	sources/vm/functions.c	/^int		op_live(t_data *data, t_process *process)$/;"	f	typeref:typename:int
+op_lld	sources/vm/functions.c	/^int		op_lld(t_data *data, t_process *process)$/;"	f	typeref:typename:int
+op_lldi	sources/vm/functions.c	/^int		op_lldi(t_data *data, t_process *process)$/;"	f	typeref:typename:int
+op_or	sources/vm/functions.c	/^int		op_or(t_data *data, t_process *process)$/;"	f	typeref:typename:int
+op_st	sources/vm/functions.c	/^int		op_st(t_data *data, t_process *process)$/;"	f	typeref:typename:int
+op_sti	sources/vm/functions.c	/^int		op_sti(t_data *data, t_process *process)$/;"	f	typeref:typename:int
+op_sub	sources/vm/functions.c	/^int		op_sub(t_data *data, t_process *process)$/;"	f	typeref:typename:int
+op_tab	sources/asm/asm_managellabels.c	/^static t_op		op_tab[17] =$/;"	v	typeref:typename:t_op[17]	file:
+op_tab	sources/asm/asm_parsing_body.c	/^static t_op		op_tab[17] =$/;"	v	typeref:typename:t_op[17]	file:
+op_tab	sources/asm/asm_parttwo.c	/^static t_op		op_tab[17] =$/;"	v	typeref:typename:t_op[17]	file:
+op_tab	sources/common/op.c	/^t_op    op_tab[17] =$/;"	v	typeref:typename:t_op[17]
+op_xor	sources/vm/functions.c	/^int		op_xor(t_data *data, t_process *process)$/;"	f	typeref:typename:int
+op_zjmp	sources/vm/functions.c	/^int		op_zjmp(t_data *data, t_process *process)$/;"	f	typeref:typename:int
+ouais	ressources/champs/championships/2017/iburel/gateau.s	/^ouais:$/;"	l
+p1	ressources/champs/42.s	/^p1:	zjmp	%:infi$/;"	l
+p1	ressources/champs/championships/2014/gudepard/Kappa.s	/^p1:$/;"	l
+p1	ressources/champs/championships/2017/adenis/Explosive_Kitty.s	/^p1:$/;"	l
+p1	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^p1:$/;"	l
+p1_2	ressources/champs/championships/2014/gudepard/Kappa.s	/^p1_2:$/;"	l
+p2	ressources/champs/championships/2014/gudepard/Kappa.s	/^p2:$/;"	l
+p2	ressources/champs/championships/2017/adenis/Explosive_Kitty.s	/^p2:$/;"	l
+p2	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^p2:$/;"	l
+p2_2	ressources/champs/championships/2014/gudepard/Kappa.s	/^p2_2:$/;"	l
+p3	ressources/champs/championships/2014/gudepard/Kappa.s	/^p3:$/;"	l
+p32	ressources/champs/42.s	/^p32:	sub	r6,r4,r6$/;"	l
+p32deb	ressources/champs/42.s	/^p32deb:	zjmp	%0$/;"	l
+p32li	ressources/champs/42.s	/^p32li:	live	%1$/;"	l
+p3_2	ressources/champs/championships/2014/gudepard/Kappa.s	/^p3_2:$/;"	l
+p4	ressources/champs/championships/2014/gudepard/Kappa.s	/^p4:$/;"	l
+p4_2	ressources/champs/championships/2014/gudepard/Kappa.s	/^p4_2:$/;"	l
+p64	ressources/champs/42.s	/^p64:	ld	%10,r8$/;"	l
+p64deb	ressources/champs/42.s	/^p64deb:	zjmp	%0$/;"	l
+p64li	ressources/champs/42.s	/^p64li:	live	%1$/;"	l
+padec2	ressources/champs/lde.s	/^padec2:	live %1$/;"	l
+padec2	ressources/champs/leeloo.s	/^padec2:	live %1$/;"	l
+padec2	ressources/champs/new.s	/^padec2:	live %1$/;"	l
+par	includes/op.h	/^	int					par;$/;"	m	struct:header_s	typeref:typename:int
+param_number	includes/corewar.h	/^	int			param_number;$/;"	m	struct:s_op	typeref:typename:int
+param_possible_types	includes/corewar.h	/^	t_octet		param_possible_types[4];$/;"	m	struct:s_op	typeref:typename:t_octet[4]
+pare	ressources/champs/leeloo.s	/^pare:	st r16,:begin -52$/;"	l
+pare	ressources/champs/new.s	/^pare:	st r0,:begin -52$/;"	l
+pare1	ressources/champs/leeloo.s	/^pare1:	ld %0,r16$/;"	l
+pare1	ressources/champs/new.s	/^pare1:	ld %0,r0$/;"	l
+parsecleanline	sources/asm/asm_parsing_body.c	/^static int parsecleanline(char *s, header_t *header)$/;"	f	typeref:typename:int	file:
+part1	ressources/champs/championships/2014/sbuono/Asombra.s	/^part1:$/;"	l
+part1	ressources/champs/championships/2017/gnebie/ultima.s	/^part1:$/;"	l
+part2	ressources/champs/championships/2014/sbuono/Asombra.s	/^part2:$/;"	l
+part2	ressources/champs/championships/2017/gnebie/ultima.s	/^part2:$/;"	l
+part3	ressources/champs/championships/2017/gnebie/ultima.s	/^part3:$/;"	l
+part4	ressources/champs/championships/2017/gnebie/ultima.s	/^part4:$/;"	l
+partone	sources/asm/asm.c	/^static void		partone(unsigned char *BUF, int *bufptout, header_t *header)$/;"	f	typeref:typename:void	file:
+parttwo	sources/asm/asm_parttwo.c	/^void			parttwo(unsigned char *BUF, int *bufptout, header_t *header)$/;"	f	typeref:typename:void
+payload	ressources/champs/championships/2017/pzarmehr/overwatch.s	/^payload:$/;"	l
+pc	includes/corewar.h	/^	t_reg				pc;$/;"	m	struct:s_process	typeref:typename:t_reg
+pc	includes/corewar.h	/^	unsigned int		pc;$/;"	m	struct:s_instruction	typeref:typename:unsigned int
+pede	ressources/champs/championships/2014/mconraux/dubo.s	/^pede:$/;"	l
+petale	ressources/champs/championships/2014/ekocevar/mandragore.s	/^petale:$/;"	l
+pharah	ressources/champs/championships/2017/pzarmehr/overwatch.s	/^pharah:$/;"	l
+piege	ressources/champs/championships/2014/kelickel/Varimathras.s	/^piege:$/;"	l
+piege1	ressources/champs/championships/2014/clafleur/big_feet.s	/^piege1:							# while(1)$/;"	l
+piege2	ressources/champs/championships/2014/clafleur/big_feet.s	/^piege2:$/;"	l
+poorkitty	ressources/champs/championships/2017/agregoir/Kittystrophic.s	/^poorkitty:$/;"	l
+pp1	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^pp1:$/;"	l
+pp2	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^pp2:$/;"	l
+prelive	ressources/champs/championships/2014/sbuono/Asombra.s	/^prelive:$/;"	l
+printrowcol	sources/asm/errors.c	/^static void	printrowcol(header_t *header, int mode)$/;"	f	typeref:typename:void	file:
+proc1	ressources/champs/championships/2014/gbir/_.s	/^proc1:$/;"	l
+processes	includes/corewar.h	/^	t_process			*processes;$/;"	m	struct:s_data	typeref:typename:t_process *
+prog	ressources/champs/championships/2017/iburel/gateau.s	/^prog:$/;"	l
+prog_name	includes/corewar.h	/^	t_octet				prog_name[PROG_NAME_LENGTH + 1];$/;"	m	struct:s_champ	typeref:typename:t_octet[]
+prog_name	includes/op.h	/^	char				prog_name[PROG_NAME_LENGTH + 1];$/;"	m	struct:header_s	typeref:typename:char[]
+prog_size	includes/corewar.h	/^	unsigned int		prog_size;$/;"	m	struct:s_champ	typeref:typename:unsigned int
+prog_size	includes/op.h	/^	unsigned int		prog_size;$/;"	m	struct:header_s	typeref:typename:unsigned int
+proloop	ressources/champs/championships/2014/mbacoux/meowluigi.s	/^proloop:$/;"	l
+proloop_2	ressources/champs/championships/2014/mbacoux/meowluigi.s	/^proloop_2:$/;"	l
+protect	ressources/champs/championships/2014/mbacoux/meowluigi.s	/^protect:$/;"	l
+protect1	ressources/champs/championships/2014/ybouvet/casimir.s	/^protect1:$/;"	l
+protect2	ressources/champs/championships/2014/mbacoux/meowluigi.s	/^protect2:$/;"	l
+protect2	ressources/champs/championships/2014/ybouvet/casimir.s	/^protect2:$/;"	l
+protection	ressources/champs/championships/2014/evlasova/terminator.s	/^protection:$/;"	l
+pterofinstr	includes/op.h	/^	int				pterofinstr;$/;"	m	struct:instr_s	typeref:typename:int
+ptlen	includes/op.h	/^	int				ptlen;$/;"	m	struct:instr_s	typeref:typename:int
+putmax	sources/asm/itobighex.c	/^void			putmax(char *NUM)$/;"	f	typeref:typename:void
+r_p1	ressources/champs/championships/2014/gudepard/Kappa.s	/^r_p1:$/;"	l
+r_p1_2	ressources/champs/championships/2014/gudepard/Kappa.s	/^r_p1_2:$/;"	l
+r_p2	ressources/champs/championships/2014/gudepard/Kappa.s	/^r_p2:$/;"	l
+r_p2_2	ressources/champs/championships/2014/gudepard/Kappa.s	/^r_p2_2:$/;"	l
+r_p3	ressources/champs/championships/2014/gudepard/Kappa.s	/^r_p3:$/;"	l
+r_p3_2	ressources/champs/championships/2014/gudepard/Kappa.s	/^r_p3_2:$/;"	l
+r_p4	ressources/champs/championships/2014/gudepard/Kappa.s	/^r_p4:$/;"	l
+r_p4_2	ressources/champs/championships/2014/gudepard/Kappa.s	/^r_p4_2:$/;"	l
+r_p5	ressources/champs/championships/2014/gudepard/Kappa.s	/^r_p5:$/;"	l
+r_p5_2	ressources/champs/championships/2014/gudepard/Kappa.s	/^r_p5_2:$/;"	l
+rboucle	ressources/champs/tdc2.s	/^rboucle:$/;"	l
+rboucle2	ressources/champs/tdc2.s	/^rboucle2:$/;"	l
+re	Makefile	/^re :$/;"	t
+re	libft/Makefile	/^re:$/;"	t
+read_bin_to_nbr	sources/common/endian.c	/^t_llu	read_bin_to_nbr(void *ptr, size_t len)$/;"	f	typeref:typename:t_llu
+read_operation	sources/vm/operation_reading.c	/^int			read_operation(t_data *data, t_process *process)$/;"	f	typeref:typename:int
+ready	ressources/champs/mortel.s	/^ready:	sti r6,r3,%:ecriture$/;"	l
+rebond	ressources/champs/championships/2017/gnebie/ultima.s	/^rebond:$/;"	l
+reg	includes/corewar.h	/^	t_reg				reg[REG_NUMBER];$/;"	m	struct:s_process	typeref:typename:t_reg[]
+reinhardt	ressources/champs/championships/2017/pzarmehr/overwatch.s	/^reinhardt:$/;"	l
+relive	ressources/champs/championships/2014/gpetrov/MarineKing.s	/^relive:$/;"	l
+replic1	ressources/champs/championships/2014/rabid-on/jinx.s	/^replic1:$/;"	l
+replic2	ressources/champs/championships/2014/rabid-on/jinx.s	/^replic2:$/;"	l
+replicate	ressources/champs/championships/2014/mbacoux/meowluigi.s	/^replicate:$/;"	l
+replicate_loop	ressources/champs/championships/2014/mbacoux/meowluigi.s	/^replicate_loop:$/;"	l
+replicated	ressources/champs/championships/2014/mbacoux/meowluigi.s	/^replicated:$/;"	l
+rest	gnl/get_next_line.h	/^	char				*rest;$/;"	m	struct:s_file	typeref:typename:char *
+rest	ressources/champs/championships/2014/sbuono/Asombra.s	/^rest:$/;"	l
+rno	ressources/champs/tdc2.s	/^rno:$/;"	l
+roger	ressources/champs/slider2.s	/^roger:		ld	%0,r10$/;"	l
+roger_ecrit	ressources/champs/slider2.s	/^roger_ecrit:	zjmp	%:roger_live$/;"	l
+roger_live	ressources/champs/slider2.s	/^roger_live:	live	%42$/;"	l
+row	includes/op.h	/^	int					row;$/;"	m	struct:header_s	typeref:typename:int
+run	ressources/champs/Survivor.s	/^run:	xor	r0, r0, r0$/;"	l
+run	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^run:$/;"	l
+rush	ressources/champs/championships/2017/iburel/gateau.s	/^rush:$/;"	l
+s1	ressources/champs/championships/2017/adenis/Explosive_Kitty.s	/^s1:$/;"	l
+s2	ressources/champs/championships/2017/adenis/Explosive_Kitty.s	/^s2:$/;"	l
+s3	ressources/champs/championships/2017/adenis/Explosive_Kitty.s	/^s3:$/;"	l
+s4	ressources/champs/championships/2017/adenis/Explosive_Kitty.s	/^s4:$/;"	l
+s_arg	includes/corewar.h	/^typedef struct			s_arg$/;"	s
+s_buff	libft/includes/get_next_line.h	/^struct					s_buff$/;"	s
+s_champ	includes/corewar.h	/^typedef struct			s_champ$/;"	s
+s_champid	includes/corewar.h	/^typedef struct			s_champid$/;"	s
+s_data	includes/corewar.h	/^typedef struct			s_data$/;"	s
+s_file	gnl/get_next_line.h	/^struct					s_file$/;"	s
+s_instruction	includes/corewar.h	/^typedef struct			s_instruction$/;"	s
+s_list	libft/includes/libft.h	/^struct	s_list$/;"	s
+s_num	includes/op.h	/^typedef struct		s_num$/;"	s
+s_op	includes/corewar.h	/^typedef struct			s_op$/;"	s
+s_process	includes/corewar.h	/^typedef struct			s_process$/;"	s
+salut2	ressources/champs/championships/2017/iburel/gateau.s	/^salut2:$/;"	l
+salut3	ressources/champs/championships/2017/iburel/gateau.s	/^salut3:$/;"	l
+salut4	ressources/champs/championships/2017/iburel/gateau.s	/^salut4:$/;"	l
+salut5	ressources/champs/championships/2017/iburel/gateau.s	/^salut5:$/;"	l
+save	ressources/champs/championships/2014/bjacob/doge.s	/^save:$/;"	l
+second	ressources/champs/championships/2014/sbuono/Asombra.s	/^second:$/;"	l
+second_attack	ressources/champs/championships/2017/adenis/Explosive_Kitty.s	/^second_attack:$/;"	l
+second_bis	ressources/champs/championships/2017/adenis/Explosive_Kitty.s	/^second_bis:$/;"	l
+second_entry	ressources/champs/championships/2014/ekocevar/mandragore.s	/^second_entry:$/;"	l
+sepa	ressources/champs/lde.s	/^sepa:	live %3$/;"	l
+sepa	ressources/champs/leeloo.s	/^sepa:	live %3$/;"	l
+sepa	ressources/champs/new.s	/^sepa:	live %3$/;"	l
+separ2	ressources/champs/lde.s	/^separ2:	live %3$/;"	l
+separ2	ressources/champs/leeloo.s	/^separ2:	live %3$/;"	l
+separ2	ressources/champs/new.s	/^separ2:	live %3$/;"	l
+separe	ressources/champs/lde.s	/^separe:	live %3$/;"	l
+separe	ressources/champs/leeloo.s	/^separe:	live %3$/;"	l
+separe	ressources/champs/new.s	/^separe:	live %3$/;"	l
+setlive	ressources/champs/championships/2014/lseguin/skynet.s	/^setlive:$/;"	l
+shield	ressources/champs/championships/2014/bguy/sam_2.0.s	/^shield:$/;"	l
+shield	ressources/champs/championships/2014/sbuono/Asombra.s	/^shield:$/;"	l
+shield2	ressources/champs/championships/2014/mbacoux/meowluigi.s	/^shield2:$/;"	l
+shield_init	ressources/champs/championships/2014/bguy/sam_2.0.s	/^shield_init:$/;"	l
+shotgun	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^shotgun:$/;"	l
+show_mars	sources/vm/debug.c	/^int			show_mars(t_data *data)$/;"	f	typeref:typename:int
+sjmp	ressources/champs/championships/2014/gbir/_.s	/^sjmp:$/;"	l
+sjmp	ressources/champs/championships/2017/iburel/gateau.s	/^sjmp:$/;"	l
+skipnl	sources/asm/asm_parsing_tools.c	/^char *skipnl(header_t *header)$/;"	f	typeref:typename:char *
+sl	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^sl:$/;"	l
+slide1	ressources/champs/maxidef.s	/^slide1: live %1$/;"	l
+slide2	ressources/champs/maxidef.s	/^slide2:	zjmp %-492$/;"	l
+source	ressources/champs/maxidef.s	/^source:	live %1$/;"	l
+spawn	ressources/champs/championships/2014/gpetrov/MarineKing.s	/^spawn:$/;"	l
+spawn2	ressources/champs/championships/2014/gpetrov/MarineKing.s	/^spawn2:$/;"	l
+spawn3	ressources/champs/championships/2014/gpetrov/MarineKing.s	/^spawn3:$/;"	l
+spore	ressources/champs/championships/2014/ekocevar/mandragore.s	/^spore:$/;"	l
+sst	ressources/champs/championships/2014/gbir/_.s	/^sst:$/;"	l
+st	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^st r1, 6$/;"	l
+st	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^st r4, -503$/;"	l
+st	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^st r4, 511$/;"	l
+st	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^st r5, 510$/;"	l
+st	ressources/champs/championships/2014/gjestin/salamahenagalabadoun.s	/^st		r1, 6$/;"	l
+st	ressources/champs/championships/2014/gpetrov/MarineKing.s	/^st		r1, 6$/;"	l
+st	ressources/champs/championships/2014/ldesgoui/_honeybadger.s	/^st r4, 511$/;"	l
+st	ressources/champs/championships/2014/ldesgoui/_honeybadger.s	/^st r5, 510$/;"	l
+st	ressources/champs/championships/2014/lsirigna/live.s	/^st		r4, -6$/;"	l
+st	ressources/champs/championships/2014/lsirigna/live.s	/^st      r8,-400$/;"	l
+st	ressources/champs/championships/2014/lsirigna/live.s	/^st      r8,-500$/;"	l
+st	ressources/champs/championships/2014/sbuono/Asombra.s	/^st r1, 11$/;"	l
+st	ressources/champs/championships/2014/sbuono/Asombra.s	/^st r10, 511$/;"	l
+st	ressources/champs/championships/2014/sbuono/Asombra.s	/^st r11, 510$/;"	l
+st	ressources/champs/championships/2014/sbuono/Asombra.s	/^st r13, 6$/;"	l
+st	ressources/champs/championships/2014/sbuono/Asombra.s	/^st r13, r7$/;"	l
+st	ressources/champs/championships/2014/sbuono/Asombra.s	/^st r16, -300$/;"	l
+st	ressources/champs/championships/2014/sbuono/Asombra.s	/^st r16, -4$/;"	l
+st	ressources/champs/championships/2014/sbuono/Asombra.s	/^st r2, -301$/;"	l
+st	ressources/champs/championships/2014/sbuono/Asombra.s	/^st r2, -302$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st		r13,-121 #-79$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st		r14, -109 #-67$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st		r14, 9$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st		r3, 200$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st		r4, 6$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st              r1, -117$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st              r1, -212$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st              r1, 69$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st              r16, -15$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st              r4, -100$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r16, -212$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r16, -214$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r16, -216$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r16, -218$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r16, -220$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r16, -222$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r16, -224$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r16, -226$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r16, -228$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r16, -230$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r16, -232$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r16, -234$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r16, -236$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r16, -238$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r16, -240$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r16, -242$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r16, -243$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r16, -244$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r16, -245$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r16, -262$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r2, -492$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r2, -493$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r2, -494$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r2, -495$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r2, -496$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r2, -497$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r2, -498$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r2, -499$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r2, -500$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r2, -501$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r2, -502$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r2, -503$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r2, -504$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r2, -505$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r2, -506$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r2, -507$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r2, -508$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r2, -509$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r2, -510$/;"	l
+st	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^st      r2, -511$/;"	l
+st	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^st		r1, 7$/;"	l
+st	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^st		r10, -496$/;"	l
+st	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^st		r15, -467$/;"	l
+st	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^st		r16, -478$/;"	l
+st	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^st		r2, -491$/;"	l
+st	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^st		r9, -105$/;"	l
+st	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^st		r9, -120$/;"	l
+st	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^st		r9, -135$/;"	l
+st	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^st		r9, -150$/;"	l
+st	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^st		r9, -45$/;"	l
+st	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^st		r9, -60$/;"	l
+st	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^st		r9, -75$/;"	l
+st	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^st		r9, -90$/;"	l
+st	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^st 		r1, -487$/;"	l
+st	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^st 		r2, :sl$/;"	l
+st	ressources/champs/examples/bigzork.s	/^st r1, 211$/;"	l
+st1	ressources/champs/leeloo.s	/^st1:	st r1,:lastlive1 +1$/;"	l
+st1	ressources/champs/new.s	/^st1:	st r1,:lastlive1 +1$/;"	l
+st2	ressources/champs/leeloo.s	/^st2:	st r1,:lastlive2 +1$/;"	l
+st2	ressources/champs/new.s	/^st2:	st r1,:lastlive2 +1$/;"	l
+st3	ressources/champs/leeloo.s	/^st3:	st r1,:lastlive3 +1$/;"	l
+st3	ressources/champs/new.s	/^st3:	st r1,:lastlive3 +1$/;"	l
+st4	ressources/champs/leeloo.s	/^st4:	st r1,:lastlive4 +1$/;"	l
+st4	ressources/champs/new.s	/^st4:	st r1,:lastlive4 +1$/;"	l
+st5	ressources/champs/leeloo.s	/^st5:	st r1,:live1 +1$/;"	l
+st5	ressources/champs/new.s	/^st5:	st r1,:live1 +1$/;"	l
+st6	ressources/champs/leeloo.s	/^st6:	st r1,:live2 +1$/;"	l
+st6	ressources/champs/new.s	/^st6:	st r1,:live2 +1$/;"	l
+st7	ressources/champs/leeloo.s	/^st7:	st r1,:live3 +1$/;"	l
+st7	ressources/champs/new.s	/^st7:	st r1,:live3 +1$/;"	l
+st8	ressources/champs/leeloo.s	/^st8:	st r1,:live4 +1$/;"	l
+st8	ressources/champs/new.s	/^st8:	st r1,:live4 +1$/;"	l
+start	ressources/champs/championships/2014/clafleur/big_feet.s	/^start:$/;"	l
+start	ressources/champs/championships/2014/dcohen/loose.s	/^start:$/;"	l
+start	ressources/champs/championships/2014/hmichals/Wall.s	/^start:$/;"	l
+start	ressources/champs/championships/2014/lsirigna/live.s	/^start:	live		%0$/;"	l
+start	ressources/champs/championships/2014/mbacoux/meowluigi.s	/^start:$/;"	l
+start	ressources/champs/championships/2014/rmasse/THUNDER.s	/^start:$/;"	l
+start	ressources/champs/championships/2014/vrey/darksasuke.s	/^start:$/;"	l
+start	ressources/champs/championships/2017/adenis/Explosive_Kitty.s	/^start:$/;"	l
+start1	ressources/champs/championships/2014/rabid-on/jinx.s	/^start1:$/;"	l
+start1	ressources/champs/championships/2014/sbuono/Asombra.s	/^start1:$/;"	l
+start2	ressources/champs/championships/2014/rabid-on/jinx.s	/^start2:$/;"	l
+start2	ressources/champs/championships/2014/sbuono/Asombra.s	/^start2:$/;"	l
+start_piege	ressources/champs/championships/2014/clafleur/big_feet.s	/^start_piege:$/;"	l
+sti	ressources/champs/championships/2014/clafleur/big_feet.s	/^sti		r1, %:begin, %1$/;"	l
+sti	ressources/champs/championships/2014/clafleur/big_feet.s	/^sti		r1, %:live, %1$/;"	l
+sti	ressources/champs/championships/2014/clafleur/big_feet.s	/^sti		r1, %:piege1, %1$/;"	l
+sti	ressources/champs/championships/2014/clafleur/big_feet.s	/^sti		r1, %:piege2, %1$/;"	l
+sti	ressources/champs/championships/2014/clafleur/big_feet.s	/^sti		r10, %:end, r11$/;"	l
+sti	ressources/champs/championships/2014/clafleur/big_feet.s	/^sti		r10, %:start, r6$/;"	l
+sti	ressources/champs/championships/2014/clafleur/big_feet.s	/^sti		r2, %:end, r7 $/;"	l
+sti	ressources/champs/championships/2014/clafleur/big_feet.s	/^sti		r2, %:start, r5 $/;"	l
+sti	ressources/champs/championships/2014/clafleur/big_feet.s	/^sti		r3, %:end, r9$/;"	l
+sti	ressources/champs/championships/2014/clafleur/big_feet.s	/^sti		r3, %:start, r4$/;"	l
+sti	ressources/champs/championships/2014/gjestin/salamahenagalabadoun.s	/^sti		r5, r5, r3$/;"	l
+sti	ressources/champs/championships/2014/gpetrov/MarineKing.s	/^sti		r1, %:live, %1$/;"	l
+sti	ressources/champs/championships/2014/gpetrov/MarineKing.s	/^sti		r1, %:wall, %1$/;"	l
+sti	ressources/champs/championships/2014/sbuono/Asombra.s	/^sti r10, r11, r12$/;"	l
+sti	ressources/champs/championships/2014/sbuono/Asombra.s	/^sti r7, r8, r12$/;"	l
+sti	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^sti		r15, %0, r14$/;"	l
+sti	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^sti     r1, %65427, %71$/;"	l
+sti	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^sti     r1, %65434, %57$/;"	l
+sti	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^sti     r1, %65441, %43$/;"	l
+sti	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^sti     r1, %65448, %29$/;"	l
+sti	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^sti     r1, %65455, %15$/;"	l
+sti	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^sti     r1, %65462, %1$/;"	l
+sti	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^sti     r15, %0, r14$/;"	l
+sti	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^sti     r4, %65381, %1$/;"	l
+sti	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^sti     r15,r10,r13 #102$/;"	l
+sti	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^sti		r1, %:a3, %1$/;"	l
+sti	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^sti		r1, %:l1, %1$/;"	l
+sti	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^sti		r1, r2, r3$/;"	l
+sti	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^sti		r2, %:sl, %1$/;"	l
+sti	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^sti		r2, r3, r3$/;"	l
+sti	ressources/champs/examples/bee_gees.s	/^sti	r1, %:live, %1			;change live by the right value$/;"	l
+sti	ressources/champs/examples/bee_gees.s	/^sti	r1, %:live2, %1			;change live by the right value$/;"	l
+stlive	ressources/champs/championships/2014/hmichals/Wall.s	/^stlive:$/;"	l
+stock	ressources/champs/championships/2017/gnebie/ultima.s	/^stock:$/;"	l
+store_def	ressources/champs/championships/2017/adenis/Explosive_Kitty.s	/^store_def:$/;"	l
+stuff1	ressources/champs/championships/2014/rabid-on/jinx.s	/^stuff1:$/;"	l
+stuff2	ressources/champs/championships/2014/rabid-on/jinx.s	/^stuff2:$/;"	l
+stuff3	ressources/champs/championships/2014/rabid-on/jinx.s	/^stuff3:$/;"	l
+stuff4	ressources/champs/championships/2014/rabid-on/jinx.s	/^stuff4:$/;"	l
+sub	ressources/champs/championships/2014/clafleur/big_feet.s	/^sub		r12, r13, r12			# decrementation du compteur$/;"	l
+sub	ressources/champs/championships/2014/clafleur/big_feet.s	/^sub		r4, r16, r4$/;"	l
+sub	ressources/champs/championships/2014/clafleur/big_feet.s	/^sub		r5, r16, r5$/;"	l
+sub	ressources/champs/championships/2014/clafleur/big_feet.s	/^sub		r6, r16, r6$/;"	l
+sub	ressources/champs/championships/2014/sbuono/Asombra.s	/^sub r11, r12, r11$/;"	l
+sub	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^sub     r10, r11, r10$/;"	l
+sub	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^sub				r16, r16, r16$/;"	l
+sub	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^sub             r4,r4,r4$/;"	l
+sub	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^sub     r4, r4, r4$/;"	l
+suitb	ressources/champs/lde.s	/^suitb:	live %1$/;"	l
+suitb	ressources/champs/leeloo.s	/^suitb:	live %3$/;"	l
+suitb	ressources/champs/new.s	/^suitb:	live %3$/;"	l
+suite	ressources/champs/championships/2014/kelickel/Varimathras.s	/^suite:$/;"	l
+suite	ressources/champs/jumper.s	/^suite:	sti r1,%:livel,%1$/;"	l
+suite	ressources/champs/lde.s	/^suite:	live %1$/;"	l
+suite	ressources/champs/leeloo.s	/^suite:	live %1$/;"	l
+suite	ressources/champs/new.s	/^suite:	live %1$/;"	l
+super	ressources/champs/championships/2017/iburel/gateau.s	/^super:$/;"	l
+symmetra	ressources/champs/championships/2017/pzarmehr/overwatch.s	/^symmetra:$/;"	l
+t_arg	includes/corewar.h	/^}						t_arg;$/;"	t	typeref:struct:s_arg
+t_arg_type	includes/op.h	/^typedef char	t_arg_type;$/;"	t	typeref:typename:char
+t_buff	libft/includes/get_next_line.h	/^typedef struct s_buff	t_buff;$/;"	t	typeref:struct:s_buff
+t_champ	includes/corewar.h	/^}						t_champ;$/;"	t	typeref:struct:s_champ
+t_champid	includes/corewar.h	/^}						t_champid;$/;"	t	typeref:struct:s_champid
+t_data	includes/corewar.h	/^}						t_data;$/;"	t	typeref:struct:s_data
+t_file	gnl/get_next_line.h	/^typedef struct s_file	t_file;$/;"	t	typeref:struct:s_file
+t_instruction	includes/corewar.h	/^}						t_instruction;$/;"	t	typeref:struct:s_instruction
+t_list	libft/includes/libft.h	/^typedef struct s_list	t_list;$/;"	t	typeref:struct:s_list
+t_llu	includes/corewar.h	/^typedef unsigned long long	t_llu;$/;"	t	typeref:typename:unsigned long long
+t_num	includes/op.h	/^}					t_num;$/;"	t	typeref:struct:s_num
+t_octet	includes/corewar.h	/^typedef unsigned char		t_octet;$/;"	t	typeref:typename:unsigned char
+t_op	includes/corewar.h	/^}						t_op;$/;"	t	typeref:struct:s_op
+t_process	includes/corewar.h	/^}						t_process;$/;"	t	typeref:struct:s_process
+t_reg	includes/corewar.h	/^typedef unsigned char		t_reg;$/;"	t	typeref:typename:unsigned char
+t_reg	includes/corewar.h	/^typedef unsigned int		t_reg;$/;"	t	typeref:typename:unsigned int
+t_reg	includes/corewar.h	/^typedef unsigned long long	t_reg;$/;"	t	typeref:typename:unsigned long long
+t_reg	includes/corewar.h	/^typedef unsigned short		t_reg;$/;"	t	typeref:typename:unsigned short
+tail	ressources/champs/championships/2014/gbir/_.s	/^tail:$/;"	l
+tampon	ressources/champs/mortel.s	/^tampon:	sti r6,r3,r5$/;"	l
+tart	ressources/champs/42.s	/^tart:	sti	r1,%:p64li,%1$/;"	l
+tige	ressources/champs/championships/2014/ekocevar/mandragore.s	/^tige:$/;"	l
+tir	ressources/champs/42.s	/^tir:	sti	r1,%:tirb,%1$/;"	l
+tirb	ressources/champs/42.s	/^tirb:	live	%1$/;"	l
+tird	ressources/champs/42.s	/^tird:	live	%42$/;"	l
+tirdow	ressources/champs/42.s	/^tirdow:	ld	%425,r2$/;"	l
+tirf	ressources/champs/42.s	/^tirf:	live	%42$/;"	l
+tirop	ressources/champs/42.s	/^tirop:	ld	%368,r2$/;"	l
+tirvd	ressources/champs/42.s	/^tirvd:	zjmp	%:tirvd2$/;"	l
+tirvd2	ressources/champs/42.s	/^tirvd2:	zjmp	%:tirdow$/;"	l
+tmp	ressources/champs/championships/2014/esusseli/gedeon.s	/^tmp:$/;"	l
+top	ressources/champs/42.s	/^top:	live	%42$/;"	l
+topd	ressources/champs/42.s	/^topd:	ld	%9,r3$/;"	l
+torbjorn	ressources/champs/championships/2017/pzarmehr/overwatch.s	/^torbjorn:$/;"	l
+torp	ressources/champs/Octobre_Rouge_V4.2.s	/^torp:		live	%42$/;"	l
+torp	ressources/champs/slider2.s	/^torp:		live	%42	$/;"	l
+torp1	ressources/champs/Octobre_Rouge_V4.2.s	/^torp1:		live	%42$/;"	l
+torp2	ressources/champs/Octobre_Rouge_V4.2.s	/^torp2:		live	%42$/;"	l
+torp3	ressources/champs/Octobre_Rouge_V4.2.s	/^torp3:		st	r1,r3	$/;"	l
+torp_	ressources/champs/slider2.s	/^torp_:		live	%42$/;"	l
+torpchk	ressources/champs/examples/fluttershy.s	/^torpchk:$/;"	l
+torpgen	ressources/champs/examples/fluttershy.s	/^torpgen:$/;"	l
+torpgeni	ressources/champs/examples/fluttershy.s	/^torpgeni:$/;"	l
+torpille_front	ressources/champs/championships/2014/tdemay/champ.s	/^torpille_front:$/;"	l
+torpinit	ressources/champs/examples/fluttershy.s	/^torpinit:$/;"	l
+torpl1	ressources/champs/examples/fluttershy.s	/^torpl1:$/;"	l
+torploop	ressources/champs/examples/fluttershy.s	/^torploop:$/;"	l
+torpwrite	ressources/champs/examples/fluttershy.s	/^torpwrite:$/;"	l
+tot	ressources/champs/lde.s	/^tot:	st r15,488$/;"	l
+tot	ressources/champs/leeloo.s	/^tot:	st r15,488$/;"	l
+tot	ressources/champs/new.s	/^tot:	st r15,488$/;"	l
+tot_len	includes/op.h	/^	int					tot_len;$/;"	m	struct:header_s	typeref:typename:int
+totinstr	includes/op.h	/^	int				totinstr;$/;"	m	struct:instr_s	typeref:typename:int
+toto	ressources/champs/lde.s	/^toto:	st r15,-480$/;"	l
+toto	ressources/champs/leeloo.s	/^toto:	st r15,-480$/;"	l
+toto	ressources/champs/new.s	/^toto:	st r15,-480$/;"	l
+toto	ressources/champs/tdc2.s	/^toto:	$/;"	l
+toto1	ressources/champs/leeloo.s	/^toto1:	zjmp %:toto	$/;"	l
+toto1	ressources/champs/new.s	/^toto1:	zjmp %:toto	$/;"	l
+trap	ressources/champs/championships/2014/esusseli/gedeon.s	/^trap:$/;"	l
+ttt	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ttt:$/;"	l
+type	includes/corewar.h	/^	t_arg_type			type;$/;"	m	struct:s_arg	typeref:typename:t_arg_type
+unused	ressources/champs/championships/2017/adenis/Explosive_Kitty.s	/^unused:$/;"	l
+up	ressources/champs/championships/2014/tdemay/champ.s	/^up:$/;"	l
+update_nl	gnl/get_next_line.c	/^static char		*update_nl(char **s, size_t *i)$/;"	f	typeref:typename:char *	file:
+var1	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var1:$/;"	l
+var1	ressources/champs/championships/2014/ldesgoui/_honeybadger.s	/^var1:$/;"	l
+var10	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var10:$/;"	l
+var100	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var100:$/;"	l
+var101	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var101:$/;"	l
+var102	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var102:$/;"	l
+var103	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var103:$/;"	l
+var104	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var104:$/;"	l
+var105	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var105:$/;"	l
+var106	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var106:$/;"	l
+var107	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var107:$/;"	l
+var108	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var108:$/;"	l
+var109	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var109:$/;"	l
+var11	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var11:$/;"	l
+var110	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var110:$/;"	l
+var111	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var111:$/;"	l
+var112	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var112:$/;"	l
+var113	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var113:$/;"	l
+var114	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var114:$/;"	l
+var115	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var115:$/;"	l
+var116	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var116:$/;"	l
+var117	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var117:$/;"	l
+var118	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var118:$/;"	l
+var119	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var119:$/;"	l
+var12	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var12:$/;"	l
+var120	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var120:$/;"	l
+var121	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var121:$/;"	l
+var122	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var122:$/;"	l
+var123	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var123:$/;"	l
+var124	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var124:$/;"	l
+var125	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var125:$/;"	l
+var126	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var126:$/;"	l
+var127	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var127:$/;"	l
+var128	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var128:$/;"	l
+var129	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var129:$/;"	l
+var13	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var13:$/;"	l
+var130	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var130:$/;"	l
+var131	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var131:$/;"	l
+var132	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var132:$/;"	l
+var133	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var133:$/;"	l
+var134	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var134:$/;"	l
+var135	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var135:$/;"	l
+var136	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var136:$/;"	l
+var137	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var137:$/;"	l
+var138	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var138:$/;"	l
+var139	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var139:$/;"	l
+var14	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var14:$/;"	l
+var140	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var140:$/;"	l
+var141	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var141:$/;"	l
+var142	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var142:$/;"	l
+var143	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var143:$/;"	l
+var144	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var144:$/;"	l
+var145	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var145:$/;"	l
+var146	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var146:$/;"	l
+var147	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var147:$/;"	l
+var148	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var148:$/;"	l
+var149	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var149:$/;"	l
+var15	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var15:$/;"	l
+var150	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var150:$/;"	l
+var151	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var151:$/;"	l
+var152	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var152:$/;"	l
+var153	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var153:$/;"	l
+var154	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var154:$/;"	l
+var155	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var155:$/;"	l
+var156	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var156:$/;"	l
+var157	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var157:$/;"	l
+var158	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var158:$/;"	l
+var159	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var159:$/;"	l
+var16	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var16:$/;"	l
+var160	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var160:$/;"	l
+var161	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var161:$/;"	l
+var162	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var162:$/;"	l
+var163	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var163:$/;"	l
+var164	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var164:$/;"	l
+var165	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var165:$/;"	l
+var166	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var166:$/;"	l
+var167	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var167:$/;"	l
+var168	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var168:$/;"	l
+var169	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var169:$/;"	l
+var17	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var17:$/;"	l
+var170	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var170:$/;"	l
+var171	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var171:$/;"	l
+var172	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var172:$/;"	l
+var173	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var173:$/;"	l
+var174	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var174:$/;"	l
+var175	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var175:$/;"	l
+var176	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var176:$/;"	l
+var177	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var177:$/;"	l
+var178	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var178:$/;"	l
+var179	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var179:$/;"	l
+var18	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var18:$/;"	l
+var180	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var180:$/;"	l
+var181	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var181:$/;"	l
+var182	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var182:$/;"	l
+var183	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var183:$/;"	l
+var184	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var184:$/;"	l
+var185	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var185:$/;"	l
+var186	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var186:$/;"	l
+var187	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var187:$/;"	l
+var188	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var188:$/;"	l
+var189	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var189:$/;"	l
+var19	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var19:$/;"	l
+var190	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var190:$/;"	l
+var191	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var191:$/;"	l
+var192	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var192:$/;"	l
+var193	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var193:$/;"	l
+var194	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var194:$/;"	l
+var195	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var195:$/;"	l
+var196	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var196:$/;"	l
+var197	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var197:$/;"	l
+var198	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var198:$/;"	l
+var199	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var199:$/;"	l
+var2	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var2:$/;"	l
+var2	ressources/champs/championships/2014/ldesgoui/_honeybadger.s	/^var2:$/;"	l
+var20	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var20:$/;"	l
+var200	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var200:$/;"	l
+var201	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var201:$/;"	l
+var202	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var202:$/;"	l
+var203	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var203:$/;"	l
+var204	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var204:$/;"	l
+var205	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var205:$/;"	l
+var206	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var206:$/;"	l
+var207	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var207:$/;"	l
+var208	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var208:$/;"	l
+var209	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var209:$/;"	l
+var21	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var21:$/;"	l
+var210	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var210:$/;"	l
+var211	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var211:$/;"	l
+var22	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var22:$/;"	l
+var225	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var225:$/;"	l
+var225	ressources/champs/championships/2014/ldesgoui/_honeybadger.s	/^var225:$/;"	l
+var23	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var23:$/;"	l
+var24	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var24:$/;"	l
+var25	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var25:$/;"	l
+var26	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var26:$/;"	l
+var27	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var27:$/;"	l
+var28	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var28:$/;"	l
+var29	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var29:$/;"	l
+var3	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var3:$/;"	l
+var30	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var30:$/;"	l
+var31	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var31:$/;"	l
+var32	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var32:$/;"	l
+var33	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var33:$/;"	l
+var34	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var34:$/;"	l
+var35	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var35:$/;"	l
+var36	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var36:$/;"	l
+var37	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var37:$/;"	l
+var38	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var38:$/;"	l
+var39	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var39:$/;"	l
+var4	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var4:$/;"	l
+var40	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var40:$/;"	l
+var41	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var41:$/;"	l
+var42	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var42:$/;"	l
+var43	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var43:$/;"	l
+var44	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var44:$/;"	l
+var45	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var45:$/;"	l
+var46	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var46:$/;"	l
+var47	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var47:$/;"	l
+var48	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var48:$/;"	l
+var49	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var49:$/;"	l
+var5	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var5:$/;"	l
+var50	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var50:$/;"	l
+var51	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var51:$/;"	l
+var52	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var52:$/;"	l
+var53	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var53:$/;"	l
+var54	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var54:$/;"	l
+var55	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var55:$/;"	l
+var56	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var56:$/;"	l
+var57	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var57:$/;"	l
+var58	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var58:$/;"	l
+var59	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var59:$/;"	l
+var6	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var6:$/;"	l
+var60	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var60:$/;"	l
+var61	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var61:$/;"	l
+var62	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var62:$/;"	l
+var63	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var63:$/;"	l
+var64	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var64:$/;"	l
+var65	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var65:$/;"	l
+var66	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var66:$/;"	l
+var67	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var67:$/;"	l
+var68	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var68:$/;"	l
+var69	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var69:$/;"	l
+var7	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var7:$/;"	l
+var70	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var70:$/;"	l
+var71	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var71:$/;"	l
+var72	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var72:$/;"	l
+var73	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var73:$/;"	l
+var74	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var74:$/;"	l
+var75	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var75:$/;"	l
+var76	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var76:$/;"	l
+var77	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var77:$/;"	l
+var78	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var78:$/;"	l
+var79	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var79:$/;"	l
+var8	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var8:$/;"	l
+var80	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var80:$/;"	l
+var81	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var81:$/;"	l
+var82	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var82:$/;"	l
+var83	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var83:$/;"	l
+var84	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var84:$/;"	l
+var85	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var85:$/;"	l
+var86	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var86:$/;"	l
+var87	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var87:$/;"	l
+var88	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var88:$/;"	l
+var89	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var89:$/;"	l
+var9	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var9:$/;"	l
+var90	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var90:$/;"	l
+var91	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var91:$/;"	l
+var92	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var92:$/;"	l
+var93	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var93:$/;"	l
+var94	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var94:$/;"	l
+var95	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var95:$/;"	l
+var96	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var96:$/;"	l
+var97	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var97:$/;"	l
+var98	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var98:$/;"	l
+var99	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var99:$/;"	l
+vite	ressources/champs/championships/2017/iburel/gateau.s	/^vite:$/;"	l
+wait	ressources/champs/mortel.s	/^wait:	live %66$/;"	l
+wall	ressources/champs/championships/2014/bguy/sam_2.0.s	/^wall:$/;"	l
+wall	ressources/champs/championships/2014/dcohen/loose.s	/^wall:$/;"	l
+wall	ressources/champs/championships/2014/gleger/Machine-gun.s	/^wall:	ld %70, r3$/;"	l
+wall	ressources/champs/championships/2014/gpetrov/MarineKing.s	/^wall:$/;"	l
+wall	ressources/champs/championships/2014/hmichals/Wall.s	/^wall:$/;"	l
+wall	ressources/champs/championships/2014/lseguin/skynet.s	/^wall:$/;"	l
+wall	ressources/champs/championships/2014/lsirigna/live.s	/^wall:	live	%42$/;"	l
+wall	ressources/champs/championships/2014/tdemay/champ.s	/^wall:$/;"	l
+wall	ressources/champs/championships/2017/iburel/gateau.s	/^wall:$/;"	l
+wall	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^wall:$/;"	l
+wall	ressources/champs/examples/helltrain.s	/^wall:$/;"	l
+wall2	ressources/champs/championships/2014/gleger/Machine-gun.s	/^wall2:	live %130000$/;"	l
+wall2	ressources/champs/championships/2014/lseguin/skynet.s	/^wall2:$/;"	l
+wall_prep	ressources/champs/championships/2014/bguy/sam_2.0.s	/^wall_prep:$/;"	l
+wall_prep	ressources/champs/championships/2014/lseguin/skynet.s	/^wall_prep:$/;"	l
+wall_prep	ressources/champs/examples/helltrain.s	/^wall_prep:$/;"	l
+wallstart	ressources/champs/championships/2014/hmichals/Wall.s	/^wallstart:$/;"	l
+what_id	sources/vm/champ_load.c	/^int		what_id(t_champid *champ_id)$/;"	f	typeref:typename:int
+write_front	ressources/champs/championships/2014/tdemay/champ.s	/^write_front:$/;"	l
+write_in_buffer	sources/vm/debug.c	/^int			write_in_buffer(char *buff, char *str, int i)$/;"	f	typeref:typename:int
+write_nbr_to_bin	sources/common/endian.c	/^void	write_nbr_to_bin(t_llu nbr, void *dst, size_t len)$/;"	f	typeref:typename:void
+xor	ressources/champs/examples/bee_gees.s	/^xor	r2, %15, r4		;if (r4) {carry = 0}$/;"	l
+xxx	ressources/champs/Octobre_Rouge_V4.2.s	/^xxx:		live	%42$/;"	l
+youshallnotpass	ressources/champs/championships/2014/esusseli/gedeon.s	/^youshallnotpass:$/;"	l
+youshallnotpass2	ressources/champs/championships/2014/esusseli/gedeon.s	/^youshallnotpass2:$/;"	l
+zero	ressources/champs/championships/2014/gbir/_.s	/^zero:$/;"	l
+zjmp	ressources/champs/championships/2014/bjacob/doge.s	/^zjmp %:attak$/;"	l
+zjmp	ressources/champs/championships/2014/bjacob/doge.s	/^zjmp %:live3$/;"	l
+zjmp	ressources/champs/championships/2014/clafleur/big_feet.s	/^zjmp	%:begin$/;"	l
+zjmp	ressources/champs/championships/2014/clafleur/big_feet.s	/^zjmp	%:piege1				# reviens en debut de boucle$/;"	l
+zjmp	ressources/champs/championships/2014/clafleur/big_feet.s	/^zjmp	%:piege2				# reviens en debut de boucle$/;"	l
+zjmp	ressources/champs/championships/2014/clafleur/big_feet.s	/^zjmp	%:start_piege			# reviens en debut de boucle$/;"	l
+zjmp	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^zjmp %494$/;"	l
+zjmp	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^zjmp %:var170$/;"	l
+zjmp	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^zjmp %:var225$/;"	l
+zjmp	ressources/champs/championships/2014/gjestin/salamahenagalabadoun.s	/^zjmp	%:loop$/;"	l
+zjmp	ressources/champs/championships/2014/ldesgoui/_honeybadger.s	/^zjmp %501$/;"	l
+zjmp	ressources/champs/championships/2014/ldesgoui/_honeybadger.s	/^zjmp %:var2$/;"	l
+zjmp	ressources/champs/championships/2014/ldesgoui/_honeybadger.s	/^zjmp %:var225$/;"	l
+zjmp	ressources/champs/championships/2014/lseguin/skynet.s	/^zjmp %:live$/;"	l
+zjmp	ressources/champs/championships/2014/lseguin/skynet.s	/^zjmp %:loop$/;"	l
+zjmp	ressources/champs/championships/2014/lsirigna/live.s	/^zjmp		%:jmp$/;"	l
+zjmp	ressources/champs/championships/2014/lsirigna/live.s	/^zjmp	%:wall$/;"	l
+zjmp	ressources/champs/championships/2014/mconraux/dubo.s	/^zjmp %:pede$/;"	l
+zjmp	ressources/champs/championships/2014/sbuono/Asombra.s	/^zjmp %3$/;"	l
+zjmp	ressources/champs/championships/2014/sbuono/Asombra.s	/^zjmp %501$/;"	l
+zjmp	ressources/champs/championships/2014/sbuono/Asombra.s	/^zjmp %:assaut1$/;"	l
+zjmp	ressources/champs/championships/2014/sbuono/Asombra.s	/^zjmp %:assaut2$/;"	l
+zjmp	ressources/champs/championships/2014/sbuono/Asombra.s	/^zjmp %:fork$/;"	l
+zjmp	ressources/champs/championships/2014/sbuono/Asombra.s	/^zjmp %:jump$/;"	l
+zjmp	ressources/champs/championships/2014/sbuono/Asombra.s	/^zjmp %:shield$/;"	l
+zjmp	ressources/champs/championships/2014/sbuono/Asombra.s	/^zjmp %:start2$/;"	l
+zjmp	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^zjmp			%:end1$/;"	l
+zjmp	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^zjmp	%-25$/;"	l
+zjmp	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^zjmp            %:live3$/;"	l
+zjmp	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^zjmp    %-5$/;"	l
+zjmp	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^zjmp    %258$/;"	l
+zjmp	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^zjmp    %:end1$/;"	l
+zjmp	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^zjmp    %:live3$/;"	l
+zjmp	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^zjmp		%-509$/;"	l
+zjmp	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^zjmp		%479$/;"	l
+zjmp	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^zjmp		%:a1$/;"	l
+zjmp	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^zjmp		%:a3$/;"	l
+zjmp	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^zjmp		%:f2$/;"	l
+zjmp	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^zjmp		%:ff2$/;"	l
+zjmp	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^zjmp		%:final$/;"	l
+zjmp	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^zjmp 		%:wall$/;"	l
+zjmp	ressources/champs/examples/bee_gees.s	/^zjmp	%:endwhile		;if (carry)$/;"	l
+zjmp	ressources/champs/examples/bee_gees.s	/^zjmp	%:forks$/;"	l
+zjmp	ressources/champs/examples/bee_gees.s	/^zjmp %:live$/;"	l
+zjmp	ressources/champs/examples/bigzork.s	/^zjmp %:loop$/;"	l
+zork	ressources/champs/Octobre_Rouge_V4.2.s	/^zork:		live	%42$/;"	l
+zork	ressources/champs/examples/turtle.s	/^zork:$/;"	l
+zork2	ressources/champs/Octobre_Rouge_V4.2.s	/^zork2:		live	%42$/;"	l
+zork2_	ressources/champs/Octobre_Rouge_V4.2.s	/^zork2_:		live	%42$/;"	l
+zork3	ressources/champs/Octobre_Rouge_V4.2.s	/^zork3:		live	%42$/;"	l
+zork3_	ressources/champs/Octobre_Rouge_V4.2.s	/^zork3_:		live	%42$/;"	l
+zork4	ressources/champs/Octobre_Rouge_V4.2.s	/^zork4:		live	%42$/;"	l
+zork4_	ressources/champs/Octobre_Rouge_V4.2.s	/^zork4_:		live	%42$/;"	l
+zork_	ressources/champs/Octobre_Rouge_V4.2.s	/^zork_:		live	%42$/;"	l

@@ -1,0 +1,17 @@
+header:
+	firstinstr:
+			pointer to the first instruction in the linked list
+	instr:
+			pointer to the last instruction in the linked list
+	lastlabelnb:
+			counts # of declared labels (eg test: add r2, r3, r4)
+	col, row:
+			counts # of newlines and chars is has reached, mostly used for error function
+	tot_len:
+			total length of the outputfile, used for length info after name and also
+labels:
+	dist:
+			used for distance between this command and the label (get filled out in second loop)
+instr:
+	pterofinstr:
+			tells pointer of the instruction
