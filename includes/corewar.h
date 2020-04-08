@@ -20,23 +20,7 @@
 typedef unsigned long long	t_llu;
 # include "common.h"
 typedef unsigned char		t_octet;
-
-typedef struct			s_arg
-{
-	t_arg_type			type;
-	int					len;
-	t_octet				content[4];
-}						t_arg;
-
-typedef struct			s_instruction
-{
-	int					op;
-	int					op_id;
-	unsigned int		pc;
-	t_octet				encod;
-	int					nbr_args;
-	t_arg				args[4];
-}						t_instruction;
+typedef unsigned char		t_bool;
 
 /*
 ** register size determination
@@ -53,6 +37,24 @@ typedef unsigned long long	t_reg;
 # else
 #  error register size not accepted
 # endif
+
+typedef struct			s_todo
+{
+	t_bool				something_to_do;
+	int					pc_add;
+	t_bool				life_cmd;
+	int					champ_id_life;
+	t_bool				cmd_write_on_mars;
+	int					mars_content;
+	t_bool				cmd_change_register;
+	int					reg_content;
+	t_bool				cmd_change_carry;
+	int					carry_content;
+	t_bool				cmd_fork;
+	int					fork_pc;
+	t_bool				cmd_aff;
+	t_octet				char_to_aff;
+}						t_todo;
 
 typedef struct			s_op
 {
@@ -74,7 +76,7 @@ typedef struct			s_process
 	t_reg				pc;
 	unsigned int		carry;
 	t_reg				reg[REG_NUMBER];
-	t_instruction		instruction;
+	t_todo				todo;
 	int					cooldown;
 	int					life;
 	struct s_process	*next;
@@ -127,14 +129,14 @@ void		hex_dump(t_octet *src, size_t len);
 int			champ_dump(t_champ *champ);
 int			buff_mars(t_data *data);
 int			err(char *s);
-int		debug_process(t_process *process);
+int			debug_process(t_process *process);
+int			debug_global(t_data *data, int turn);
 
 /*
 ** init
 */
 int			init_corewar(t_data *data, int ac, char **av);
 int			mars_fill(t_data *data);
-
 int			new_champ(t_data *data, char *source, t_champid *champ_id);
 
 /*
@@ -146,7 +148,14 @@ int			new_process(t_data *data, int loc, int champ_id);
 /*
  ** operation_reading
  */
+j
 int		read_operation(t_data *data, t_process *process);
+
+/*
+ ** op_exe
+ */
+
+int		execute_operation(t_data *data, t_process *process)
 
 /*
  ** differents functions

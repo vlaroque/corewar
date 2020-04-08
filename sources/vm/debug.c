@@ -177,3 +177,15 @@ int		debug_process(t_process *process)
 	ft_putstr("\n");
 	return (0);
 }
+
+int		debug_global(t_data *data, int turn)
+{
+		ft_putstr("Turn = "); ft_putnbr(turn); ft_putstr("  ");
+		ft_putstr("max = "); ft_putnbr(data->max_cycles); ft_putstr("  ");
+		ft_putstr("lives = "); ft_putnbr(data->lives_count); ft_putstr("  ");
+		if (data->processes)
+			ft_putnbr(data->processes->cooldown);
+		ft_putstr("           \n");
+		return (0);
+}
+

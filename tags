@@ -15,7 +15,6 @@ ASM_H	includes/asm.h	/^# define ASM_H$/;"	d
 ASM_OBJ	Makefile	/^ASM_OBJ = $(addprefix $(OBJ_PATH)\/,$(ASM_SRC_FILES:.c=.o))$/;"	m
 ASM_PATH	Makefile	/^ASM_PATH = asm$/;"	m
 ASM_SRC_FILES	Makefile	/^ASM_SRC_FILES = $(addprefix $(ASM_PATH)\/,$(SRC_ASM))$/;"	m
-BUFF_SIZE	gnl/get_next_line.h	/^# define BUFF_SIZE /;"	d
 BUFF_SIZE	libft/includes/get_next_line.h	/^# define BUFF_SIZE /;"	d
 CC	Makefile	/^CC = clang$/;"	m
 CC	libft/Makefile	/^CC = gcc$/;"	m
@@ -43,7 +42,6 @@ DIRECT_CHAR	includes/op.h	/^# define DIRECT_CHAR	/;"	d
 DIR_CODE	includes/op.h	/^# define DIR_CODE	/;"	d
 DIR_SIZE	includes/op.h	/^# define DIR_SIZE	/;"	d
 EPENDS	Makefile	/^EPENDS = $(ASM_OBJ:%.o=%.d) $/;"	m
-GET_NEXT_LINE_H	gnl/get_next_line.h	/^# define GET_NEXT_LINE_H$/;"	d
 GET_NEXT_LINE_H	libft/includes/get_next_line.h	/^# define GET_NEXT_LINE_H$/;"	d
 IDX_MOD	includes/op.h	/^# define IDX_MOD	/;"	d
 INCLUDES	libft/Makefile	/^INCLUDES = includes\/$/;"	m
@@ -94,7 +92,6 @@ a6	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^a6:$/;"	l
 a7	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^a7:$/;"	l
 a8	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^a8:$/;"	l
 aaaaah	ressources/champs/championships/2017/iburel/gateau.s	/^aaaaah:$/;"	l
-add	ressources/42.s	/^add	r1,           r2 , r3$/;"	l
 add	ressources/champs/championships/2014/clafleur/big_feet.s	/^add		r11, r16, r11$/;"	l
 add	ressources/champs/championships/2014/clafleur/big_feet.s	/^add		r7, r16, r7$/;"	l
 add	ressources/champs/championships/2014/clafleur/big_feet.s	/^add		r9, r16, r9$/;"	l
@@ -187,6 +184,8 @@ beginnewattack	ressources/champs/championships/2014/gbir/_.s	/^beginnewattack:$/
 bf	ressources/champs/championships/2014/tdemay/champ.s	/^bf:$/;"	l
 big_endian_int	sources/common/endian.c	/^int		big_endian_int(void *ptr)$/;"	f	typeref:typename:int
 big_little_endian	sources/vm/champ_load.c	/^unsigned int		big_little_endian(unsigned int nbr)$/;"	f	typeref:typename:unsigned int
+big_to_int	sources/vm/functions.c	/^int		big_to_int(int *nbr)$/;"	f	typeref:typename:int
+big_to_short	sources/vm/functions.c	/^short		big_to_short(short *nbr)$/;"	f	typeref:typename:short
 bite	ressources/champs/42.s	/^bite:	sti     r1,%:copie,%2$/;"	l
 bomb_a	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^bomb_a:$/;"	l
 bomb_b	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^bomb_b:$/;"	l
@@ -252,6 +251,7 @@ coregen	ressources/champs/examples/fluttershy.s	/^coregen:$/;"	l
 coregeni	ressources/champs/examples/fluttershy.s	/^coregeni:$/;"	l
 coreinit	ressources/champs/examples/fluttershy.s	/^coreinit:$/;"	l
 corelive	ressources/champs/examples/fluttershy.s	/^corelive:$/;"	l
+corewar	README.md	/^# corewar$/;"	c
 corps	ressources/champs/championships/2014/gbir/_.s	/^corps:$/;"	l
 corruption_first	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^corruption_first:$/;"	l
 corruption_first2	ressources/champs/championships/2017/gnebie/ultima.s	/^corruption_first2:$/;"	l
@@ -270,6 +270,8 @@ deb	ressources/champs/mat.s	/^deb:	fork %12$/;"	l
 deb	ressources/champs/new.s	/^deb:	$/;"	l
 deb1	ressources/champs/mat.s	/^deb1:	zjmp %:deb$/;"	l
 debt	ressources/champs/toto.s	/^debt:		live %42			#5$/;"	l
+debug_global	sources/vm/battle.c	/^int		debug_global(t_data *data, int turn)$/;"	f	typeref:typename:int
+debug_process	sources/vm/debug.c	/^int		debug_process(t_process *process)$/;"	f	typeref:typename:int
 debut	ressources/champs/Gagnant.s	/^debut:		live %42			#5$/;"	l
 debut	ressources/champs/Torpille.s	/^debut:$/;"	l
 debut	ressources/champs/championships/2017/iburel/gateau.s	/^debut:$/;"	l
@@ -378,7 +380,6 @@ fin	ressources/champs/new.s	/^fin:$/;"	l
 final	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^final:$/;"	l
 finboucle0	ressources/champs/jumper.s	/^finboucle0:	xor r3,r3,r3$/;"	l
 finboucle1	ressources/champs/jumper.s	/^finboucle1:	xor r3,r3,r3$/;"	l
-findfd	gnl/get_next_line.c	/^static t_file	*findfd(const int fd, t_file **list)$/;"	f	typeref:typename:t_file *	file:
 findlastpt	sources/asm/asm.c	/^static int		findlastpt(char *addr)$/;"	f	typeref:typename:int	file:
 first	ressources/champs/championships/2014/gbir/_.s	/^first:$/;"	l
 first_attack	ressources/champs/championships/2017/adenis/Explosive_Kitty.s	/^first_attack:$/;"	l
@@ -448,7 +449,6 @@ ft_atoi	libft/ft_atoi.c	/^int		ft_atoi(const char *str)$/;"	f	typeref:typename:i
 ft_bzero	libft/ft_bzero.c	/^void	*ft_bzero(void *s, size_t n)$/;"	f	typeref:typename:void *
 ft_countwords	libft/ft_countwords.c	/^size_t	ft_countwords(char const *s, char c)$/;"	f	typeref:typename:size_t
 ft_delete	libft/ft_lstmap.c	/^static void		ft_delete(void *content, size_t content_size)$/;"	f	typeref:typename:void	file:
-ft_exit	gnl/get_next_line.c	/^static int		ft_exit(t_file **file)$/;"	f	typeref:typename:int	file:
 ft_fd_s_chain	libft/get_next_line.c	/^t_buff	*ft_fd_s_chain(int fd)$/;"	f	typeref:typename:t_buff *
 ft_freechartab	libft/ft_freechartab.c	/^void		ft_freechartab(char ***tab)$/;"	f	typeref:typename:void
 ft_isalnum	libft/ft_isalnum.c	/^int		ft_isalnum(int c)$/;"	f	typeref:typename:int
@@ -485,7 +485,6 @@ ft_putstr_fd	libft/ft_putstr_fd.c	/^void	ft_putstr_fd(char const *s, int fd)$/;"
 ft_read_first_time	libft/get_next_line.c	/^int		ft_read_first_time(t_buff *fd_ch)$/;"	f	typeref:typename:int
 ft_read_or_not	libft/get_next_line.c	/^int		ft_read_or_not(t_buff *fd_ch, char **line, char *tmp, char *tmp2)$/;"	f	typeref:typename:int
 ft_sqrt	libft/ft_sqrt.c	/^int		ft_sqrt(int nbr)$/;"	f	typeref:typename:int
-ft_strappend	gnl/get_next_line.c	/^static int		ft_strappend(char **init, char *add)$/;"	f	typeref:typename:int	file:
 ft_strcat	libft/ft_strcat.c	/^char	*ft_strcat(char *s1, const char *s2)$/;"	f	typeref:typename:char *
 ft_strchr	libft/ft_strchr.c	/^char	*ft_strchr(const char *s, int c)$/;"	f	typeref:typename:char *
 ft_strclr	libft/ft_strclr.c	/^void	ft_strclr(char *s)$/;"	f	typeref:typename:void
@@ -530,7 +529,6 @@ gen	ressources/champs/tdc3.s	/^gen:$/;"	l
 gen21	ressources/champs/maxidef.s	/^gen21:	live %1		$/;"	l
 gen22	ressources/champs/maxidef.s	/^gen22:	live %1		$/;"	l
 get_encoding_byte	sources/vm/operation_reading.c	/^int		get_encoding_byte(t_data *data, t_process *process, int *pc)$/;"	f	typeref:typename:int
-get_next_line	gnl/get_next_line.c	/^int				get_next_line(const int fd, char **line)$/;"	f	typeref:typename:int
 get_next_line	libft/get_next_line.c	/^int		get_next_line(const int fd, char **line)$/;"	f	typeref:typename:int
 get_op	sources/vm/operation_reading.c	/^int		get_op(t_data *data, t_process *process, int *pc)$/;"	f	typeref:typename:int
 get_without_encod_byte	sources/vm/operation_reading.c	/^int		get_without_encod_byte(t_data *data, t_process *process, int *pc)$/;"	f	typeref:typename:int
@@ -560,7 +558,6 @@ hexbig	sources/asm/itobighex.c	/^static void		hexbig(char *NUM, long long nb)$/;
 hop	ressources/champs/lde.s	/^hop:	live %1$/;"	l
 hop	ressources/champs/leeloo.s	/^hop:	live %1$/;"	l
 hop	ressources/champs/new.s	/^hop:	live %1$/;"	l
-i	gnl/get_next_line.h	/^	int					i;$/;"	m	struct:s_file	typeref:typename:int
 id	includes/corewar.h	/^	int					id;$/;"	m	struct:s_champ	typeref:typename:int
 id	includes/corewar.h	/^	int					id;$/;"	m	struct:s_champid	typeref:typename:int
 id	includes/corewar.h	/^	int					id;$/;"	m	struct:s_process	typeref:typename:int
@@ -830,7 +827,6 @@ ldi	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^ldi     %12, %
 ldi	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^ldi     %4, %65306, r15$/;"	l
 ldi	ressources/champs/championships/2014/srabah-m/littlepuppy.s	/^ldi     %8, %65343, r15$/;"	l
 lefork	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^lefork:$/;"	l
-len	gnl/get_next_line.h	/^	size_t				len;$/;"	m	struct:s_file	typeref:typename:size_t
 len	includes/corewar.h	/^	int					len;$/;"	m	struct:s_arg	typeref:typename:int
 len	includes/op.h	/^	int				len;$/;"	m	struct:instr_s	typeref:typename:int
 leon	ressources/champs/slider2.s	/^leon:		ld      %0,r2$/;"	l
@@ -1050,7 +1046,7 @@ live_live	ressources/champs/barriere_test.s	/^live_live:	live	%42	$/;"	l
 livel	ressources/champs/jumper.s	/^livel:	live %66$/;"	l
 liver1	ressources/champs/tdc2.s	/^liver1:$/;"	l
 liver2	ressources/champs/tdc2.s	/^liver2:	$/;"	l
-lives	includes/corewar.h	/^	int					lives;$/;"	m	struct:s_data	typeref:typename:int
+lives_count	includes/corewar.h	/^	int					lives_count;$/;"	m	struct:s_data	typeref:typename:int
 livex	ressources/champs/jumper.s	/^livex:	live %66$/;"	l
 llll	ressources/champs/championships/2017/gnebie/ultima.s	/^llll:$/;"	l
 loader	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^loader:$/;"	l
@@ -1106,7 +1102,6 @@ nbr_champs	includes/corewar.h	/^	int					nbr_champs;$/;"	m	struct:s_data	typeref
 new_champ	sources/vm/champ_load.c	/^int		new_champ(t_data *data, char *source, t_champid *champ_id)$/;"	f	typeref:typename:int
 new_process	sources/vm/process_new.c	/^int			new_process(t_data *data, int loc, int champ_id)$/;"	f	typeref:typename:int
 new_turn	sources/vm/battle.c	/^int		new_turn(t_data *data)$/;"	f	typeref:typename:int
-next	gnl/get_next_line.h	/^	t_file				*next;$/;"	m	struct:s_file	typeref:typename:t_file *
 next	includes/corewar.h	/^	struct s_champ		*next;$/;"	m	struct:s_champ	typeref:struct:s_champ *
 next	includes/corewar.h	/^	struct s_process	*next;$/;"	m	struct:s_process	typeref:struct:s_process *
 next	includes/op.h	/^	struct		instr_s *next;$/;"	m	struct:instr_s	typeref:struct:instr_s *
@@ -1124,29 +1119,15 @@ numero1	ressources/champs/mortel.s	/^numero1: live %66$/;"	l
 numero2	ressources/champs/mortel.s	/^numero2: live %66$/;"	l
 ok	ressources/champs/tdc3.s	/^ok:$/;"	l
 op	includes/corewar.h	/^	int					op;$/;"	m	struct:s_instruction	typeref:typename:int
-op_add	sources/vm/functions.c	/^int		op_add(t_data *data, t_process *process)$/;"	f	typeref:typename:int
-op_aff	sources/vm/functions.c	/^int		op_aff(t_data *data, t_process *process)$/;"	f	typeref:typename:int
-op_and	sources/vm/functions.c	/^int		op_and(t_data *data, t_process *process)$/;"	f	typeref:typename:int
 op_bzero	libft/op_bzero.c	/^void	op_bzero(void *s, size_t n)$/;"	f	typeref:typename:void
 op_code	includes/corewar.h	/^	t_octet		op_code;$/;"	m	struct:s_op	typeref:typename:t_octet
-op_fork	sources/vm/functions.c	/^int		op_fork(t_data *data, t_process *process)$/;"	f	typeref:typename:int
 op_id	includes/corewar.h	/^	int					op_id;$/;"	m	struct:s_instruction	typeref:typename:int
 op_ld	sources/vm/functions.c	/^int		op_ld(t_data *data, t_process *process)$/;"	f	typeref:typename:int
-op_ldi	sources/vm/functions.c	/^int		op_ldi(t_data *data, t_process *process)$/;"	f	typeref:typename:int
-op_lfork	sources/vm/functions.c	/^int		op_lfork(t_data *data, t_process *process)$/;"	f	typeref:typename:int
 op_live	sources/vm/functions.c	/^int		op_live(t_data *data, t_process *process)$/;"	f	typeref:typename:int
-op_lld	sources/vm/functions.c	/^int		op_lld(t_data *data, t_process *process)$/;"	f	typeref:typename:int
-op_lldi	sources/vm/functions.c	/^int		op_lldi(t_data *data, t_process *process)$/;"	f	typeref:typename:int
-op_or	sources/vm/functions.c	/^int		op_or(t_data *data, t_process *process)$/;"	f	typeref:typename:int
-op_st	sources/vm/functions.c	/^int		op_st(t_data *data, t_process *process)$/;"	f	typeref:typename:int
-op_sti	sources/vm/functions.c	/^int		op_sti(t_data *data, t_process *process)$/;"	f	typeref:typename:int
-op_sub	sources/vm/functions.c	/^int		op_sub(t_data *data, t_process *process)$/;"	f	typeref:typename:int
 op_tab	sources/asm/asm_managellabels.c	/^static t_op		op_tab[17] =$/;"	v	typeref:typename:t_op[17]	file:
 op_tab	sources/asm/asm_parsing_body.c	/^static t_op		op_tab[17] =$/;"	v	typeref:typename:t_op[17]	file:
 op_tab	sources/asm/asm_parttwo.c	/^static t_op		op_tab[17] =$/;"	v	typeref:typename:t_op[17]	file:
 op_tab	sources/common/op.c	/^t_op    op_tab[17] =$/;"	v	typeref:typename:t_op[17]
-op_xor	sources/vm/functions.c	/^int		op_xor(t_data *data, t_process *process)$/;"	f	typeref:typename:int
-op_zjmp	sources/vm/functions.c	/^int		op_zjmp(t_data *data, t_process *process)$/;"	f	typeref:typename:int
 ouais	ressources/champs/championships/2017/iburel/gateau.s	/^ouais:$/;"	l
 p1	ressources/champs/42.s	/^p1:	zjmp	%:infi$/;"	l
 p1	ressources/champs/championships/2014/gudepard/Kappa.s	/^p1:$/;"	l
@@ -1243,7 +1224,6 @@ replic2	ressources/champs/championships/2014/rabid-on/jinx.s	/^replic2:$/;"	l
 replicate	ressources/champs/championships/2014/mbacoux/meowluigi.s	/^replicate:$/;"	l
 replicate_loop	ressources/champs/championships/2014/mbacoux/meowluigi.s	/^replicate_loop:$/;"	l
 replicated	ressources/champs/championships/2014/mbacoux/meowluigi.s	/^replicated:$/;"	l
-rest	gnl/get_next_line.h	/^	char				*rest;$/;"	m	struct:s_file	typeref:typename:char *
 rest	ressources/champs/championships/2014/sbuono/Asombra.s	/^rest:$/;"	l
 rno	ressources/champs/tdc2.s	/^rno:$/;"	l
 roger	ressources/champs/slider2.s	/^roger:		ld	%0,r10$/;"	l
@@ -1262,7 +1242,6 @@ s_buff	libft/includes/get_next_line.h	/^struct					s_buff$/;"	s
 s_champ	includes/corewar.h	/^typedef struct			s_champ$/;"	s
 s_champid	includes/corewar.h	/^typedef struct			s_champid$/;"	s
 s_data	includes/corewar.h	/^typedef struct			s_data$/;"	s
-s_file	gnl/get_next_line.h	/^struct					s_file$/;"	s
 s_instruction	includes/corewar.h	/^typedef struct			s_instruction$/;"	s
 s_list	libft/includes/libft.h	/^struct	s_list$/;"	s
 s_num	includes/op.h	/^typedef struct		s_num$/;"	s
@@ -1484,7 +1463,6 @@ t_buff	libft/includes/get_next_line.h	/^typedef struct s_buff	t_buff;$/;"	t	type
 t_champ	includes/corewar.h	/^}						t_champ;$/;"	t	typeref:struct:s_champ
 t_champid	includes/corewar.h	/^}						t_champid;$/;"	t	typeref:struct:s_champid
 t_data	includes/corewar.h	/^}						t_data;$/;"	t	typeref:struct:s_data
-t_file	gnl/get_next_line.h	/^typedef struct s_file	t_file;$/;"	t	typeref:struct:s_file
 t_instruction	includes/corewar.h	/^}						t_instruction;$/;"	t	typeref:struct:s_instruction
 t_list	libft/includes/libft.h	/^typedef struct s_list	t_list;$/;"	t	typeref:struct:s_list
 t_llu	includes/corewar.h	/^typedef unsigned long long	t_llu;$/;"	t	typeref:typename:unsigned long long
@@ -1542,7 +1520,6 @@ ttt	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^ttt:$/;"	l
 type	includes/corewar.h	/^	t_arg_type			type;$/;"	m	struct:s_arg	typeref:typename:t_arg_type
 unused	ressources/champs/championships/2017/adenis/Explosive_Kitty.s	/^unused:$/;"	l
 up	ressources/champs/championships/2014/tdemay/champ.s	/^up:$/;"	l
-update_nl	gnl/get_next_line.c	/^static char		*update_nl(char **s, size_t *i)$/;"	f	typeref:typename:char *	file:
 var1	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var1:$/;"	l
 var1	ressources/champs/championships/2014/ldesgoui/_honeybadger.s	/^var1:$/;"	l
 var10	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var10:$/;"	l
