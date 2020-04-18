@@ -59,7 +59,6 @@ int		op_live(t_data *data, t_process *process)
 
 int		op_ld(t_data *data, t_process *process)
 {
-	if (process->instruction->args[0]
 	return (0);
 }
 

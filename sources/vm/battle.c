@@ -14,6 +14,11 @@
 #include "corewar.h"
 #include <unistd.h>
 
+int		death_reaper(t_data *data)
+{
+	return (0);
+}
+
 int		new_turn(t_data *data)
 {
 	t_process	*process;

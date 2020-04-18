@@ -18,7 +18,6 @@
 /*
  ** fill the size of arguments according to the op and encoding byte or the bits
  ** sent without encoding byte
- */
 
 int		fill_arg(t_arg *arg, t_octet bits, int direct_size_two)
 {
@@ -43,9 +42,7 @@ int		fill_arg(t_arg *arg, t_octet bits, int direct_size_two)
 	return (0);
 }
 
-/*
  ** get arguments types for operations without encoding byte
- */
 
 int		get_without_encod_byte(t_data *data, t_process *process, int *pc)
 {
@@ -76,9 +73,7 @@ int		get_without_encod_byte(t_data *data, t_process *process, int *pc)
 	return (0);
 }
 
-/*
  ** get arguments types for operations with encoding byte
- */
 
 int		get_encoding_byte(t_data *data, t_process *process, int *pc)
 {
@@ -101,9 +96,7 @@ int		get_encoding_byte(t_data *data, t_process *process, int *pc)
 	return (0);
 }
 
-/*
  ** check if the pointed byte is an op_code and store it in process
- */
 
 int		get_op(t_data *data, t_process *process, int *pc)
 {
@@ -138,10 +131,10 @@ int			fill_instruction(t_data *data, t_process *process, int *pc)
 	}
 	return (0);
 }
-
+*/
 int			read_operation(t_data *data, t_process *process)
 {
-	int		pc;
+/*	int		pc;
 
 	pc = process->pc;
 
@@ -160,5 +153,5 @@ int			read_operation(t_data *data, t_process *process)
 		get_without_encod_byte(data, process, &pc);
 	fill_instruction(data, process, &pc);
 	process->pc = pc;
-	return (1);
+*/	return (1);
 }

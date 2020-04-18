@@ -154,7 +154,7 @@ int			buff_mars(t_data *data)
 	write(1, "\n", 1);
 	return (0);
 }
-
+/*
 int		debug_process(t_process *process)
 {
 	ft_putstr("proc id=|");
@@ -177,7 +177,7 @@ int		debug_process(t_process *process)
 	ft_putstr("\n");
 	return (0);
 }
-
+*/
 int		debug_global(t_data *data, int turn)
 {
 		ft_putstr("Turn = "); ft_putnbr(turn); ft_putstr("  ");

@@ -38,6 +38,15 @@ typedef unsigned long long	t_reg;
 #  error register size not accepted
 # endif
 
+
+typedef union	u_subint
+{
+	int		nbr;
+	short	short_nbr;
+	t_octet	char_nbr[4];
+}				t_subint;
+
+
 typedef struct			s_todo
 {
 	t_bool				something_to_do;
@@ -45,8 +54,10 @@ typedef struct			s_todo
 	t_bool				life_cmd;
 	int					champ_id_life;
 	t_bool				cmd_write_on_mars;
+	int					pc;
 	int					mars_content;
 	t_bool				cmd_change_register;
+	int					reg;
 	int					reg_content;
 	t_bool				cmd_change_carry;
 	int					carry_content;
@@ -93,7 +104,6 @@ typedef struct			s_champid
 	int					carried_nbr;
 }						t_champid;
 
-
 /*
 ** champion
 */
@@ -132,6 +142,7 @@ int			err(char *s);
 int			debug_process(t_process *process);
 int			debug_global(t_data *data, int turn);
 
+
 /*
 ** init
 */
@@ -139,23 +150,38 @@ int			init_corewar(t_data *data, int ac, char **av);
 int			mars_fill(t_data *data);
 int			new_champ(t_data *data, char *source, t_champid *champ_id);
 
+
 /*
 ** process_new
 */
-
 int			new_process(t_data *data, int loc, int champ_id);
+
 
 /*
  ** operation_reading
  */
-j
 int		read_operation(t_data *data, t_process *process);
+
 
 /*
  ** op_exe
  */
+int		execute_operation(t_data *data, t_process *process);
 
-int		execute_operation(t_data *data, t_process *process)
+
+/*
+ ** read_mars
+ */
+int			read_int_mars(t_data *data, int pc);
+short		read_short_mars(t_data *data, int pc);
+t_octet		read_oct_mars(t_data *data, int pc);
+
+/*
+ ** write_mars
+ */
+int		write_oct_mars(t_data *data, t_octet c, int pc);
+int		write_short_mars(t_data *data, short nbr, int pc);
+int		write_int_mars(t_data *data, int nbr, int pc);
 
 /*
  ** differents functions
