@@ -2,16 +2,31 @@
 
 int		it_live(t_data *data, t_process *process, int champ_id)
 {
+	data->lives_count++;
+	if (data->lives_count >= NBR_LIVE)
+	{
+		if (data->max_cycles - CYCLE_DELTA > 0)
+			data->max_cycles -= CYCLE_DELTA;
+	}
+	process->life++;
+	
 	return (champ_id);
 }
 
+//void	*ft_memcpy(void *dst, const void *src, size_t n)
+
 int		it_fork(t_data *data, t_process *process, int pc)
 {
+	new_process(data, pc, 0);
+	ft_memcpy(data->processes, process, sizeof(t_process));
+	op_bzero(&data->processes->todo, sizeof(t_todo));
+	data->processes->pc = pc;
 	return (0);
 }
 
 int		it_aff(t_data *data, t_process *process, char pc)
 {
+	write(0, pc, 1);
 	return (0);
 }
 
@@ -31,8 +46,6 @@ int		execute_operation(t_data *data, t_process *process)
 		it_fork(data, process, process->todo.fork_pc);
 	if (process->todo.cmd_aff)
 		it_aff(data, process, process->todo.char_to_aff);
-	if (process->todo.something_to_do)
-		return (1);
-	else
-		read_int_mars(data, process->todo.pc);
+	op_bzero(&process->todo, sizeof(t_todo));
+	return (1);
 }

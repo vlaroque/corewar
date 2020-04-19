@@ -14,7 +14,7 @@ NAME = libft.a
 
 CPPFLAGS = -I includes
 
-CC = gcc
+CC = clang
 
 CFLAGS = -Werror -Wall -Wextra
 

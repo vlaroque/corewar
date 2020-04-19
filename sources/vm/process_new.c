@@ -29,3 +29,4 @@ int			new_process(t_data *data, int loc, int champ_id)
 	data->processes = process;
 	return (0);
 }
+
