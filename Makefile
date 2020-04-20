@@ -91,3 +91,7 @@ fclean : clean
 re :
 	@$(MAKE) fclean
 	@$(MAKE)
+
+git :
+	@$(MAKE) fclean
+	@git add .

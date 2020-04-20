@@ -2,6 +2,7 @@
 
 int		it_live(t_data *data, t_process *process, int champ_id)
 {
+	t_champ		*champ;
 	data->lives_count++;
 	if (data->lives_count >= NBR_LIVE)
 	{
@@ -9,6 +10,13 @@ int		it_live(t_data *data, t_process *process, int champ_id)
 			data->max_cycles -= CYCLE_DELTA;
 	}
 	process->life++;
+	champ = data->champs;
+	while (champ)
+	{
+		if (champ->id == champ_id)
+			data->last_alive = champ_id;
+		champ = champ->next;
+	}
 	
 	return (champ_id);
 }
@@ -34,7 +42,9 @@ int		execute_operation(t_data *data, t_process *process)
 {
 	if (!process->todo.something_to_do)
 		return (0);
-	if (process->todo.life_cmd)
+	if (process->todo.pc_add)
+		process->pc = (process->todo.pc_add + process->pc) % MEM_SIZE;
+	if (process->todo.cmd_life)
 		it_live(data, process, process->todo.champ_id_life);
 	if (process->todo.cmd_write_on_mars)
 		write_int_mars(data, process->todo.mars_content, process->todo.pc);

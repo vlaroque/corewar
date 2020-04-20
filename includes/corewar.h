@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include "op.h"
+# include "champ_id.h"
 # include "libft.h"
 typedef unsigned long long	t_llu;
 # include "common.h"
@@ -25,7 +26,6 @@ typedef unsigned char		t_bool;
 /*
 ** register size determination
 */
-
 # if REG_SIZE == 1
 typedef unsigned char		t_reg;
 # elif REG_SIZE == 2
@@ -37,7 +37,6 @@ typedef unsigned long long	t_reg;
 # else
 #  error register size not accepted
 # endif
-
 
 typedef union	u_subint
 {
@@ -51,18 +50,24 @@ typedef struct			s_todo
 {
 	t_bool				something_to_do;
 	int					pc_add;
-	t_bool				life_cmd;
+
+	t_bool				cmd_life;
 	int					champ_id_life;
+
 	t_bool				cmd_write_on_mars;
 	int					pc;
 	int					mars_content;
+
 	t_bool				cmd_change_register;
 	int					reg;
 	int					reg_content;
+
 	t_bool				cmd_change_carry;
 	int					carry_content;
+
 	t_bool				cmd_fork;
 	int					fork_pc;
+
 	t_bool				cmd_aff;
 	t_octet				char_to_aff;
 }						t_todo;
@@ -94,17 +99,6 @@ typedef struct			s_process
 }						t_process;
 
 /*
-** used for bonus of champs number id
-*/
-
-typedef struct			s_champid
-{
-	int					id;
-	int					carry;
-	int					carried_nbr;
-}						t_champid;
-
-/*
 ** champion
 */
 
@@ -128,6 +122,7 @@ typedef struct			s_data
 	int					cycles_to_die;
 	int					max_cycles;
 	int					lives_count;
+	int					last_alive;
 }						t_data;
 
 /*
@@ -186,6 +181,7 @@ int		write_int_mars(t_data *data, int nbr, int pc);
 /*
  ** differents functions
  */
+int		op_just_next(t_data *data, t_process *process);
 int		op_live(t_data *data, t_process *process);
 int		op_ld(t_data *data, t_process *process);
 int		op_st(t_data *data, t_process *process);
