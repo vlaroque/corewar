@@ -45,31 +45,47 @@ typedef union	u_subint
 	t_octet	char_nbr[4];
 }				t_subint;
 
+typedef struct			s_args
+{
+	t_octet		type;
+	int			size;
+	char		cdata;
+	short		sdata;
+	int			idata;
+}						t_args;
+
+typedef struct			s_opmem
+{
+	int			op;
+	int			pc_delta;
+	int			nb_args;
+	t_args		args[3];
+}						t_opmem;
 
 typedef struct			s_todo
 {
-	t_bool				something_to_do;
-	int					pc_add;
+	t_bool		something_to_do;
+	int			pc_add;
 
-	t_bool				cmd_life;
-	int					champ_id_life;
+	t_bool		cmd_life;
+	int			champ_id_life;
 
-	t_bool				cmd_write_on_mars;
-	int					pc;
-	int					mars_content;
+	t_bool		cmd_write_on_mars;
+	int			pc;
+	int			mars_content;
 
-	t_bool				cmd_change_register;
-	int					reg;
-	int					reg_content;
+	t_bool		cmd_change_register;
+	int			reg;
+	int			reg_content;
 
-	t_bool				cmd_change_carry;
-	int					carry_content;
+	t_bool		cmd_change_carry;
+	int			carry_content;
 
-	t_bool				cmd_fork;
-	int					fork_pc;
+	t_bool		cmd_fork;
+	int			fork_pc;
 
-	t_bool				cmd_aff;
-	t_octet				char_to_aff;
+	t_bool		cmd_aff;
+	t_octet		char_to_aff;
 }						t_todo;
 
 typedef struct			s_op
@@ -92,6 +108,7 @@ typedef struct			s_process
 	t_reg				pc;
 	unsigned int		carry;
 	t_reg				reg[REG_NUMBER];
+	t_opmem				tmp_mem;
 	t_todo				todo;
 	int					cooldown;
 	int					life;
@@ -198,5 +215,7 @@ int		op_lld(t_data *data, t_process *process);
 int		op_lldi(t_data *data, t_process *process);
 int		op_lfork(t_data *data, t_process *process);
 int		op_aff(t_data *data, t_process *process);
+
+extern	t_op	op_tab[17];
 
 #endif

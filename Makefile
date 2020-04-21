@@ -21,8 +21,9 @@ CFLAGS = -g #-fsanitize=address# -Wextra -Werror -Wall -Wno-missing-field-initia
 
 SRC_ASM = asm.c errors.c asm_parttwo.c asm_parsing.c itobighex.c asm_parsing_tools.c asm_parsing_head.c asm_parsing_body.c
 SRC_VM = main.c debug.c battle.c champ_load.c init_corewar.c process_new.c\
-		 operation_reading.c functions.c op_exe.c read_mars.c write_mars.c
-SRC_COMMON = #op.c
+		 operation_reading.c functions.c op_exe.c read_mars.c write_mars.c\
+		 op_processor.c
+SRC_COMMON = op.c
 
 # PATH
 
@@ -39,8 +40,8 @@ COMMON_PATH = common
 
 ASM_SRC_FILES = $(addprefix $(ASM_PATH)/,$(SRC_ASM))
 ASM_SRC_FILES += $(addprefix $(COMMON_PATH)/,$(SRC_COMMON))
-VM_SRC_FILES = $(addprefix $(VM_PATH)/,$(SRC_VM))
-VM_SRC_FILES += $(addprefix $(COMMON_PATH)/,$(SRC_COMMON))
+VM_SRC_FILES = $(addprefix $(COMMON_PATH)/,$(SRC_COMMON))
+VM_SRC_FILES += $(addprefix $(VM_PATH)/,$(SRC_VM))
 
 ASM_OBJ = $(addprefix $(OBJ_PATH)/,$(ASM_SRC_FILES:.c=.o))
 VM_OBJ = $(addprefix $(OBJ_PATH)/,$(VM_SRC_FILES:.c=.o))

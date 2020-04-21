@@ -1,31 +1,17 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   op.c                                               :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: zaz <marvin@42.fr>                         +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/10/04 11:43:01 by zaz               #+#    #+#             */
-/*   Updated: 2020/02/09 21:31:44 by vlaroque         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#ifndef OP_TAB_H
+# define OP_TAB_H
 
-#include "op.h"
-#include "corewar.h"
-
-/*
- **	typedef struct			s_op
- **	{
- **		char		*name;
- **		int			param_number;
- **		t_octet		param_possible_types[4];
- **		t_octet		op_code;
- **		int			cycle;
- **		char		*complete_name;
- **		t_octet		encoding_byte;
- **		int			direct_size_two;
- **	}						t_op;
- */
+typedef struct			s_op
+{
+	char		*name;
+	int			param_number;
+	t_octet		param_possible_types[4];
+	t_octet		op_code;
+	int			cycle;
+	char		*complete_name;
+	t_octet		encoding_byte;
+	int			direct_size_two;
+}						t_op;
 
 t_op    op_tab[17] =
 {
@@ -53,3 +39,5 @@ t_op    op_tab[17] =
 	{"aff", 1, {T_REG}, 16, 2, "aff", 1, 0},
 	{0, 0, {0}, 0, 0, 0, 0, 0}
 };
+
+#endif
