@@ -45,23 +45,6 @@ typedef union	u_subint
 	t_octet	char_nbr[4];
 }				t_subint;
 
-typedef struct			s_args
-{
-	t_octet		type;
-	int			size;
-	char		cdata;
-	short		sdata;
-	int			idata;
-}						t_args;
-
-typedef struct			s_opmem
-{
-	int			op;
-	int			pc_delta;
-	int			nb_args;
-	t_args		args[3];
-}						t_opmem;
-
 typedef struct			s_todo
 {
 	t_bool		something_to_do;
@@ -92,7 +75,7 @@ typedef struct			s_op
 {
 	char		*name;
 	int			param_number;
-	t_octet		param_possible_types[4];
+	t_octet		types_tab[4];
 	t_octet		op_code;
 	int			cycle;
 	char		*complete_name;
@@ -100,7 +83,6 @@ typedef struct			s_op
 	int			direct_size_two;
 }						t_op;
 
-//# include "../sources/common/op.c"
 
 typedef struct			s_process
 {
@@ -108,7 +90,6 @@ typedef struct			s_process
 	t_reg				pc;
 	unsigned int		carry;
 	t_reg				reg[REG_NUMBER];
-	t_opmem				tmp_mem;
 	t_todo				todo;
 	int					cooldown;
 	int					life;

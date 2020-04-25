@@ -28,7 +28,7 @@ int		new_turn(t_data *data)
 	{
 		if (process->cooldown > 0)
 			process->cooldown--;
-		if (process->cooldown == 0)
+		if (process->cooldown <= 0)
 		{
 			execute_operation(data, process);
 			read_operation(data, process);
