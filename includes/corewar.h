@@ -21,6 +21,7 @@
 typedef unsigned long long	t_llu;
 # include "common.h"
 typedef unsigned char		t_octet;
+# include "operation_reading.h"
 typedef unsigned char		t_bool;
 
 /*
@@ -161,6 +162,10 @@ int		read_operation(t_data *data, t_process *process);
  */
 int		execute_operation(t_data *data, t_process *process);
 
+/*
+ ** pre_execute_op
+ */
+int		pre_execute_op(t_data *data, t_process *proc, t_cache *c);
 
 /*
  ** read_mars
@@ -179,23 +184,23 @@ int		write_int_mars(t_data *data, int nbr, int pc);
 /*
  ** differents functions
  */
-int		op_just_next(t_data *data, t_process *process);
-int		op_live(t_data *data, t_process *process);
-int		op_ld(t_data *data, t_process *process);
-int		op_st(t_data *data, t_process *process);
-int		op_add(t_data *data, t_process *process);
-int		op_sub(t_data *data, t_process *process);
-int		op_and(t_data *data, t_process *process);
-int		op_or(t_data *data, t_process *process);
-int		op_xor(t_data *data, t_process *process);
-int		op_zjmp(t_data *data, t_process *process);
-int		op_ldi(t_data *data, t_process *process);
-int		op_sti(t_data *data, t_process *process);
-int		op_fork(t_data *data, t_process *process);
-int		op_lld(t_data *data, t_process *process);
-int		op_lldi(t_data *data, t_process *process);
-int		op_lfork(t_data *data, t_process *process);
-int		op_aff(t_data *data, t_process *process);
+int		op_just_next(t_data *data, t_process *process, t_cache *c);
+int		op_live(t_data *data, t_process *process, t_cache *c);
+int		op_ld(t_data *data, t_process *process, t_cache *c);
+int		op_st(t_data *data, t_process *process, t_cache *c);
+int		op_add(t_data *data, t_process *process, t_cache *c);
+int		op_sub(t_data *data, t_process *process, t_cache *c);
+int		op_and(t_data *data, t_process *process, t_cache *c);
+int		op_or(t_data *data, t_process *process, t_cache *c);
+int		op_xor(t_data *data, t_process *process, t_cache *c);
+int		op_zjmp(t_data *data, t_process *process, t_cache *c);
+int		op_ldi(t_data *data, t_process *process, t_cache *c);
+int		op_sti(t_data *data, t_process *process, t_cache *c);
+int		op_fork(t_data *data, t_process *process, t_cache *c);
+int		op_lld(t_data *data, t_process *process, t_cache *c);
+int		op_lldi(t_data *data, t_process *process, t_cache *c);
+int		op_lfork(t_data *data, t_process *process, t_cache *c);
+int		op_aff(t_data *data, t_process *process, t_cache *c);
 
 extern	t_op	op_tab[17];
 

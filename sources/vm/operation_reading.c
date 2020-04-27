@@ -72,6 +72,8 @@ int			args_fill(t_data *data, t_process *process, t_cache *c)
 	t_octet		*types;
 	int			i;
 
+	if (c->op == 0)
+		return (0);
 	i = 0;
 	if (op_tab[c->op - 1].encoding_byte)
 	{
@@ -98,12 +100,8 @@ int			read_operation(t_data *data, t_process *process)
 	c.pc_delta = 0;
 	c.op = data->mars[process->pc];
 	if (c.op <= 0 || c.op >= 17)
-	{
 		c.op = 0;
-		op_just_next(data, process);
-		return (0);
-	}
 	args_fill(data, process, &c);
-	usleep(1000000);
+	pre_execute_op(data, process, &c);
 	return (1);
 }
