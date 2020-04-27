@@ -14,7 +14,6 @@
 #include "op.h"
 #include "corewar.h"
 #include "operation_reading.h"
-//#include "../common/op.c"
 
 t_octet		bits_to_octet_type(t_octet two_bits)
 {
@@ -95,7 +94,6 @@ int			args_fill(t_data *data, t_process *process, t_cache *c)
 int			read_operation(t_data *data, t_process *process)
 {
 	t_cache		c;
-	t_octet		args_types[4];
 
 	c.pc_delta = 0;
 	c.op = data->mars[process->pc];
@@ -106,10 +104,6 @@ int			read_operation(t_data *data, t_process *process)
 		return (0);
 	}
 	args_fill(data, process, &c);
-	process->cooldown = op_tab[c.op - 1].cycle;
-	process->todo.something_to_do = 1;
-	process->todo.pc_add = c.pc_delta;
-
 	usleep(1000000);
 	return (1);
 }
