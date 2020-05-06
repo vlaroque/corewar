@@ -43,9 +43,25 @@ short		big_to_short(short *nbr)
 
 void		todo_change_reg(t_process *p, int reg_id, int content)
 {
+	char		c;
 	p->todo.cmd_change_register = 1;
-	process->todo.reg = reg_id;
-	process->todo.reg_content = content;
+	p->todo.reg = reg_id;
+	p->todo.reg_content = content;
+	printf("change reg id [%d] | cnt %d\n", p->todo.reg, 
+	p->todo.reg_content);
+	c = getchar();
+
+}
+
+void		todo_write_mars(t_process *p, int where, int what)
+{
+	p->todo.cmd_write_on_mars = 1;
+	p->todo.pc = where;
+	p->todo.mars_content = what;
+	printf("what = %d                                  \n", what);
+	printf("write on mars [%d] | cnt %d\n", p->todo.pc, p->todo.mars_content);
+	char		c;
+	c = getchar();
 }
 
 int		op_live(t_data *data, t_process *process, t_cache *c)
@@ -66,26 +82,31 @@ int		op_live(t_data *data, t_process *process, t_cache *c)
 int		op_ld(t_data *data, t_process *process, t_cache *c)
 {
 	int		toload;
+	int		pc;
 
 	if (c->args[0].type == T_DIR)
 		toload = c->args[0].int_data;
 	else if (c->args[0].type == T_IND)
-		toload = read_int_mars(data, (process->pc + (c->args[0].short_data % IDX_MOD)) % MEM_SIZE);
+	{
+		pc = (process->pc + (c->args[0].short_data % IDX_MOD)) % MEM_SIZE;
+		toload = read_int_mars(data, pc);
+	}
 	todo_change_reg(process, c->args[1].octet_data, toload);
-	process->todo.cmd_change_register = 1;
-	process->todo.reg = c->args[1].octet_data;
-	process->todo.reg_content = toload;
 	return (0);
 }
 
 int		op_st(t_data *data, t_process *process, t_cache *c)
 {
 	int		tostore;
+	int		pc;
 
 	tostore = process->reg[c->args[0].octet_data];
-	if (c->args[1].type == T_REG)'
+	if (c->args[1].type == T_REG)
+		todo_change_reg(process, c->args[1].octet_data, tostore);
+	else if (c->args[1].type == T_IND)
 	{
-
+		pc = (process->pc + (c->args[1].short_data) % IDX_MOD) % MEM_SIZE;
+		todo_write_mars(process, pc, tostore);
 	}
 	return (0);
 }
