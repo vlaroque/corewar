@@ -15,31 +15,6 @@
 #include "corewar.h"
 #include "operation_reading.h"
 
-t_octet		bits_to_octet_type(t_octet two_bits)
-{
-	if (two_bits == 1)
-		return (T_REG);
-	else if (two_bits == 2)
-		return (T_DIR);
-	else if (two_bits == 3)
-		return (T_IND);
-	else
-		return (0);
-}
-
-t_octet		*decode_encoding_byte(t_data *data, t_process *process,
-		t_octet *tmp_types)
-{
-	char	c;
-
-	c = data->mars[(process->pc + 1) % MEM_SIZE];
-	tmp_types[0] = bits_to_octet_type((c >> (3 * 2)) & 3);
-	tmp_types[1] = bits_to_octet_type((c >> (2 * 2)) & 3);
-	tmp_types[2] = bits_to_octet_type((c >> (1 * 2)) & 3);
-	tmp_types[3] = bits_to_octet_type((c >> (0 * 2)) & 3);
-	return (tmp_types);
-}
-
 int			arg_size(int op, t_octet type)
 {
 	if (type == T_REG)
@@ -63,7 +38,7 @@ int			arg_content_fill(t_data *data, t_args *arg, int pc)
 	else if (arg->size == 2)
 		arg->short_data = read_short_mars(data, pc);
 	else if (arg->size == 4)
-		arg->int_data = read_short_mars(data, pc);
+		arg->int_data = read_int_mars(data, pc);
 	return(arg->size);
 }
 
@@ -75,9 +50,12 @@ int			args_fill(t_data *data, t_process *process, t_cache *c)
 	if (c->op == 0)
 		return (0);
 	i = 0;
+	c->pc_delta += 1;
 	if (op_tab[c->op - 1].encoding_byte)
 	{
 		types = decode_encoding_byte(data, process, &(c->types[4]));
+		if (incorrect_encoding_byte(c->op, types))
+			return (c->op = 0);
 		c->pc_delta += 1;
 	}
 	else

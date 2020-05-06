@@ -182,6 +182,14 @@ int		write_short_mars(t_data *data, short nbr, int pc);
 int		write_int_mars(t_data *data, int nbr, int pc);
 
 /*
+ ** encoding_byte
+ */
+t_octet		*decode_encoding_byte(t_data *data, t_process *process,
+		t_octet *tmp_types);
+int			incorrect_encoding_byte(int op, t_octet *types);
+
+
+/*
  ** differents functions
  */
 int		op_just_next(t_data *data, t_process *process, t_cache *c);
@@ -201,6 +209,8 @@ int		op_lld(t_data *data, t_process *process, t_cache *c);
 int		op_lldi(t_data *data, t_process *process, t_cache *c);
 int		op_lfork(t_data *data, t_process *process, t_cache *c);
 int		op_aff(t_data *data, t_process *process, t_cache *c);
+
+
 
 extern	t_op	op_tab[17];
 
