@@ -47,9 +47,9 @@ void		todo_change_reg(t_process *p, int reg_id, int content)
 	p->todo.cmd_change_register = 1;
 	p->todo.reg = reg_id;
 	p->todo.reg_content = content;
-	printf("change reg id [%d] | cnt %d\n", p->todo.reg, 
-	p->todo.reg_content);
-	c = getchar();
+//	printf("change reg id [%d] | cnt %d\n", p->todo.reg, 
+//	p->todo.reg_content);
+//	c = getchar();
 
 }
 
@@ -58,10 +58,22 @@ void		todo_write_mars(t_process *p, int where, int what)
 	p->todo.cmd_write_on_mars = 1;
 	p->todo.pc = where;
 	p->todo.mars_content = what;
-	printf("what = %d                                  \n", what);
-	printf("write on mars [%d] | cnt %d\n", p->todo.pc, p->todo.mars_content);
-	char		c;
-	c = getchar();
+//	printf("what = %d                                  \n", what);
+//	printf("write on mars [%d] | cnt %d\n", p->todo.pc, p->todo.mars_content);
+//	char		c;
+//	c = getchar();
+}
+
+void	todo_fork(t_process *p, int where)
+{
+	p->todo.cmd_fork = 1;
+	p->todo.fork_pc = where;
+}
+
+void	todo_carry(t_process *p, int carry)
+{
+	p->todo.cmd_change_carry = 1;
+	p->todo.carry_content = carry;
 }
 
 int		op_live(t_data *data, t_process *process, t_cache *c)
@@ -113,26 +125,100 @@ int		op_st(t_data *data, t_process *process, t_cache *c)
 
 int		op_add(t_data *data, t_process *process, t_cache *c)
 {
+	int		first;
+	int		second;
+	int		res;
+
+	first = process->reg[c->args[0].octet_data];
+	second = process->reg[c->args[1].octet_data];
+	res = first + second;
+	todo_change_reg(process, c->args[2].octet_data, res);
+	if (res == 0)
+		todo_carry(process, 1);
+	else
+		todo_carry(process, 0);
 	return (0);
 }
 
 int		op_sub(t_data *data, t_process *process, t_cache *c)
 {
+	int		first;
+	int		second;
+	int		res;
+
+	first = process->reg[c->args[0].octet_data];
+	second = process->reg[c->args[1].octet_data];
+	res = first - second;
+	todo_change_reg(process, c->args[2].octet_data, res);
+	if (res == 0)
+		todo_carry(process, 1);
+	else
+		todo_carry(process, 0);
 	return (0);
+}
+
+int		get_int_from_arg(t_data *d, t_process *p, t_cache *c, int arg_id)
+{
+	int		res;
+
+	if (c->args[arg_id].type == T_REG)
+		res = process->reg[c->args[arg_id].octet_data];
+	else if (c->args[arg_id].type == T_IND)
+		res = read_int_mars(d, (p->pc + c->args[arg_id].short_data)
+				% MEM_SIZE);
+	else if (c->args[arg_id].type == T_DIR)
+		res = c->args[arg_id].int_data;
+	return(res);
 }
 
 int		op_and(t_data *data, t_process *process, t_cache *c)
 {
+	int		first;
+	int		second;
+	int		res;
+
+	first = get_int_from_arg(data, process, c, 0);
+	second = get_int_from_arg(data, process, c, 1);
+	res = first & second;
+	todo_change_reg(process, c->args[2].octet_data, res);
+	if (res == 0)
+		todo_carry(process, 1);
+	else
+		todo_carry(process, 0);
 	return (0);
 }
 
 int		op_or(t_data *data, t_process *process, t_cache *c)
 {
+	int		first;
+	int		second;
+	int		res;
+
+	first = get_int_from_arg(data, process, c, 0);
+	second = get_int_from_arg(data, process, c, 1);
+	res = first | second;
+	todo_change_reg(process, c->args[2].octet_data, res);
+	if (res == 0)
+		todo_carry(process, 1);
+	else
+		todo_carry(process, 0);
 	return (0);
 }
 
 int		op_xor(t_data *data, t_process *process, t_cache *c)
 {
+	int		first;
+	int		second;
+	int		res;
+
+	first = get_int_from_arg(data, process, c, 0);
+	second = get_int_from_arg(data, process, c, 1);
+	res = first ^ second;
+	todo_change_reg(process, c->args[2].octet_data, res);
+	if (res == 0)
+		todo_carry(process, 1);
+	else
+		todo_carry(process, 0);
 	return (0);
 }
 
@@ -153,6 +239,7 @@ int		op_sti(t_data *data, t_process *process, t_cache *c)
 
 int		op_fork(t_data *data, t_process *process, t_cache *c)
 {
+	todo_fork(process, (c->args[0].short_data % IDX_MOD) % MEM_SIZE);
 	return (0);
 }
 
@@ -179,6 +266,7 @@ int		op_lldi(t_data *data, t_process *process, t_cache *c)
 
 int		op_lfork(t_data *data, t_process *process, t_cache *c)
 {
+	todo_fork(process, c->args[0].short_data % MEM_SIZE);
 	return (0);
 }
 
