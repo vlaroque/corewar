@@ -170,6 +170,7 @@ int		pre_execute_op(t_data *data, t_process *proc, t_cache *c);
 /*
  ** read_mars
  */
+int			pc_fix(int pc);
 int			read_int_mars(t_data *data, int pc);
 short		read_short_mars(t_data *data, int pc);
 t_octet		read_oct_mars(t_data *data, int pc);

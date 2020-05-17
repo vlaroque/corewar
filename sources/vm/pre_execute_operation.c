@@ -32,8 +32,5 @@ int		pre_execute_op(t_data *data, t_process *proc, t_cache *c)
 		proc->todo.pc_add = c->pc_delta;
 	}
 	op_fun[c->op](data, proc, c);
-
-
-
 	return (0);
 }
