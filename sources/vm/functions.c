@@ -166,20 +166,6 @@ int		op_sub(t_data *data, t_process *process, t_cache *c)
 	return (0);
 }
 
-int		get_int_from_arg(t_data *d, t_process *p, t_cache *c, int arg_id)
-{
-	int		res;
-
-	if (c->args[arg_id].type == T_REG)
-		res = process->reg[c->args[arg_id].octet_data];
-	else if (c->args[arg_id].type == T_IND)
-		res = read_int_mars(d, (p->pc + c->args[arg_id].short_data)
-				% MEM_SIZE);
-	else if (c->args[arg_id].type == T_DIR)
-		res = c->args[arg_id].int_data;
-	return(res);
-}
-
 int		op_and(t_data *data, t_process *process, t_cache *c)
 {
 	int		first;
@@ -238,20 +224,33 @@ int		op_zjmp(t_data *data, t_process *process, t_cache *c)
 	return (0);
 }
 
-int		get_int_from_indirect(t_data *d, t_process *p, t_arg *one, t_arg *two)
-{
-
-	return (0);
-}
-
 int		op_ldi(t_data *data, t_process *process, t_cache *c)
 {
-	
+	int		first;
+	int		second;
+	int		where;
+	int		res;
+
+	first = get_int_from_indirect_arg(data, process, &c->args[0], 1);
+	second = get_int_from_indirect_arg(data, process, &c->args[1], 1);
+	where = (process->pc + ((first + second) % IDX_MOD)) % MEM_SIZE;
+	res = read_int_mars(data, where);
+	todo_change_reg(process, c->args[2].octet_data, res);
 	return (0);
 }
 
 int		op_sti(t_data *data, t_process *process, t_cache *c)
 {
+	int		what;
+	int		first;
+	int		second;
+	int		where;
+
+	what = process->reg[c->args[0].octet_data];
+	first = get_int_from_indirect_arg(data, process, &c->args[1], 1);
+	second = get_int_from_indirect_arg(data, process, &c->args[2], 1);
+	where = (process->pc + ((first + second) % IDX_MOD)) % MEM_SIZE;
+	todo_write_mars(process, where, what);
 	return (0);
 }
 
@@ -279,6 +278,18 @@ int		op_lld(t_data *data, t_process *process, t_cache *c)
 
 int		op_lldi(t_data *data, t_process *process, t_cache *c)
 {
+	int		first;
+	int		second;
+	int		where;
+	int		res;
+
+	first = get_int_from_indirect_arg(data, process, &c->args[0], 1);
+	second = get_int_from_indirect_arg(data, process, &c->args[1], 1);
+	where = (process->pc + first + second) % MEM_SIZE;
+	res = read_int_mars(data, where);
+	todo_change_reg(process, c->args[2].octet_data, res);
+	return (0);
+
 	return (0);
 }
 

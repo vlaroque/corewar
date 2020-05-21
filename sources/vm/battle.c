@@ -33,7 +33,7 @@ int		new_turn(t_data *data)
 			execute_operation(data, process);
 			read_operation(data, process);
 		}
-		usleep(1000000);
+		usleep(10000);
 		process = process->next;
 	}
 	return (0);

@@ -189,6 +189,11 @@ t_octet		*decode_encoding_byte(t_data *data, t_process *process,
 		t_octet *tmp_types);
 int			incorrect_encoding_byte(int op, t_octet *types);
 
+/*
+ ** get_data_from_args.c
+ */
+int		get_int_from_arg(t_data *d, t_process *p, t_cache *c, int arg_id);
+int		get_int_from_indirect_arg(t_data *d, t_process *p, t_args *arg, int idx_lim);
 
 /*
  ** differents functions
