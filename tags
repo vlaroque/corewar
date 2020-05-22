@@ -170,6 +170,7 @@ aff	ressources/champs/championships/2017/iburel/gateau.s	/^aff:$/;"	l
 alive	ressources/champs/championships/2014/gmange/corelol.s	/^alive:$/;"	l
 alive	ressources/champs/championships/2014/gudepard/Kappa.s	/^alive:$/;"	l
 alive	ressources/champs/championships/2014/hmichals/Wall.s	/^alive:$/;"	l
+and	43.s	/^and r2, r3, r3$/;"	l
 and	ressources/champs/championships/2017/jaustry/mise_a_jour_windows95.s	/^and		r16, r16, r16$/;"	l
 apocalypse	ressources/champs/championships/2017/iburel/gateau.s	/^apocalypse:$/;"	l
 arbre	ressources/champs/maxidef.s	/^arbre:	live %1$/;"	l
@@ -345,7 +346,6 @@ deb	ressources/champs/mat.s	/^deb:	fork %12$/;"	l
 deb	ressources/champs/new.s	/^deb:	$/;"	l
 deb1	ressources/champs/mat.s	/^deb1:	zjmp %:deb$/;"	l
 debt	ressources/champs/toto.s	/^debt:		live %42			#5$/;"	l
-debug_global	sources/vm/debug.c	/^int		debug_global(t_data *data, int turn)$/;"	f
 debut	ressources/champs/Gagnant.s	/^debut:		live %42			#5$/;"	l
 debut	ressources/champs/Torpille.s	/^debut:$/;"	l
 debut	ressources/champs/championships/2017/iburel/gateau.s	/^debut:$/;"	l
@@ -600,6 +600,8 @@ gear_third	ressources/champs/championships/2017/nolivier/run_Kitty_RUN.s	/^gear_
 gen	ressources/champs/tdc3.s	/^gen:$/;"	l
 gen21	ressources/champs/maxidef.s	/^gen21:	live %1		$/;"	l
 gen22	ressources/champs/maxidef.s	/^gen22:	live %1		$/;"	l
+get_int_from_arg	sources/vm/get_data_from_args.c	/^int		get_int_from_arg(t_data *d, t_process *p, t_cache *c, int arg_id)$/;"	f
+get_int_from_indirect_arg	sources/vm/get_data_from_args.c	/^int		get_int_from_indirect_arg(t_data *d, t_process *p, t_args *arg,$/;"	f
 get_next_line	libft/get_next_line.c	/^int		get_next_line(const int fd, char **line)$/;"	f
 getparam	sources/asm/asm_parsing_head.c	/^static void getparam(header_t *header, char *s, char *str, char *dest)$/;"	f	file:
 getparams	sources/asm/asm_parsing_body.c	/^void	getparams(char *s, header_t *header)$/;"	f
@@ -632,6 +634,7 @@ hop	ressources/champs/new.s	/^hop:	live %1$/;"	l
 id	includes/champ_id.h	/^	int					id;$/;"	m	struct:s_champid
 id	includes/corewar.h	/^	int					id;$/;"	m	struct:s_champ
 id	includes/corewar.h	/^	int					id;$/;"	m	struct:s_process
+if_null_carry_up	sources/vm/functions.c	/^void	if_null_carry_up(t_process *p, int value)$/;"	f
 incorrect_encoding_byte	sources/vm/encoding_byte.c	/^int			incorrect_encoding_byte(int op, t_octet *types)$/;"	f
 infi	ressources/champs/42.s	/^infi:	sti	r1,%:l0,%1$/;"	l
 init	ressources/champs/Gagnant.s	/^init:		ld   %393216,r4		 	#7	$/;"	l
@@ -767,6 +770,8 @@ lastlive4	ressources/champs/leeloo.s	/^lastlive4: live %1$/;"	l
 lastlive4	ressources/champs/new.s	/^lastlive4: live %1$/;"	l
 launc_	ressources/champs/Octobre_Rouge_V4.2.s	/^launc_:	live	%42$/;"	l
 launch	ressources/champs/Octobre_Rouge_V4.2.s	/^launch:	st	r3,15$/;"	l
+ld	43.s	/^ld %0, r16$/;"	l
+ld	43.s	/^ld -1, r2$/;"	l
 ld	ressources/champs/championships/2014/clafleur/big_feet.s	/^ld		%-12, r4				# r4 = suite (soustraction de start pr aller a r3 : suite du carry)$/;"	l
 ld	ressources/champs/championships/2014/clafleur/big_feet.s	/^ld		%-16, r5				# r2 = soustraction de start pr aller a r2 : carry a 1$/;"	l
 ld	ressources/champs/championships/2014/clafleur/big_feet.s	/^ld		%-8, r6					# r6 = soustration de start pr aller a r10 : zjmp$/;"	l
@@ -1270,6 +1275,7 @@ pc	includes/corewar.h	/^	int			pc;$/;"	m	struct:s_todo
 pc	includes/corewar.h	/^	t_reg				pc;$/;"	m	struct:s_process
 pc_add	includes/corewar.h	/^	int			pc_add;$/;"	m	struct:s_todo
 pc_delta	includes/operation_reading.h	/^	int			pc_delta;$/;"	m	struct:s_cache
+pc_fix	sources/vm/read_mars.c	/^int			pc_fix(int pc)$/;"	f
 pede	ressources/champs/championships/2014/mconraux/dubo.s	/^pede:$/;"	l
 petale	ressources/champs/championships/2014/ekocevar/mandragore.s	/^petale:$/;"	l
 pharah	ressources/champs/championships/2017/pzarmehr/overwatch.s	/^pharah:$/;"	l
@@ -1283,7 +1289,9 @@ pre_execute_op	sources/vm/pre_execute_operation.c	/^int		pre_execute_op(t_data *
 prelive	ressources/champs/championships/2014/sbuono/Asombra.s	/^prelive:$/;"	l
 printrowcol	sources/asm/errors.c	/^static void	printrowcol(header_t *header, int mode)$/;"	f	file:
 proc1	ressources/champs/championships/2014/gbir/_.s	/^proc1:$/;"	l
+process_copy	sources/vm/op_exe.c	/^void	process_copy(t_process *src, t_process *dst)$/;"	f
 processes	includes/corewar.h	/^	t_process			*processes;$/;"	m	struct:s_data
+processes	sources/vm/debug.c	/^void		processes(t_process *p)$/;"	f
 prog	ressources/champs/championships/2017/iburel/gateau.s	/^prog:$/;"	l
 prog_name	includes/corewar.h	/^	t_octet				prog_name[PROG_NAME_LENGTH + 1];$/;"	m	struct:s_champ
 prog_name	includes/op.h	/^	char				prog_name[PROG_NAME_LENGTH + 1];$/;"	m	struct:header_s
@@ -1319,7 +1327,7 @@ read_short_mars	sources/vm/read_mars.c	/^short		read_short_mars(t_data *data, in
 ready	ressources/champs/mortel.s	/^ready:	sti r6,r3,%:ecriture$/;"	l
 rebond	ressources/champs/championships/2017/gnebie/ultima.s	/^rebond:$/;"	l
 reg	includes/corewar.h	/^	int			reg;$/;"	m	struct:s_todo
-reg	includes/corewar.h	/^	t_reg				reg[REG_NUMBER];$/;"	m	struct:s_process
+reg	includes/corewar.h	/^	t_reg				reg[REG_NUMBER + 1];$/;"	m	struct:s_process
 reg_content	includes/corewar.h	/^	int			reg_content;$/;"	m	struct:s_todo
 reinhardt	ressources/champs/championships/2017/pzarmehr/overwatch.s	/^reinhardt:$/;"	l
 relive	ressources/champs/championships/2014/gpetrov/MarineKing.s	/^relive:$/;"	l
@@ -1401,6 +1409,7 @@ spawn2	ressources/champs/championships/2014/gpetrov/MarineKing.s	/^spawn2:$/;"	l
 spawn3	ressources/champs/championships/2014/gpetrov/MarineKing.s	/^spawn3:$/;"	l
 spore	ressources/champs/championships/2014/ekocevar/mandragore.s	/^spore:$/;"	l
 sst	ressources/champs/championships/2014/gbir/_.s	/^sst:$/;"	l
+st	43.s	/^st r2, -100$/;"	l
 st	ressources/42.s	/^st r1, 20$/;"	l
 st	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^st r1, 6$/;"	l
 st	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^st r4, -503$/;"	l
@@ -1610,6 +1619,11 @@ tirvd	ressources/champs/42.s	/^tirvd:	zjmp	%:tirvd2$/;"	l
 tirvd2	ressources/champs/42.s	/^tirvd2:	zjmp	%:tirdow$/;"	l
 tmp	ressources/champs/championships/2014/esusseli/gedeon.s	/^tmp:$/;"	l
 todo	includes/corewar.h	/^	t_todo				todo;$/;"	m	struct:s_process
+todo_carry	sources/vm/functions.c	/^void	todo_carry(t_process *p, int carry)$/;"	f
+todo_change_pc	sources/vm/functions.c	/^void	todo_change_pc(t_process *p, int pc)$/;"	f
+todo_change_reg	sources/vm/functions.c	/^void		todo_change_reg(t_process *p, int reg_id, int content)$/;"	f
+todo_fork	sources/vm/functions.c	/^void	todo_fork(t_process *p, int where)$/;"	f
+todo_write_mars	sources/vm/functions.c	/^void	todo_write_mars(t_process *p, int where, int what)$/;"	f
 top	ressources/champs/42.s	/^top:	live	%42$/;"	l
 topd	ressources/champs/42.s	/^topd:	ld	%9,r3$/;"	l
 torbjorn	ressources/champs/championships/2017/pzarmehr/overwatch.s	/^torbjorn:$/;"	l
@@ -1893,6 +1907,7 @@ xxx	ressources/champs/Octobre_Rouge_V4.2.s	/^xxx:		live	%42$/;"	l
 youshallnotpass	ressources/champs/championships/2014/esusseli/gedeon.s	/^youshallnotpass:$/;"	l
 youshallnotpass2	ressources/champs/championships/2014/esusseli/gedeon.s	/^youshallnotpass2:$/;"	l
 zero	ressources/champs/championships/2014/gbir/_.s	/^zero:$/;"	l
+zjmp	43.s	/^zjmp %-100$/;"	l
 zjmp	ressources/champs/championships/2014/bjacob/doge.s	/^zjmp %:attak$/;"	l
 zjmp	ressources/champs/championships/2014/bjacob/doge.s	/^zjmp %:live3$/;"	l
 zjmp	ressources/champs/championships/2014/clafleur/big_feet.s	/^zjmp	%:begin$/;"	l

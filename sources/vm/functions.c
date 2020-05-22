@@ -89,7 +89,6 @@ void	todo_change_pc(t_process *p, int pc)
 }
 
 
-
 int		op_live(t_data *data, t_process *process, t_cache *c)
 {
 	process->life = 1;
@@ -173,8 +172,10 @@ int		op_and(t_data *data, t_process *process, t_cache *c)
 	int		second;
 	int		res;
 
-	first = get_int_from_arg(data, process, c, 0);
-	second = get_int_from_arg(data, process, c, 1);
+	//first = get_int_from_arg(data, process, c, 0);
+	first = get_int_from_direct_arg(data, process, &c->args[0], 1);
+	//second = get_int_from_arg(data, process, c, 1);
+	second = get_int_from_direct_arg(data, process, &c->args[1], 1);
 	res = first & second;
 	todo_change_reg(process, c->args[2].octet_data, res);
 	if_null_carry_up(process, res);
@@ -187,8 +188,10 @@ int		op_or(t_data *data, t_process *process, t_cache *c)
 	int		second;
 	int		res;
 
-	first = get_int_from_arg(data, process, c, 0);
-	second = get_int_from_arg(data, process, c, 1);
+	//first = get_int_from_arg(data, process, c, 0);
+	first = get_int_from_direct_arg(data, process, &c->args[0], 1);
+	//second = get_int_from_arg(data, process, c, 1);
+	second = get_int_from_direct_arg(data, process, &c->args[1], 1);
 	res = first | second;
 	todo_change_reg(process, c->args[2].octet_data, res);
 	if_null_carry_up(process, res);
@@ -201,8 +204,10 @@ int		op_xor(t_data *data, t_process *process, t_cache *c)
 	int		second;
 	int		res;
 
-	first = get_int_from_arg(data, process, c, 0);
-	second = get_int_from_arg(data, process, c, 1);
+	//first = get_int_from_arg(data, process, c, 0);
+	first = get_int_from_direct_arg(data, process, &c->args[0], 1);
+	//second = get_int_from_arg(data, process, c, 1);
+	second = get_int_from_direct_arg(data, process, &c->args[1], 1);
 	res = first ^ second;
 	todo_change_reg(process, c->args[2].octet_data, res);
 	if_null_carry_up(process, res);
@@ -283,8 +288,8 @@ int		op_lldi(t_data *data, t_process *process, t_cache *c)
 	int		where;
 	int		res;
 
-	first = get_int_from_indirect_arg(data, process, &c->args[0], 1);
-	second = get_int_from_indirect_arg(data, process, &c->args[1], 1);
+	first = get_int_from_indirect_arg(data, process, &c->args[0], 0);
+	second = get_int_from_indirect_arg(data, process, &c->args[1], 0);
 	where = (process->pc + first + second) % MEM_SIZE;
 	res = read_int_mars(data, where);
 	todo_change_reg(process, c->args[2].octet_data, res);
