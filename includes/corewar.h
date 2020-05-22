@@ -90,7 +90,7 @@ typedef struct			s_process
 	int					id;
 	t_reg				pc;
 	unsigned int		carry;
-	t_reg				reg[REG_NUMBER];
+	t_reg				reg[REG_NUMBER + 1];
 	t_todo				todo;
 	int					cooldown;
 	int					life;

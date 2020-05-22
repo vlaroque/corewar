@@ -84,11 +84,7 @@ void	todo_change_pc(t_process *p, int pc)
 {
 	int		res;
 
-	res = p->pc;
-	res += pc;
-	res = res % MEM_SIZE;
-	if (res < 0)
-		res += MEM_SIZE;
+	res = pc % IDX_MOD;
 	p->todo.pc_add = res;
 }
 

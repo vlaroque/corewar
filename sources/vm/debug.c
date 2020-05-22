@@ -123,6 +123,15 @@ int			write_in_buffer(char *buff, char *str, int i)
 	return (i + a);
 }
 
+void		processes(t_process *p)
+{
+	while (p)
+	{
+		printf("process ptr = %x pc = %d               \n", (int)p, p->pc);
+		p = p->next;
+	}
+}
+
 int			buff_mars(t_data *data)
 {
 	int		i;
@@ -137,12 +146,13 @@ int			buff_mars(t_data *data)
 //	write(1, "\[?25l", 6);
 	while (i < MEM_SIZE)
 	{
-		if (is_pointed(data, i))
-			buff_i = write_in_buffer(buff, "\e[1m", buff_i);
 		if (i != 0 && i % 64 == 0)
 			buff[buff_i++] = '\n';
 		else if (i != 0)
 			buff[buff_i++] = ' ';
+		if (is_pointed(data, i))
+			buff_i = write_in_buffer(buff, "\e[7m", buff_i);
+			//buff_i = write_in_buffer(buff, "\e[1m", buff_i);
 		char_hexa_str(data->mars[i], tmp);
 		buff_i = write_in_buffer(buff, tmp, buff_i);
 		if (is_pointed(data, i))
@@ -152,40 +162,6 @@ int			buff_mars(t_data *data)
 	buff[buff_i] = '\0';
 	write(1, buff, ft_strlen(buff));
 	write(1, "\n", 1);
+	processes(data->processes);
 	return (0);
 }
-/*
-int		debug_process(t_process *process)
-{
-	ft_putstr("proc id=|");
-	ft_putnbr(process->id);
-	ft_putstr("| pc=|");
-	ft_putnbr(process->pc);
-	ft_putstr("| inst=");
-	ft_putnbr(process->instruction.op_id);
-	ft_putstr("| enc=");
-	char_hexa(process->instruction.encod);
-	ft_putstr("| nbr arg =");
-	ft_putnbr(process->instruction.nbr_args);
-	for (int i = 0; i < 4; i++)
-	{
-		ft_putstr(" arg");
-		ft_putnbr(i);
-		ft_putstr(" l=");
-		ft_putnbr(process->instruction.args[i].len);
-	}
-	ft_putstr("\n");
-	return (0);
-}
-*/
-int		debug_global(t_data *data, int turn)
-{
-		ft_putstr("Turn = "); ft_putnbr(turn); ft_putstr("  ");
-		ft_putstr("max = "); ft_putnbr(data->max_cycles); ft_putstr("  ");
-		ft_putstr("lives = "); ft_putnbr(data->lives_count); ft_putstr("  ");
-		if (data->processes)
-			ft_putnbr(data->processes->cooldown);
-		ft_putstr("           \n");
-		return (0);
-}
-

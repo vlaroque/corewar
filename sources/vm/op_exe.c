@@ -23,14 +23,28 @@ int		it_live(t_data *data, t_process *process, int champ_id)
 
 //void	*ft_memcpy(void *dst, const void *src, size_t n)
 
+void	process_copy(t_process *src, t_process *dst)
+{
+	int		i;
+
+	dst->carry = src->carry;
+	i = 0;
+	while (i < REG_NUMBER + 1)
+	{
+		dst->reg[i] = src->reg[i];
+		i++;
+	}
+}
+
 int		it_fork(t_data *data, t_process *process, int pc)
 {
 	new_process(data, pc, 0);
-	ft_memcpy(data->processes, process, sizeof(t_process));
+//	ft_memcpy(data->processes, process, sizeof(t_process));
+	process_copy(process, data->processes);
 	op_bzero(&data->processes->todo, sizeof(t_todo));
 	data->processes->pc = pc;
-	printf("pc du fork %d\n", pc);
-	getchar();
+//	printf("pc du fork %d\n", pc);
+//	getchar();
 	return (0);
 }
 
@@ -45,7 +59,7 @@ int		execute_operation(t_data *data, t_process *process)
 	if (!process->todo.something_to_do)
 		return (0);
 	if (process->todo.pc_add)
-		process->pc = (process->todo.pc_add + process->pc) % MEM_SIZE;
+		process->pc = pc_fix((process->todo.pc_add + process->pc) % MEM_SIZE);
 	if (process->todo.cmd_life)
 		it_live(data, process, process->todo.champ_id_life);
 	if (process->todo.cmd_write_on_mars)
