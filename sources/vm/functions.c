@@ -50,7 +50,6 @@ void		todo_change_reg(t_process *p, int reg_id, int content)
 //	printf("change reg id [%d] | cnt %d\n", p->todo.reg, 
 //	p->todo.reg_content);
 //	c = getchar();
-
 }
 
 
@@ -73,6 +72,14 @@ void	todo_carry(t_process *p, int carry)
 	p->todo.carry_content = carry;
 }
 
+void	if_null_carry_up(t_process *p, int value)
+{
+	if (value == 0)
+		todo_carry(p, 1);
+	else
+		todo_carry(p, 0);
+}
+
 void	todo_change_pc(t_process *p, int pc)
 {
 	int		res;
@@ -84,6 +91,8 @@ void	todo_change_pc(t_process *p, int pc)
 		res += MEM_SIZE;
 	p->todo.pc_add = res;
 }
+
+
 
 int		op_live(t_data *data, t_process *process, t_cache *c)
 {
@@ -112,6 +121,7 @@ int		op_ld(t_data *data, t_process *process, t_cache *c)
 		pc = (process->pc + (c->args[0].short_data % IDX_MOD)) % MEM_SIZE;
 		toload = read_int_mars(data, pc);
 	}
+	if_null_carry_up(process, toload);
 	todo_change_reg(process, c->args[1].octet_data, toload);
 	return (0);
 }
@@ -129,6 +139,7 @@ int		op_st(t_data *data, t_process *process, t_cache *c)
 		pc = (process->pc + (c->args[1].short_data) % IDX_MOD) % MEM_SIZE;
 		todo_write_mars(process, pc, tostore);
 	}
+	if_null_carry_up(process, tostore);
 	return (0);
 }
 
@@ -142,10 +153,7 @@ int		op_add(t_data *data, t_process *process, t_cache *c)
 	second = process->reg[c->args[1].octet_data];
 	res = first + second;
 	todo_change_reg(process, c->args[2].octet_data, res);
-	if (res == 0)
-		todo_carry(process, 1);
-	else
-		todo_carry(process, 0);
+	if_null_carry_up(process, res);
 	return (0);
 }
 
@@ -159,10 +167,7 @@ int		op_sub(t_data *data, t_process *process, t_cache *c)
 	second = process->reg[c->args[1].octet_data];
 	res = first - second;
 	todo_change_reg(process, c->args[2].octet_data, res);
-	if (res == 0)
-		todo_carry(process, 1);
-	else
-		todo_carry(process, 0);
+	if_null_carry_up(process, res);
 	return (0);
 }
 
@@ -176,10 +181,7 @@ int		op_and(t_data *data, t_process *process, t_cache *c)
 	second = get_int_from_arg(data, process, c, 1);
 	res = first & second;
 	todo_change_reg(process, c->args[2].octet_data, res);
-	if (res == 0)
-		todo_carry(process, 1);
-	else
-		todo_carry(process, 0);
+	if_null_carry_up(process, res);
 	return (0);
 }
 
@@ -193,10 +195,7 @@ int		op_or(t_data *data, t_process *process, t_cache *c)
 	second = get_int_from_arg(data, process, c, 1);
 	res = first | second;
 	todo_change_reg(process, c->args[2].octet_data, res);
-	if (res == 0)
-		todo_carry(process, 1);
-	else
-		todo_carry(process, 0);
+	if_null_carry_up(process, res);
 	return (0);
 }
 
@@ -210,10 +209,7 @@ int		op_xor(t_data *data, t_process *process, t_cache *c)
 	second = get_int_from_arg(data, process, c, 1);
 	res = first ^ second;
 	todo_change_reg(process, c->args[2].octet_data, res);
-	if (res == 0)
-		todo_carry(process, 1);
-	else
-		todo_carry(process, 0);
+	if_null_carry_up(process, res);
 	return (0);
 }
 
@@ -236,6 +232,7 @@ int		op_ldi(t_data *data, t_process *process, t_cache *c)
 	where = (process->pc + ((first + second) % IDX_MOD)) % MEM_SIZE;
 	res = read_int_mars(data, where);
 	todo_change_reg(process, c->args[2].octet_data, res);
+	if_null_carry_up(process, res);
 	return (0);
 }
 
@@ -251,12 +248,18 @@ int		op_sti(t_data *data, t_process *process, t_cache *c)
 	second = get_int_from_indirect_arg(data, process, &c->args[2], 1);
 	where = (process->pc + ((first + second) % IDX_MOD)) % MEM_SIZE;
 	todo_write_mars(process, where, what);
+	if_null_carry_up(process, what);
 	return (0);
 }
 
 int		op_fork(t_data *data, t_process *process, t_cache *c)
 {
-	todo_fork(process, (c->args[0].short_data % IDX_MOD) % MEM_SIZE);
+	int		pc;
+
+	pc = process->pc;
+	pc += (c->args[0].short_data % IDX_MOD) % MEM_SIZE;
+	pc = pc_fix(pc);
+	todo_fork(process, pc);
 	return (0);
 }
 
@@ -272,6 +275,7 @@ int		op_lld(t_data *data, t_process *process, t_cache *c)
 		pc = (process->pc + c->args[0].short_data) % MEM_SIZE;
 		toload = read_int_mars(data, pc);
 	}
+	if_null_carry_up(process, toload);
 	todo_change_reg(process, c->args[1].octet_data, toload);
 	return (0);
 }
@@ -288,14 +292,18 @@ int		op_lldi(t_data *data, t_process *process, t_cache *c)
 	where = (process->pc + first + second) % MEM_SIZE;
 	res = read_int_mars(data, where);
 	todo_change_reg(process, c->args[2].octet_data, res);
-	return (0);
-
+	if_null_carry_up(process, res);
 	return (0);
 }
 
 int		op_lfork(t_data *data, t_process *process, t_cache *c)
 {
-	todo_fork(process, c->args[0].short_data % MEM_SIZE);
+	int		pc;
+
+	pc = process->pc;
+	pc += c->args[0].short_data % MEM_SIZE;
+	pc = pc_fix(pc);
+	todo_fork(process, pc);
 	return (0);
 }
 

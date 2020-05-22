@@ -29,6 +29,8 @@ int		it_fork(t_data *data, t_process *process, int pc)
 	ft_memcpy(data->processes, process, sizeof(t_process));
 	op_bzero(&data->processes->todo, sizeof(t_todo));
 	data->processes->pc = pc;
+	printf("pc du fork %d\n", pc);
+	getchar();
 	return (0);
 }
 
