@@ -122,6 +122,7 @@ typedef struct			s_data
 	int					max_cycles;
 	int					lives_count;
 	int					last_alive;
+	int					cycles_before_dump;
 }						t_data;
 
 /*

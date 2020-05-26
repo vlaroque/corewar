@@ -22,6 +22,7 @@ int		death_reaper(t_data *data)
 int		new_turn(t_data *data)
 {
 	t_process	*process;
+	static int		turn;
 
 	process = data->processes;
 	while(process)
@@ -30,12 +31,16 @@ int		new_turn(t_data *data)
 			process->cooldown--;
 		if (process->cooldown <= 0)
 		{
+			buff_mars(data);
+			printf("t %d nouvelle op\n", turn);
 			execute_operation(data, process);
 			read_operation(data, process);
+			getchar();
 		}
-		usleep(10000);
+//		usleep(10000);
 		process = process->next;
 	}
+	turn++;
 	return (0);
 }
 
@@ -49,7 +54,7 @@ int		battle(t_data *data)
 	{
 		if (turn > 100000)
 			return (1 + err("end turn"));
-		buff_mars(data);
+//		buff_mars(data);
 		new_turn(data);
 		//		debug_global(data, turn);
 		data->cycles_to_die--;

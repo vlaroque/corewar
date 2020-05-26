@@ -84,6 +84,8 @@ void	todo_change_pc(t_process *p, int pc)
 {
 	int		res;
 
+	printf("change pc: %d                                      \n", pc);
+	getchar();
 	res = pc % IDX_MOD;
 	p->todo.pc_add = res;
 }
@@ -206,8 +208,6 @@ int		op_xor(t_data *data, t_process *process, t_cache *c)
 
 	//first = get_int_from_arg(data, process, c, 0);
 	first = get_int_from_direct_arg(data, process, &c->args[0], 1);
-	//second = get_int_from_arg(data, process, c, 1);
-	second = get_int_from_direct_arg(data, process, &c->args[1], 1);
 	res = first ^ second;
 	todo_change_reg(process, c->args[2].octet_data, res);
 	if_null_carry_up(process, res);
@@ -218,6 +218,11 @@ int		op_zjmp(t_data *data, t_process *process, t_cache *c)
 {
 	if (process->carry)
 		todo_change_pc(process, c->args[0].short_data);
+	else
+	{
+		printf("fail\n");
+		getchar();
+	}
 	return (0);
 }
 

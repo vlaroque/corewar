@@ -39,12 +39,9 @@ void	process_copy(t_process *src, t_process *dst)
 int		it_fork(t_data *data, t_process *process, int pc)
 {
 	new_process(data, pc, 0);
-//	ft_memcpy(data->processes, process, sizeof(t_process));
 	process_copy(process, data->processes);
 	op_bzero(&data->processes->todo, sizeof(t_todo));
 	data->processes->pc = pc;
-//	printf("pc du fork %d\n", pc);
-//	getchar();
 	return (0);
 }
 

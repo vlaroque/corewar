@@ -36,7 +36,7 @@ int		mars_fill(t_data *data)
 	}
 	return (0);
 }
-
+/*
 void	custom_id(t_data *data, t_champid *champ_id, char *str)
 {
 	int		nbr;
@@ -65,8 +65,53 @@ int		init_corewar(t_data *data, int ac, char **av)
 	}
 	data->max_cycles = CYCLE_TO_DIE;
 	data->cycles_to_die = CYCLE_TO_DIE;
-//	champ_dump(data->champs);
-//	champ_dump(data->champs->next);
+	return (0);
+}
+*/
+int		dump_option(t_data *data, int ac, char **av, int *head_ac)
+{
+	int		nbr_cycles;
+
+	(*head_ac) += 1;
+	if (*head_ac > ac)
+		return (-1);
+	nbr_cycles = ft_atoi(av[*head_ac]);
+	data->cycles_before_dump = nbr_cycles;
 	return (0);
 }
 
+int		champ_id_option(int ac, char **av, int *head_ac, t_champid *champ_id)
+{
+	int		nbr;
+
+	(*head_ac) += 1;
+	if (*head_ac > ac)
+		return (-1);
+	nbr = ft_atoi(av[*head_ac]);
+	champ_id->carry = 1;
+	champ_id->carried_nbr = nbr;
+	return (0);
+}
+
+int		init_corewar(t_data *data, int ac, char **av)
+{
+	int				head_ac;
+	t_champid		champ_id;
+
+	head_ac = 1;
+	data->cycles_before_dump = -1;
+	while (head_ac < ac)
+	{
+		if (av[head_ac][0] != '-')
+			new_champ(data, av[head_ac], &champ_id);
+		else if (!ft_strncmp(av[head_ac], "-dump", 5))
+			dump_option(data, ac, av, &head_ac);
+		else if (!ft_strncmp(av[head_ac], "-n", 2))
+			champ_id_option(ac, av, &head_ac, &champ_id);
+		head_ac++;
+	}
+	data->max_cycles = CYCLE_TO_DIE;
+	data->cycles_to_die = CYCLE_TO_DIE;
+
+	return (0);
+}
