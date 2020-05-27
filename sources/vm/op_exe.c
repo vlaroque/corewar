@@ -3,13 +3,9 @@
 int		it_live(t_data *data, t_process *process, int champ_id)
 {
 	t_champ		*champ;
+
 	data->lives_count++;
-	if (data->lives_count >= NBR_LIVE)
-	{
-		if (data->max_cycles - CYCLE_DELTA > 0)
-			data->max_cycles -= CYCLE_DELTA;
-	}
-	process->life++;
+	process->lives_count++;
 	champ = data->champs;
 	while (champ)
 	{

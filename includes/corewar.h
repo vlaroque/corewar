@@ -93,7 +93,7 @@ typedef struct			s_process
 	t_reg				reg[REG_NUMBER + 1];
 	t_todo				todo;
 	int					cooldown;
-	int					life;
+	int					lives_count;
 	struct s_process	*next;
 }						t_process;
 
@@ -118,10 +118,15 @@ typedef struct			s_data
 	int					nbr_champs;
 	t_champ				*champs;
 	t_process			*processes;
+
 	int					cycles_to_die;
 	int					max_cycles;
+	int					checks_count;
 	int					lives_count;
 	int					last_alive;
+
+	int					visual_option;
+	int					dump_option;
 	int					cycles_before_dump;
 }						t_data;
 
@@ -136,6 +141,7 @@ int			buff_mars(t_data *data);
 int			err(char *s);
 int			debug_process(t_process *process);
 int			debug_global(t_data *data, int turn);
+int			dump_option_mars(t_data *data);
 
 
 /*
@@ -150,6 +156,11 @@ int			new_champ(t_data *data, char *source, t_champid *champ_id);
 ** process_new
 */
 int			new_process(t_data *data, int loc, int champ_id);
+
+/*
+** checks
+*/
+int			checks(t_data *data);
 
 
 /*

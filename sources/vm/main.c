@@ -21,6 +21,8 @@ int		main(int ac, char **av)
 	op_bzero(&data, sizeof(t_data));
 	init_corewar(&data, ac, av);
 	mars_fill(&data);
+	if (data.dump_option)
+		dump_option_mars(&data);
 	battle(&data);
 	buff_mars(&data);
 	return (0);

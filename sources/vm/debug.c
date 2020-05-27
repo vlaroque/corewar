@@ -132,6 +132,53 @@ void		processes(t_process *p)
 	}
 }
 
+void		fill_address(char *adress)
+{
+	static int adress_nbr = 0;
+	char	base[] = "0123456789abcdef";
+
+	adress[0] = '0';
+	adress[1] = 'x';
+	adress[2] = base[(adress_nbr / 4096) % 16];
+	adress[3] = base[(adress_nbr / 256) % 16];
+	adress[4] = base[(adress_nbr / 16) % 16];
+	adress[5] = base[adress_nbr % 16];
+	adress[6] = ' ';
+	adress[7] = ':';
+	adress[8] = ' ';
+	adress[9] = '\0';
+	adress_nbr += 64;
+}
+
+int			dump_option_mars(t_data *data)
+{
+	int		i;
+	int		buff_i;
+	char	tmp[3];
+	char	adress[10];
+	char	buff[MEM_SIZE * 10];
+
+	i = 0;
+	buff_i = 0;
+	while (i < MEM_SIZE)
+	{
+		if (i % 64 == 0)
+		{
+			fill_address(adress);
+			buff_i = write_in_buffer(buff, adress, buff_i);
+		}
+		char_hexa_str(data->mars[i], tmp);
+		buff_i = write_in_buffer(buff, tmp, buff_i);
+		buff[buff_i++] = ' ';
+		if (i % 64 == 63)
+			buff[buff_i++] = '\n';
+		i++;
+	}
+	buff[buff_i] = '\0';
+	write(1, buff, ft_strlen(buff));
+	return (0);
+}
+
 int			buff_mars(t_data *data)
 {
 	int		i;
@@ -142,8 +189,8 @@ int			buff_mars(t_data *data)
 	i = 0;
 	buff_i = 0;
 	write(1, "\e[H", 3);
-//	write_in_buffer(buff, "\e[H", buff_i);
-//	write(1, "\[?25l", 6);
+	//	write_in_buffer(buff, "\e[H", buff_i);
+	//	write(1, "\[?25l", 6);
 	while (i < MEM_SIZE)
 	{
 		if (i != 0 && i % 64 == 0)
@@ -152,7 +199,7 @@ int			buff_mars(t_data *data)
 			buff[buff_i++] = ' ';
 		if (is_pointed(data, i))
 			buff_i = write_in_buffer(buff, "\e[7m", buff_i);
-			//buff_i = write_in_buffer(buff, "\e[1m", buff_i);
+		//buff_i = write_in_buffer(buff, "\e[1m", buff_i);
 		char_hexa_str(data->mars[i], tmp);
 		buff_i = write_in_buffer(buff, tmp, buff_i);
 		if (is_pointed(data, i))
@@ -162,6 +209,5 @@ int			buff_mars(t_data *data)
 	buff[buff_i] = '\0';
 	write(1, buff, ft_strlen(buff));
 	write(1, "\n", 1);
-//	processes(data->processes);
 	return (0);
 }

@@ -84,25 +84,14 @@ void	todo_change_pc(t_process *p, int pc)
 {
 	int		res;
 
-	printf("change pc: %d                                      \n", pc);
-	getchar();
 	res = pc % IDX_MOD;
 	p->todo.pc_add = res;
 }
 
-
 int		op_live(t_data *data, t_process *process, t_cache *c)
 {
-	process->life = 1;
-	data->lives_count++;
-	if (data->lives_count == NBR_LIVE)
-	{
-		data->lives_count = 0;
-		if (data->max_cycles - CYCLE_DELTA >= 0)
-			data->max_cycles -= CYCLE_DELTA;
-		else
-			data->max_cycles = 0;
-	}
+	process->todo.cmd_life = 1;
+	process->todo.champ_id_life = c->args[0].int_data;
 	return (0);
 }
 

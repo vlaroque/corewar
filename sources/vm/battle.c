@@ -14,11 +14,6 @@
 #include "corewar.h"
 #include <unistd.h>
 
-int		death_reaper(t_data *data)
-{
-	return (0);
-}
-
 int		new_turn(t_data *data)
 {
 	t_process	*process;
@@ -32,10 +27,10 @@ int		new_turn(t_data *data)
 		if (process->cooldown <= 0)
 		{
 			buff_mars(data);
-			printf("t %d nouvelle op\n", turn);
+//			printf("t %d nouvelle op\n", turn);
 			execute_operation(data, process);
 			read_operation(data, process);
-			getchar();
+//			getchar();
 		}
 //		usleep(10000);
 		process = process->next;
@@ -59,7 +54,7 @@ int		battle(t_data *data)
 		//		debug_global(data, turn);
 		data->cycles_to_die--;
 		if (data->cycles_to_die == 0)
-			if (death_reaper(data))
+			if (checks(data))
 				return (-1);
 		turn++;
 	}
