@@ -55,7 +55,7 @@ int			args_fill(t_data *data, t_process *process, t_cache *c)
 	{
 		types = decode_encoding_byte(data, process, &(c->types[4]));
 		if (incorrect_encoding_byte(c->op, types))
-			return (c->op = 0);
+			c->op = 17;
 		c->pc_delta += 1;
 	}
 	else
@@ -77,7 +77,7 @@ int			read_operation(t_data *data, t_process *process)
 
 	c.pc_delta = 0;
 	c.op = data->mars[process->pc];
-	if (c.op <= 0 || c.op >= 17)
+	if (c.op < 0 || c.op >= 17)
 		c.op = 0;
 	args_fill(data, process, &c);
 	pre_execute_op(data, process, &c);

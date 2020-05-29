@@ -228,6 +228,7 @@ int		op_lld(t_data *data, t_process *process, t_cache *c);
 int		op_lldi(t_data *data, t_process *process, t_cache *c);
 int		op_lfork(t_data *data, t_process *process, t_cache *c);
 int		op_aff(t_data *data, t_process *process, t_cache *c);
+int		op_bad_encoding_byte(t_data *data, t_process *process, t_cache *c);
 
 
 

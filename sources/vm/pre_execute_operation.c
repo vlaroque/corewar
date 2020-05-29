@@ -20,7 +20,8 @@ int		(*op_fun[18])(t_data *, t_process *, t_cache *) = {
 	op_lld,
 	op_lldi,
 	op_lfork,
-	op_aff
+	op_aff,
+	op_bad_encoding_byte
 };
 
 int		pre_execute_op(t_data *data, t_process *proc, t_cache *c)

@@ -306,3 +306,9 @@ int		op_aff(t_data *data, t_process *process, t_cache *c)
 {
 	return (0);
 }
+
+int		op_bad_encoding_byte(t_data *data, t_process *process, t_cache *c)
+{
+	return (0);
+}
+
