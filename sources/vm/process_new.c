@@ -23,7 +23,7 @@ int			new_process(t_data *data, int loc, int champ_id)
 	if (data->processes)
 		process->id = data->processes->id + 1;
 	process->pc = loc;
-	process->reg[0] = champ_id;
+	process->reg[1] = champ_id;
 	if (data->processes)
 		process->next = data->processes;
 	data->processes = process;

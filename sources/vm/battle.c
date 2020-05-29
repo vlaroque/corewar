@@ -26,7 +26,7 @@ int		new_turn(t_data *data)
 			process->cooldown--;
 		if (process->cooldown <= 0)
 		{
-			buff_mars(data);
+			//buff_mars(data);
 //			printf("t %d nouvelle op\n", turn);
 			execute_operation(data, process);
 			read_operation(data, process);
@@ -47,15 +47,18 @@ int		battle(t_data *data)
 	write(1, "\e[2J", 4);
 	while (1)
 	{
-		if (turn > 100000)
-			return (1 + err("end turn"));
-//		buff_mars(data);
+//		if (turn > 100000)
+			//return (1 + err("end turn"));
 		new_turn(data);
 		//		debug_global(data, turn);
 		data->cycles_to_die--;
 		if (data->cycles_to_die == 0)
 			if (checks(data))
 				return (-1);
+		if (data->visual_option)
+			buff_mars(data);
+		if (data->dump_option && turn == data->cycles_before_dump)
+			return (dump_option_mars(data));
 		turn++;
 	}
 	return (0);

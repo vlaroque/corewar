@@ -23,7 +23,6 @@ int		mars_fill(t_data *data)
 	offset = 0;
 	while (champ)
 	{
-		printf("\nnew champ\n");
 		i = 0;
 		while (i < CHAMP_MAX_SIZE)
 		{
