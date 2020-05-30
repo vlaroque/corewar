@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include "corewar.h"
 
 int		it_live(t_data *data, t_process *process, int champ_id)
@@ -43,7 +44,7 @@ int		it_fork(t_data *data, t_process *process, int pc)
 
 int		it_aff(t_data *data, t_process *process, char pc)
 {
-	write(0, pc, 1);
+	write(0, &pc, 1);
 	return (0);
 }
 

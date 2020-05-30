@@ -1,11 +1,43 @@
-turns = 0;
+turns = 1100;
 nombre_derreurs = 0
 real_corewar = ""
 './corewar -dump '
 file1 = ARGV[0]
 
-`./lasm #{file1.gsub(".cor", ".s")}`
+#`./lasm #{file1.gsub(".cor", ".s")}`
 debug = true
+
+### compare strings and put in red differences and return first string
+def string_compare(firstString, secondString)
+	i = 0
+	resultString = ""
+	savedString= ""
+	modified = false
+	while firstString[i] && secondString[i] do
+		
+		if firstString[i] == "\n" then
+			if modified == true then
+				resultString = resultString + "\n" + savedString + "\n"
+				modified = false
+			else
+				resultString = resultString + "\n"
+			end
+			savedString = ""
+		end
+		letter = firstString.slice(i)
+		saved_letter = secondString.slice(i)
+		if firstString[i] != secondString[i] then
+			letter = "\e[31m" + letter + "\e[39m"
+			saved_letter = "\e[32m" + saved_letter + "\e[39m"
+			modified = true
+		end
+		resultString.insert(-1, letter)
+		savedString.insert(-1, saved_letter)
+		i += 1
+
+	end
+	return resultString
+end
 
 while turns < 10000 do
 	res1 = `./corewar -dump #{turns.to_s} -n -1 #{file1}`
@@ -13,14 +45,15 @@ while turns < 10000 do
 	cut1 = res1.slice(res1.index("0x0000")..-1)
 	cut2 = res2.slice(res2.index("0x0000")..-1)
 	
-	print turns.to_s + " "
 	equal_strings = cut1.eql?(cut2)
 
-	puts equal_strings
 	if !equal_strings && debug then
+		print turns.to_s + " "
+		puts equal_strings
 		nombre_derreurs += 1
-		puts "mine\n" + cut1 + "real\n" + cut2
-		if nombre_derreurs == 2 then
+		#puts "mine\n" + cut1 + "real\n" + cut2
+		puts string_compare(cut1, cut2)
+		if nombre_derreurs == 10 then
 			exit
 		end
 	end

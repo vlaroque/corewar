@@ -55,8 +55,10 @@ int		battle(t_data *data)
 		if (data->cycles_to_die == 0)
 			if (checks(data))
 				return (-1);
-		if (data->visual_option)
+		if (data->visual_option && !data->dump_option)
 			buff_mars(data);
+		if (data->visual_option && data->dump_option && turn == data->cycles_before_dump)
+			return (buff_mars(data));
 		if (data->dump_option && turn == data->cycles_before_dump)
 			return (dump_option_mars(data));
 		turn++;

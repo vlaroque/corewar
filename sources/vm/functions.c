@@ -209,8 +209,8 @@ int		op_zjmp(t_data *data, t_process *process, t_cache *c)
 		todo_change_pc(process, c->args[0].short_data);
 	else
 	{
-		printf("fail\n");
-		getchar();
+		//printf("fail\n");
+		//getchar();
 	}
 	return (0);
 }
