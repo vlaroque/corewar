@@ -179,6 +179,39 @@ int			dump_option_mars(t_data *data)
 	return (0);
 }
 
+/*
+ ** colors 1 yellow 2 blue 3 red 4 green 
+ */
+
+int			color_octet(t_data *data, char *buff, int buff_i, int i)
+{
+	if (i == 0)
+	{
+		if (data->colors[i] == 1)
+			buff_i = write_in_buffer(buff, "\e[93m", buff_i);
+		else if (data->colors[i] == 2)
+			buff_i = write_in_buffer(buff, "\e[96m", buff_i);
+		else if (data->colors[i] == 3)
+			buff_i = write_in_buffer(buff, "\e[91m", buff_i);
+		else if (data->colors[i] == 3)
+			buff_i = write_in_buffer(buff, "\e[92m", buff_i);
+	}
+	else if (data->colors[i - 1] != data->colors[i])
+	{
+		if (data->colors[i] == 0)
+			buff_i = write_in_buffer(buff, "\e[39m", buff_i);
+		else if (data->colors[i] == 1)
+			buff_i = write_in_buffer(buff, "\e[93m", buff_i);
+		else if (data->colors[i] == 2)
+			buff_i = write_in_buffer(buff, "\e[96m", buff_i);
+		else if (data->colors[i] == 3)
+			buff_i = write_in_buffer(buff, "\e[91m", buff_i);
+		else if (data->colors[i] == 3)
+			buff_i = write_in_buffer(buff, "\e[92m", buff_i);
+	}
+	return (buff_i);
+}
+
 int			buff_mars(t_data *data)
 {
 	int		i;
@@ -197,6 +230,7 @@ int			buff_mars(t_data *data)
 			buff[buff_i++] = '\n';
 		else if (i != 0)
 			buff[buff_i++] = ' ';
+		buff_i = color_octet(data, buff, buff_i, i);
 		if (is_pointed(data, i))
 			buff_i = write_in_buffer(buff, "\e[7m", buff_i);
 		//buff_i = write_in_buffer(buff, "\e[1m", buff_i);
@@ -204,6 +238,7 @@ int			buff_mars(t_data *data)
 		buff_i = write_in_buffer(buff, tmp, buff_i);
 		if (is_pointed(data, i))
 			buff_i = write_in_buffer(buff, "\e[0m", buff_i);
+		buff_i = color_octet(data, buff, buff_i, i);
 		i++;
 	}
 	buff[buff_i] = '\0';

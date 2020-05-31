@@ -16,22 +16,26 @@
 int		mars_fill(t_data *data)
 {
 	int		i;
+	int		color;
 	t_champ	*champ;
 	int		offset;
 
 	champ = data->champs;
 	offset = 0;
+	color = 1;
 	while (champ)
 	{
 		i = 0;
-		while (i < CHAMP_MAX_SIZE)
+		while (i < champ->prog_size)
 		{
 			data->mars[offset + i] = champ->content[i];
+			data->colors[offset + i] = color;
 			i++;
 		}
 		new_process(data, offset, champ->id);
 		champ = champ->next;
 		offset += MEM_SIZE / data->nbr_champs;
+		color++;
 	}
 	return (0);
 }
@@ -84,6 +88,5 @@ int		init_corewar(t_data *data, int ac, char **av)
 	}
 	data->max_cycles = CYCLE_TO_DIE;
 	data->cycles_to_die = CYCLE_TO_DIE;
-
 	return (0);
 }
