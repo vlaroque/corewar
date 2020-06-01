@@ -42,6 +42,7 @@ def string_compare(firstString, secondString)
 end
 
 while turns < 10000 do
+	puts turns
 	res1 = `./corewar -dump #{turns.to_s} -n -1 #{file1}`
 	res2 = `./lcorewar -d #{turns.to_s} #{file1} 2> /dev/null`
 	cut1 = res1.slice(res1.index("0x0000")..-1)

@@ -48,6 +48,14 @@ int		it_aff(t_data *data, t_process *process, char pc)
 	return (0);
 }
 
+void		color_mars(t_data *data, int color, int pc)
+{
+	data->colors[pc % MEM_SIZE] = color;
+	data->colors[(pc + 1) % MEM_SIZE] = color;
+	data->colors[(pc + 2) % MEM_SIZE] = color;
+	data->colors[(pc + 3) % MEM_SIZE] = color;
+}
+
 int		execute_operation(t_data *data, t_process *process)
 {
 	if (!process->todo.something_to_do)
@@ -57,7 +65,10 @@ int		execute_operation(t_data *data, t_process *process)
 	if (process->todo.cmd_life)
 		it_live(data, process, process->todo.champ_id_life);
 	if (process->todo.cmd_write_on_mars)
+	{
 		write_int_mars(data, process->todo.mars_content, process->todo.pc);
+		color_mars(data, process->color, process->todo.pc);
+	}
 	if (process->todo.cmd_change_register)
 		process->reg[process->todo.reg] = process->todo.reg_content;
 	if (process->todo.cmd_change_carry)

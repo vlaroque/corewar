@@ -205,6 +205,7 @@ int		op_xor(t_data *data, t_process *process, t_cache *c)
 
 int		op_zjmp(t_data *data, t_process *process, t_cache *c)
 {
+	//printf("zjump p[%d] carry[%d], where %d\n", process->id, process->carry, c->args[0].short_data);
 	if (process->carry)
 		todo_change_pc(process, c->args[0].short_data);
 	else
@@ -242,8 +243,9 @@ int		op_sti(t_data *data, t_process *process, t_cache *c)
 	first = get_int_from_indirect_arg(data, process, &c->args[1], 1);
 	second = get_int_from_indirect_arg(data, process, &c->args[2], 1);
 	where = (process->pc + ((first + second) % IDX_MOD)) % MEM_SIZE;
+	//printf("sti p[%d] pc[%d] what %x, where %d\n", process->id, process->pc, what, where);
 	todo_write_mars(process, where, what);
-	if_null_carry_up(process, what);
+	//if_null_carry_up(process, what);
 	return (0);
 }
 

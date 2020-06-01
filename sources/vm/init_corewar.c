@@ -71,6 +71,7 @@ int		init_corewar(t_data *data, int ac, char **av)
 	int				head_ac;
 	t_champid		champ_id;
 
+	op_bzero(&champ_id, sizeof(t_champid));
 	head_ac = 1;
 	data->dump_option = 0;
 	data->visual_option = 0;

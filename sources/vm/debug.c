@@ -183,32 +183,28 @@ int			dump_option_mars(t_data *data)
  ** colors 1 yellow 2 blue 3 red 4 green 
  */
 
+int			what_color(t_data *data, char *buff, int buff_i, int i)
+{
+	if (data->colors[i] == 0)
+		buff_i = write_in_buffer(buff, "\e[39m", buff_i);
+	else if (data->colors[i] == 1)
+		buff_i = write_in_buffer(buff, "\e[93m", buff_i);
+	else if (data->colors[i] == 2)
+		buff_i = write_in_buffer(buff, "\e[96m", buff_i);
+	else if (data->colors[i] == 3)
+		buff_i = write_in_buffer(buff, "\e[91m", buff_i);
+	else if (data->colors[i] == 3)
+		buff_i = write_in_buffer(buff, "\e[92m", buff_i);
+	return (buff_i);
+}
+
+
 int			color_octet(t_data *data, char *buff, int buff_i, int i)
 {
 	if (i == 0)
-	{
-		if (data->colors[i] == 1)
-			buff_i = write_in_buffer(buff, "\e[93m", buff_i);
-		else if (data->colors[i] == 2)
-			buff_i = write_in_buffer(buff, "\e[96m", buff_i);
-		else if (data->colors[i] == 3)
-			buff_i = write_in_buffer(buff, "\e[91m", buff_i);
-		else if (data->colors[i] == 3)
-			buff_i = write_in_buffer(buff, "\e[92m", buff_i);
-	}
+		buff_i = what_color(data, buff, buff_i, i);
 	else if (data->colors[i - 1] != data->colors[i])
-	{
-		if (data->colors[i] == 0)
-			buff_i = write_in_buffer(buff, "\e[39m", buff_i);
-		else if (data->colors[i] == 1)
-			buff_i = write_in_buffer(buff, "\e[93m", buff_i);
-		else if (data->colors[i] == 2)
-			buff_i = write_in_buffer(buff, "\e[96m", buff_i);
-		else if (data->colors[i] == 3)
-			buff_i = write_in_buffer(buff, "\e[91m", buff_i);
-		else if (data->colors[i] == 3)
-			buff_i = write_in_buffer(buff, "\e[92m", buff_i);
-	}
+		buff_i = what_color(data, buff, buff_i, i);
 	return (buff_i);
 }
 
@@ -237,8 +233,10 @@ int			buff_mars(t_data *data)
 		char_hexa_str(data->mars[i], tmp);
 		buff_i = write_in_buffer(buff, tmp, buff_i);
 		if (is_pointed(data, i))
+		{
 			buff_i = write_in_buffer(buff, "\e[0m", buff_i);
-		buff_i = color_octet(data, buff, buff_i, i);
+			buff_i = what_color(data, buff, buff_i, i);
+		}
 		i++;
 	}
 	buff[buff_i] = '\0';

@@ -75,10 +75,12 @@ int			read_operation(t_data *data, t_process *process)
 {
 	t_cache		c;
 
+	op_bzero(&c, sizeof(t_cache));
 	c.pc_delta = 0;
 	c.op = data->mars[process->pc];
 	if (c.op < 0 || c.op >= 17)
 		c.op = 0;
+	process->color = data->colors[process->pc];
 	args_fill(data, process, &c);
 	pre_execute_op(data, process, &c);
 	return (1);

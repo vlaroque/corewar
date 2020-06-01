@@ -91,6 +91,7 @@ typedef struct			s_process
 	t_reg				pc;
 	unsigned int		carry;
 	t_reg				reg[REG_NUMBER + 1];
+	int					color;
 	t_todo				todo;
 	int					cooldown;
 	int					lives_count;

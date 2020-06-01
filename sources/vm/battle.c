@@ -51,6 +51,7 @@ int		battle(t_data *data)
 //		if (turn > 100000)
 			//return (1 + err("end turn"));
 		new_turn(data);
+//		printf("turn %d\n", turn);
 		//		debug_global(data, turn);
 		data->cycles_to_die--;
 		if (data->cycles_to_die == 0)
