@@ -31,10 +31,14 @@ int			arg_size(int op, t_octet type)
 	return (0);
 }
 
-int			arg_content_fill(t_data *data, t_args *arg, int pc)
+int			arg_content_fill(t_data *data, t_cache *c, t_args *arg, int pc)
 {
 	if (arg->size == 1)
+	{
 		arg->octet_data = read_oct_mars(data, pc);
+		if (arg->octet_data < 1 || arg->octet_data > 16)
+			c->op = 17;
+	}
 	else if (arg->size == 2)
 		arg->short_data = read_short_mars(data, pc);
 	else if (arg->size == 4)
@@ -64,7 +68,7 @@ int			args_fill(t_data *data, t_process *process, t_cache *c)
 	{
 		c->args[i].type = types[i];
 		c->args[i].size = arg_size(c->op, types[i]);
-		c->pc_delta += arg_content_fill(data, &(c->args[i]),
+		c->pc_delta += arg_content_fill(data, c, &(c->args[i]),
 				(process->pc + c->pc_delta) % MEM_SIZE);
 		i++;
 	}
