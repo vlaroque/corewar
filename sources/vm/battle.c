@@ -25,16 +25,17 @@ int		new_turn(t_data *data)
 		if (process->cooldown > 0)
 			process->cooldown--;
 		if (process->cooldown <= 0)
-		{
-			//buff_mars(data);
-//			printf("t %d nouvelle op\n", turn);
 			execute_operation(data, process);
-			read_operation(data, process);
-//			getchar();
-		}
-//		usleep(10000);
 		process = process->next;
 	}
+	process = data->processes;
+	while(process)
+	{
+		if (process->cooldown <= 0)
+			read_operation(data, process);
+		process = process->next;
+	}
+
 	turn++;
 	return (0);
 }

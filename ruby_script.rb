@@ -1,6 +1,6 @@
-turns = 1100;
+turns = 0;
 nombre_derreurs = 0
-real_corewar = ""
+nombre_derreurs_max = 10
 './corewar -dump '
 file1 = ARGV[0]
 
@@ -31,8 +31,10 @@ def string_compare(firstString, secondString)
 			saved_letter = "\e[32m" + saved_letter + "\e[39m"
 			modified = true
 		end
-		resultString.insert(-1, letter)
-		savedString.insert(-1, saved_letter)
+		if firstString[i] != "\n" then
+			resultString.insert(-1, letter)
+			savedString.insert(-1, saved_letter)
+		end
 		i += 1
 
 	end
@@ -41,7 +43,7 @@ end
 
 while turns < 10000 do
 	res1 = `./corewar -dump #{turns.to_s} -n -1 #{file1}`
-	res2 = `./lcorewar -d #{turns.to_s} #{file1}`
+	res2 = `./lcorewar -d #{turns.to_s} #{file1} 2> /dev/null`
 	cut1 = res1.slice(res1.index("0x0000")..-1)
 	cut2 = res2.slice(res2.index("0x0000")..-1)
 	
@@ -53,7 +55,7 @@ while turns < 10000 do
 		nombre_derreurs += 1
 		#puts "mine\n" + cut1 + "real\n" + cut2
 		puts string_compare(cut1, cut2)
-		if nombre_derreurs == 10 then
+		if nombre_derreurs == nombre_derreurs_max then
 			exit
 		end
 	end
