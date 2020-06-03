@@ -188,7 +188,7 @@ int			what_color(t_data *data, char *buff, int buff_i, int i)
 	if (data->colors[i] == 0)
 		buff_i = write_in_buffer(buff, "\e[39m", buff_i);
 	else if (data->colors[i] == 1)
-		buff_i = write_in_buffer(buff, "\e[93m", buff_i);
+		buff_i = write_in_buffer(buff, "\e[33m", buff_i);
 	else if (data->colors[i] == 2)
 		buff_i = write_in_buffer(buff, "\e[96m", buff_i);
 	else if (data->colors[i] == 3)
@@ -218,8 +218,7 @@ int			buff_mars(t_data *data)
 	i = 0;
 	buff_i = 0;
 	if (!data->dump_option)
-		write_in_buffer(buff, "\e[H", buff_i);
-	//	write(1, "\[?25l", 6);
+		write(1, "\e[H", 3);
 	while (i < MEM_SIZE)
 	{
 		if (i != 0 && i % 64 == 0)
@@ -229,7 +228,6 @@ int			buff_mars(t_data *data)
 		buff_i = color_octet(data, buff, buff_i, i);
 		if (is_pointed(data, i))
 			buff_i = write_in_buffer(buff, "\e[7m", buff_i);
-		//buff_i = write_in_buffer(buff, "\e[1m", buff_i);
 		char_hexa_str(data->mars[i], tmp);
 		buff_i = write_in_buffer(buff, tmp, buff_i);
 		if (is_pointed(data, i))

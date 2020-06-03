@@ -29,6 +29,8 @@ int		death_reaper(t_data *data)
 int		checks(t_data *data)
 {
 	death_reaper(data);
+	if (data->processes == NULL)
+		return (1);
 	if (data->lives_count >= NBR_LIVE)
 	{
 		data->max_cycles -= CYCLE_DELTA;

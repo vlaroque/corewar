@@ -105,9 +105,9 @@ typedef struct			s_process
 typedef struct			s_champ
 {
 	int					id;
-	t_octet				prog_name[PROG_NAME_LENGTH + 1];
+	char				prog_name[PROG_NAME_LENGTH + 1];
 	unsigned int		prog_size;
-	t_octet				comment[COMMENT_LENGTH + 1];
+	char				comment[COMMENT_LENGTH + 1];
 	t_octet				content[CHAMP_MAX_SIZE];
 	struct s_champ		*next;
 }						t_champ;
@@ -231,7 +231,11 @@ int		op_lfork(t_data *data, t_process *process, t_cache *c);
 int		op_aff(t_data *data, t_process *process, t_cache *c);
 int		op_bad_encoding_byte(t_data *data, t_process *process, t_cache *c);
 
-
+/*
+ ** frees.c
+ */
+int		free_data(t_data *data);
+int		exit_error(t_data *data, char* str);
 
 extern	t_op	op_tab[17];
 

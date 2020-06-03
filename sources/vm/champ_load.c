@@ -83,6 +83,7 @@ int		new_champ(t_data *data, char *source, t_champid *champ_id)
 	data->nbr_champs++;
 	op_bzero(champ, sizeof(t_champ));
 	champ->id = what_id(champ_id);
+	data->last_alive = champ->id;
 	if (!data->champs)
 		data->champs = champ;
 	else
