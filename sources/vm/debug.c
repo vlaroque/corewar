@@ -193,7 +193,7 @@ int			what_color(t_data *data, char *buff, int buff_i, int i)
 		buff_i = write_in_buffer(buff, "\e[96m", buff_i);
 	else if (data->colors[i] == 3)
 		buff_i = write_in_buffer(buff, "\e[91m", buff_i);
-	else if (data->colors[i] == 3)
+	else if (data->colors[i] == 4)
 		buff_i = write_in_buffer(buff, "\e[92m", buff_i);
 	return (buff_i);
 }
@@ -217,8 +217,8 @@ int			buff_mars(t_data *data)
 
 	i = 0;
 	buff_i = 0;
-	write(1, "\e[H", 3);
-	//	write_in_buffer(buff, "\e[H", buff_i);
+	if (!data->dump_option)
+		write_in_buffer(buff, "\e[H", buff_i);
 	//	write(1, "\[?25l", 6);
 	while (i < MEM_SIZE)
 	{

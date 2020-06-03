@@ -45,7 +45,7 @@ int		battle(t_data *data)
 	int		turn;
 
 	turn = 0;
-	write(1, "\e[2J", 4);
+//	write(1, "\e[2J", 4);
 	while (1)
 	{
 //		if (turn > 100000)
