@@ -129,6 +129,7 @@ typedef struct			s_data
 	int					visual_option;
 	int					dump_option;
 	int					cycles_before_dump;
+	int					debug_option;
 }						t_data;
 
 /*

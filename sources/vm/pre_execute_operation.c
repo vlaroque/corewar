@@ -28,7 +28,6 @@ int		pre_execute_op(t_data *data, t_process *proc, t_cache *c)
 {
 	if (c->op > 0)
 	{
-		proc->cooldown = op_tab[c->op - 1].cycle;
 		proc->todo.something_to_do = 1;
 		proc->todo.pc_add = c->pc_delta;
 	}

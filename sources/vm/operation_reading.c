@@ -59,7 +59,11 @@ int			args_fill(t_data *data, t_process *process, t_cache *c)
 	{
 		types = decode_encoding_byte(data, process, &(c->types[4]));
 		if (incorrect_encoding_byte(c->op, types))
-			c->op = 17;
+		{
+			if (data->debug_option)
+				printf("invalid op\n");
+			c->bad_encoding_byte = 1;
+		}
 		c->pc_delta += 1;
 	}
 	else
@@ -79,13 +83,20 @@ int			read_operation(t_data *data, t_process *process)
 {
 	t_cache		c;
 
+	if (data->debug_option)
+		printf("p[%d] pc[%d] read opc[%d]\n", process->id, process->pc, data->mars[process->pc]);
 	op_bzero(&c, sizeof(t_cache));
 	c.pc_delta = 0;
+	c.bad_encoding_byte = 0;
 	c.op = data->mars[process->pc];
 	if (c.op < 0 || c.op >= 17)
 		c.op = 0;
+	if (c.op > 0)
+		process->cooldown = op_tab[c.op - 1].cycle;
 	process->color = data->colors[process->pc];
 	args_fill(data, process, &c);
+	if (c.bad_encoding_byte)
+		c.op = 17;
 	pre_execute_op(data, process, &c);
 	return (1);
 }

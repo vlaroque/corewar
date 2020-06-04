@@ -48,6 +48,10 @@ int		battle(t_data *data)
 		write(1, "\e[2J", 4);
 	while (1)
 	{
+		if (data->debug_option)
+			printf("turn %d\n", turn);
+		if (data->debug_option && turn > 5390)
+			exit(0);
 		new_turn(data);
 		data->cycles_to_die--;
 		if (data->cycles_to_die <= 0)

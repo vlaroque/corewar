@@ -84,6 +84,7 @@ end
 turn_per_second = 1
 turn = 0
 turn_carry = 0                              #base25
+turn_save = -1
 pause = false
 reset_screen
 system("stty raw -echo")
@@ -108,16 +109,24 @@ while true do
     turn_per_second -= 1
   elsif key == "h"
     turn -= 1
+  elsif key == "H"
+    turn -= 100
   elsif key == "l"
     turn += 1
+  elsif key == "L"
+    turn += 100
   end
   
-  mars = `./corewar -v -dump #{turn} #{arg_str}`
+  if turn != turn_save then
+    mars = `./corewar -v -dump #{turn} #{arg_str}`
+  end
   if mars[1] == 'n'
     pause = true
     print_pos(70, 100, mars)
   end
   print_pos(3, 4, mars)
+
+  turn_save = turn
 
   if pause == false
     turn_carry += turn_per_second

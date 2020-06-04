@@ -85,6 +85,8 @@ int		init_corewar(t_data *data, int ac, char **av)
 			champ_id_option(ac, av, &head_ac, &champ_id);
 		else if (!ft_strncmp(av[head_ac], "-v", 2))
 			data->visual_option = 1;
+		else if (!ft_strncmp(av[head_ac], "-d", 2))
+			data->debug_option = 1;
 		head_ac++;
 	}
 	data->max_cycles = CYCLE_TO_DIE;

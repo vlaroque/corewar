@@ -1,6 +1,6 @@
-turns = 4500;
+turns = 0;
 nombre_derreurs = 0
-nombre_derreurs_max = 1000
+nombre_derreurs_max = 10
 './corewar -dump '
 file1 = ARGV[0]
 

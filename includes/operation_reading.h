@@ -17,6 +17,7 @@ typedef struct			s_cache
 	int			nb_args;
 	t_octet		types[4];
 	t_args		args[4];
+	int			bad_encoding_byte;
 }						t_cache;
 
 # endif
