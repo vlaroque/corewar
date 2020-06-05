@@ -183,8 +183,9 @@ b1	ressources/champs/42.s	/^b1:	add	r2,r4,r2$/;"	l
 back	ressources/champs/championships/2014/rmasse/THUNDER.s	/^back:$/;"	l
 back_wall	ressources/champs/Octobre_Rouge_V4.2.s	/^back_wall:      live	%42	$/;"	l
 backward	ressources/champs/championships/2014/vrey/darksasuke.s	/^backward:$/;"	l
+bad_encoding_byte	includes/operation_reading.h	/^	int			bad_encoding_byte;$/;"	m	struct:s_cache	typeref:typename:int
 base	ressources/champs/championships/2014/bjacob/doge.s	/^base:$/;"	l
-battle	sources/vm/battle.c	/^int		battle(t_data *data)$/;"	f	typeref:typename:int
+battle	sources/vm/battle.c	/^int				battle(t_data *data)$/;"	f	typeref:typename:int
 beegees	ressources/champs/examples/helltrain.s	/^beegees:$/;"	l
 beegees_gen	ressources/champs/examples/helltrain.s	/^beegees_gen:$/;"	l
 begin	ressources/champs/championships/2014/clafleur/big_feet.s	/^begin:$/;"	l
@@ -277,7 +278,7 @@ cont	ressources/champs/42.s	/^cont:	add	r6,r6,r6$/;"	l
 content	includes/corewar.h	/^	t_octet				content[CHAMP_MAX_SIZE];$/;"	m	struct:s_champ	typeref:typename:t_octet[]
 content	libft/includes/libft.h	/^	void			*content;$/;"	m	struct:s_list	typeref:typename:void *
 content_size	libft/includes/libft.h	/^	size_t			content_size;$/;"	m	struct:s_list	typeref:typename:size_t
-contestant	sources/vm/main.c	/^int		contestant(t_champ *champ, int id)$/;"	f	typeref:typename:int
+contestant	sources/vm/messages.c	/^static int		contestant(t_champ *champ, int id)$/;"	f	typeref:typename:int	file:
 cooldown	includes/corewar.h	/^	int					cooldown;$/;"	m	struct:s_process	typeref:typename:int
 copie	ressources/champs/42.s	/^copie:  ld      %1,r1$/;"	l
 core	ressources/champs/championships/2014/esusseli/gedeon.s	/^core:$/;"	l
@@ -305,6 +306,7 @@ deb	ressources/champs/mat.s	/^deb:	fork %12$/;"	l
 deb	ressources/champs/new.s	/^deb:	$/;"	l
 deb1	ressources/champs/mat.s	/^deb1:	zjmp %:deb$/;"	l
 debt	ressources/champs/toto.s	/^debt:		live %42			#5$/;"	l
+debug_option	includes/corewar.h	/^	int					debug_option;$/;"	m	struct:s_data	typeref:typename:int
 debut	ressources/champs/Gagnant.s	/^debut:		live %42			#5$/;"	l
 debut	ressources/champs/Torpille.s	/^debut:$/;"	l
 debut	ressources/champs/championships/2017/iburel/gateau.s	/^debut:$/;"	l
@@ -625,7 +627,7 @@ instr	includes/op.h	/^	int				instr;$/;"	m	struct:instr_s	typeref:typename:int
 instr_s	includes/op.h	/^typedef struct		instr_s$/;"	s
 instr_t	includes/op.h	/^}					instr_t;$/;"	t	typeref:struct:instr_s
 int_data	includes/operation_reading.h	/^	int			int_data;$/;"	m	struct:s_args	typeref:typename:int
-introduce_contestants	sources/vm/main.c	/^int		introduce_contestants(t_data *data)$/;"	f	typeref:typename:int
+introduce_contestants	sources/vm/messages.c	/^int		introduce_contestants(t_data *data)$/;"	f	typeref:typename:int
 is_pointed	sources/vm/debug.c	/^int			is_pointed(t_data *data, unsigned int pc)$/;"	f	typeref:typename:int
 isinstruct	sources/asm/asm_parsing_body.c	/^static int isinstruct(char *s, header_t *header)$/;"	f	typeref:typename:int	file:
 islabel	includes/op.h	/^	int				islabel[3];$/;"	m	struct:instr_s	typeref:typename:int[3]
@@ -1177,7 +1179,7 @@ nbr	includes/corewar.h	/^	int		nbr;$/;"	m	union:u_subint	typeref:typename:int
 nbr_champs	includes/corewar.h	/^	int					nbr_champs;$/;"	m	struct:s_data	typeref:typename:int
 new_champ	sources/vm/champ_load.c	/^int		new_champ(t_data *data, char *source, t_champid *champ_id)$/;"	f	typeref:typename:int
 new_process	sources/vm/process_new.c	/^int			new_process(t_data *data, int loc, int champ_id)$/;"	f	typeref:typename:int
-new_turn	sources/vm/battle.c	/^int		new_turn(t_data *data)$/;"	f	typeref:typename:int
+new_turn	sources/vm/battle.c	/^static int		new_turn(t_data *data)$/;"	f	typeref:typename:int	file:
 next	includes/corewar.h	/^	struct s_champ		*next;$/;"	m	struct:s_champ	typeref:struct:s_champ *
 next	includes/corewar.h	/^	struct s_process	*next;$/;"	m	struct:s_process	typeref:struct:s_process *
 next	includes/op.h	/^	struct		instr_s *next;$/;"	m	struct:instr_s	typeref:struct:instr_s *
@@ -1195,6 +1197,7 @@ numero1	ressources/champs/mortel.s	/^numero1: live %66$/;"	l
 numero2	ressources/champs/mortel.s	/^numero2: live %66$/;"	l
 octet_data	includes/operation_reading.h	/^	t_octet		octet_data;$/;"	m	struct:s_args	typeref:typename:t_octet
 ok	ressources/champs/tdc3.s	/^ok:$/;"	l
+op	includes/corewar.h	/^	t_octet				op;$/;"	m	struct:s_process	typeref:typename:t_octet
 op	includes/operation_reading.h	/^	int			op;$/;"	m	struct:s_cache	typeref:typename:int
 op_add	sources/vm/functions.c	/^int		op_add(t_data *data, t_process *process, t_cache *c)$/;"	f	typeref:typename:int
 op_aff	sources/vm/functions.c	/^int		op_aff(t_data *data, t_process *process, t_cache *c)$/;"	f	typeref:typename:int
@@ -1320,6 +1323,7 @@ re	libft/Makefile	/^re:$/;"	t
 read_bin_to_nbr	sources/common/endian.c	/^t_llu	read_bin_to_nbr(void *ptr, size_t len)$/;"	f	typeref:typename:t_llu
 read_int_mars	sources/vm/read_mars.c	/^int			read_int_mars(t_data *data, int pc)$/;"	f	typeref:typename:int
 read_oct_mars	sources/vm/read_mars.c	/^t_octet		read_oct_mars(t_data *data, int pc)$/;"	f	typeref:typename:t_octet
+read_op_code	sources/vm/battle.c	/^static int		read_op_code(t_data *data, t_process *process)$/;"	f	typeref:typename:int	file:
 read_operation	sources/vm/operation_reading.c	/^int			read_operation(t_data *data, t_process *process)$/;"	f	typeref:typename:int
 read_short_mars	sources/vm/read_mars.c	/^short		read_short_mars(t_data *data, int pc)$/;"	f	typeref:typename:short
 ready	ressources/champs/mortel.s	/^ready:	sti r6,r3,%:ecriture$/;"	l
@@ -1566,7 +1570,7 @@ sti	ressources/champs/examples/bee_gees.s	/^sti	r1, %:live2, %1			;change live b
 stlive	ressources/champs/championships/2014/hmichals/Wall.s	/^stlive:$/;"	l
 stock	ressources/champs/championships/2017/gnebie/ultima.s	/^stock:$/;"	l
 store_def	ressources/champs/championships/2017/adenis/Explosive_Kitty.s	/^store_def:$/;"	l
-string_compare	ruby_script.rb	/^def string_compare(firstString, secondString)$/;"	f
+string_compare	compare.rb	/^def string_compare(firstString, secondString)$/;"	f
 stuff1	ressources/champs/championships/2014/rabid-on/jinx.s	/^stuff1:$/;"	l
 stuff2	ressources/champs/championships/2014/rabid-on/jinx.s	/^stuff2:$/;"	l
 stuff3	ressources/champs/championships/2014/rabid-on/jinx.s	/^stuff3:$/;"	l
@@ -1881,6 +1885,7 @@ var96	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var96:$
 var97	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var97:$/;"	l
 var98	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var98:$/;"	l
 var99	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var99:$/;"	l
+victory	sources/vm/messages.c	/^int		victory(t_data *data)$/;"	f	typeref:typename:int
 visual_option	includes/corewar.h	/^	int					visual_option;$/;"	m	struct:s_data	typeref:typename:int
 vite	ressources/champs/championships/2017/iburel/gateau.s	/^vite:$/;"	l
 wait	ressources/champs/mortel.s	/^wait:	live %66$/;"	l

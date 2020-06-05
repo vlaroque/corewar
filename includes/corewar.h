@@ -88,6 +88,7 @@ typedef struct			s_op
 typedef struct			s_process
 {
 	int					id;
+	t_octet				op;
 	t_reg				pc;
 	unsigned int		carry;
 	t_reg				reg[REG_NUMBER + 1];
@@ -105,6 +106,7 @@ typedef struct			s_process
 typedef struct			s_champ
 {
 	int					id;
+	int					champ_rank;
 	char				prog_name[PROG_NAME_LENGTH + 1];
 	unsigned int		prog_size;
 	char				comment[COMMENT_LENGTH + 1];
@@ -136,7 +138,6 @@ typedef struct			s_data
 ** debug
 */
 int			show_mars(t_data *data);
-int			battle(t_data *data);
 void		hex_dump(t_octet *src, size_t len);
 int			champ_dump(t_champ *champ);
 int			buff_mars(t_data *data);
@@ -145,6 +146,10 @@ int			debug_process(t_process *process);
 int			debug_global(t_data *data, int turn);
 int			dump_option_mars(t_data *data);
 
+/*
+ ** battle
+ */
+int			battle(t_data *data);
 
 /*
 ** init
@@ -237,6 +242,14 @@ int		op_bad_encoding_byte(t_data *data, t_process *process, t_cache *c);
  */
 int		free_data(t_data *data);
 int		exit_error(t_data *data, char* str);
+
+/*
+ ** Messages
+ */
+int		introduce_contestants(t_data *data);
+int		victory(t_data *data);
+
+
 
 extern	t_op	op_tab[17];
 

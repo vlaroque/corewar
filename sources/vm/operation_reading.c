@@ -88,12 +88,7 @@ int			read_operation(t_data *data, t_process *process)
 	op_bzero(&c, sizeof(t_cache));
 	c.pc_delta = 0;
 	c.bad_encoding_byte = 0;
-	c.op = data->mars[process->pc];
-	if (c.op < 0 || c.op >= 17)
-		c.op = 0;
-	if (c.op > 0)
-		process->cooldown = op_tab[c.op - 1].cycle;
-	process->color = data->colors[process->pc];
+	c.op = process->op;
 	args_fill(data, process, &c);
 	if (c.bad_encoding_byte)
 		c.op = 17;

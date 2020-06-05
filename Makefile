@@ -23,7 +23,7 @@ SRC_ASM =
 SRC_VM = main.c debug.c battle.c champ_load.c init_corewar.c process_new.c\
 		 operation_reading.c functions.c op_exe.c read_mars.c write_mars.c\
 		 op_processor.c pre_execute_operation.c encoding_byte.c\
-		 get_data_from_args.c check.c frees.c
+		 get_data_from_args.c check.c frees.c messages.c
 SRC_COMMON = op.c
 
 # PATH

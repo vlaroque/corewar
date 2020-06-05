@@ -14,32 +14,51 @@
 #include "corewar.h"
 #include <unistd.h>
 
-int		new_turn(t_data *data)
+static int		read_op_code(t_data *data, t_process *process)
+{
+	int		op_code;
+
+	op_code = data->mars[process->pc];
+	if (op_code < 0 || op_code > 16)
+		op_code = 0;
+	if (op_code > 0)
+		process->cooldown = op_tab[op_code - 1].cycle;
+	process->color = data->colors[process->pc];
+	process->op = op_code;
+	if (op_code == 0)
+		op_just_next(data, process, NULL);
+	return (0);
+}
+
+static int		new_turn(t_data *data)
 {
 	t_process	*process;
-	static int		turn;
+	static int		turn = 0;
 
 	process = data->processes;
 	while(process)
 	{
 		if (process->cooldown > 0)
 			process->cooldown--;
-		if (process->cooldown <= 0)
+		if (process->cooldown <= 0 && turn != 0)
+		{
+			read_operation(data, process);
 			execute_operation(data, process);
+		}
 		process = process->next;
 	}
 	process = data->processes;
 	while(process)
 	{
 		if (process->cooldown <= 0)
-			read_operation(data, process);
+			read_op_code(data, process);
 		process = process->next;
 	}
 	turn++;
 	return (0);
 }
 
-int		battle(t_data *data)
+int				battle(t_data *data)
 {
 	int		turn;
 
