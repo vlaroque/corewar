@@ -6,12 +6,11 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 08:01:15 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/03/10 16:04:56 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/05 20:49:13 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "op.h"
 #include "corewar.h"
 #include "operation_reading.h"
 
@@ -43,7 +42,7 @@ int			arg_content_fill(t_data *data, t_cache *c, t_args *arg, int pc)
 		arg->short_data = read_short_mars(data, pc);
 	else if (arg->size == 4)
 		arg->int_data = read_int_mars(data, pc);
-	return(arg->size);
+	return (arg->size);
 }
 
 int			args_fill(t_data *data, t_process *process, t_cache *c)
@@ -59,11 +58,7 @@ int			args_fill(t_data *data, t_process *process, t_cache *c)
 	{
 		types = decode_encoding_byte(data, process, &(c->types[4]));
 		if (incorrect_encoding_byte(c->op, types))
-		{
-			if (data->debug_option)
-				printf("invalid op\n");
 			c->bad_encoding_byte = 1;
-		}
 		c->pc_delta += 1;
 	}
 	else
@@ -84,7 +79,8 @@ int			read_operation(t_data *data, t_process *process)
 	t_cache		c;
 
 	if (data->debug_option)
-		printf("p[%d] pc[%d] read opc[%d]\n", process->id, process->pc, data->mars[process->pc]);
+		printf("p[%d] pc[%d] read opc[%d]\n", process->id, process->pc,
+				data->mars[process->pc]);
 	op_bzero(&c, sizeof(t_cache));
 	c.pc_delta = 0;
 	c.bad_encoding_byte = 0;

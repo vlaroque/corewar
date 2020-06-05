@@ -1,9 +1,19 @@
-#include <unistd.h>
-#include "op.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pre_execute_operation.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/06/05 20:29:41 by vlaroque          #+#    #+#             */
+/*   Updated: 2020/06/05 20:34:18 by vlaroque         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "corewar.h"
 #include "operation_reading.h"
 
-int		(*op_fun[18])(t_data *, t_process *, t_cache *) = {
+static int		(*op_fun[18])(t_data *, t_process *, t_cache *) = {
 	op_just_next,
 	op_live,
 	op_ld,

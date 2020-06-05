@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   encoding_byte.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/06/05 20:20:13 by vlaroque          #+#    #+#             */
+/*   Updated: 2020/06/05 20:20:16 by vlaroque         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "op.h"
 #include "corewar.h"
 #include "operation_reading.h"
@@ -14,7 +26,7 @@ static t_octet		bits_to_octet_type(t_octet two_bits)
 		return (0);
 }
 
-t_octet		*decode_encoding_byte(t_data *data, t_process *process,
+t_octet				*decode_encoding_byte(t_data *data, t_process *process,
 		t_octet *tmp_types)
 {
 	char	c;
@@ -27,9 +39,9 @@ t_octet		*decode_encoding_byte(t_data *data, t_process *process,
 	return (tmp_types);
 }
 
-int			incorrect_encoding_byte(int op, t_octet *types)
+int					incorrect_encoding_byte(int op, t_octet *types)
 {
-	int			i;
+	int		i;
 
 	i = 0;
 	while (i < op_tab[op - 1].param_number)

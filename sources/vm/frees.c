@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   frees.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/06/05 20:21:39 by vlaroque          #+#    #+#             */
+/*   Updated: 2020/06/05 20:25:24 by vlaroque         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "op.h"
 #include "corewar.h"
 
@@ -14,18 +26,18 @@ int		free_data(t_data *data)
 	{
 		champ_to_free = champ;
 		champ = champ->next;
-		free (champ_to_free);
+		free(champ_to_free);
 	}
 	while (process)
 	{
 		process_to_free = process;
 		process = process->next;
-		free (process_to_free);
+		free(process_to_free);
 	}
 	return (0);
 }
 
-int		exit_error(t_data *data, char* str)
+int		exit_error(t_data *data, char *str)
 {
 	free_data(data);
 	ft_putstr(str);

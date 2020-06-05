@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 20:26:23 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/01/30 21:26:46 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/05 20:26:11 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,3 @@ int			new_process(t_data *data, int loc, int champ_id)
 	data->processes = process;
 	return (0);
 }
-

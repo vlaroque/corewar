@@ -6,7 +6,7 @@
 /*   By: stherkil <stherkil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 17:19:57 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/03/10 15:36:07 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/05 23:04:12 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,6 @@ typedef struct			s_data
 int			show_mars(t_data *data);
 void		hex_dump(t_octet *src, size_t len);
 int			champ_dump(t_champ *champ);
-int			buff_mars(t_data *data);
 int			err(char *s);
 int			debug_process(t_process *process);
 int			debug_global(t_data *data, int turn);
@@ -182,6 +181,13 @@ int		read_operation(t_data *data, t_process *process);
 int		execute_operation(t_data *data, t_process *process);
 
 /*
+ ** it_functions
+ */
+int		it_live(t_data *data, t_process *process, int champ_id);
+int			it_fork(t_data *data, t_process *process, int pc);
+int			it_aff(t_data *data, t_process *process, char pc);
+
+/*
  ** pre_execute_op
  */
 int		pre_execute_op(t_data *data, t_process *proc, t_cache *c);
@@ -211,7 +217,6 @@ int			incorrect_encoding_byte(int op, t_octet *types);
 /*
  ** get_data_from_args.c
  */
-int		get_int_from_arg(t_data *d, t_process *p, t_cache *c, int arg_id);
 int		get_int_from_direct_arg(t_data *d, t_process *p, t_args *arg, int idx_lim);
 int		get_int_from_indirect_arg(t_data *d, t_process *p, t_args *arg, int idx_lim);
 
@@ -238,6 +243,15 @@ int		op_aff(t_data *data, t_process *process, t_cache *c);
 int		op_bad_encoding_byte(t_data *data, t_process *process, t_cache *c);
 
 /*
+ ** todo functions
+ */
+void	todo_change_reg(t_process *p, int reg_id, int content);
+void	todo_write_mars(t_process *p, int where, int what);
+void	todo_fork(t_process *p, int where);
+void	todo_carry(t_process *p, int carry);
+void	todo_change_pc(t_process *p, int pc);
+
+/*
  ** frees.c
  */
 int		free_data(t_data *data);
@@ -249,6 +263,15 @@ int		exit_error(t_data *data, char* str);
 int		introduce_contestants(t_data *data);
 int		victory(t_data *data);
 
+/*
+ ** buff_mars
+ */
+int		buff_mars(t_data *data);
+int			write_in_buffer(char *buff, char *str, int i);
+void		char_hexa_str(t_octet c, char *str);
+
+
+int			is_pointed(t_data *data, unsigned int pc);
 
 
 extern	t_op	op_tab[17];

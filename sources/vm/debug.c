@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 17:56:00 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/03/10 18:13:57 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/05 22:01:06 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,28 +101,6 @@ int			show_mars(t_data *data)
 }
 
 
-void		char_hexa_str(t_octet c, char *str)
-{
-	char	base[] = "0123456789abcdef";
-
-	str[0] = base[c / 16];
-	str[1] = base[c % 16];
-	str[2] = '\0';
-}
-
-int			write_in_buffer(char *buff, char *str, int i)
-{
-	int		a;
-
-	a = 0;
-	while (str[a])
-	{
-		buff[i + a] = str[a];
-		a++;
-	}
-	return (i + a);
-}
-
 void		processes(t_process *p)
 {
 	while (p)
@@ -179,66 +157,3 @@ int			dump_option_mars(t_data *data)
 	return (0);
 }
 
-/*
- ** colors 1 yellow 2 blue 3 red 4 green 
- */
-
-int			what_color(t_data *data, char *buff, int buff_i, int i)
-{
-	if (data->colors[i] == 0)
-		buff_i = write_in_buffer(buff, "\e[39m", buff_i);
-	else if (data->colors[i] == 1)
-		buff_i = write_in_buffer(buff, "\e[33m", buff_i);
-	else if (data->colors[i] == 2)
-		buff_i = write_in_buffer(buff, "\e[96m", buff_i);
-	else if (data->colors[i] == 3)
-		buff_i = write_in_buffer(buff, "\e[91m", buff_i);
-	else if (data->colors[i] == 4)
-		buff_i = write_in_buffer(buff, "\e[92m", buff_i);
-	return (buff_i);
-}
-
-
-int			color_octet(t_data *data, char *buff, int buff_i, int i)
-{
-	if (i == 0)
-		buff_i = what_color(data, buff, buff_i, i);
-	else if (data->colors[i - 1] != data->colors[i])
-		buff_i = what_color(data, buff, buff_i, i);
-	return (buff_i);
-}
-
-int			buff_mars(t_data *data)
-{
-	int		i;
-	int		buff_i;
-	char	tmp[3];
-	char	buff[MEM_SIZE * 10];
-
-	i = 0;
-	buff_i = 0;
-	if (!data->dump_option)
-		write(1, "\e[H", 3);
-	while (i < MEM_SIZE)
-	{
-		if (i != 0 && i % 64 == 0)
-			buff[buff_i++] = '\n';
-		else if (i != 0)
-			buff[buff_i++] = ' ';
-		buff_i = color_octet(data, buff, buff_i, i);
-		if (is_pointed(data, i))
-			buff_i = write_in_buffer(buff, "\e[7m", buff_i);
-		char_hexa_str(data->mars[i], tmp);
-		buff_i = write_in_buffer(buff, tmp, buff_i);
-		if (is_pointed(data, i))
-		{
-			buff_i = write_in_buffer(buff, "\e[0m", buff_i);
-			buff_i = what_color(data, buff, buff_i, i);
-		}
-		i++;
-	}
-	buff[buff_i] = '\0';
-	write(1, buff, ft_strlen(buff));
-	write(1, "\n", 1);
-	return (0);
-}

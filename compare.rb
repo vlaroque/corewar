@@ -1,4 +1,4 @@
-turns = 20000;
+turns = 0;
 nombre_derreurs = 0
 nombre_derreurs_max = 10
 './corewar -dump '

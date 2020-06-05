@@ -6,11 +6,10 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/06 18:14:39 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/03/10 20:28:16 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/05 20:53:51 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "op.h"
 #include "corewar.h"
 
 int		big_to_int(int *nbr)
@@ -41,51 +40,12 @@ short		big_to_short(short *nbr)
 	return (dest);
 }
 
-void		todo_change_reg(t_process *p, int reg_id, int content)
-{
-	char		c;
-	p->todo.cmd_change_register = 1;
-	p->todo.reg = reg_id;
-	p->todo.reg_content = content;
-//	printf("change reg id [%d] | cnt %d\n", p->todo.reg, 
-//	p->todo.reg_content);
-//	c = getchar();
-}
-
-
-void	todo_write_mars(t_process *p, int where, int what)
-{
-	p->todo.cmd_write_on_mars = 1;
-	p->todo.pc = where;
-	p->todo.mars_content = what;
-}
-
-void	todo_fork(t_process *p, int where)
-{
-	p->todo.cmd_fork = 1;
-	p->todo.fork_pc = where;
-}
-
-void	todo_carry(t_process *p, int carry)
-{
-	p->todo.cmd_change_carry = 1;
-	p->todo.carry_content = carry;
-}
-
 void	if_null_carry_up(t_process *p, int value)
 {
 	if (value == 0)
 		todo_carry(p, 1);
 	else
 		todo_carry(p, 0);
-}
-
-void	todo_change_pc(t_process *p, int pc)
-{
-	int		res;
-
-	res = pc % IDX_MOD;
-	p->todo.pc_add = res;
 }
 
 int		op_live(t_data *data, t_process *process, t_cache *c)
@@ -163,9 +123,7 @@ int		op_and(t_data *data, t_process *process, t_cache *c)
 	int		second;
 	int		res;
 
-	//first = get_int_from_arg(data, process, c, 0);
 	first = get_int_from_direct_arg(data, process, &c->args[0], 1);
-	//second = get_int_from_arg(data, process, c, 1);
 	second = get_int_from_direct_arg(data, process, &c->args[1], 1);
 	res = first & second;
 	todo_change_reg(process, c->args[2].octet_data, res);
@@ -179,9 +137,7 @@ int		op_or(t_data *data, t_process *process, t_cache *c)
 	int		second;
 	int		res;
 
-	//first = get_int_from_arg(data, process, c, 0);
 	first = get_int_from_direct_arg(data, process, &c->args[0], 1);
-	//second = get_int_from_arg(data, process, c, 1);
 	second = get_int_from_direct_arg(data, process, &c->args[1], 1);
 	res = first | second;
 	todo_change_reg(process, c->args[2].octet_data, res);
@@ -195,7 +151,6 @@ int		op_xor(t_data *data, t_process *process, t_cache *c)
 	int		second;
 	int		res;
 
-	//first = get_int_from_arg(data, process, c, 0);
 	first = get_int_from_direct_arg(data, process, &c->args[0], 1);
 	res = first ^ second;
 	todo_change_reg(process, c->args[2].octet_data, res);
@@ -205,14 +160,8 @@ int		op_xor(t_data *data, t_process *process, t_cache *c)
 
 int		op_zjmp(t_data *data, t_process *process, t_cache *c)
 {
-	//printf("zjump p[%d] carry[%d], where %d\n", process->id, process->carry, c->args[0].short_data);
 	if (process->carry)
 		todo_change_pc(process, c->args[0].short_data);
-	else
-	{
-		//printf("fail\n");
-		//getchar();
-	}
 	return (0);
 }
 
@@ -243,9 +192,7 @@ int		op_sti(t_data *data, t_process *process, t_cache *c)
 	first = get_int_from_indirect_arg(data, process, &c->args[1], 1);
 	second = get_int_from_indirect_arg(data, process, &c->args[2], 1);
 	where = (process->pc + ((first + second) % IDX_MOD)) % MEM_SIZE;
-	//printf("sti p[%d] pc[%d] what %x, where %d\n", process->id, process->pc, what, where);
 	todo_write_mars(process, where, what);
-	//if_null_carry_up(process, what);
 	return (0);
 }
 

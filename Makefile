@@ -6,7 +6,7 @@
 #    By: stherkil <stherkil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/20 10:33:13 by vlaroque          #+#    #+#              #
-#    Updated: 2020/03/06 21:52:50 by vlaroque         ###   ########.fr        #
+#    Updated: 2020/06/05 22:27:27 by vlaroque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRC_ASM =
 SRC_VM = main.c debug.c battle.c champ_load.c init_corewar.c process_new.c\
 		 operation_reading.c functions.c op_exe.c read_mars.c write_mars.c\
 		 op_processor.c pre_execute_operation.c encoding_byte.c\
-		 get_data_from_args.c check.c frees.c messages.c
+		 get_data_from_args.c check.c frees.c messages.c it_functions.c\
+		 todo_functions.c buff_mars.c
 SRC_COMMON = op.c
 
 # PATH

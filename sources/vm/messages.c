@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   messages.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/06/05 20:16:01 by vlaroque          #+#    #+#             */
+/*   Updated: 2020/06/05 20:16:43 by vlaroque         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "op.h"
 #include "corewar.h"
 
@@ -18,7 +30,7 @@ static int		contestant(t_champ *champ, int id)
 	return (0);
 }
 
-int		introduce_contestants(t_data *data)
+int				introduce_contestants(t_data *data)
 {
 	int		i;
 
@@ -28,7 +40,7 @@ int		introduce_contestants(t_data *data)
 	return (0);
 }
 
-int		victory(t_data *data)
+int				victory(t_data *data)
 {
 	t_champ		*champ;
 
@@ -36,7 +48,7 @@ int		victory(t_data *data)
 	while (champ)
 	{
 		if (champ->id == data->last_alive)
-			break;
+			break ;
 		champ = champ->next;
 		if (!champ)
 		{
@@ -51,5 +63,3 @@ int		victory(t_data *data)
 	ft_putstr("\", has won !\n");
 	return (0);
 }
-
-

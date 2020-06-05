@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 19:19:42 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/03/10 17:39:52 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/05 22:38:25 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ static int		read_op_code(t_data *data, t_process *process)
 static int		new_turn(t_data *data)
 {
 	t_process	*process;
-	static int		turn = 0;
+	static int	turn = 0;
 
 	process = data->processes;
-	while(process)
+	while (process)
 	{
 		if (process->cooldown > 0)
 			process->cooldown--;
@@ -48,7 +48,7 @@ static int		new_turn(t_data *data)
 		process = process->next;
 	}
 	process = data->processes;
-	while(process)
+	while (process)
 	{
 		if (process->cooldown <= 0)
 			read_op_code(data, process);
@@ -78,7 +78,8 @@ int				battle(t_data *data)
 				return (1);
 		if (data->visual_option && !data->dump_option)
 			buff_mars(data);
-		if (data->visual_option && data->dump_option && turn == data->cycles_before_dump)
+		if (data->visual_option && data->dump_option
+				&& turn == data->cycles_before_dump)
 			return (buff_mars(data));
 		if (data->dump_option && turn == data->cycles_before_dump)
 			return (dump_option_mars(data));
