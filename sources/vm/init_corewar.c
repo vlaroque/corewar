@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 18:08:38 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/03/06 21:46:37 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/08 21:11:00 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,20 +46,26 @@ int		dump_option(t_data *data, int ac, char **av, int *head_ac)
 
 	(*head_ac) += 1;
 	if (*head_ac > ac)
-		return (-1);
+		print_error(data, 3);
+	if (!ft_isnbr(av[*head_ac]))
+		print_error(data, 1);
 	nbr_cycles = ft_atoi(av[*head_ac]);
+	if (nbr_cycles < 0)
+		print_error(data, 2);
 	data->cycles_before_dump = nbr_cycles;
 	data->dump_option = 1;
 	return (0);
 }
 
-int		champ_id_option(int ac, char **av, int *head_ac, t_champid *champ_id)
+int		champ_id_option(t_data *data, int ac, char **av, int *head_ac, t_champid *champ_id)
 {
 	int		nbr;
 
 	(*head_ac) += 1;
 	if (*head_ac > ac)
-		return (-1);
+		print_error(data, 10);
+	if (!ft_isnbr(av[*head_ac]))
+		print_error(data, 11);
 	nbr = ft_atoi(av[*head_ac]);
 	champ_id->carry = 1;
 	champ_id->carried_nbr = nbr;
@@ -82,7 +88,7 @@ int		init_corewar(t_data *data, int ac, char **av)
 		else if (!ft_strncmp(av[head_ac], "-dump", 5))
 			dump_option(data, ac, av, &head_ac);
 		else if (!ft_strncmp(av[head_ac], "-n", 2))
-			champ_id_option(ac, av, &head_ac, &champ_id);
+			champ_id_option(data, ac, av, &head_ac, &champ_id);
 		else if (!ft_strncmp(av[head_ac], "-v", 2))
 			data->visual_option = 1;
 		else if (!ft_strncmp(av[head_ac], "-d", 2))

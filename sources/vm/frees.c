@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 20:21:39 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/05 20:25:24 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/08 21:04:11 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,14 @@ int		free_data(t_data *data)
 		champ = champ->next;
 		free(champ_to_free);
 	}
+	data->champs = NULL;
 	while (process)
 	{
 		process_to_free = process;
 		process = process->next;
 		free(process_to_free);
 	}
+	data->processes = NULL;
 	return (0);
 }
 

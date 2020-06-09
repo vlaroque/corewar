@@ -6,7 +6,7 @@
 /*   By: stherkil <stherkil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 17:19:57 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/05 23:04:12 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/09 17:05:19 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ typedef struct			s_process
 typedef struct			s_champ
 {
 	int					id;
+	int					n_option;
 	int					champ_rank;
 	char				prog_name[PROG_NAME_LENGTH + 1];
 	unsigned int		prog_size;
@@ -156,6 +157,14 @@ int			battle(t_data *data);
 int			init_corewar(t_data *data, int ac, char **av);
 int			mars_fill(t_data *data);
 int			new_champ(t_data *data, char *source, t_champid *champ_id);
+
+/*
+ ** init errors
+ */
+int		print_error(t_data *data, int error);
+int		ft_isnbr(char *str);
+int		print_usage(t_data *data);
+
 
 
 /*
