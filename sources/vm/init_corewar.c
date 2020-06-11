@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 18:08:38 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/08 21:11:00 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/11 16:22:28 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,20 @@ int		champ_id_option(t_data *data, int ac, char **av, int *head_ac, t_champid *c
 	return (0);
 }
 
+int		verbose_option(t_data *data, int ac, char **av, int *head_ac)
+{
+	int		verbosity;
+
+	(*head_ac) += 1;
+	if (*head_ac > ac)
+		print_error(data, 3);
+	if (!ft_isnbr(av[*head_ac]))
+		print_error(data, 1);
+	verbosity = ft_atoi(av[*head_ac]);
+	data->verbosity = verbosity;
+	return (0);
+}
+
 int		init_corewar(t_data *data, int ac, char **av)
 {
 	int				head_ac;
@@ -89,10 +103,12 @@ int		init_corewar(t_data *data, int ac, char **av)
 			dump_option(data, ac, av, &head_ac);
 		else if (!ft_strncmp(av[head_ac], "-n", 2))
 			champ_id_option(data, ac, av, &head_ac, &champ_id);
-		else if (!ft_strncmp(av[head_ac], "-v", 2))
+		else if (!ft_strncmp(av[head_ac], "-c", 2))
 			data->visual_option = 1;
 		else if (!ft_strncmp(av[head_ac], "-d", 2))
 			data->debug_option = 1;
+		else if (!ft_strncmp(av[head_ac], "-v", 2))
+			verbose_option(data, ac, av, &head_ac);
 		head_ac++;
 	}
 	data->max_cycles = CYCLE_TO_DIE;

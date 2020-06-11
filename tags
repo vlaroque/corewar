@@ -291,7 +291,7 @@ cf	ressources/champs/championships/2014/tdemay/champ.s	/^cf:$/;"	l
 champ_dump	sources/vm/debug.c	/^int			champ_dump(t_champ *champ)$/;"	f
 champ_fill	sources/vm/champ_load.c	/^static int		champ_fill(t_data *data, t_champ *champ, int fd)$/;"	f	file:
 champ_id_life	includes/corewar.h	/^	int			champ_id_life;$/;"	m	struct:s_todo
-champ_id_option	sources/vm/init_corewar.c	/^int		champ_id_option(int ac, char **av, int *head_ac, t_champid *champ_id)$/;"	f
+champ_id_option	sources/vm/init_corewar.c	/^int		champ_id_option(t_data *data, int ac, char **av, int *head_ac, t_champid *champ_id)$/;"	f
 champ_rank	includes/corewar.h	/^	int					champ_rank;$/;"	m	struct:s_champ
 champs	includes/corewar.h	/^	t_champ				*champs;$/;"	m	struct:s_data
 char_hexa	sources/vm/debug.c	/^void		char_hexa(t_octet c)$/;"	f
@@ -469,6 +469,7 @@ final	ressources/champs/championships/2017/tbillard/Douceur_power.s	/^final:$/;"
 finboucle0	ressources/champs/jumper.s	/^finboucle0:	xor r3,r3,r3$/;"	l
 finboucle1	ressources/champs/jumper.s	/^finboucle1:	xor r3,r3,r3$/;"	l
 findlastpt	sources/asm/asm.c	/^static int		findlastpt(char *addr)$/;"	f	file:
+finish_champs	sources/vm/main.c	/^int		finish_champs(t_data *data)$/;"	f
 first	ressources/champs/championships/2014/gbir/_.s	/^first:$/;"	l
 first_attack	ressources/champs/championships/2017/adenis/Explosive_Kitty.s	/^first_attack:$/;"	l
 firstinstr	includes/op.h	/^	instr_t				*firstinstr;$/;"	m	struct:header_s
@@ -652,6 +653,7 @@ hop	ressources/champs/new.s	/^hop:	live %1$/;"	l
 id	includes/champ_id.h	/^	int					id;$/;"	m	struct:s_champid
 id	includes/corewar.h	/^	int					id;$/;"	m	struct:s_champ
 id	includes/corewar.h	/^	int					id;$/;"	m	struct:s_process
+id_exist	sources/vm/champ_load.c	/^static int		id_exist(t_data *data, int id)$/;"	f	file:
 if_null_carry_up	sources/vm/functions.c	/^void	if_null_carry_up(t_process *p, int value)$/;"	f
 incorrect_encoding_byte	sources/vm/encoding_byte.c	/^int					incorrect_encoding_byte(int op, t_octet *types)$/;"	f
 infi	ressources/champs/42.s	/^infi:	sti	r1,%:l0,%1$/;"	l
@@ -980,6 +982,7 @@ li1	ressources/champs/championships/2014/gbir/_.s	/^li1:$/;"	l
 li1	ressources/champs/tdc4.s	/^li1:	$/;"	l
 li2	ressources/champs/tdc4.s	/^li2:	$/;"	l
 liv	ressources/champs/championships/2014/bjacob/doge.s	/^liv:$/;"	l
+live	bad_alive.s	/^live %10$/;"	l
 live	ressources/42.s	/^live %-2$/;"	l
 live	ressources/champs/Backward.s	/^live:	zjmp	%:l1 - 100$/;"	l
 live	ressources/champs/Death.s	/^live:	live	%1$/;"	l
@@ -1199,6 +1202,7 @@ main	sources/vm/main.c	/^int		main(int ac, char **av)$/;"	f
 main2	ressources/champs/championships/2014/mbacoux/meowluigi.s	/^main2:$/;"	l
 main3	ressources/champs/championships/2014/mbacoux/meowluigi.s	/^main3:$/;"	l
 main4	ressources/champs/championships/2014/mbacoux/meowluigi.s	/^main4:$/;"	l
+manage_checks	sources/vm/battle.c	/^int				manage_checks(t_data *data, int turn)$/;"	f
 manage_label	sources/asm/asm_managellabels.c	/^void	manage_label(char *s, int type, header_t *header)$/;"	f
 mars	includes/corewar.h	/^	t_octet				mars[MEM_SIZE];$/;"	m	struct:s_data
 mars_content	includes/corewar.h	/^	int			mars_content;$/;"	m	struct:s_todo
@@ -1221,6 +1225,7 @@ move4	ressources/champs/championships/2014/cdivry/youforkmytralala.s	/^move4:$/;
 move5	ressources/champs/championships/2014/cdivry/youforkmytralala.s	/^move5:$/;"	l
 move_forward	ressources/champs/championships/2014/gudepard/Kappa.s	/^move_forward:$/;"	l
 move_to	test.rb	/^def move_to(row, colomn)$/;"	f
+n_option	includes/corewar.h	/^	int					n_option;$/;"	m	struct:s_champ
 name	includes/corewar.h	/^	char		*name;$/;"	m	struct:s_op
 name	includes/op.h	/^	char		*name;$/;"	m	struct:labels_s
 name	includes/op_tab.h	/^	char		*name;$/;"	m	struct:s_op
@@ -1450,7 +1455,9 @@ shield_init	ressources/champs/championships/2014/bguy/sam_2.0.s	/^shield_init:$/
 short_data	includes/operation_reading.h	/^	short		short_data;$/;"	m	struct:s_args
 short_nbr	includes/corewar.h	/^	short	short_nbr;$/;"	m	union:u_subint
 shotgun	ressources/champs/championships/2014/hmoutaou/Misaka_Mikoto.s	/^shotgun:$/;"	l
+show_cycle_to_die	sources/vm/verbosity.c	/^int		show_cycle_to_die(t_data *data, int i)$/;"	f
 show_mars	sources/vm/debug.c	/^int			show_mars(t_data *data)$/;"	f
+show_turn	sources/vm/verbosity.c	/^int		show_turn(t_data *data, int i)$/;"	f
 size	includes/operation_reading.h	/^	int			size;$/;"	m	struct:s_args
 sjmp	ressources/champs/championships/2014/gbir/_.s	/^sjmp:$/;"	l
 sjmp	ressources/champs/championships/2017/iburel/gateau.s	/^sjmp:$/;"	l
@@ -1945,6 +1952,8 @@ var96	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var96:$
 var97	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var97:$/;"	l
 var98	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var98:$/;"	l
 var99	ressources/champs/championships/2014/fcorre/ultimate-surrender.s	/^var99:$/;"	l
+verbose_option	sources/vm/init_corewar.c	/^int		verbose_option(t_data *data, int ac, char **av, int *head_ac)$/;"	f
+verbosity	includes/corewar.h	/^	int					verbosity;$/;"	m	struct:s_data
 victory	sources/vm/messages.c	/^int				victory(t_data *data)$/;"	f
 visual_option	includes/corewar.h	/^	int					visual_option;$/;"	m	struct:s_data
 vite	ressources/champs/championships/2017/iburel/gateau.s	/^vite:$/;"	l
@@ -1967,7 +1976,7 @@ wall_prep	ressources/champs/championships/2014/lseguin/skynet.s	/^wall_prep:$/;"
 wall_prep	ressources/champs/examples/helltrain.s	/^wall_prep:$/;"	l
 wallstart	ressources/champs/championships/2014/hmichals/Wall.s	/^wallstart:$/;"	l
 what_color	sources/vm/buff_mars.c	/^static int	what_color(t_data *data, char *buff, int buff_i, int i)$/;"	f	file:
-what_id	sources/vm/champ_load.c	/^static int		what_id(t_champid *champ_id)$/;"	f	file:
+what_id	sources/vm/champ_load.c	/^static int		what_id(t_data *data, t_champ *champ, t_champid *champ_id)$/;"	f	file:
 white_bg	test.rb	/^def white_bg()$/;"	f
 write_front	ressources/champs/championships/2014/tdemay/champ.s	/^write_front:$/;"	l
 write_in_buff_formated_octet	sources/vm/buff_mars.c	/^int			write_in_buff_formated_octet(t_data *data, char *buff, int buff_i, int i)$/;"	f

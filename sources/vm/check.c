@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 20:44:21 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/05 20:44:31 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/11 22:39:43 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int		death_reaper(t_data *data)
 		if (p->lives_count <= 0)
 		{
 			*previous = p->next;
+			show_process_death(data, p);
 			free(p);
 			p = *previous;
 		}
@@ -45,11 +46,13 @@ int		checks(t_data *data)
 	if (data->lives_count >= NBR_LIVE)
 	{
 		data->max_cycles -= CYCLE_DELTA;
+		show_cycle_to_die(data, data->max_cycles);
 		data->checks_count = 0;
 	}
 	else if (data->checks_count >= MAX_CHECKS - 1)
 	{
 		data->max_cycles -= CYCLE_DELTA;
+		show_cycle_to_die(data, data->max_cycles);
 		data->checks_count = 0;
 	}
 	else

@@ -6,7 +6,7 @@
 /*   By: stherkil <stherkil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 17:19:57 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/09 17:05:19 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/11 22:12:44 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ typedef struct			s_process
 	t_todo				todo;
 	int					cooldown;
 	int					lives_count;
+	int					last_live_turn;
 	struct s_process	*next;
 }						t_process;
 
@@ -117,6 +118,7 @@ typedef struct			s_champ
 
 typedef struct			s_data
 {
+	int					turn;
 	t_octet				mars[MEM_SIZE];
 	int					colors[MEM_SIZE];
 	int					nbr_champs;
@@ -133,6 +135,7 @@ typedef struct			s_data
 	int					dump_option;
 	int					cycles_before_dump;
 	int					debug_option;
+	int					verbosity;
 }						t_data;
 
 /*
@@ -259,6 +262,15 @@ void	todo_write_mars(t_process *p, int where, int what);
 void	todo_fork(t_process *p, int where);
 void	todo_carry(t_process *p, int carry);
 void	todo_change_pc(t_process *p, int pc);
+
+/*
+ ** verbosity
+ */
+int		show_turn(t_data *data, int i);
+int		show_cycle_to_die(t_data *data, int i);
+int		show_live(t_data *data, t_champ *champ);
+int		show_process_death(t_data *data, t_process *process);
+
 
 /*
  ** frees.c

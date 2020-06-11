@@ -91,11 +91,13 @@ system("stty raw -echo")
 square(1, 68, 1, 198, "white")
 square(1, 68, 2, 199, "white")
 print_pos(3, 200, corewar)
+puts `\e[?25l`
 while true do
 
   key = pressed_char
   if key == "c"
     system("stty -raw echo")
+	puts `\e[?25h`
     exit
   elsif key == " "
     pause = pause ? false : true
@@ -118,7 +120,7 @@ while true do
   end
   
   if turn != turn_save then
-    mars = `./corewar -v -dump #{turn} #{arg_str}`
+    mars = `./corewar -c -dump #{turn} #{arg_str}`
   end
   if mars[1] == 'n'
     pause = true
