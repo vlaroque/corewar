@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/11 16:14:57 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/11 22:13:22 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/11 23:29:04 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int		show_turn(t_data *data, int i)
 {
+	if (data->turn == 0)
+		return (0);
 	if (!(data->verbosity & 2))
 		return (0);
 	ft_putstr("It is now cycle ");

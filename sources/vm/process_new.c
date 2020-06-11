@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 20:26:23 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/05 20:26:11 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/11 23:38:39 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@
 int			new_process(t_data *data, int loc, int champ_id)
 {
 	t_process		*process;
+	static int		id = 1;
 
 	if (!(process = (t_process *)malloc(sizeof(t_process))))
 		return (-1);
 	op_bzero(process, sizeof(t_process));
-	if (data->processes)
-		process->id = data->processes->id + 1;
+	process->id = id;
+	id++;
 	process->pc = loc;
 	process->reg[1] = champ_id;
 	if (data->processes)

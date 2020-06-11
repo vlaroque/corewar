@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 16:48:23 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/09 17:30:49 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/12 00:05:13 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,15 @@ int		finish_champs(t_data *data)
 	t_champ		*champ;
 	int			i;
 	int			nbr_champs;
+	int			rank;
 	
+	rank = 1;
 	i = 1;
 	nbr_champs = 0;
 	champ = data->champs;
 	while (champ)
 	{
+		champ->champ_rank = rank++;
 		if (!(champ->n_option))
 		{
 			champ->id = i;

@@ -6,20 +6,17 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 20:16:01 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/05 20:16:43 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/12 00:07:48 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "op.h"
 #include "corewar.h"
 
-static int		contestant(t_champ *champ, int id)
+static int		contestant(t_champ *champ)
 {
-	if (champ->next)
-		contestant(champ->next, id + 0);
-	champ->champ_rank = id;
 	ft_putstr("* Player ");
-	ft_putnbr(id);
+	ft_putnbr(champ->champ_rank);
 	ft_putstr(", weighing ");
 	ft_putnbr(champ->prog_size);
 	ft_putstr(" bytes, \"");
@@ -27,6 +24,8 @@ static int		contestant(t_champ *champ, int id)
 	ft_putstr("\" (\"");
 	ft_putstr(champ->comment);
 	ft_putstr("\") !\n");
+	if (champ->next)
+		contestant(champ->next);
 	return (0);
 }
 
@@ -36,7 +35,7 @@ int				introduce_contestants(t_data *data)
 
 	i = 0;
 	ft_putstr("Introducing contestants...\n");
-	contestant(data->champs, i + 1);
+	contestant(data->champs);
 	return (0);
 }
 

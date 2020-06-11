@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 20:10:37 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/11 22:39:22 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/12 00:10:58 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ static void	process_copy(t_process *src, t_process *dst)
 		dst->reg[i] = src->reg[i];
 		i++;
 	}
+	dst->last_live_turn = src->last_live_turn;
+	dst->lives_count = src->lives_count;
 }
 
 int			it_fork(t_data *data, t_process *process, int pc)

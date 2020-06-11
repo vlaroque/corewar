@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/26 14:52:08 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/09 18:13:44 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/12 00:02:15 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,6 @@ int		new_champ(t_data *data, char *source, t_champid *champ_id)
 	data->nbr_champs++;
 	op_bzero(champ, sizeof(t_champ));
 	what_id(data, champ, champ_id);
-	data->last_alive = champ->id;
 	if (!data->champs)
 		data->champs = champ;
 	else
