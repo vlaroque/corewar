@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 18:08:38 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/11 16:22:28 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/12 19:38:54 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,8 @@ int		init_corewar(t_data *data, int ac, char **av)
 			data->debug_option = 1;
 		else if (!ft_strncmp(av[head_ac], "-v", 2))
 			verbose_option(data, ac, av, &head_ac);
+		else if (!ft_strncmp(av[head_ac], "-a", 2))
+			data->aff_option = 1;
 		head_ac++;
 	}
 	data->max_cycles = CYCLE_TO_DIE;

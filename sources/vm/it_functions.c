@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 20:10:37 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/12 00:10:58 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/12 19:41:30 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ int			it_fork(t_data *data, t_process *process, int pc)
 
 int			it_aff(t_data *data, t_process *process, char pc)
 {
-	write(0, &pc, 1);
+	(void) *process;
+	if (data->aff_option)
+		write(0, &pc, 1);
 	return (0);
 }

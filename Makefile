@@ -6,7 +6,7 @@
 #    By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/20 10:33:13 by vlaroque          #+#    #+#              #
-#    Updated: 2020/06/11 16:19:03 by vlaroque         ###   ########.fr        #
+#    Updated: 2020/06/12 16:32:25 by vlaroque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,16 +15,19 @@
 NAME1 = asm
 NAME2 = corewar
 CC = clang
-CFLAGS = -g #-fsanitize=address# -Wextra -Werror -Wall -Wno-missing-field-initializers
+CFLAGS = -g -Wextra -Werror -Wno-missing-field-initializers
 
+#-fsanitize=address# 
 # SOURCES
 
 SRC_ASM = 
 SRC_VM = main.c debug.c battle.c champ_load.c init_corewar.c process_new.c\
-		 operation_reading.c functions.c op_exe.c read_mars.c write_mars.c\
-		 op_processor.c pre_execute_operation.c encoding_byte.c\
+		 operation_reading.c functions.c operation_execution.c read_mars.c\
+		 write_mars.c op_just_next.c pre_execute_operation.c encoding_byte.c\
 		 get_data_from_args.c check.c frees.c messages.c it_functions.c\
-		 todo_functions.c buff_mars.c init_errors.c verbosity.c
+		 todo_functions.c buff_mars.c init_errors.c verbosity.c\
+		 op_loads.c op_arithmetics.c op_stores.c op_jump_n_fork.c\
+		 op_live_aff_badenc.c
 SRC_COMMON = op.c
 
 # PATH
