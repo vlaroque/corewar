@@ -56,10 +56,7 @@ int		main(int ac, char **av)
 	mars_fill(&data);
 	vic = battle(&data);
 	if (vic)
-	{
-		ft_putstr("end battle\n");
 		victory(&data);
-	}
 	free_data(&data);
 	return (0);
 }

@@ -14,7 +14,7 @@ end
 
 def print_x_space(x)
   x.times do
-    print" "
+    print " "
   end
 end
 
@@ -75,14 +75,64 @@ def pressed_char
   end
 end
 
+def clean_exit
+    system("stty -raw echo")
+	print "\e[?25h"
+    exit
+end
+
+def key_to_action(key)
+  if key == "c"
+    clean_exit
+  elsif key == " "
+    pause = pause ? false : true
+  elsif key == "K"
+    $turn_per_second += 10
+  elsif key == "k"
+   $turn_per_second += 1
+  elsif key == "J"
+    $turn_per_second -= 10
+  elsif key == "j"
+    $turn_per_second -= 1
+  elsif key == "h"
+    $turn -= 1
+  elsif key == "H"
+    $turn -= 100
+  elsif key == "l"
+    $turn += 1
+  elsif key == "L"
+    $turn += 100
+  end
+end
+
+def global_values_fix
+  if $turn_per_second < 0
+    $turn_per_second = 0;
+  elsif $turn_per_second > 1000
+    $turn_per_second = 1000 
+  end
+  if $turn < 0
+    $turn = 0
+  end
+end
+
+
 arg_str = ""
 for arg in ARGV
   arg_str = arg_str + " " + arg
 end
 
 
-turn_per_second = 1
-turn = 0
+$turn_per_second = 1
+$turn = 0
+
+mars = `./corewar -c -dump #{$turn} #{arg_str}`
+if mars.include? "Error"
+  print mars
+  exit
+end
+  
+
 turn_carry = 0                              #base25
 turn_save = -1
 pause = false
@@ -90,56 +140,34 @@ reset_screen
 system("stty raw -echo")
 square(1, 68, 1, 198, "white")
 square(1, 68, 2, 199, "white")
-print_pos(3, 200, corewar)
-puts `\e[?25l`
+square(1, 68, 201, 260, "white")
+print_pos(3, 203, corewar)
+print "\e[?25l"
+
 while true do
 
   key = pressed_char
-  if key == "c"
-    system("stty -raw echo")
-	puts `\e[?25h`
-    exit
-  elsif key == " "
-    pause = pause ? false : true
-  elsif key == "K" and turn_per_second <= 990
-    turn_per_second += 10
-  elsif key == "k" and turn_per_second <= 999
-    turn_per_second += 1
-  elsif key == "J" and turn_per_second >= 10
-    turn_per_second -= 10
-  elsif key == "j" and turn_per_second >= 1
-    turn_per_second -= 1
-  elsif key == "h"
-    turn -= 1
-  elsif key == "H"
-    turn -= 100
-  elsif key == "l"
-    turn += 1
-  elsif key == "L"
-    turn += 100
+  key_to_action(key)
+  global_values_fix
+  if $turn != turn_save then
+    mars = `./corewar -c -dump #{$turn} #{arg_str}`
   end
-  
-  if turn != turn_save then
-    mars = `./corewar -c -dump #{turn} #{arg_str}`
-  end
-  if mars[1] == 'n'
-    pause = true
+  if mars[1] == 'o'
     print_pos(70, 100, mars)
+    clean_exit
   end
-  print_pos(3, 4, mars)
-
-  turn_save = turn
-
+  print_pos(3, 5, mars)
+  turn_save = $turn
   if pause == false
-    turn_carry += turn_per_second
+    turn_carry += $turn_per_second
     if turn_carry >= 25
-      turn += turn_carry / 25
+      $turn += turn_carry / 25
       turn_carry = turn_carry % 25
     end
   end
   
   move_to 69, 100
-  print ("space = pause | c = exit | K = +10 | k = +1 | J = -10 | j = -1        actual = " + turn_per_second.to_s + " tps | turn " + turn.to_s + "                             " )
+  print ("space = pause | c = exit | K = +10 | k = +1 | J = -10 | j = -1        actual = " + $turn_per_second.to_s + " tps | turn " + $turn.to_s + "                             " )
   sleep(0.04)
 end
 
