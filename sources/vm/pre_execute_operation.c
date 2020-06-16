@@ -6,14 +6,14 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 20:29:41 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/05 20:34:18 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/16 12:29:49 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "corewar.h"
 #include "operation_reading.h"
 
-static int		(*op_fun[18])(t_data *, t_process *, t_cache *) = {
+static int		(*g_op_fun[18])(t_data *, t_process *, t_cache *) = {
 	op_just_next,
 	op_live,
 	op_ld,
@@ -41,6 +41,6 @@ int		pre_execute_op(t_data *data, t_process *proc, t_cache *c)
 		proc->todo.something_to_do = 1;
 		proc->todo.pc_add = c->pc_delta;
 	}
-	op_fun[c->op](data, proc, c);
+	g_op_fun[c->op](data, proc, c);
 	return (0);
 }

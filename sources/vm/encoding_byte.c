@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 20:20:13 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/05 20:20:16 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/16 23:19:22 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ int					incorrect_encoding_byte(int op, t_octet *types)
 	int		i;
 
 	i = 0;
-	while (i < op_tab[op - 1].param_number)
+	while (i < g_op_tab[op - 1].param_number)
 	{
-		if (!(types[i] & op_tab[op - 1].types_tab[i]))
+		if (!(types[i] & g_op_tab[op - 1].types_tab[i]))
 			return (1);
 		i++;
 	}

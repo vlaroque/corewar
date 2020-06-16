@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/12 15:34:34 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/12 21:24:44 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/16 12:11:01 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		op_add(t_data *data, t_process *process, t_cache *c)
 	int		second;
 	int		res;
 
-	(void) data;
+	(void)data;
 	first = process->reg[c->args[0].octet_data];
 	second = process->reg[c->args[1].octet_data];
 	res = first + second;
@@ -33,7 +33,7 @@ int		op_sub(t_data *data, t_process *process, t_cache *c)
 	int		second;
 	int		res;
 
-	(void) data;
+	(void)data;
 	first = process->reg[c->args[0].octet_data];
 	second = process->reg[c->args[1].octet_data];
 	res = first - second;
@@ -48,7 +48,7 @@ int		op_and(t_data *data, t_process *process, t_cache *c)
 	int		second;
 	int		res;
 
-	(void) data;
+	(void)data;
 	first = get_int_from_direct_arg(data, process, &c->args[0], 1);
 	second = get_int_from_direct_arg(data, process, &c->args[1], 1);
 	res = first & second;
@@ -63,7 +63,7 @@ int		op_or(t_data *data, t_process *process, t_cache *c)
 	int		second;
 	int		res;
 
-	(void) data;
+	(void)data;
 	first = get_int_from_direct_arg(data, process, &c->args[0], 1);
 	second = get_int_from_direct_arg(data, process, &c->args[1], 1);
 	res = first | second;
@@ -78,7 +78,7 @@ int		op_xor(t_data *data, t_process *process, t_cache *c)
 	int		second;
 	int		res;
 
-	(void) data;
+	(void)data;
 	first = get_int_from_direct_arg(data, process, &c->args[0], 1);
 	res = first ^ second;
 	todo_change_reg(process, c->args[2].octet_data, res);

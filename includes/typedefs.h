@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_just_next.c                                     :+:      :+:    :+:   */
+/*   typedefs.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/05 20:27:43 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/16 12:17:37 by vlaroque         ###   ########.fr       */
+/*   Created: 2020/06/16 23:27:30 by vlaroque          #+#    #+#             */
+/*   Updated: 2020/06/16 23:29:33 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "corewar.h"
+#ifndef TYPEDEFS_H
+# define TYPEDEFS_H
 
-int		op_just_next(t_data *data, t_process *process, t_cache *c)
-{
-	(void)*data;
-	(void)*c;
-	process->todo.something_to_do = 1;
-	process->todo.pc_add = 1;
-	return (1);
-}
+typedef unsigned long long	t_llu;
+typedef unsigned char		t_octet;
+typedef unsigned char		t_bool;
+typedef int					t_reg;
+
+#endif

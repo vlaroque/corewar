@@ -6,21 +6,27 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/08 14:44:33 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/09 18:13:46 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/16 15:00:49 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "corewar.h"
 
-int		print_error(t_data *data, int error)
+static int	print_error_more(int error)
 {
-	ft_putstr("Error: ");
 	if (error == -1)
 		ft_putstr("Malloc failed, program exit\n");
 	else if (error == -2)
 		ft_putstr("Cannot open file\n");
-	else if (error == 1)
+	return (0);
+}
+
+int			print_error(t_data *data, int error)
+{
+	ft_putstr("Error: ");
+	print_error_more(error);
+	if (error == 1)
 		ft_putstr("-dump nbr_cycles, nbr_cycles is not a number\n");
 	else if (error == 2)
 		ft_putstr("-dump nbr_cycles, nbr_cycles cannot be negative\n");
@@ -41,10 +47,10 @@ int		print_error(t_data *data, int error)
 	else if (error == 40)
 		ft_putstr("Cannot assign twice the same champion id\n");
 	free_data(data);
-	exit (0);
+	exit(0);
 }
 
-int		ft_isnbr(char *str)
+int			ft_isnbr(char *str)
 {
 	while (*str == ' ')
 		str++;
@@ -58,7 +64,7 @@ int		ft_isnbr(char *str)
 		return (0);
 }
 
-int		print_usage(t_data *data)
+int			print_usage(t_data *data)
 {
 	ft_putstr("Usage: ./corewar [-dump nbr_cycles] [[-n number] ");
 	ft_putstr("champion1.cor] ...\n");
@@ -66,6 +72,6 @@ int		print_usage(t_data *data)
 	ft_putstr("then exits\n");
 	ft_putstr("\t-n number          : Set the number of the next champion\n");
 	free_data(data);
-	exit (0);
+	exit(0);
 	return (0);
 }

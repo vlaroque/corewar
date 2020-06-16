@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 19:19:42 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/11 22:36:52 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/16 23:18:03 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int		read_op_code(t_data *data, t_process *process)
 	if (op_code < 0 || op_code > 16)
 		op_code = 0;
 	if (op_code > 0)
-		process->cooldown = op_tab[op_code - 1].cycle;
+		process->cooldown = g_op_tab[op_code - 1].cycle;
 	process->color = data->colors[process->pc];
 	process->op = op_code;
 	if (op_code == 0)
@@ -90,7 +90,6 @@ int				battle(t_data *data)
 			return (buff_mars(data));
 		if (data->dump_option && data->turn == data->cycles_before_dump)
 			return (dump_option_mars(data));
-//		printf("battle 4 lives_count = %d\n", data->processes->lives_count);
 		data->turn++;
 	}
 	return (0);

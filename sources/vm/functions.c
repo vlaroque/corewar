@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/06 18:14:39 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/12 15:45:07 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/16 12:15:01 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int		big_to_int(int *nbr)
 	return (dest);
 }
 
-short		big_to_short(short *nbr)
+short	big_to_short(short *nbr)
 {
-	short			dest;
+	short		dest;
 	t_octet		*dest_ptr;
 	t_octet		*nbr_ptr;
 

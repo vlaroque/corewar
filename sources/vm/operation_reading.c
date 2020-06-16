@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 08:01:15 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/05 20:49:13 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/16 23:19:03 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int			arg_size(int op, t_octet type)
 		return (2);
 	else if (type == T_DIR)
 	{
-		if (op_tab[op - 1].direct_size_two)
+		if (g_op_tab[op - 1].direct_size_two)
 			return (2);
 		else
 			return (4);
@@ -54,7 +54,7 @@ int			args_fill(t_data *data, t_process *process, t_cache *c)
 		return (0);
 	i = 0;
 	c->pc_delta += 1;
-	if (op_tab[c->op - 1].encoding_byte)
+	if (g_op_tab[c->op - 1].encoding_byte)
 	{
 		types = decode_encoding_byte(data, process, &(c->types[4]));
 		if (incorrect_encoding_byte(c->op, types))
@@ -62,8 +62,8 @@ int			args_fill(t_data *data, t_process *process, t_cache *c)
 		c->pc_delta += 1;
 	}
 	else
-		types = op_tab[c->op - 1].types_tab;
-	while (i < op_tab[c->op - 1].param_number)
+		types = g_op_tab[c->op - 1].types_tab;
+	while (i < g_op_tab[c->op - 1].param_number)
 	{
 		c->args[i].type = types[i];
 		c->args[i].size = arg_size(c->op, types[i]);
@@ -78,9 +78,6 @@ int			read_operation(t_data *data, t_process *process)
 {
 	t_cache		c;
 
-	if (data->debug_option)
-		printf("p[%d] pc[%d] read opc[%d]\n", process->id, process->pc,
-				data->mars[process->pc]);
 	op_bzero(&c, sizeof(t_cache));
 	c.pc_delta = 0;
 	c.bad_encoding_byte = 0;

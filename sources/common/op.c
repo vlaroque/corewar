@@ -6,7 +6,7 @@
 /*   By: zaz <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:43:01 by zaz               #+#    #+#             */
-/*   Updated: 2020/02/09 21:31:44 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/16 23:11:23 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 #include "corewar.h"
 
 /*
- **	typedef struct			s_op
- **	{
- **		char		*name;
- **		int			param_number;
- **		t_octet		param_possible_types[4];
- **		t_octet		op_code;
- **		int			cycle;
- **		char		*complete_name;
- **		t_octet		encoding_byte;
- **		int			direct_size_two;
- **	}						t_op;
- */
+**	typedef struct			s_op
+**	{
+**		char		*name;
+**		int			param_number;
+**		t_octet		param_possible_types[4];
+**		t_octet		op_code;
+**		int			cycle;
+**		char		*complete_name;
+**		t_octet		encoding_byte;
+**		int			direct_size_two;
+**	}						t_op;
+*/
 
-t_op    op_tab[17] =
+t_op    g_op_tab[17] =
 {
 	{"live", 1, {T_DIR}, 1, 10, "alive", 0, 0},
 	{"ld", 2, {T_DIR | T_IND, T_REG}, 2, 5, "load", 1, 0},

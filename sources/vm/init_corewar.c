@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 18:08:38 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/12 19:38:54 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/16 21:14:25 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,16 @@ int		dump_option(t_data *data, int ac, char **av, int *head_ac)
 	return (0);
 }
 
-int		champ_id_option(t_data *data, int ac, char **av, int *head_ac, t_champid *champ_id)
+int		champ_id_option(t_data *data, int *head_ac, t_champid *champ_id)
 {
 	int		nbr;
 
 	(*head_ac) += 1;
-	if (*head_ac > ac)
+	if (*head_ac > data->ac)
 		print_error(data, 10);
-	if (!ft_isnbr(av[*head_ac]))
+	if (!ft_isnbr(data->av[*head_ac]))
 		print_error(data, 11);
-	nbr = ft_atoi(av[*head_ac]);
+	nbr = ft_atoi(data->av[*head_ac]);
 	champ_id->carry = 1;
 	champ_id->carried_nbr = nbr;
 	return (0);
@@ -93,8 +93,6 @@ int		init_corewar(t_data *data, int ac, char **av)
 
 	op_bzero(&champ_id, sizeof(t_champid));
 	head_ac = 1;
-	data->dump_option = 0;
-	data->visual_option = 0;
 	while (head_ac < ac)
 	{
 		if (av[head_ac][0] != '-')
@@ -102,7 +100,7 @@ int		init_corewar(t_data *data, int ac, char **av)
 		else if (!ft_strncmp(av[head_ac], "-dump", 5))
 			dump_option(data, ac, av, &head_ac);
 		else if (!ft_strncmp(av[head_ac], "-n", 2))
-			champ_id_option(data, ac, av, &head_ac, &champ_id);
+			champ_id_option(data, &head_ac, &champ_id);
 		else if (!ft_strncmp(av[head_ac], "-c", 2))
 			data->visual_option = 1;
 		else if (!ft_strncmp(av[head_ac], "-d", 2))
@@ -113,7 +111,5 @@ int		init_corewar(t_data *data, int ac, char **av)
 			data->aff_option = 1;
 		head_ac++;
 	}
-	data->max_cycles = CYCLE_TO_DIE;
-	data->cycles_to_die = CYCLE_TO_DIE;
 	return (0);
 }

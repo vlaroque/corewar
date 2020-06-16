@@ -6,7 +6,7 @@
 /*   By: stherkil <stherkil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 17:19:57 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/12 19:38:46 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/16 23:32:28 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,18 @@
 
 # include <stdio.h>
 # include <stdlib.h>
+# include "typedefs.h"
 # include "op.h"
 # include "champ_id.h"
 # include "libft.h"
-typedef unsigned long long	t_llu;
-typedef unsigned char		t_octet;
 # include "operation_reading.h"
-typedef unsigned char		t_bool;
 
-/*
- ** register size determination
- */
-# if REG_SIZE == 1
-typedef unsigned char		t_reg;
-# elif REG_SIZE == 2
-typedef unsigned short		t_reg;
-# elif REG_SIZE == 4
-typedef unsigned int		t_reg;
-# elif REG_SIZE == 8
-typedef unsigned long long	t_reg;
-# else
-#  error register size not accepted
-# endif
-
-typedef union	u_subint
+typedef union			u_subint
 {
 	int		nbr;
 	short	short_nbr;
 	t_octet	char_nbr[4];
-}				t_subint;
+}						t_subint;
 
 typedef struct			s_todo
 {
@@ -77,7 +60,6 @@ typedef struct			s_op
 	int			direct_size_two;
 }						t_op;
 
-
 typedef struct			s_process
 {
 	int					id;
@@ -94,8 +76,8 @@ typedef struct			s_process
 }						t_process;
 
 /*
- ** champion
- */
+** champion
+*/
 
 typedef struct			s_champ
 {
@@ -103,7 +85,7 @@ typedef struct			s_champ
 	int					n_option;
 	int					champ_rank;
 	char				prog_name[PROG_NAME_LENGTH + 1];
-	int		prog_size;
+	int					prog_size;
 	char				comment[COMMENT_LENGTH + 1];
 	t_octet				content[CHAMP_MAX_SIZE];
 	struct s_champ		*next;
@@ -111,6 +93,8 @@ typedef struct			s_champ
 
 typedef struct			s_data
 {
+	int					ac;
+	char				**av;
 	int					turn;
 	t_octet				mars[MEM_SIZE];
 	int					colors[MEM_SIZE];
@@ -131,8 +115,8 @@ typedef struct			s_data
 }						t_data;
 
 /*
- ** debug
- */
+** debug
+*/
 int		show_mars(t_data *data);
 void	hex_dump(t_octet *src, size_t len);
 int		champ_dump(t_champ *champ);
@@ -142,87 +126,89 @@ int		debug_global(t_data *data, int turn);
 int		dump_option_mars(t_data *data);
 
 /*
- ** battle
- */
+** battle
+*/
 int		battle(t_data *data);
 
 /*
- ** init
- */
+** init
+*/
 int		init_corewar(t_data *data, int ac, char **av);
 int		mars_fill(t_data *data);
 int		new_champ(t_data *data, char *source, t_champid *champ_id);
 
 /*
- ** init errors
- */
+** init errors
+*/
 int		print_error(t_data *data, int error);
 int		ft_isnbr(char *str);
 int		print_usage(t_data *data);
 
 /*
- ** process_new
- */
+** process_new
+*/
 int		new_process(t_data *data, int loc, int champ_id);
 
 /*
- ** checks
- */
+** checks
+*/
 int		checks(t_data *data);
 
 /*
- ** operation_reading
- */
+** operation_reading
+*/
 int		read_operation(t_data *data, t_process *process);
 
 /*
- ** op_exe
- */
+** op_exe
+*/
 int		execute_operation(t_data *data, t_process *process);
 
 /*
- ** it_functions
- */
+** it_functions
+*/
 int		it_live(t_data *data, t_process *process, int champ_id);
 int		it_fork(t_data *data, t_process *process, int pc);
 int		it_aff(t_data *data, t_process *process, char pc);
 
 /*
- ** pre_execute_op
- */
+** pre_execute_op
+*/
 int		pre_execute_op(t_data *data, t_process *proc, t_cache *c);
 
 /*
- ** read_mars
- */
+** read_mars
+*/
 int		pc_fix(int pc);
 int		read_int_mars(t_data *data, int pc);
 short	read_short_mars(t_data *data, int pc);
 t_octet	read_oct_mars(t_data *data, int pc);
 
 /*
- ** write_mars
- */
+** write_mars
+*/
 int		write_oct_mars(t_data *data, t_octet c, int pc);
 int		write_short_mars(t_data *data, short nbr, int pc);
 int		write_int_mars(t_data *data, int nbr, int pc);
 
 /*
- ** encoding_byte
- */
+** encoding_byte
+*/
 t_octet	*decode_encoding_byte(t_data *data, t_process *process,
 		t_octet *tmp_types);
 int		incorrect_encoding_byte(int op, t_octet *types);
 
 /*
- ** get_data_from_args.c
- */
-int		get_int_from_direct_arg(t_data *d, t_process *p, t_args *arg, int idx_lim);
-int		get_int_from_indirect_arg(t_data *d, t_process *p, t_args *arg, int idx_lim);
+** get_data_from_args.c
+*/
+int		get_int_from_direct_arg(t_data *d, t_process *p, t_args *arg,
+		int idx_lim);
+int		get_int_from_indirect_arg(t_data *d, t_process *p, t_args *arg,
+		int idx_lim);
 
 /*
- ** differents functions
- */
+** differents functions
+*/
 int		op_just_next(t_data *data, t_process *process, t_cache *c);
 int		op_live(t_data *data, t_process *process, t_cache *c);
 int		op_ld(t_data *data, t_process *process, t_cache *c);
@@ -244,8 +230,8 @@ int		op_bad_encoding_byte(t_data *data, t_process *process, t_cache *c);
 void	if_null_carry_up(t_process *p, int value);
 
 /*
- ** todo functions
- */
+** todo functions
+*/
 void	todo_change_reg(t_process *p, int reg_id, int content);
 void	todo_write_mars(t_process *p, int where, int what);
 void	todo_fork(t_process *p, int where);
@@ -253,33 +239,39 @@ void	todo_carry(t_process *p, int carry);
 void	todo_change_pc(t_process *p, int pc);
 
 /*
- ** verbosity
- */
+** verbosity
+*/
 int		show_turn(t_data *data, int i);
 int		show_cycle_to_die(t_data *data, int i);
 int		show_live(t_data *data, t_champ *champ);
 int		show_process_death(t_data *data, t_process *process);
 
 /*
- ** frees.c
- */
+** frees.c
+*/
 int		free_data(t_data *data);
-int		exit_error(t_data *data, char* str);
+int		exit_error(t_data *data, char *str);
 
 /*
- ** Messages
- */
+** Messages
+*/
 int		introduce_contestants(t_data *data);
 int		victory(t_data *data);
 
 /*
- ** buff_mars
- */
+** buff_mars
+*/
 int		buff_mars(t_data *data);
 int		write_in_buffer(char *buff, char *str, int i);
 void	char_hexa_str(t_octet c, char *str);
-int		is_pointed(t_data *data, unsigned int pc);
+int		is_pointed(t_data *data, int pc);
 
-extern	t_op	op_tab[17];
+/*
+** buff_mars_color
+*/
+int		what_color(t_data *data, char *buff, int buff_i, int i);
+int		color_octet(t_data *data, char *buff, int buff_i, int i);
+
+extern	t_op			g_op_tab[17];
 
 #endif

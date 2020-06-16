@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/11 16:14:57 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/11 23:29:04 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/16 12:16:02 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int		show_live(t_data *data, t_champ *champ)
 	return (0);
 }
 
-//Process 1 hasn't lived for 50 cycles (CTD 36)
 int		show_process_death(t_data *data, t_process *process)
 {
 	if (!(data->verbosity & 8))

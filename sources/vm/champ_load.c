@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/26 14:52:08 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/12 00:02:15 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/16 12:14:05 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 #include "op.h"
 #include "corewar.h"
 
-int		big_little_endian(int nbr)
+int				big_little_endian(int nbr)
 {
 	unsigned int	new;
 	t_octet			*ptr_nbr;
 	t_octet			*ptr_new;
 
-	ptr_nbr = (t_octet *) &nbr;
-	ptr_new = (t_octet *) &new;
+	ptr_nbr = (t_octet *)&nbr;
+	ptr_new = (t_octet *)&new;
 	ptr_new[0] = ptr_nbr[3];
 	ptr_new[1] = ptr_nbr[2];
 	ptr_new[2] = ptr_nbr[1];
@@ -84,11 +84,11 @@ static int		what_id(t_data *data, t_champ *champ, t_champid *champ_id)
 	return (0);
 }
 
-int		new_champ(t_data *data, char *source, t_champid *champ_id)
+int				new_champ(t_data *data, char *source, t_champid *champ_id)
 {
-	int		fd;
-	t_champ	*champ;
-	t_champ	*last;
+	int			fd;
+	t_champ		*champ;
+	t_champ		*last;
 
 	fd = open(source, O_RDONLY);
 	if (fd < 1)
