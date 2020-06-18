@@ -194,6 +194,7 @@ print "\e[?25l"
 
 while true do
 
+	move_to 68, 260
 	key = pressed_char
 	key_to_action(key)
 	global_values_fix
