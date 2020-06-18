@@ -6,7 +6,7 @@
 /*   By: stherkil <stherkil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 17:19:57 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/16 23:32:28 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/18 22:37:49 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,7 @@ typedef struct			s_data
 	int					debug_option;
 	int					verbosity;
 	int					aff_option;
+	int					c_option;
 }						t_data;
 
 /*
@@ -272,6 +273,7 @@ int		is_pointed(t_data *data, int pc);
 int		what_color(t_data *data, char *buff, int buff_i, int i);
 int		color_octet(t_data *data, char *buff, int buff_i, int i);
 
+int		verbose_operations(t_data *data, t_process *p, t_cache *c);
 extern	t_op			g_op_tab[17];
 
 #endif

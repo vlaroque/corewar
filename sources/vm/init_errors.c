@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/08 14:44:33 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/16 15:00:49 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/18 15:00:56 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ static int	print_error_more(int error)
 		ft_putstr("Malloc failed, program exit\n");
 	else if (error == -2)
 		ft_putstr("Cannot open file\n");
+	else if (error == 50)
+		ft_putstr("-v N, arg N is missing\n");
+	else if (error == 51)
+		ft_putstr("-v N, arg N is not a number\n");
 	return (0);
 }
 

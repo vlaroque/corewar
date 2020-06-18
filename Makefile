@@ -6,7 +6,7 @@
 #    By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/20 10:33:13 by vlaroque          #+#    #+#              #
-#    Updated: 2020/06/16 21:37:58 by vlaroque         ###   ########.fr        #
+#    Updated: 2020/06/18 16:11:05 by vlaroque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SRC_VM = main.c debug.c battle.c champ_load.c init_corewar.c process_new.c\
 		 get_data_from_args.c check.c frees.c messages.c it_functions.c\
 		 todo_functions.c buff_mars.c init_errors.c verbosity.c\
 		 op_loads.c op_arithmetics.c op_stores.c op_jump_n_fork.c\
-		 op_live_aff_badenc.c buff_mars_color.c
+		 op_live_aff_badenc.c buff_mars_color.c visual_operations.c
 SRC_COMMON = op.c
 
 # PATH

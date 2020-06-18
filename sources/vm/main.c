@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 16:48:23 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/16 21:14:36 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/18 23:11:05 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,34 @@ int		init_data(t_data *data, int ac, char **av)
 	return (0);
 }
 
+void	c_option(t_data *data)
+{
+	t_champ		*champ;
+
+	champ = data->champs;
+	while (champ)
+	{
+		ft_putstr("\e[39mPlayer ");
+		ft_putnbr(champ->champ_rank);
+		ft_putstr(" id[");
+		ft_putnbr(champ->id);
+		ft_putstr("] : ");
+		if (champ->champ_rank == 1)
+			ft_putstr("\e[32m");
+		else if (champ->champ_rank == 2)
+			ft_putstr("\e[34m");
+		else if (champ->champ_rank == 3)
+			ft_putstr("\e[31m");
+		else if (champ->champ_rank == 4)
+			ft_putstr("\e[36m");
+		ft_putstr(champ->prog_name);
+		ft_putstr("\e[39m\n");
+		champ = champ->next;
+	}
+	free_data(data);
+	exit(0);
+}
+
 int		main(int ac, char **av)
 {
 	t_data		data;
@@ -61,6 +89,8 @@ int		main(int ac, char **av)
 	init_data(&data, ac, av);
 	init_corewar(&data, ac, av);
 	finish_champs(&data);
+	if(data.c_option)
+		c_option(&data);
 	if (!data.visual_option)
 		introduce_contestants(&data);
 	mars_fill(&data);

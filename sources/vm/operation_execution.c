@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 20:08:28 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/12 15:03:12 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/18 16:57:54 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void		color_mars(t_data *data, int color, int pc)
 {
+	pc = pc_fix(pc);
 	data->colors[pc % MEM_SIZE] = color;
 	data->colors[(pc + 1) % MEM_SIZE] = color;
 	data->colors[(pc + 2) % MEM_SIZE] = color;

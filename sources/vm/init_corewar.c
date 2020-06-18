@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 18:08:38 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/16 21:14:25 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/18 22:53:56 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,9 +78,9 @@ int		verbose_option(t_data *data, int ac, char **av, int *head_ac)
 
 	(*head_ac) += 1;
 	if (*head_ac > ac)
-		print_error(data, 3);
+		print_error(data, 50);
 	if (!ft_isnbr(av[*head_ac]))
-		print_error(data, 1);
+		print_error(data, 51);
 	verbosity = ft_atoi(av[*head_ac]);
 	data->verbosity = verbosity;
 	return (0);
@@ -109,6 +109,8 @@ int		init_corewar(t_data *data, int ac, char **av)
 			verbose_option(data, ac, av, &head_ac);
 		else if (!ft_strncmp(av[head_ac], "-a", 2))
 			data->aff_option = 1;
+		else if (!ft_strncmp(av[head_ac], "-p", 2))
+			data->c_option = 1;
 		head_ac++;
 	}
 	return (0);

@@ -146,6 +146,13 @@ def global_values_fix
 	end
 end
 
+def truncate(str, len = 10)
+	if str.length > len
+		return "#{str[0...len]}...\n"
+	else
+		return str
+	end
+end
 
 arg_str = ""
 for arg in ARGV
@@ -172,6 +179,16 @@ square(1, 68, 1, 198, "white")
 square(1, 68, 2, 199, "white")
 square(1, 68, 201, 260, "white")
 print_pos(3, 205, corewar2)
+
+champ_line = 40
+champs = `./corewar -p #{arg_str}`
+champs_array = champs.split("\n");
+for line in champs_array
+	print_pos(champ_line, 205, "#{truncate(line, 60)}")
+	champ_line += 1;
+end
+reset_color
+
 print_pos(55, 205, ctrls)
 print "\e[?25l"
 
@@ -182,6 +199,7 @@ while true do
 	global_values_fix
 	if $turn != turn_save then
 		mars = `./corewar -c -dump #{$turn} #{arg_str}`
+		print_pos(30, 205, "cycle : #{$turn.to_s}\nspeed : #{$turn_per_second.to_s}")
 	end
 	if mars[1] == 'o'
 		print_pos(70, 100, mars)
@@ -196,11 +214,9 @@ while true do
 			$turn += turn_carry / 25
 			turn_carry = turn_carry % 25
 		end
+		print_pos(33, 205, "          ")
+	elsif
+		print_pos(33, 205, "PAUSE\n")
 	end
-
-	move_to 69, 100
-	print ("space = pause | c = exit | K = +10 | k = +1 | J = -10 | j = -1        actual = " + $turn_per_second.to_s + " tps | turn " + $turn.to_s + "                             " )
-	sleep(0.04)
+	sleep(0.04/(1.0 + ($turn.to_f/4000.0)))
 end
-
-

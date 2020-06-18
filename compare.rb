@@ -48,6 +48,11 @@ while turns < 50000 do
 	puts turns
 	res1 = `./corewar -dump #{turns.to_s} -n -1 #{file1} -n -2 #{file2} -n -3 #{file3} -n -4 #{file4}`
 	res2 = `./lcorewar -d #{turns.to_s} #{file1} #{file2} #{file3} #{file4} 2> /dev/null`
+	if res2.include? "won"
+		puts res1 + res2
+		puts "end"
+		exit
+	end
 	cut1 = res1.slice(res1.index("0x0000")..-1)
 	cut2 = res2.slice(res2.index("0x0000")..-1)
 	
