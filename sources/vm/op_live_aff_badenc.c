@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/12 15:44:12 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/18 21:47:48 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/19 12:13:55 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@ int		op_live(t_data *data, t_process *process, t_cache *c)
 	(void)data;
 	process->todo.cmd_life = 1;
 	process->todo.champ_id_life = c->args[0].int_data;
+	if (data->verbosity & 4)
+	{
+		verbose_operations(data, process);
+		ft_putnbr(process->todo.champ_id_life);
+		verbose_opertation_end(data, process);
+	}
 	return (0);
 }
 

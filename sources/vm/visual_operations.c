@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/18 15:38:37 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/18 21:42:38 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/19 12:25:07 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,8 @@ int		print_x_spaces(int x)
 	return (0);
 }
 
-int		verbose_operations(t_data *data, t_process *p, t_cache *c)
+int		verbose_operations(t_data *data, t_process *p)
 {
-	(void)c;
 	if (!(data->verbosity & 4))
 		return (0);
 	if (p->op < 1 || p->op > 16)
@@ -54,5 +53,45 @@ int		verbose_operations(t_data *data, t_process *p, t_cache *c)
 	ft_putstr(" | ");
 	ft_putstr(g_op_tab[p->op - 1].name);
 	ft_putstr(" ");
+	return (0);
+}
+
+int		verbose_opertation_end(t_data *data, t_process *p)
+{
+	if (!(data->verbosity & 4))
+		return (0);
+	if (p->op < 1 || p->op > 16)
+		return (0);
+	ft_putstr("\n");
+	return (0);
+}
+
+int		show_reg_elsif_number(t_data *data, t_args *arg, int nbr)
+{
+	if (!(data->verbosity & 4))
+		return (0);
+	if (arg->type == T_REG)
+	{
+		ft_putstr("r");
+		ft_putnbr((int)arg->octet_data);
+	}
+	else
+		ft_putnbr(nbr);
+	return (0);
+}
+
+int		verbose_space(t_data *data)
+{
+	if (!(data->verbosity & 4))
+		return (0);
+	ft_putstr(" ");
+	return (0);
+}
+
+int		verbose_putnbr(t_data *data, int nbr)
+{
+	if (!(data->verbosity & 4))
+		return (0);
+	ft_putnbr(nbr);
 	return (0);
 }

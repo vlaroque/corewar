@@ -6,7 +6,7 @@
 /*   By: stherkil <stherkil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 17:19:57 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/18 22:37:49 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/19 12:26:01 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -273,7 +273,12 @@ int		is_pointed(t_data *data, int pc);
 int		what_color(t_data *data, char *buff, int buff_i, int i);
 int		color_octet(t_data *data, char *buff, int buff_i, int i);
 
-int		verbose_operations(t_data *data, t_process *p, t_cache *c);
+int		verbose_operations(t_data *data, t_process *p);
+int		verbose_opertation_end(t_data *data, t_process *p);
+int		show_reg_elsif_number(t_data *data, t_args *arg, int nbr);
+int		verbose_space(t_data *data);
+int		verbose_putnbr(t_data *data, int nbr);
+
 extern	t_op			g_op_tab[17];
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/12 15:38:14 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/12 21:25:07 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/19 13:12:32 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ int		op_st(t_data *data, t_process *process, t_cache *c)
 		todo_write_mars(process, pc, tostore);
 	}
 	if_null_carry_up(process, tostore);
+	verbose_operations(data, process);
+	show_reg_elsif_number(data, &c->args[0], tostore);
+	verbose_space(data);
+	show_reg_elsif_number(data, &c->args[1], (int)c->args[1].short_data);
+	verbose_opertation_end(data, process);
 	return (0);
 }
 
@@ -43,5 +48,12 @@ int		op_sti(t_data *data, t_process *process, t_cache *c)
 	second = get_int_from_indirect_arg(data, process, &c->args[2], 1);
 	where = (process->pc + ((first + second) % IDX_MOD)) % MEM_SIZE;
 	todo_write_mars(process, where, what);
+	verbose_operations(data, process);
+	show_reg_elsif_number(data, &c->args[0], -1);
+	verbose_space(data);
+	verbose_putnbr(data, first);
+	verbose_space(data);
+	verbose_putnbr(data, second);
+	verbose_opertation_end(data, process);
 	return (0);
 }
