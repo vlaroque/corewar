@@ -16,7 +16,6 @@ int		op_just_next(t_data *data, t_process *process, t_cache *c)
 {
 	(void)*data;
 	(void)*c;
-	process->todo.something_to_do = 1;
-	process->todo.pc_add = 1;
+	process->pc = pc_fix(process->pc + 1);
 	return (1);
 }

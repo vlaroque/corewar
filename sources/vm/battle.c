@@ -29,7 +29,7 @@ static int		read_op_code(t_data *data, t_process *process)
 		op_just_next(data, process, NULL);
 	return (0);
 }
-
+/*
 static int		new_turn(t_data *data)
 {
 	t_process	*process;
@@ -50,6 +50,27 @@ static int		new_turn(t_data *data)
 	while (process)
 	{
 		if (process->cooldown <= 0)
+			read_op_code(data, process);
+		process = process->next;
+	}
+	return (0);
+}
+*/
+static int		new_turn(t_data *data)
+{
+	t_process	*process;
+
+	process = data->processes;
+	while (process)
+	{
+		if (process->cooldown)
+			process->cooldown--;
+		if (process->cooldown == 1 && data->turn != 0)
+		{
+			read_operation(data, process);
+			execute_operation(data, process);
+		}
+		else if (process->cooldown <= 0 && data->turn != 0)
 			read_op_code(data, process);
 		process = process->next;
 	}

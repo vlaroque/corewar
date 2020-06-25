@@ -200,7 +200,7 @@ while true do
 	global_values_fix
 	if $turn != turn_save then
 		mars = `./corewar -c -dump #{$turn} #{arg_str}`
-		print_pos(30, 205, "cycle : #{$turn.to_s}\nspeed : #{$turn_per_second.to_s}")
+		print_pos(30, 205, "cycle : #{$turn.to_s}          \nspeed : #{$turn_per_second.to_s}         ")
 	end
 	if mars[1] == 'o'
 		print_pos(70, 100, mars)
