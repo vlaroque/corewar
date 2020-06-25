@@ -29,10 +29,7 @@ int		nbr_len(int nbr)
 int		print_x_spaces(int x)
 {
 	if (x < 0)
-	{
-		ft_putstr("error x spaces\n");
-		return (-1);
-	}
+		return (0);
 	while (x)
 	{
 		ft_putstr(" ");
@@ -47,8 +44,8 @@ int		verbose_operations(t_data *data, t_process *p)
 		return (0);
 	if (p->op < 1 || p->op > 16)
 		return (0);
-	ft_putstr("P");
-	print_x_spaces(5 - nbr_len(p->id));
+	ft_putstr("P ");
+	print_x_spaces(4 - nbr_len(p->id));
 	ft_putnbr(p->id);
 	ft_putstr(" | ");
 	ft_putstr(g_op_tab[p->op - 1].name);

@@ -36,7 +36,7 @@ int			arg_content_fill(t_data *data, t_cache *c, t_args *arg, int pc)
 	{
 		arg->octet_data = read_oct_mars(data, pc);
 		if (arg->octet_data < 1 || arg->octet_data > 16)
-			c->op = 17;
+			c->bad_registers = 1;
 	}
 	else if (arg->size == 2)
 		arg->short_data = read_short_mars(data, pc);
@@ -81,9 +81,10 @@ int			read_operation(t_data *data, t_process *process)
 	op_bzero(&c, sizeof(t_cache));
 	c.pc_delta = 0;
 	c.bad_encoding_byte = 0;
+	c.bad_registers = 0;
 	c.op = process->op;
 	args_fill(data, process, &c);
-	if (c.bad_encoding_byte)
+	if (c.bad_encoding_byte || c.bad_registers)
 		c.op = 17;
 	pre_execute_op(data, process, &c);
 	return (1);

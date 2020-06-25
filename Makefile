@@ -27,7 +27,8 @@ SRC_VM = main.c debug.c battle.c champ_load.c init_corewar.c process_new.c\
 		 get_data_from_args.c check.c frees.c messages.c it_functions.c\
 		 todo_functions.c buff_mars.c init_errors.c verbosity.c\
 		 op_loads.c op_arithmetics.c op_stores.c op_jump_n_fork.c\
-		 op_live_aff_badenc.c buff_mars_color.c visual_operations.c
+		 op_live_aff_badenc.c buff_mars_color.c visual_operations.c\
+		 v_stores.c
 SRC_COMMON = op.c
 
 # PATH

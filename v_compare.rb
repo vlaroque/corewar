@@ -20,9 +20,9 @@ while turn < 40000 and array_mine[turn] and array_real[turn] do
 	if array_mine[turn] != array_real[turn] then
 		puts "mine " + array_mine[turn] + "real " + array_real[turn] + "\n"
 		errors -= 1
-		if errors == 0
-			exit
-		end
+#		if errors == 0
+#			exit
+#		end
 	end
 	turn += 1
 end

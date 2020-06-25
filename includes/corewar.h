@@ -231,6 +231,15 @@ int		op_bad_encoding_byte(t_data *data, t_process *process, t_cache *c);
 void	if_null_carry_up(t_process *p, int value);
 
 /*
+** verbose functions
+*/
+int		v_st(t_data *data, t_process *process, t_cache *c);
+int		v_sti(t_data *data, t_process *process, t_cache *c);
+int		v_ldi(t_data *data, t_process *process, t_cache *c);
+int		v_lldi(t_data *data, t_process *process, t_cache *c);
+
+
+/*
 ** todo functions
 */
 void	todo_change_reg(t_process *p, int reg_id, int content);

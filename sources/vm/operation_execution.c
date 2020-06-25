@@ -21,12 +21,48 @@ void		color_mars(t_data *data, int color, int pc)
 	data->colors[(pc + 3) % MEM_SIZE] = color;
 }
 
+int			f_s(char *str)
+{
+	ft_putstr(str);
+	return (0);
+}
+
+int			f_i(int nbr)
+{
+	ft_putnbr(nbr);
+	return (0);
+}
+
+int			f_a(int a, int b, int c, int d)
+{
+	int		res;
+
+	res = a + b + c + d;
+	return (res);
+}
+
+int			v_process_mvt(t_data *data, t_process *process, int to_add)
+{
+	int		new_pc;
+	
+	if (!(data->verbosity & 16))
+		return (0);
+	f_a(f_s("process "), f_i(process->id), f_s(" was "), f_i(process->pc));
+	new_pc = pc_fix(process->pc + to_add);
+	f_a(f_s(" now "), f_i(new_pc), f_s("\n"), 0);
+	return (0);
+
+}
+
 int			execute_operation(t_data *data, t_process *process)
 {
 	if (!process->todo.something_to_do)
 		return (0);
 	if (process->todo.pc_add)
+	{
+		v_process_mvt(data, process, process->todo.pc_add);
 		process->pc = pc_fix((process->todo.pc_add + process->pc) % MEM_SIZE);
+	}
 	if (process->todo.cmd_life)
 		it_live(data, process, process->todo.champ_id_life);
 	if (process->todo.cmd_write_on_mars)

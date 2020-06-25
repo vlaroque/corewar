@@ -30,6 +30,7 @@ typedef struct			s_cache
 	t_octet		types[4];
 	t_args		args[4];
 	int			bad_encoding_byte;
+	int			bad_registers;
 }						t_cache;
 
 #endif

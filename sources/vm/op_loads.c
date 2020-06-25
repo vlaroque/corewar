@@ -47,6 +47,7 @@ int		op_ldi(t_data *data, t_process *process, t_cache *c)
 	res = read_int_mars(data, where);
 	todo_change_reg(process, c->args[2].octet_data, res);
 	if_null_carry_up(process, res);
+	v_ldi(data, process, c);
 	return (0);
 }
 
@@ -85,5 +86,6 @@ int		op_lldi(t_data *data, t_process *process, t_cache *c)
 	res = read_int_mars(data, where);
 	todo_change_reg(process, c->args[2].octet_data, res);
 	if_null_carry_up(process, res);
+	v_lldi(data, process, c);
 	return (0);
 }
