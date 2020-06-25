@@ -17,6 +17,7 @@ int		op_ld(t_data *data, t_process *process, t_cache *c)
 	int		toload;
 	int		pc;
 
+	toload = 0;
 	if (c->args[0].type == T_DIR)
 		toload = c->args[0].int_data;
 	else if (c->args[0].type == T_IND)
@@ -56,6 +57,7 @@ int		op_lld(t_data *data, t_process *process, t_cache *c)
 	int		toload;
 	int		pc;
 
+	toload = 0;
 	if (c->args[0].type == T_DIR)
 		toload = c->args[0].int_data;
 	else if (c->args[0].type == T_IND)
