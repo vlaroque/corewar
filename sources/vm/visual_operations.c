@@ -6,37 +6,12 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/18 15:38:37 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/19 12:25:07 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/25 23:33:59 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "corewar.h"
 #include "operation_reading.h"
-
-int		nbr_len(int nbr)
-{
-	int		len;
-
-	len = 1;
-	while(nbr / 10)
-	{
-		nbr /= 10;
-		len++;
-	}
-	return (len);
-}
-
-int		print_x_spaces(int x)
-{
-	if (x < 0)
-		return (0);
-	while (x)
-	{
-		ft_putstr(" ");
-		x--;
-	}
-	return (0);
-}
 
 int		verbose_operations(t_data *data, t_process *p)
 {

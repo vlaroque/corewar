@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 16:48:23 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/18 23:11:05 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/25 23:26:11 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int		main(int ac, char **av)
 	init_data(&data, ac, av);
 	init_corewar(&data, ac, av);
 	finish_champs(&data);
-	if(data.c_option)
+	if (data.c_option)
 		c_option(&data);
 	if (!data.visual_option)
 		introduce_contestants(&data);

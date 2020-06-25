@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 19:19:42 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/18 16:58:19 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/25 23:30:15 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,33 +29,7 @@ static int		read_op_code(t_data *data, t_process *process)
 		op_just_next(data, process, NULL);
 	return (0);
 }
-/*
-static int		new_turn(t_data *data)
-{
-	t_process	*process;
 
-	process = data->processes;
-	while (process)
-	{
-		if (process->cooldown > 0)
-			process->cooldown--;
-		if (process->cooldown <= 0 && data->turn != 0)
-		{
-			read_operation(data, process);
-			execute_operation(data, process);
-		}
-		process = process->next;
-	}
-	process = data->processes;
-	while (process)
-	{
-		if (process->cooldown <= 0)
-			read_op_code(data, process);
-		process = process->next;
-	}
-	return (0);
-}
-*/
 static int		new_turn(t_data *data)
 {
 	t_process	*process;
@@ -99,8 +73,6 @@ int				battle(t_data *data)
 	while (1)
 	{
 		show_turn(data, data->turn);
-		if (data->debug_option && data->turn > 5390)
-			exit(0);
 		new_turn(data);
 		if (manage_checks(data, data->turn))
 			return (1);

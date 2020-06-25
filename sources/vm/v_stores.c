@@ -1,19 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   v_stores.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/06/25 23:19:32 by vlaroque          #+#    #+#             */
+/*   Updated: 2020/06/25 23:20:31 by vlaroque         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "corewar.h"
-
-int				v_st(t_data *data, t_process *process, t_cache *c)
-{
-	int		tostore;
-
-	if (!(data->verbosity & 4))
-		return (0);
-	tostore = process->reg[c->args[0].octet_data];
-	verbose_operations(data, process);
-	show_reg_elsif_number(data, &c->args[0], tostore);
-	verbose_space(data);
-	show_reg_elsif_number(data, &c->args[1], (int)c->args[1].short_data);
-	verbose_opertation_end(data, process);
-	return (0);
-}
 
 static int		sti_second_line(int first, int second, int where)
 {
@@ -42,7 +39,6 @@ int				v_sti(t_data *data, t_process *process, t_cache *c)
 	first = get_int_from_indirect_arg(data, process, &c->args[1], 1);
 	second = get_int_from_indirect_arg(data, process, &c->args[2], 1);
 	where = (process->pc + ((first + second) % IDX_MOD)) % MEM_SIZE;
-
 	verbose_operations(data, process);
 	show_reg_elsif_number(data, &c->args[0], -1);
 	verbose_space(data);
@@ -71,7 +67,6 @@ static int		ldi_second_line(int first, int second, int where, int l)
 	ft_putstr(")");
 	return (0);
 }
-
 
 int				v_ldi(t_data *data, t_process *process, t_cache *c)
 {

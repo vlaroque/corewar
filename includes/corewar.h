@@ -6,7 +6,7 @@
 /*   By: stherkil <stherkil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 17:19:57 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/19 12:26:01 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/25 23:45:39 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,42 +23,44 @@
 
 typedef union			u_subint
 {
-	int		nbr;
-	short	short_nbr;
-	t_octet	char_nbr[4];
+	int					nbr;
+	short				short_nbr;
+	t_octet				char_nbr[4];
 }						t_subint;
 
 typedef struct			s_todo
 {
-	t_bool		something_to_do;
-	int			pc_add;
-	t_bool		cmd_life;
-	int			champ_id_life;
-	t_bool		cmd_write_on_mars;
-	int			pc;
-	int			mars_content;
-	t_bool		cmd_change_register;
-	int			reg;
-	int			reg_content;
-	t_bool		cmd_change_carry;
-	int			carry_content;
-	t_bool		cmd_fork;
-	int			fork_pc;
-	t_bool		cmd_aff;
-	t_octet		char_to_aff;
+	t_bool				something_to_do;
+	int					pc_add;
+	t_bool				cmd_life;
+	int					champ_id_life;
+	t_bool				cmd_write_on_mars;
+	int					pc;
+	int					mars_content;
+	t_bool				cmd_change_register;
+	int					reg;
+	int					reg_content;
+	t_bool				cmd_change_carry;
+	int					carry_content;
+	t_bool				cmd_fork;
+	int					fork_pc;
+	t_bool				cmd_aff;
+	t_octet				char_to_aff;
 }						t_todo;
 
 typedef struct			s_op
 {
-	char		*name;
-	int			param_number;
-	t_octet		types_tab[4];
-	t_octet		op_code;
-	int			cycle;
-	char		*complete_name;
-	t_octet		encoding_byte;
-	int			direct_size_two;
+	char				*name;
+	int					param_number;
+	t_octet				types_tab[4];
+	t_octet				op_code;
+	int					cycle;
+	char				*complete_name;
+	t_octet				encoding_byte;
+	int					direct_size_two;
 }						t_op;
+
+extern t_op				g_op_tab[17];
 
 typedef struct			s_process
 {
@@ -109,7 +111,6 @@ typedef struct			s_data
 	int					visual_option;
 	int					dump_option;
 	int					cycles_before_dump;
-	int					debug_option;
 	int					verbosity;
 	int					aff_option;
 	int					c_option;
@@ -238,7 +239,6 @@ int		v_sti(t_data *data, t_process *process, t_cache *c);
 int		v_ldi(t_data *data, t_process *process, t_cache *c);
 int		v_lldi(t_data *data, t_process *process, t_cache *c);
 
-
 /*
 ** todo functions
 */
@@ -282,12 +282,20 @@ int		is_pointed(t_data *data, int pc);
 int		what_color(t_data *data, char *buff, int buff_i, int i);
 int		color_octet(t_data *data, char *buff, int buff_i, int i);
 
+/*
+** visual_operations
+*/
+
 int		verbose_operations(t_data *data, t_process *p);
 int		verbose_opertation_end(t_data *data, t_process *p);
 int		show_reg_elsif_number(t_data *data, t_args *arg, int nbr);
 int		verbose_space(t_data *data);
 int		verbose_putnbr(t_data *data, int nbr);
 
-extern	t_op			g_op_tab[17];
+/*
+** verbose_utility
+*/
+int		nbr_len(int nbr);
+int		print_x_spaces(int x);
 
 #endif

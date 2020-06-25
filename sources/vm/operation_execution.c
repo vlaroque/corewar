@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 20:08:28 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/18 16:57:54 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/25 23:25:30 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,37 +21,21 @@ void		color_mars(t_data *data, int color, int pc)
 	data->colors[(pc + 3) % MEM_SIZE] = color;
 }
 
-int			f_s(char *str)
-{
-	ft_putstr(str);
-	return (0);
-}
-
-int			f_i(int nbr)
-{
-	ft_putnbr(nbr);
-	return (0);
-}
-
-int			f_a(int a, int b, int c, int d)
-{
-	int		res;
-
-	res = a + b + c + d;
-	return (res);
-}
-
 int			v_process_mvt(t_data *data, t_process *process, int to_add)
 {
 	int		new_pc;
-	
+
 	if (!(data->verbosity & 16))
 		return (0);
-	f_a(f_s("process "), f_i(process->id), f_s(" was "), f_i(process->pc));
+	ft_putstr("process ");
+	ft_putnbr(process->id);
+	ft_putstr(" was ");
+	ft_putnbr(process->pc);
 	new_pc = pc_fix(process->pc + to_add);
-	f_a(f_s(" now "), f_i(new_pc), f_s("\n"), 0);
+	ft_putstr(" now ");
+	ft_putnbr(new_pc);
+	ft_putstr("\n");
 	return (0);
-
 }
 
 int			execute_operation(t_data *data, t_process *process)

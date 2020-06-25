@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 18:08:38 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/18 22:53:56 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/25 23:29:11 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,6 @@ int		init_corewar(t_data *data, int ac, char **av)
 			champ_id_option(data, &head_ac, &champ_id);
 		else if (!ft_strncmp(av[head_ac], "-c", 2))
 			data->visual_option = 1;
-		else if (!ft_strncmp(av[head_ac], "-d", 2))
-			data->debug_option = 1;
 		else if (!ft_strncmp(av[head_ac], "-v", 2))
 			verbose_option(data, ac, av, &head_ac);
 		else if (!ft_strncmp(av[head_ac], "-a", 2))
