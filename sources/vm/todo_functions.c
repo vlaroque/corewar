@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 20:59:56 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/05 21:09:42 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/26 00:16:16 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	todo_change_reg(t_process *p, int reg_id, int content)
 {
-	char		c;
-
 	p->todo.cmd_change_register = 1;
 	p->todo.reg = reg_id;
 	p->todo.reg_content = content;

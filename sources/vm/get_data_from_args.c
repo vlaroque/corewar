@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 20:40:35 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/05 20:43:13 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/06/26 00:15:40 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int		get_int_from_direct_arg(t_data *d, t_process *p, t_args *arg,
 {
 	int		res;
 
+	res = 0;
 	if (arg->type == T_REG)
 		res = p->reg[arg->octet_data];
 	else if (arg->type == T_IND && idx_lim)
@@ -35,6 +36,7 @@ int		get_int_from_indirect_arg(t_data *d, t_process *p, t_args *arg,
 {
 	int		res;
 
+	res = 0;
 	if (arg->type == T_REG)
 		res = p->reg[arg->octet_data];
 	else if (arg->type == T_IND && idx_lim)

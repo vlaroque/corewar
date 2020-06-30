@@ -6,7 +6,7 @@
 #    By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/20 10:33:13 by vlaroque          #+#    #+#              #
-#    Updated: 2020/06/25 23:52:23 by vlaroque         ###   ########.fr        #
+#    Updated: 2020/06/26 00:12:25 by vlaroque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 NAME1 = asm
 NAME2 = corewar
 CC = clang
-CFLAGS = -g -Wextra -Werror -Wno-missing-field-initializers
+CFLAGS = -g -Wextra -Werror -Wall -Wno-missing-field-initializers
 
 #-fsanitize=address# 
 # SOURCES
