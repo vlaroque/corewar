@@ -55,7 +55,7 @@ int		print_usage(t_data *data);
 /*
 ** process_new
 */
-int			new_process(t_data *data, int loc, int champ_id);
+int		new_process(t_data *data, int loc, int champ_id);
 
 /*
 ** checks

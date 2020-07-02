@@ -46,8 +46,6 @@ int		op_ldi(t_data *data, t_process *process, t_cache *c)
 	second = get_int_from_indirect_arg(data, process, &c->args[1], 1);
 	where = (process->pc + ((first + second) % IDX_MOD)) % MEM_SIZE;
 	res = read_int_mars(data, where);
-	if (c->args[0].type == T_DIR)
-		res = (0xFFFF0000 & res);
 	todo_change_reg(process, c->args[2].octet_data, res);
 	if_null_carry_up(process, res);
 	v_ldi(data, process, c);

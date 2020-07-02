@@ -31,7 +31,7 @@ int		big_endian_int(void *ptr)
 
 t_llu	read_bin_to_nbr(void *ptr, size_t len)
 {
-	t_llu	nbr;
+	t_llu				br;
 	t_octet				*octet;
 
 	nbr = 0;
