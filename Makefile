@@ -20,7 +20,10 @@ CFLAGS = -g -Wextra -Werror -Wall -Wno-missing-field-initializers
 #-fsanitize=address# 
 # SOURCES
 
-SRC_ASM = 
+SRC_ASM = main.c writer/assembler.c writer/endianness.c \
+	  writer/writer.c writer/display.c parser/parser.c \
+	  parser/analyse.c parser/display.c tokens.c \
+	  utils/file.c utils/read_file.c utils/del_useless.c utils/free_tab.c
 SRC_VM = main.c debug.c battle.c champ_load.c init_corewar.c process_new.c\
 		 operation_reading.c functions.c operation_execution.c read_mars.c\
 		 write_mars.c op_just_next.c pre_execute_operation.c encoding_byte.c\
@@ -59,8 +62,8 @@ DEPENDS += $(VM_OBJ:%.o=%.d)
 LIBFT = libft/libft.a
 
 .PHONY: all
-#all : $(NAME1) $(NAME2)
-all : $(NAME2)
+all : $(NAME1) $(NAME2)
+#all : $(NAME2)
 
 $(NAME1) : $(ASM_OBJ) $(LIBFT)
 	@echo "\tLinking $@'s files"
