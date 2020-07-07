@@ -70,11 +70,18 @@ int			ft_isnbr(char *str)
 
 int			print_usage(t_data *data)
 {
-	ft_putstr("Usage: ./corewar [-dump nbr_cycles] [[-n number] ");
+	ft_putstr("Usage: ./corewar  [-v number] [-dump nbr_cycles] [[-n number] ");
 	ft_putstr("champion1.cor] ...\n");
 	ft_putstr("\t-dump nbr_cycles   : Dumps memory after nbr_cycles cycles ");
 	ft_putstr("then exits\n");
 	ft_putstr("\t-n number          : Set the number of the next champion\n");
+	ft_putstr("\t-v number          : Verbosity levels, can be added ");
+	ft_putstr("together to enable several\n");
+	ft_putstr("\t\t - 0 : Show only essentials\n");
+	ft_putstr("\t\t - 1 : Show lives\n");
+	ft_putstr("\t\t - 2 : Show cycles\n");
+	ft_putstr("\t\t - 4 : Show operations (Params are NOT litteral ...)\n");
+	ft_putstr("\t\t - 8 : Show deaths\n");
 	free_data(data);
 	exit(0);
 	return (0);
