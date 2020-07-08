@@ -6,7 +6,7 @@
 /*   By: aljigmon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 19:44:35 by aljigmon          #+#    #+#             */
-/*   Updated: 2020/06/21 20:05:37 by aljigmon         ###   ########.fr       */
+/*   Updated: 2020/07/08 16:51:37 by aljigmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ t_token		*free_tokens(t_token **tokens)
 	t_token	*tmp;
 
 	token = *tokens;
+	if (token == NULL || tokens == NULL)
+		return (NULL);
 	while (token->prev)
 		token = token->prev;
 	while (token)
