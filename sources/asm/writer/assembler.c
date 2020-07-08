@@ -6,7 +6,7 @@
 /*   By: aljigmon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 15:13:54 by aljigmon          #+#    #+#             */
-/*   Updated: 2020/07/08 15:16:47 by aljigmon         ###   ########.fr       */
+/*   Updated: 2020/07/08 23:20:37 by aljigmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,28 +18,28 @@ static inline void		write_parameters(
 	t_token *start,
 	t_token *token)
 {
-	uint32_t		value;
-	size_t			dir_size;
+	uint32_t		v;
+	size_t			dir;
 
-	dir_size = get_dir_size(schema->opcode);
+	dir = get_dir_size(schema->opcode);
 	while (is_parameter(token))
 	{
 		if (((token->type & T_REF) != T_REF))
-			value = (uint32_t)ft_atoi(token->type == T_REG
+			v = (uint32_t)ft_atoi(token->type == T_REG
 				? token->content + 1 : token->content);
 		if (token->type == T_REG)
-			write_buffer(file, (char*)&value, 1);
+			write_buffer(file, (char*)&v, 1);
 		if ((token->type & T_REF) == T_REF)
-			value = resolve_reference(start, token);
+			v = resolve_reference(start, token);
 		if ((token->type & T_DIR) == T_DIR)
 		{
-			dir_size == 4 ? to_big_endian32((char*)&value) : to_big_endian16((char*)&value);
-			write_buffer(file, (char*)&value, dir_size);
+			dir == 4 ? to_big_endian32((char*)&v) : to_big_endian16((char*)&v);
+			write_buffer(file, (char*)&v, dir);
 		}
 		if ((token->type & T_IND) == T_IND)
 		{
-			to_big_endian16((char*)&value);
-			write_buffer(file, (char*)&value, IND_SIZE);
+			to_big_endian16((char*)&v);
+			write_buffer(file, (char*)&v, IND_SIZE);
 		}
 		token = token->next;
 	}
