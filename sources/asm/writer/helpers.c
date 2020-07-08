@@ -6,7 +6,7 @@
 /*   By: aljigmon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 17:05:46 by aljigmon          #+#    #+#             */
-/*   Updated: 2020/07/08 13:54:16 by aljigmon         ###   ########.fr       */
+/*   Updated: 2020/07/08 22:59:27 by aljigmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ void	to_big_endian32(char *buff)
 	memcpy(buff, (void*)&value, sizeof(uint32_t));
 }
 
-int			yield_token_offset(t_token *token, uint32_t *direct_size, int *offset)
+int		yield_token_offset(t_token *token, uint32_t *direct_size, int *offset)
 {
-	int 		mne_offset;
+	int			mne_offset;
 	t_inst_info	*schema;
 
 	mne_offset = *offset;

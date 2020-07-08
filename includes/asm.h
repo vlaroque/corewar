@@ -6,7 +6,7 @@
 /*   By: aljigmon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/09 14:48:01 by aljigmon          #+#    #+#             */
-/*   Updated: 2020/07/08 13:44:02 by aljigmon         ###   ########.fr       */
+/*   Updated: 2020/07/08 22:57:06 by aljigmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@
 # include "asm_structures.h"
 # include "asm_tokens.h"
 
-int			yield_token_offset(t_token *token, uint32_t *direct_size, int *offset);
+int			yield_token_offset(t_token *token,
+		uint32_t *direct_size, int *offset);
 t_bool		throw_check_quotes(char *str, t_token *token);
 t_bool		is_parameter(t_token *token);
 t_bool		ocp_required(uint32_t inst);
