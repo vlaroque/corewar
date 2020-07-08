@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 13:13:21 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/02/19 18:53:59 by stherkil         ###   ########.fr       */
+/*   Updated: 2020/07/08 13:47:33 by aljigmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ struct	s_list
 	struct s_list	*next;
 };
 
-char    *ft_strndup(const char *s1, int n);
+char	*ft_strndup(const char *s1, int n);
 void	*ft_memset(void *b, int c, size_t len);
 void	*ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
