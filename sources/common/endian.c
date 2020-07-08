@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 15:36:02 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/01/23 15:45:36 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/07/08 13:49:32 by aljigmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		big_endian_int(void *ptr)
 t_llu	read_bin_to_nbr(void *ptr, size_t len)
 {
 	t_llu	nbr;
-	t_octet				*octet;
+	t_octet	*octet;
 
 	nbr = 0;
 	octet = ptr;
