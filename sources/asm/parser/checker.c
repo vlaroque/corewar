@@ -6,7 +6,7 @@
 /*   By: aljigmon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 13:54:38 by aljigmon          #+#    #+#             */
-/*   Updated: 2020/07/08 15:18:13 by aljigmon         ###   ########.fr       */
+/*   Updated: 2020/07/08 16:38:34 by aljigmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_bool	is_register(t_token *token)
 	symbol = token->content;
 	if (*symbol++ != 'r')
 		return (FALSE);
-	register_number = atoi(symbol);
+	register_number = ft_atoi(symbol);
 	if (register_number < 0 || register_number > REG_NUMBER)
 	{
 		display_register_unknown(token);
@@ -106,8 +106,6 @@ t_bool	is_symbol(t_token *token)
 	t_token		*label;
 	uint32_t	offset;
 
-	puts(token->content);
-	puts("okkkk");
 	if (token->content[0] == LABEL_CHAR)
 	{
 		label = get_label(token, token->content + 1);
