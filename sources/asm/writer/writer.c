@@ -46,13 +46,14 @@ static inline char		*get_out_file(char *in_file)
 	char		*out_file;
 
 	ext_len = is_s_ext(in_file) ? get_ext_len(in_file) : 0;
-	src_len = ft_strlen(in_file);
-	dst_len = (src_len - ext_len) + 4;
+	src_len = ft_strlen(in_file) - ext_len;
+	dst_len = src_len + 4;
 	out_file = (char*)malloc(sizeof(char) * (dst_len + 1));
 	if (!out_file)
 		return (NULL);
-	ft_strncpy(out_file, in_file, src_len - ext_len);
-	return (ft_strcat(out_file, ".cor"));
+	ft_strncpy(out_file, in_file, src_len);
+	ft_strcpy(out_file + src_len, ".cor");
+	return (out_file);
 }
 
 

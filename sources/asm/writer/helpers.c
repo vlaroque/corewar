@@ -12,6 +12,19 @@
 
 #include "asm.h"
 
+t_bool	is_parameter(t_token *token)
+{
+	return (token && ((token->type & T_DIR) == T_DIR || ((token->type & T_IND) == T_IND) || token->type == T_REG));
+}
+
+
+
+t_bool	ocp_required(uint32_t inst)
+{
+	return (inst != 0x1 && inst != 0x09 && inst != 0x0c);
+}
+
+
 void	to_big_endian16(char *buff)
 {
 	uint16_t	data;

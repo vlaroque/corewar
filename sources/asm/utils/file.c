@@ -30,7 +30,7 @@ t_file		*init_file(void)
 
 int			load_file(t_file *file, char *filename)
 {
-	file->fd = open(filename, O_WRONLY | O_TRUNC | O_CREAT, 644);
+	file->fd = open(filename, O_WRONLY | O_TRUNC | O_CREAT, 0644);
 	return (file->fd);
 }
 

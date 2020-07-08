@@ -24,9 +24,25 @@
 # include "asm_structures.h"
 # include "asm_tokens.h"
 
-char    	*read_file(const int fd);
-void    	*free_tab(char ***tab);
-char    	**del_useless(char const *s);
+
+t_bool	is_parameter(t_token *token);
+t_bool	ocp_required(uint32_t inst);
+
+size_t		get_dir_size(uint32_t inst);
+t_inst_info	*get_token_schema(t_token *token);
+uint8_t		get_opc(t_inst_info *schema, t_token *token);
+int			get_token_offset(t_token *start, t_token *search, t_bool mnemonic);
+int			resolve_reference(t_token *start, t_token *token);
+
+t_bool		is_register(t_token *token);
+t_bool		is_label(char *label);
+t_token		*get_label(t_token *token, char *label);
+t_bool		is_constant(t_token *token);
+t_bool		is_symbol(t_token *token);
+
+char		*read_file(const int fd);
+void		*free_tab(char ***tab);
+char		**del_useless(char const *s);
 
 void		display_string_error(char *str);
 void		display_label_unknown(t_token *token);
