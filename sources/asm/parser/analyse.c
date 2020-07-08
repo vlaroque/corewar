@@ -6,13 +6,13 @@
 /*   By: aljigmon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 17:03:11 by aljigmon          #+#    #+#             */
-/*   Updated: 2020/06/22 17:03:12 by aljigmon         ###   ########.fr       */
+/*   Updated: 2020/07/08 13:57:52 by aljigmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
 
-static inline t_bool get_arguments(t_token *token, t_inst_info *handler)
+static inline t_bool		get_arguments(t_token *token, t_inst_info *handler)
 {
 	uint32_t	offset;
 	int			param;
@@ -33,7 +33,7 @@ static inline t_bool get_arguments(t_token *token, t_inst_info *handler)
 	return (TRUE);
 }
 
-static inline t_bool	throw_str_exception(t_token *token)
+static inline t_bool		throw_str_exception(t_token *token)
 {
 	char *str;
 
@@ -69,7 +69,7 @@ static inline t_bool	throw_str_exception(t_token *token)
 	return (FALSE);
 }
 
-static inline t_bool	throw_label_exception(t_token *token)
+static inline t_bool		throw_label_exception(t_token *token)
 {
 	char *symbol;
 
@@ -98,14 +98,14 @@ static inline t_inst_info	*get_schema(t_token *token)
 	offset = 0;
 	while (g_inst_symbol_tab[offset].inst)
 	{
-			if (!ft_strcmp(token->content, g_inst_symbol_tab[offset].inst))
-				return (&g_inst_symbol_tab[offset]);
-			offset++;
+		if (!ft_strcmp(token->content, g_inst_symbol_tab[offset].inst))
+			return (&g_inst_symbol_tab[offset]);
+		offset++;
 	}
 	return (NULL);
 }
 
-void					syntax_analysis(t_token *token)
+void						syntax_analysis(t_token *token)
 {
 	t_inst_info	*schema;
 
@@ -129,4 +129,3 @@ void					syntax_analysis(t_token *token)
 		token = token->next;
 	}
 }
-

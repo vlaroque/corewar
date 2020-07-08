@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aljigmon <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/08 13:54:38 by aljigmon          #+#    #+#             */
+/*   Updated: 2020/07/08 15:18:13 by aljigmon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "asm.h"
 
 t_bool	is_register(t_token *token)
@@ -56,7 +68,8 @@ t_token	*get_label(t_token *token, char *label)
 		size = 0;
 		while (item->content[size])
 			size++;
-		if (size - 1 == label_size && !ft_strncmp(item->content, label, size - 1))
+		if (size - 1 == label_size
+				&& !ft_strncmp(item->content, label, size - 1))
 			return (item);
 		item = item->next;
 	}

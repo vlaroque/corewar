@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   endianness.c                                       :+:      :+:    :+:   */
+/*   helpers.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aljigmon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 17:05:46 by aljigmon          #+#    #+#             */
-/*   Updated: 2020/06/22 17:05:47 by aljigmon         ###   ########.fr       */
+/*   Updated: 2020/07/08 13:54:16 by aljigmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 t_bool	is_parameter(t_token *token)
 {
-	return (token && ((token->type & T_DIR) == T_DIR || ((token->type & T_IND) == T_IND) || token->type == T_REG));
+	return (token && ((token->type & T_DIR) == T_DIR
+				|| ((token->type & T_IND) == T_IND) || token->type == T_REG));
 }
-
-
 
 t_bool	ocp_required(uint32_t inst)
 {
 	return (inst != 0x1 && inst != 0x09 && inst != 0x0c);
 }
-
 
 void	to_big_endian16(char *buff)
 {

@@ -6,7 +6,7 @@
 /*   By: aljigmon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 17:05:59 by aljigmon          #+#    #+#             */
-/*   Updated: 2020/06/22 17:06:01 by aljigmon         ###   ########.fr       */
+/*   Updated: 2020/07/08 15:12:54 by aljigmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ static inline char		*get_out_file(char *in_file)
 	ft_strcpy(out_file + src_len, ".cor");
 	return (out_file);
 }
-
 
 void					write_binary(char *in_file, t_token *token)
 {
