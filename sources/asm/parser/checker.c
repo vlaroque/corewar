@@ -60,14 +60,10 @@ t_token	*get_label(t_token *token, char *label)
 	item = token;
 	while (item->prev)
 		item = item->prev;
-	label_size = 0;
-	while (label[label_size])
-		label_size++;
+	label_size = ft_strlen(label);
 	while (item)
 	{
-		size = 0;
-		while (item->content[size])
-			size++;
+		size = ft_strlen(item->content);
 		if (size - 1 == label_size
 				&& !ft_strncmp(item->content, label, size - 1))
 			return (item);

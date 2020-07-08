@@ -64,33 +64,24 @@ size_t		get_dir_size(uint32_t inst)
 int			get_token_offset(t_token *start, t_token *search, t_bool mnemonic)
 {
 	int			offset;
-	int			ins_offset;
+	int			mne_offset;
 	t_token		*token;
-	t_inst_info	*schema;
-	uint32_t	dir_size;
+	uint32_t	direct_size;
 
 	token = start;
 	offset = 0;
-	ins_offset = 0;
 	while (token)
 	{
 		if ((token->type & T_MNE) == T_MNE)
-		{
-			ins_offset = offset;
-			schema = get_token_schema(token);
-			dir_size = get_dir_size(schema->opcode);
-			offset++;
-			if (ocp_required(schema->opcode))
-				offset++;
-		}
+			mne_offset = yield_token_offset(token, &direct_size, &offset);
 		if ((token->type & T_DIR) == T_DIR)
-			offset += dir_size;
+			offset += direct_size;
 		else if ((token->type & T_REG) == T_REG)
 			offset++;
 		else if ((token->type & T_IND) == T_IND)
 			offset += IND_SIZE;
 		if (token == search)
-			return (mnemonic ? ins_offset : offset);
+			return (mnemonic ? mne_offset : offset);
 		token = token->next;
 	}
 	return (0);
@@ -102,7 +93,6 @@ int			resolve_reference(t_token *start, t_token *token)
 	int		reference_offset;
 	t_token	*label_token;
 	int		label_offset;
-	int		offset;
 	size_t	length;
 
 	reference_name = token->content + 2;
@@ -120,6 +110,5 @@ int			resolve_reference(t_token *start, t_token *token)
 	if (!label_token)
 		return (0);
 	label_offset = get_token_offset(start, label_token, FALSE);
-	offset = label_offset - reference_offset;
-	return (offset);
+	return (label_offset - reference_offset);
 }

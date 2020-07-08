@@ -12,34 +12,32 @@
 
 #include "asm.h"
 
-static inline void		write_parameters(t_inst_info *schema, t_file *file, t_token *start, t_token *token)
+static inline void		write_parameters(
+	t_inst_info *schema,
+	t_file *file,
+	t_token *start,
+	t_token *token)
 {
 	uint32_t		value;
-	t_bool			is_ref;
 	size_t			dir_size;
 
 	dir_size = get_dir_size(schema->opcode);
 	while (is_parameter(token))
 	{
-		is_ref = ((token->type & T_REF) == T_REF);
+		if (((token->type & T_REF) != T_REF))
+			value = (uint32_t)ft_atoi(token->type == T_REG
+				? token->content + 1 : token->content);
 		if (token->type == T_REG)
-		{
-			value = (uint32_t)ft_atoi(token->content + 1);
 			write_buffer(file, (char*)&value, 1);
-		}
-		if (is_ref)
+		if ((token->type & T_REF) == T_REF)
 			value = resolve_reference(start, token);
 		if ((token->type & T_DIR) == T_DIR)
 		{
-			if (!is_ref)
-				value = (uint32_t)ft_atoi(token->content);
 			dir_size == 4 ? to_big_endian32((char*)&value) : to_big_endian16((char*)&value);
 			write_buffer(file, (char*)&value, dir_size);
 		}
 		if ((token->type & T_IND) == T_IND)
 		{
-			if (!is_ref)
-				value = (uint32_t)ft_atoi(token->content);
 			to_big_endian16((char*)&value);
 			write_buffer(file, (char*)&value, IND_SIZE);
 		}

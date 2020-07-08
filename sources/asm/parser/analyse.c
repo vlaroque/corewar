@@ -45,28 +45,7 @@ static inline t_bool		throw_str_exception(t_token *token)
 		display_string_error("Assembly syntax error");
 		return (TRUE);
 	}
-	while (*str && *str != '"')
-	{
-		if (*str == '\\' && *(str + 1) == '"')
-		{
-			if (!*(str + 2))
-			{
-				display_string_error(token->content);
-				return (TRUE);
-			}
-			ft_strcpy(str, str + 1);
-		}
-		str++;
-	}
-	if (*str != '"' || *(str + 1))
-	{
-		display_string_error(token->content);
-		return (TRUE);
-	}
-	*str = '\0';
-	token->type = T_STR;
-	token->content++;
-	return (FALSE);
+	return (throw_check_quotes(str, token));
 }
 
 static inline t_bool		throw_label_exception(t_token *token)

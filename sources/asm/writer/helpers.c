@@ -47,20 +47,16 @@ void	to_big_endian32(char *buff)
 	memcpy(buff, (void*)&value, sizeof(uint32_t));
 }
 
-void	to_big_endian64(char *buff)
+int			yield_token_offset(t_token *token, uint32_t *direct_size, int *offset)
 {
-	uint64_t	data;
-	uint64_t	value;
+	int 		mne_offset;
+	t_inst_info	*schema;
 
-	data = *(uint64_t*)buff;
-	value = (
-			((data << 56) & 0xff00000000000000) |
-			((data << 40) & 0xff000000000000) |
-			((data << 24) & 0xff0000000000) |
-			((data << 8) & 0xff00000000) |
-			((data >> 8) & 0xff000000) |
-			((data >> 24) & 0xff0000) |
-			((data >> 40) & 0xff00) |
-			((data >> 56) & 0xff));
-	memcpy(buff, (void*)&value, sizeof(uint64_t));
+	mne_offset = *offset;
+	schema = get_token_schema(token);
+	*direct_size = get_dir_size(schema->opcode);
+	(*offset)++;
+	if (ocp_required(schema->opcode))
+		(*offset)++;
+	return (mne_offset);
 }

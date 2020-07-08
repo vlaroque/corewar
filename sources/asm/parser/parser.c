@@ -12,6 +12,32 @@
 
 #include "asm.h"
 
+t_bool		throw_check_quotes(char *str, t_token *token)
+{
+	while (*str && *str != '"')
+	{
+		if (*str == '\\' && *(str + 1) == '"')
+		{
+			if (!*(str + 2))
+			{
+				display_string_error(token->content);
+				return (TRUE);
+			}
+			ft_strcpy(str, str + 1);
+		}
+		str++;
+	}
+	if (*str != '"' || *(str + 1))
+	{
+		display_string_error(token->content);
+		return (TRUE);
+	}
+	*str = '\0';
+	token->type = T_STR;
+	token->content++;
+	return (FALSE);
+}
+
 static void	upgrade(int *i, int *num_line, char *line, char **tab)
 {
 	*i = 0;
