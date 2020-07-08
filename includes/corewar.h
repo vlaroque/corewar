@@ -6,7 +6,7 @@
 /*   By: gondras <gondras@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 17:19:57 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/26 00:07:49 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/07/08 13:41:45 by aljigmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int		print_usage(t_data *data);
 /*
 ** process_new
 */
-int			new_process(t_data *data, int loc, int champ_id);
+int		new_process(t_data *data, int loc, int champ_id);
 
 /*
 ** checks

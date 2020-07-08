@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   defines.h                                          :+:      :+:    :+:   */
+/*   asm_typedefs.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aljigmon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 16:23:39 by aljigmon          #+#    #+#             */
-/*   Updated: 2020/06/20 21:03:44 by aljigmon         ###   ########.fr       */
+/*   Updated: 2020/07/08 13:43:12 by aljigmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFINES_H
-# define DEFINES_H
+#ifndef ASM_TYPEDEFS_H
+# define ASM_TYPEDEFS_H
 
 # include <string.h>
 # include <stdint.h>

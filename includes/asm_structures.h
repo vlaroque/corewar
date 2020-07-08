@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct.h                                           :+:      :+:    :+:   */
+/*   asm_structures.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aljigmon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 16:25:10 by aljigmon          #+#    #+#             */
-/*   Updated: 2020/06/20 21:23:21 by aljigmon         ###   ########.fr       */
+/*   Updated: 2020/07/08 13:44:42 by aljigmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCT_H
-# define STRUCT_H
+#ifndef ASM_STRUCTURES_H
+# define ASM_STRUCTURES_H
 
 # include "asm_typedefs.h"
 # include "op.h"
