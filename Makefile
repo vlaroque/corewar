@@ -15,7 +15,7 @@
 NAME1 = asm
 NAME2 = corewar
 CC = clang
-CFLAGS = -g -Wextra -Werror -Wall -Wno-missing-field-initializers
+CFLAGS = -Wextra -Werror -Wall 
 
 #-fsanitize=address#
 # SOURCES
