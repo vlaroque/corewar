@@ -91,7 +91,7 @@ char		**del_useless(char const *s)
 		return (NULL);
 	size = count_words(s, 0);
 	i = 0;
-	if ((tab = (char**)malloc(sizeof(char*) * size + 1)) == NULL)
+	if ((tab = (char**)malloc(sizeof(char*) * (size + 1))) == NULL)
 		return (NULL);
 	tab[size] = 0;
 	while (i < size)
