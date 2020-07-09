@@ -16,10 +16,19 @@ t_bool	is_register(t_token *token)
 {
 	char		*symbol;
 	int			register_number;
+	int			index;
 
 	symbol = token->content;
 	if (*symbol++ != 'r')
 		return (FALSE);
+	index = 0;
+	while (symbol[index] && symbol[index] >= '0' && symbol[index] <= '9')
+		index++;
+	if ((symbol[0] == '0' && symbol[1]) || symbol[index])
+	{
+		display_register_unknown(token);
+		return (FALSE);
+	}
 	register_number = ft_atoi(symbol);
 	if (register_number < 0 || register_number > REG_NUMBER)
 	{
@@ -33,13 +42,22 @@ t_bool	is_register(t_token *token)
 t_bool	is_label(char *label)
 {
 	uint32_t	offset;
+	uint32_t	count;
 
 	while (*label)
 	{
 		offset = 0;
-		while (LABEL_CHARS[offset] && LABEL_CHARS[offset] != *label)
+		count = 0;
+		while (LABEL_CHARS[offset] && LABEL_CHARS[offset])
+		{
+			if (LABEL_CHARS[offset] == *label)
+			{
+				count++;
+				break ;
+			}
 			offset++;
-		if (!LABEL_CHARS[offset])
+		}
+		if (!count)
 			return (FALSE);
 		label++;
 	}

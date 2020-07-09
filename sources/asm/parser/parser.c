@@ -77,6 +77,7 @@ t_token		*lexical_analysis(const int fd, char *line, int num_line, int i)
 t_token		*parser(const int fd)
 {
 	t_token	*tokens;
+	int		count;
 
 	tokens = lexical_analysis(fd, NULL, 1, 0);
 	if (!tokens)
@@ -84,6 +85,13 @@ t_token		*parser(const int fd)
 		ft_putstr("error reading file, format not recognized\n");
 		return (NULL);
 	}
-	syntax_analysis(tokens);
+	count = syntax_analysis(tokens);
+	if (count <= 0)
+	{
+		if (count == -1)
+			ft_putstr("The file does not contain instructions to execute\n");
+		free_tokens(&tokens);
+		return (NULL);
+	}
 	return (tokens);
 }

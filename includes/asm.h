@@ -63,6 +63,6 @@ int			load_file(t_file *file, char *filename);
 void		write_buffer(t_file *file, char *data, uint32_t size);
 void		file_flush(t_file *file);
 void		clear_file(t_file *file);
-void		syntax_analysis(t_token *token);
+int			syntax_analysis(t_token *token);
 
 #endif
