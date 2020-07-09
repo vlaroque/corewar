@@ -24,6 +24,7 @@
 # include "asm_structures.h"
 # include "asm_tokens.h"
 
+t_bool		throw_const_error(char *str);
 t_bool		throw_fields(char *name, char *comment);
 int			yield_token_offset(t_token *token,
 		uint32_t *direct_size, int *offset);

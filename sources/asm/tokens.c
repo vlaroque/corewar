@@ -26,6 +26,7 @@ t_token		*new_token(int num, char *content, int type)
 		free(token);
 		return (NULL);
 	}
+	token->offset = 0;
 	token->type = type;
 	token->next = NULL;
 	token->prev = NULL;
@@ -38,39 +39,42 @@ int			append_token(int num, char *content, int type, t_token *token)
 	{
 		token = token->next;
 	}
-	token->next = (t_token*)malloc(sizeof(*token));
+	token->next = (t_token*)ft_memalloc(sizeof(*token));
 	if (!token->next)
 		return (0);
 	token->next->num = num;
 	token->next->content = ft_strdup(content);
-	if (!token->next->content)
-	{
-		free(token->next);
-		return (0);
+		if (!token->next->content)
+		{
+			free(token->next);
+			return (0);
+		}
+		token->next->type = type;
+		token->next->next = NULL;
+		token->next->prev = token;
+		return (1);
 	}
-	token->next->type = type;
-	token->next->next = NULL;
-	token->next->prev = token;
-	return (1);
-}
 
-t_token		*free_tokens(t_token **tokens)
-{
-	t_token	*token;
-	t_token	*tmp;
+	t_token		*free_tokens(t_token **tokens)
+	{
+		t_token	*token;
+		t_token	*tmp;
 
-	token = *tokens;
-	if (token == NULL || tokens == NULL)
+		token = *tokens;
+		if (token == NULL || tokens == NULL)
+			return (NULL);
+		while (token->prev)
+			token = token->prev;
+		while (token)
+		{
+			tmp = token;
+			token = tmp->next;
+			if (tmp->content)
+			{
+				tmp->content -= tmp->offset;
+				ft_strdel(&tmp->content);
+			}
+			free(tmp);
+		}
 		return (NULL);
-	while (token->prev)
-		token = token->prev;
-	while (token)
-	{
-		tmp = token;
-		token = tmp->next;
-		if (tmp->content)
-			ft_strdel(&tmp->content);
-		free(tmp);
 	}
-	return (NULL);
-}

@@ -20,6 +20,7 @@ typedef struct		s_token
 {
 	int				num;
 	int				type;
+	int				offset;
 	char			*content;
 	struct s_token	*next;
 	struct s_token	*prev;

@@ -110,7 +110,10 @@ t_bool	is_constant(t_token *token)
 		token->type = (T_REF | T_DIR);
 		return (TRUE);
 	}
+	token->offset++;
 	token->content++;
+	if (throw_const_error(token->content))
+		return (FALSE);
 	token->type = T_DIR;
 	return (TRUE);
 }
@@ -127,7 +130,6 @@ t_bool	is_symbol(t_token *token)
 			return (FALSE);
 		label->type = T_LAB;
 		token->type = (T_REF | T_IND);
-		exit(0);
 		return (TRUE);
 	}
 	offset = (token->content[0] == '+' || token->content[0] == '-') ? 1 : 0;
