@@ -35,6 +35,7 @@ t_bool		throw_check_quotes(char *str, t_token *token)
 	*str = '\0';
 	token->type = T_STR;
 	token->content++;
+	token->offset++;
 	return (FALSE);
 }
 

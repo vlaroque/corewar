@@ -12,6 +12,20 @@
 
 #include "asm.h"
 
+t_bool	throw_const_error(char *str)
+{
+	char *strr = str;
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str)
+	{
+		if (!ft_isdigit(*str))
+			return (TRUE);
+		str++;
+	}
+	return (FALSE);
+}
+
 void	*free_tab(char ***tab)
 {
 	int		i;

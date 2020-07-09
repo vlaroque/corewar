@@ -6,7 +6,7 @@ entree:	live	%42		# entree
 	ld	%0,r5
 	zjmp	%:bite
 
-tier:	sti	r1,%:tirb,%1
+tir:	sti	r1,%:tirb,%1
 	ld	%2304,r10
 	ld	%1,r5
 	ld	%0,r11
@@ -15,9 +15,9 @@ tier:	sti	r1,%:tirb,%1
 tirf:	live	%42
 	fork	%:tirop
 	live	%742
-	sub	r3,r5,r5
+	sub	r3,r5,r3
 	zjmp	%:top
-	ld	%0,r1
+	ld	%0,r11
 	fork	%:tirvd
 	live	%42
 	sti	r10,%-510,%0
@@ -109,7 +109,7 @@ top:	live	%42
 	sti	r3,%:p32deb,%-6
 	ld	%2,r3
 	sti	r3,%:p32deb,%-16
-	ld	%sds0,r3
+	ld	%0,r3
 	zjmp	%:topd
 
 
