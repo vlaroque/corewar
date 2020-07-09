@@ -6,7 +6,7 @@
 /*   By: aljigmon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 17:03:11 by aljigmon          #+#    #+#             */
-/*   Updated: 2020/07/08 13:57:52 by aljigmon         ###   ########.fr       */
+/*   Updated: 2020/07/09 15:11:21 by aljigmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,6 @@ static inline t_inst_info	*get_schema(t_token *token)
 	length = ft_strlen(token->content);
 	while (g_inst_symbol_tab[offset].inst)
 	{
-
 		if (!ft_strcmp(token->content, g_inst_symbol_tab[offset].inst)
 			&& length == ft_strlen(g_inst_symbol_tab[offset].inst))
 			return (&g_inst_symbol_tab[offset]);
