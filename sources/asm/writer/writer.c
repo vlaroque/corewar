@@ -12,6 +12,29 @@
 
 #include "asm.h"
 
+t_bool			throw_fields(char *name, char *comment)
+{
+	if (!name)
+		display_missing_field(NAME_CMD_STRING);
+	else if (!comment)
+		display_missing_field(COMMENT_CMD_STRING);
+	else
+	{
+		if (ft_strlen(name) > PROG_NAME_LENGTH)
+		{
+			ft_putstr(".name size exceeds expected\n");
+			return (TRUE);
+		}
+		if (ft_strlen(comment) > COMMENT_LENGTH)
+		{
+			ft_putstr(".comment size exceeds expected\n");
+			return (TRUE);
+		}
+		return (FALSE);
+	}
+	return (TRUE);
+}
+
 static inline t_bool	is_s_ext(char *path)
 {
 	uint32_t	offset;

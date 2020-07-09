@@ -1,7 +1,7 @@
 .name           "42"
 .comment        "Just a basic Winner Program"
 
-en*tree:	live	%42		# entree
+entree:	live	%42		# entree
 	ld	%0,r5
 	ld	%0,r5
 	zjmp	%:bite
@@ -15,9 +15,9 @@ tier:	sti	r1,%:tirb,%1
 tirf:	live	%42
 	fork	%:tirop
 	live	%742
-	sub	r3,r5,r3
+	sub	r3,r5,r5
 	zjmp	%:top
-	ld	%0,r11
+	ld	%0,r1
 	fork	%:tirvd
 	live	%42
 	sti	r10,%-510,%0
@@ -109,7 +109,7 @@ top:	live	%42
 	sti	r3,%:p32deb,%-6
 	ld	%2,r3
 	sti	r3,%:p32deb,%-16
-	ld	%0,r3
+	ld	%sds0,r3
 	zjmp	%:topd
 
 

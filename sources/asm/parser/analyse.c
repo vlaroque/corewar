@@ -24,14 +24,14 @@ static inline t_bool		get_arguments(t_token *token, t_inst_info *handler)
 	while (params[count] && count < 3)
 		count++;
 	offset = 0;
-	while ((param = params[offset]) && offset < 3)
+	while ((param = params[offset]) && offset < 3 && token)
 	{
-		if (!token)
-			return (FALSE);
 		if (((param & T_REG) && is_register(token))
 				|| ((param & T_DIR) && is_constant(token))
 				|| ((param & T_IND) && is_symbol(token)))
 			offset++;
+		if (!token->type)
+			offset = 4;
 		token = token->next;
 	}
 	if (offset != count)
@@ -70,8 +70,12 @@ static inline t_bool		throw_label_exception(t_token *token)
 		symbol++;
 	if (*symbol == ':')
 	{
-		if (!*(symbol + 1))
+		*symbol = '\0';
+		if (!*(symbol + 1) && is_label(token->content))
+		{
+			*symbol = ':';
 			token->type = T_LAB;
+		}
 		else
 		{
 			display_label_error(token->content);

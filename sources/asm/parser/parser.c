@@ -6,7 +6,7 @@
 /*   By: aljigmon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/21 20:01:37 by aljigmon          #+#    #+#             */
-/*   Updated: 2020/06/21 20:09:59 by aljigmon         ###   ########.fr       */
+/*   Updated: 2020/07/09 15:09:12 by aljigmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,20 @@ static void	upgrade(int *i, int *num_line, char *line, char **tab)
 	free_tab(&tab);
 }
 
+static int	check_line(char *line)
+{
+	int		i;
+
+	i = 0;
+	while (line[i])
+	{
+		if (line[i] == ',' && line[i + 1] == ',')
+			return (-1);
+		i++;
+	}
+	return (0);
+}
+
 t_token		*lexical_analysis(const int fd, char *line, int num_line, int i)
 {
 	int		rt;
@@ -55,7 +69,7 @@ t_token		*lexical_analysis(const int fd, char *line, int num_line, int i)
 	tokens = NULL;
 	while ((rt = get_next_line(fd, &line)) > 0)
 	{
-		if ((tab = del_useless(line)) == NULL)
+		if ((tab = del_useless(line)) == NULL || (check_line(line) == -1))
 			return (free_tokens(&tokens));
 		if (tokens == NULL && tab[i] && tab[i][0] != '#')
 		{

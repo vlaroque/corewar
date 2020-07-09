@@ -95,22 +95,18 @@ static inline t_header	*get_header(t_file *file, t_token *token)
 		return (NULL);
 	name = get_symbol(token, NAME_CMD_STRING);
 	comment = get_symbol(token, COMMENT_CMD_STRING);
-	if (!name)
-		display_missing_field(NAME_CMD_STRING);
-	else if (!comment)
-		display_missing_field(COMMENT_CMD_STRING);
-	else
+	if (throw_fields(name, comment))
 	{
-		header->magic = COREWAR_EXEC_MAGIC;
-		ft_strcpy(header->prog_name, name);
-		ft_strcpy(header->comment, comment);
-		ft_memcpy(&header->prog_size, &file->size, sizeof(unsigned int));
-		to_big_endian32((char*)&header->magic);
-		to_big_endian32((char*)&header->prog_size);
-		return (header);
+		free(header);
+		return (NULL);
 	}
-	free(header);
-	return (NULL);
+	header->magic = COREWAR_EXEC_MAGIC;
+	ft_strcpy(header->prog_name, name);
+	ft_strcpy(header->comment, comment);
+	ft_memcpy(&header->prog_size, &file->size, sizeof(unsigned int));
+	to_big_endian32((char*)&header->magic);
+	to_big_endian32((char*)&header->prog_size);
+	return (header);
 }
 
 void					assemble(char *filename, t_token *token)
