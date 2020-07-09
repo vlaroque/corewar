@@ -14,7 +14,6 @@
 
 t_bool	throw_const_error(char *str)
 {
-	char *strr = str;
 	if (*str == '-' || *str == '+')
 		str++;
 	while (*str)
