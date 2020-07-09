@@ -103,7 +103,7 @@ int			resolve_reference(t_token *start, t_token *token)
 	{
 		if (label_token->type == T_LAB &&
 				!ft_strncmp(label_token->content, reference_name, length)
-				&& (!label_token->content[length]))
+				&& (!label_token->content[length + 1]))
 			break ;
 		label_token = label_token->next;
 	}
