@@ -21,7 +21,7 @@ static inline t_bool		get_arguments(t_token *token, t_inst_info *handler)
 
 	ft_memmove(&params, &handler->param1, sizeof(int) * 3);
 	count = 0;
-	while (params[count] && count < 3)
+	while (count < 3 && params[count])
 		count++;
 	offset = 0;
 	while ((param = params[offset]) && offset < 3 && token)
