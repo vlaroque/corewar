@@ -14,25 +14,44 @@
 #include "op.h"
 #include "corewar.h"
 
+int		next_id(t_data *data, t_champ *champ_limit)
+{
+	static int		id = 1;
+	t_champ			*champ;
+	int				id_exist;
+
+	id_exist = 1;
+	while (id_exist)
+	{
+		champ = data->champs;
+		id_exist = 0;
+		while (champ != champ_limit)
+		{
+			if (champ->id == id)
+			{
+				id_exist = 1;
+				id++;
+			}
+			champ = champ->next;
+		}
+	}
+	return (id);
+}
+
 int		finish_champs(t_data *data)
 {
 	t_champ		*champ;
-	int			i;
 	int			nbr_champs;
 	int			rank;
 
 	rank = 1;
-	i = 1;
 	nbr_champs = 0;
 	champ = data->champs;
 	while (champ)
 	{
 		champ->champ_rank = rank++;
 		if (!(champ->n_option))
-		{
-			champ->id = i;
-			i++;
-		}
+			champ->id = next_id(data, champ);
 		nbr_champs++;
 		champ = champ->next;
 	}
