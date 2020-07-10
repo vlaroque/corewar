@@ -6,7 +6,7 @@
 /*   By: aljigmon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 17:03:11 by aljigmon          #+#    #+#             */
-/*   Updated: 2020/07/09 15:11:21 by aljigmon         ###   ########.fr       */
+/*   Updated: 2020/07/10 12:26:48 by aljigmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ static inline t_inst_info	*get_schema(t_token *token)
 	while (g_inst_symbol_tab[offset].inst)
 	{
 		if (!ft_strcmp(token->content, g_inst_symbol_tab[offset].inst)
-			&& length == ft_strlen(g_inst_symbol_tab[offset].inst))
+				&& length == ft_strlen(g_inst_symbol_tab[offset].inst))
 			return (&g_inst_symbol_tab[offset]);
 		offset++;
 	}
@@ -104,14 +104,13 @@ static inline t_inst_info	*get_schema(t_token *token)
 
 int							syntax_analysis(t_token *token)
 {
-	t_inst_info	*schema;
-	int			count;
+	t_inst_info		*schema;
+	int				count;
 
 	count = -1;
-	while (token)
+	while (token && !throw_str_exception(token)
+			&& !throw_label_exception(token))
 	{
-		if (throw_str_exception(token) || throw_label_exception(token))
-			return (FALSE);
 		if (token->type != T_PRE)
 		{
 			if ((schema = get_schema(token)))
@@ -129,5 +128,5 @@ int							syntax_analysis(t_token *token)
 		}
 		token = token->next;
 	}
-	return (count);
+	return (token ? 0 : count);
 }
