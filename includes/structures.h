@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 00:05:33 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/26 00:09:29 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/07/10 22:01:37 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ typedef struct			s_data
 {
 	int					ac;
 	char				**av;
+	int					fd;
 	int					turn;
 	t_octet				mars[MEM_SIZE];
 	int					colors[MEM_SIZE];
