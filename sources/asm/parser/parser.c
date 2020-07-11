@@ -114,7 +114,7 @@ t_token		*parser(const int fd)
 	if (count <= 0)
 	{
 		if (count == -1)
-			ft_putstr("The file does not contain instructions to execute\n");
+			ft_putstr("The file does not contain an instruction or a syntax error.\n");
 		free_tokens(&tokens);
 		return (NULL);
 	}

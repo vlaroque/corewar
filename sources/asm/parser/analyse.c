@@ -112,13 +112,13 @@ int							syntax_analysis(t_token *token)
 	while (token && !throw_str_exception(token)
 			&& !throw_label_exception(token))
 	{
-		if (token->type != T_PRE)
+		if (!token->type)
 		{
 			if ((schema = get_schema(token)))
 			{
 				token->type = T_MNE;
-				if (token->next && !(get_arguments(token->next, schema)))
-					return (FALSE);
+				if (!token->next || !(get_arguments(token->next, schema)))
+					return (!token->next ? -1 : 0);
 				count++;
 			}
 		}
