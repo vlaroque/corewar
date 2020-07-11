@@ -6,7 +6,7 @@
 /*   By: aljigmon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 17:03:11 by aljigmon          #+#    #+#             */
-/*   Updated: 2020/07/10 12:26:48 by aljigmon         ###   ########.fr       */
+/*   Updated: 2020/07/11 20:20:24 by aljigmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,7 @@ static inline t_bool		get_arguments(t_token *token, t_inst_info *handler)
 		token = token->next;
 	}
 	if (offset != count)
-	{
-		puts("::");
-		puts(token->content);
-		puts(token->next->content);
 		display_string_error("Assembly syntax error");
-	}
 	return (offset == count);
 }
 
