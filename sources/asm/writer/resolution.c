@@ -95,7 +95,8 @@ int			resolve_reference(t_token *start, t_token *token)
 	int		label_offset;
 	size_t	length;
 
-	reference_name = token->content + 2;
+	reference_name = (token->type & T_IND) == T_IND
+			? token->content + 1 : token->content + 2;
 	reference_offset = get_token_offset(start, token, TRUE);
 	length = (size_t)ft_strlen(reference_name);
 	label_token = start;

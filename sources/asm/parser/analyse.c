@@ -35,7 +35,12 @@ static inline t_bool		get_arguments(t_token *token, t_inst_info *handler)
 		token = token->next;
 	}
 	if (offset != count)
+	{
+		puts("::");
+		puts(token->content);
+		puts(token->next->content);
 		display_string_error("Assembly syntax error");
+	}
 	return (offset == count);
 }
 
@@ -64,7 +69,7 @@ static inline t_bool		throw_label_exception(t_token *token)
 {
 	char *symbol;
 
-	if (*token->content == DIRECT_CHAR)
+	if (token->type || *token->content == DIRECT_CHAR)
 		return (FALSE);
 	symbol = token->content;
 	while (*symbol && *symbol != ':')

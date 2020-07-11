@@ -95,21 +95,23 @@ t_token	*get_label(t_token *token, char *label)
 
 t_bool	is_constant(t_token *token)
 {
-	char	*symbol;
+	char	*s;
 	t_token	*label;
 
-	symbol = token->content;
-	if (*symbol != DIRECT_CHAR)
+	s = token->content;
+	if (*s != DIRECT_CHAR && *s != LABEL_CHAR)
 		return (FALSE);
-	symbol++;
-	if (*symbol == LABEL_CHAR)
+	if (*s != LABEL_CHAR)
+		s++;
+	if (*s == LABEL_CHAR)
 	{
-		symbol++;
-		label = get_label(token, symbol);
+		s++;
+		label = get_label(token, s);
 		if (!label)
 			return (FALSE);
 		label->type = T_LAB;
-		token->type = (T_REF | T_DIR);
+		token->type = (token->content == s - 1)
+			? (T_REF | T_IND) : (T_REF | T_DIR);
 		return (TRUE);
 	}
 	token->offset++;
