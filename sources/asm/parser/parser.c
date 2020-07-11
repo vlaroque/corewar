@@ -6,7 +6,7 @@
 /*   By: aljigmon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/21 20:01:37 by aljigmon          #+#    #+#             */
-/*   Updated: 2020/07/11 13:54:04 by aljigmon         ###   ########.fr       */
+/*   Updated: 2020/07/11 15:56:34 by aljigmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,8 @@ static void	upgrade(int *i, int *num_line, char *line, char **tab)
 	free_tab(&tab);
 }
 
-static int	check_line(char *line)
+static int	check_line(char *line, int i)
 {
-	int		i;
-
-	i = 0;
 	while (line[i] && (line[i] == ' ' || line[i] == '\t'))
 		i++;
 	while (line[i] && line[i] != ' ' && line[i] != '\t')
@@ -63,9 +60,15 @@ static int	check_line(char *line)
 	i = 0;
 	while (line[i])
 	{
-		if ((line[i] == ',' && line[i + 1] == ',')
-				|| (line[i] == ',' && line[i + 1] == '\0'))
-			return (-1);
+		if (line[i] == ',')
+		{
+			i++;
+			while (line[i] && (line[i] == ' ' || line[i] == '\t'))
+				i++;
+			if (line[i] == ',' || line[i] == '\0')
+				return (-1);
+			i--;
+		}
 		i++;
 	}
 	return (0);
@@ -80,7 +83,7 @@ t_token		*lexical_analysis(const int fd, char *line, int num_line, int i)
 	tokens = NULL;
 	while ((rt = get_next_line(fd, &line)) > 0)
 	{
-		if ((tab = del_useless(line)) == NULL || (check_line(line) == -1))
+		if ((tab = del_useless(line)) == NULL || (check_line(line, 0) == -1))
 			return (free_tokens(&tokens));
 		if (tokens == NULL && tab[i] && tab[i][0] != '#')
 		{
@@ -114,7 +117,7 @@ t_token		*parser(const int fd)
 	if (count <= 0)
 	{
 		if (count == -1)
-			ft_putstr("The file does not contain an instruction or a syntax error.\n");
+			ft_putstr("File doesn't contain an instruction or syntax error.\n");
 		free_tokens(&tokens);
 		return (NULL);
 	}
