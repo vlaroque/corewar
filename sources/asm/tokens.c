@@ -6,7 +6,7 @@
 /*   By: aljigmon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 19:44:35 by aljigmon          #+#    #+#             */
-/*   Updated: 2020/07/08 16:51:37 by aljigmon         ###   ########.fr       */
+/*   Updated: 2020/07/10 11:19:40 by aljigmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,37 +44,37 @@ int			append_token(int num, char *content, int type, t_token *token)
 		return (0);
 	token->next->num = num;
 	token->next->content = ft_strdup(content);
-		if (!token->next->content)
-		{
-			free(token->next);
-			return (0);
-		}
-		token->next->type = type;
-		token->next->next = NULL;
-		token->next->prev = token;
-		return (1);
-	}
-
-	t_token		*free_tokens(t_token **tokens)
+	if (!token->next->content)
 	{
-		t_token	*token;
-		t_token	*tmp;
-
-		token = *tokens;
-		if (token == NULL || tokens == NULL)
-			return (NULL);
-		while (token->prev)
-			token = token->prev;
-		while (token)
-		{
-			tmp = token;
-			token = tmp->next;
-			if (tmp->content)
-			{
-				tmp->content -= tmp->offset;
-				ft_strdel(&tmp->content);
-			}
-			free(tmp);
-		}
-		return (NULL);
+		free(token->next);
+		return (0);
 	}
+	token->next->type = type;
+	token->next->next = NULL;
+	token->next->prev = token;
+	return (1);
+}
+
+t_token		*free_tokens(t_token **tokens)
+{
+	t_token	*token;
+	t_token	*tmp;
+
+	token = *tokens;
+	if (token == NULL || tokens == NULL)
+		return (NULL);
+	while (token->prev)
+		token = token->prev;
+	while (token)
+	{
+		tmp = token;
+		token = tmp->next;
+		if (tmp->content)
+		{
+			tmp->content -= tmp->offset;
+			ft_strdel(&tmp->content);
+		}
+		free(tmp);
+	}
+	return (NULL);
+}

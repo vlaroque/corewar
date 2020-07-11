@@ -55,7 +55,6 @@ while turns < 50000 do
 	end
 	cut1 = res1.slice(res1.index("0x0000")..-1)
 	cut2 = res2.slice(res2.index("0x0000")..-1)
-	
 	equal_strings = cut1.eql?(cut2)
 
 	if !equal_strings && debug then

@@ -6,13 +6,13 @@
 /*   By: aljigmon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 17:05:59 by aljigmon          #+#    #+#             */
-/*   Updated: 2020/07/08 15:12:54 by aljigmon         ###   ########.fr       */
+/*   Updated: 2020/07/10 11:20:46 by aljigmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
 
-t_bool			throw_fields(char *name, char *comment)
+t_bool					throw_fields(char *name, char *comment)
 {
 	if (!name)
 		display_missing_field(NAME_CMD_STRING);

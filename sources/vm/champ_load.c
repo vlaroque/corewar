@@ -6,7 +6,7 @@
 /*   By: vlaroque <vlaroque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/26 14:52:08 by vlaroque          #+#    #+#             */
-/*   Updated: 2020/06/16 12:14:05 by vlaroque         ###   ########.fr       */
+/*   Updated: 2020/07/10 22:04:49 by vlaroque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,10 @@ static int		what_id(t_data *data, t_champ *champ, t_champid *champ_id)
 	if (champ_id->carry == 1)
 	{
 		if (id_exist(data, champ_id->carried_nbr))
+		{
+			close(data->fd);
 			print_error(data, 40);
+		}
 		champ_id->carry = 0;
 		champ->id = champ_id->carried_nbr;
 		champ->n_option = 1;
@@ -86,14 +89,15 @@ static int		what_id(t_data *data, t_champ *champ, t_champid *champ_id)
 
 int				new_champ(t_data *data, char *source, t_champid *champ_id)
 {
-	int			fd;
 	t_champ		*champ;
 	t_champ		*last;
 
-	fd = open(source, O_RDONLY);
-	if (fd < 1)
+	data->fd = open(source, O_RDONLY);
+	if (data->fd < 1)
 		print_error(data, -2);
 	if (!(champ = (t_champ *)malloc(sizeof(t_champ))))
+		close(data->fd);
+	if (!(champ))
 		print_error(data, -1);
 	data->nbr_champs++;
 	op_bzero(champ, sizeof(t_champ));
@@ -107,7 +111,7 @@ int				new_champ(t_data *data, char *source, t_champid *champ_id)
 			last = last->next;
 		last->next = champ;
 	}
-	champ_fill(data, champ, fd);
-	close(fd);
+	champ_fill(data, champ, data->fd);
+	close(data->fd);
 	return (1);
 }

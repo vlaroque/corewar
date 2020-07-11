@@ -20,7 +20,7 @@ t_bool	is_parameter(t_token *token)
 
 t_bool	ocp_required(uint32_t inst)
 {
-	return (inst != 0x1 && inst != 0x09 && inst != 0x0c);
+	return (inst != 0x1 && inst != 0x09 && inst != 0x0c && inst != 0xf);
 }
 
 void	to_big_endian16(char *buff)

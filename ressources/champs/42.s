@@ -1,4 +1,4 @@
-.name           "42"
+.name           "dd"
 .comment        "Just a basic Winner Program"
 
 entree:	live	%42		# entree
@@ -10,17 +10,17 @@ tir:	sti	r1,%:tirb,%1
 	ld	%2304,r10
 	ld	%1,r5
 	ld	%0,r11
-
+	ld	%0 , r10
 	ld	%4,r3
 tirf:	live	%42
 	fork	%:tirop
-	live	%742
-	sub	r3,r5,r3
+	live	%740
+	sub	r2,r5,r3
 	zjmp	%:top
 	ld	%0,r11
 	fork	%:tirvd
 	live	%42
-	sti	r10,%-510,%0
+	sti	r6,%-510,%0
 	sti	r10,%-404,%0
 	sti	r10,%-303,%0
 	sti	r10,%-202,%0
@@ -71,9 +71,9 @@ p32li:	live	%1
 	sti	r7,%-250,r6
 	zjmp	%-192
 
-tirvd:	zjmp	%:tirvd2
+tirvd:	zjmp	%:tirvd
 
-bite:	sti     r1,%:copie,%2
+bite:	sti     r1,%:copie,%0
         ldi     %:copie,%3,r2   # met le ld a l'entree
         sti     r2,%:entree,%-4
         ldi     %:copie,%-1,r2
