@@ -118,7 +118,7 @@ int							syntax_analysis(t_token *token)
 			{
 				token->type = T_MNE;
 				if (!token->next || !(get_arguments(token->next, schema)))
-					return (!token->next ? -1 : 0);
+					return (!token->next ? -1 : count + 1);
 				count++;
 			}
 		}
@@ -129,5 +129,5 @@ int							syntax_analysis(t_token *token)
 		}
 		token = token->next;
 	}
-	return (token ? 0 : count);
+	return (token ? 0 : count + 1);
 }
