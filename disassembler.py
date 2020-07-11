@@ -45,7 +45,7 @@ SYMBOLS = [
 
 if len(sys.argv) != 2:
 	red("python dissambler.py <filename>\n")
-	exit(0)
+	exit(1)
 
 
 try:
@@ -68,8 +68,8 @@ if struct.unpack("<I", buffer[:4])[0] != 0xf383ea00:
 def get_param_type(value, begin, end):
 	return
 
-print("Nom du champion: {}".format(buffer[4:132]))
-comment = buffer[140:2180]
+print("Nom du champion: {}".format(buffer[4:132]).replace('\x00', ''))
+comment = buffer[140:2180].replace('\x00', '')
 print("Commentaire: \"{}\"\n".format(comment))
 
 get_param = lambda params, offset: (params >> offset & 3)
