@@ -43,7 +43,8 @@ static inline t_bool		throw_str_exception(t_token *token)
 {
 	char *str;
 
-	if (*token->content == '.')
+	if (*token->content == '.' && (!ft_strcmp(token->content, ".name")
+		|| !ft_strcmp(token->content, ".comment")))
 	{
 		token->type = T_PRE;
 		return (FALSE);

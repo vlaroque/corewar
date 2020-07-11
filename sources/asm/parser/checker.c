@@ -44,6 +44,8 @@ t_bool	is_label(char *label)
 	uint32_t	offset;
 	uint32_t	count;
 
+	if (!*label)
+		return (FALSE);
 	while (*label)
 	{
 		offset = 0;
