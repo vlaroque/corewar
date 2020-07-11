@@ -3,4 +3,3 @@
 
 loop:
 	live %42
-	zjmp %:loop
