@@ -19,15 +19,20 @@ int		next_id(t_data *data, t_champ *champ_limit)
 	static int		id = 1;
 	t_champ			*champ;
 	int				id_exist;
+	int				before;
 
 	id_exist = 1;
+	before = 1;
 	while (id_exist)
 	{
 		champ = data->champs;
 		id_exist = 0;
-		while (champ != champ_limit)
+		while (champ)
 		{
-			if (champ->id == id)
+			if (champ == champ_limit)
+				before = 0;
+			if ((champ->id == id && before) || (champ->n_option
+						&& champ->id == id))
 			{
 				id_exist = 1;
 				id++;
