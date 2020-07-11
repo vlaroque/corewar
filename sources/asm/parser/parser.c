@@ -6,7 +6,7 @@
 /*   By: aljigmon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/21 20:01:37 by aljigmon          #+#    #+#             */
-/*   Updated: 2020/07/09 15:09:12 by aljigmon         ###   ########.fr       */
+/*   Updated: 2020/07/11 13:00:04 by aljigmon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ static int	check_line(char *line)
 	i = 0;
 	while (line[i])
 	{
-		if (line[i] == ',' && line[i + 1] == ',')
+		if ((line[i] == ',' && line[i + 1] == ',')
+				|| (line[i] == ',' && line[i + 1] == '\0'))
 			return (-1);
 		i++;
 	}
