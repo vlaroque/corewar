@@ -22,7 +22,10 @@ t_file		*init_file(void)
 	file->fd = -1;
 	file->buffer = (char*)malloc(sizeof(char) * 4096);
 	if (!file->buffer)
+	{
+		free(file);
 		return (NULL);
+	}
 	file->page = 1;
 	file->size = 0;
 	return (file);
@@ -55,7 +58,8 @@ void		write_buffer(t_file *file, char *data, uint32_t size)
 				(sizeof(char)) * (file->size + 4096));
 		file->page++;
 	}
-	ft_memcpy(file->buffer + file->size, data, size);
+	if (file->buffer)
+		ft_memcpy(file->buffer + file->size, data, size);
 	file->size += size;
 }
 
